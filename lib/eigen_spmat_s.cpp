@@ -6,9 +6,7 @@
 
 /******************** SparseMatrix_S: pointer conversion  ********************/
 
-typedef float elt_s;
 typedef SparseMatrix<elt_s, Eigen::RowMajor, INDEX> spmat_s;
-const elt_s zero_s = 0.;
 
 inline spmat_s& c_to_eigen(c_spmat_s* ptr)
 {

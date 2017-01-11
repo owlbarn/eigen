@@ -5,9 +5,7 @@
 
 /******************** SparseMatrix_C: pointer conversion  ********************/
 
-typedef std::complex<float> elt_c;
 typedef SparseMatrix<elt_c, Eigen::RowMajor, INDEX> spmat_c;
-const elt_c zero_c = 0.;
 
 inline spmat_c& c_to_eigen(c_spmat_c* ptr)
 {

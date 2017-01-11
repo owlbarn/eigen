@@ -6,9 +6,7 @@
 
 /******************** SparseMatrix_D: pointer conversion  ********************/
 
-typedef double elt_d;
 typedef SparseMatrix<elt_d, Eigen::RowMajor, INDEX> spmat_d;
-const elt_d zero_d = 0.;
 
 inline spmat_d& c_to_eigen(c_spmat_d* ptr)
 {
