@@ -3,7 +3,6 @@
  * Copyright (c) 2016 Liang Wang <liang.wang@cl.cam.ac.uk>
  */
 
-
 /******************** SparseMatrix_S: pointer conversion  ********************/
 
 typedef float elt_s;

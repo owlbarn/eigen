@@ -1,5 +1,5 @@
 /*
- * OWL - an OCaml numerical library for scientific computing
+ * Eigen - an OCaml interface to C++ Eigen library
  * Copyright (c) 2016 Liang Wang <liang.wang@cl.cam.ac.uk>
  */
 
