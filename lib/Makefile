@@ -5,11 +5,11 @@ CXXFLAGS2 = -c -ansi -Wno-extern-c-compat -Wno-c++11-long-long
 all:
 	g++ ${CXXFLAGS2} -I. eigen_dsmat.cpp -o eigen_dsmat.o
 	g++ ${CXXFLAGS2} -I. eigen_spmat.cpp -o eigen_spmat.o
-	gcc -c ffi_eigen_generated_stub.c -I. -I/Users/liang/.opam/4.04.0/lib/ctypes/ -I/Users/liang/.opam/4.04.0/lib/ocaml/ -o eigen_stub.o
+	gcc -c ffi_eigen_generated_stub.c -I. -I`ocamlfind query ctypes` -I`ocamlc -where` -o eigen_stub.o
 	ld -r eigen_*.o -o libeigen.o
-	ocamlfind ocamlc -c -linkpkg -custom -package ctypes ffi_eigen_generated.ml
-	ocamlfind ocamlc -c -linkpkg -custom -package ctypes ffi_eigen_bindings.ml
-	ocamlfind ocamlc -c -linkpkg -custom -package ctypes.stubs libeigen.o ffi_eigen_bindings.cmo ffi_eigen_generated.cmo ml_dsmat_s.ml -cclib -lstdc++
+	ocamlfind ocamlc -c -package ctypes ffi_eigen_generated.ml
+	ocamlfind ocamlc -c -package ctypes ffi_eigen_bindings.ml
+	ocamlfind ocamlc -c -linkpkg -custom -package ctypes.stubs ffi_eigen_bindings.cmo ffi_eigen_generated.cmo ml_dsmat_s.ml -cclib -lstdc++
 	ocamlfind ocamlc -linkpkg -custom -package ctypes.stubs libeigen.o ffi_eigen_bindings.cmo ffi_eigen_generated.cmo ml_dsmat_s.cmo example.ml -o example.byte -cclib -lstdc++
 	#ocamlfind ocamlc -linkpkg -custom -package ctypes.stubs libeigen.o ffi_eigen_bindings.cmo ffi_eigen_generated.cmo eigen_dsmat_s.ml -o example.byte -cclib -L. -cclib -leigen_stub -cclib -lstdc++
 clean:
