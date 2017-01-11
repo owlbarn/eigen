@@ -3,6 +3,6 @@ CXXFLAGS1 = -shared -fPIC -ansi -pedantic -Wno-extern-c-compat -Wno-c++11-long-l
 CXXFLAGS2 = -c -ansi -Wno-extern-c-compat -Wno-c++11-long-long
 
 all:
-	g++ ${CXXFLAGS2} -I. libowl_eigen.cpp -o libowl_eigen.o
+	g++ ${CXXFLAGS2} -I. eigen.cpp -o eigen.o
 clean:
 	rm -rf *.o *.so
