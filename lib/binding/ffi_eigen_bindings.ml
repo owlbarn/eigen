@@ -13,10 +13,15 @@ module Bindings (F : Cstubs.FOREIGN) = struct
 
     type c_dsmat_s
     let c_dsmat_s : c_dsmat_s structure typ = structure "c_dsmat_s"
+    let elt = float
 
     let ml_eigen_new = foreign "c_eigen_dsmat_s_new" (int64_t @-> int64_t @-> returning (ptr c_dsmat_s))
 
     let ml_eigen_delete = foreign "c_eigen_dsmat_s_delete" (ptr c_dsmat_s @-> returning void)
+
+    let ml_eigen_get = foreign "c_eigen_dsmat_s_get" (ptr c_dsmat_s @-> int64_t @-> int64_t @-> returning elt)
+
+    let ml_eigen_set = foreign "c_eigen_dsmat_s_set" (ptr c_dsmat_s @-> int64_t @-> int64_t @-> elt @-> returning void)
 
     let ml_eigen_print = foreign "c_eigen_dsmat_s_print" (ptr c_dsmat_s @-> returning void)
 

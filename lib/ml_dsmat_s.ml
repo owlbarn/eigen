@@ -15,4 +15,8 @@ let create m n =
 
 let delete x = ml_eigen_delete x
 
+let get x i j = ml_eigen_get x (Int64.of_int i) (Int64.of_int j)
+
+let set x i j a = ml_eigen_set x (Int64.of_int i) (Int64.of_int j) a
+
 let print x = ml_eigen_print x

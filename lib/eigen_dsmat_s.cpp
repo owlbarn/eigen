@@ -30,6 +30,16 @@ void c_eigen_dsmat_s_delete(c_dsmat_s *m)
   delete &c_to_eigen(m);
 }
 
+dsmat_s_elt c_eigen_dsmat_s_get(c_dsmat_s *m, INDEX i, INDEX j)
+{
+  return (c_to_eigen(m)).coeff(i,j);
+}
+
+void c_eigen_dsmat_s_set(c_dsmat_s *m, INDEX i, INDEX j, dsmat_s_elt x)
+{
+  (c_to_eigen(m)).coeffRef(i,j) = x;
+}
+
 void c_eigen_dsmat_s_print(c_dsmat_s *m)
 {
   std::cout << c_to_eigen(m) << std::endl;

@@ -20,6 +20,8 @@ extern "C"
   #define CELT_C c_dsmat_c_elt
   #define CELT_Z c_dsmat_z_elt
 #else
+  typedef float dsmat_s_elt;
+  typedef double dsmat_d_elt;
   #define CELT_C float _Complex
   #define CELT_Z double _Complex
 #endif
@@ -31,6 +33,8 @@ extern "C"
 
   struct c_dsmat_s* c_eigen_dsmat_s_new(INDEX rows, INDEX cols);
   void c_eigen_dsmat_s_delete(struct c_dsmat_s *m);
+  dsmat_s_elt c_eigen_dsmat_s_get(struct c_dsmat_s *m, INDEX i, INDEX j);
+  void c_eigen_dsmat_s_set(struct c_dsmat_s *m, INDEX i, INDEX j, dsmat_s_elt x);
   void c_eigen_dsmat_s_print(struct c_dsmat_s *m);
 
 
@@ -40,6 +44,8 @@ extern "C"
 
   struct c_dsmat_d* c_eigen_dsmat_d_new(INDEX rows, INDEX cols);
   void c_eigen_dsmat_d_delete(struct c_dsmat_d *m);
+  dsmat_d_elt c_eigen_dsmat_d_get(struct c_dsmat_d *m, INDEX i, INDEX j);
+  void c_eigen_dsmat_d_set(struct c_dsmat_d *m, INDEX i, INDEX j, dsmat_d_elt x);
   void c_eigen_dsmat_d_print(struct c_dsmat_d *m);
 
 
