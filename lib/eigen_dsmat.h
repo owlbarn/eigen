@@ -11,12 +11,14 @@ extern "C"
 #define INDEX long long
 
 #ifdef __cplusplus
-  typedef struct { float r, i; } complex_c;
-  typedef struct { double r, i; } complex_z;
   typedef float dsmat_s_elt;
   typedef double dsmat_d_elt;
-  #define CELT_C complex_c
-  #define CELT_Z complex_z
+  typedef std::complex<float> dsmat_c_elt;
+  typedef std::complex<double> dsmat_z_elt;
+  typedef struct { float r, i; } c_dsmat_c_elt;
+  typedef struct { double r, i; } c_dsmat_z_elt;
+  #define CELT_C c_dsmat_c_elt
+  #define CELT_Z c_dsmat_z_elt
 #else
   #define CELT_C float _Complex
   #define CELT_Z double _Complex
@@ -31,6 +33,16 @@ extern "C"
   /**************************** DenseMatrix_D ****************************/
 
   struct c_dsmat_d {};
+
+
+  /**************************** DenseMatrix_C ****************************/
+
+  struct c_dsmat_c {};
+
+
+  /**************************** DenseMatrix_Z ****************************/
+
+  struct c_dsmat_z {};
 
 
 #ifdef __cplusplus

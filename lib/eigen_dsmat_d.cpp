@@ -3,7 +3,7 @@
  * Copyright (c) 2016 Liang Wang <liang.wang@cl.cam.ac.uk>
  */
 
-/******************** DenseMatrix_D: pointer conversion  ********************/
+/******************** pointer conversion  ********************/
 
 typedef Matrix<dsmat_d_elt, Dynamic, Dynamic, RowMajor> dsmat_d;
 
@@ -18,7 +18,7 @@ inline c_dsmat_d* eigen_to_c(dsmat_d& ref)
 }
 
 
-/***************** DenseMatrix_D: c stubs for c++ functions *****************/
+/***************** c stubs for c++ functions *****************/
 
 c_dsmat_d* c_eigen_dsmat_d_new(INDEX rows, INDEX cols)
 {
