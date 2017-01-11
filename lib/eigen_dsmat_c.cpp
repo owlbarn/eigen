@@ -44,3 +44,8 @@ void c_eigen_dsmat_c_delete(c_dsmat_c *m)
 {
   delete &c_to_eigen(m);
 }
+
+void c_eigen_dsmat_c_print(c_dsmat_c *m)
+{
+  std::cout << c_to_eigen(m) << std::endl;
+}

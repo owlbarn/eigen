@@ -29,20 +29,36 @@ extern "C"
 
   struct c_dsmat_s {};
 
+  struct c_dsmat_s* c_eigen_dsmat_s_new(INDEX rows, INDEX cols);
+  void c_eigen_dsmat_s_delete(struct c_dsmat_s *m);
+  void c_eigen_dsmat_s_print(struct c_dsmat_s *m);
+
 
   /**************************** DenseMatrix_D ****************************/
 
   struct c_dsmat_d {};
+
+  struct c_dsmat_d* c_eigen_dsmat_d_new(INDEX rows, INDEX cols);
+  void c_eigen_dsmat_d_delete(struct c_dsmat_d *m);
+  void c_eigen_dsmat_d_print(struct c_dsmat_d *m);
 
 
   /**************************** DenseMatrix_C ****************************/
 
   struct c_dsmat_c {};
 
+  struct c_dsmat_c* c_eigen_dsmat_c_new(INDEX rows, INDEX cols);
+  void c_eigen_dsmat_c_delete(struct c_dsmat_c *m);
+  void c_eigen_dsmat_c_print(struct c_dsmat_c *m);
+
 
   /**************************** DenseMatrix_Z ****************************/
 
   struct c_dsmat_z {};
+
+  struct c_dsmat_z* c_eigen_dsmat_z_new(INDEX rows, INDEX cols);
+  void c_eigen_dsmat_z_delete(struct c_dsmat_z *m);
+  void c_eigen_dsmat_z_print(struct c_dsmat_z *m);
 
 
 #ifdef __cplusplus
