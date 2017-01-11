@@ -17,13 +17,11 @@ extern "C"
   typedef std::complex<double> dsmat_z_elt;
   typedef struct { float r, i; } c_dsmat_c_elt;
   typedef struct { double r, i; } c_dsmat_z_elt;
-  #define CELT_C c_dsmat_c_elt
-  #define CELT_Z c_dsmat_z_elt
 #else
   typedef float dsmat_s_elt;
   typedef double dsmat_d_elt;
-  #define CELT_C float _Complex
-  #define CELT_Z double _Complex
+  typedef float _Complex c_dsmat_c_elt;
+  typedef double _Complex c_dsmat_z_elt;
 #endif
 
 
@@ -55,6 +53,8 @@ extern "C"
 
   struct c_dsmat_c* c_eigen_dsmat_c_new(INDEX rows, INDEX cols);
   void c_eigen_dsmat_c_delete(struct c_dsmat_c *m);
+  c_dsmat_c_elt c_eigen_dsmat_c_get(struct c_dsmat_c *m, INDEX i, INDEX j);
+  void c_eigen_dsmat_c_set(struct c_dsmat_c *m, INDEX i, INDEX j, c_dsmat_c_elt x);
   void c_eigen_dsmat_c_print(struct c_dsmat_c *m);
 
 
@@ -64,6 +64,8 @@ extern "C"
 
   struct c_dsmat_z* c_eigen_dsmat_z_new(INDEX rows, INDEX cols);
   void c_eigen_dsmat_z_delete(struct c_dsmat_z *m);
+  c_dsmat_z_elt c_eigen_dsmat_z_get(struct c_dsmat_z *m, INDEX i, INDEX j);
+  void c_eigen_dsmat_z_set(struct c_dsmat_z *m, INDEX i, INDEX j, c_dsmat_z_elt x);
   void c_eigen_dsmat_z_print(struct c_dsmat_z *m);
 
 
