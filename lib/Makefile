@@ -12,5 +12,9 @@ all:
 	ocamlfind ocamlc -c -linkpkg -custom -package ctypes.stubs ffi_eigen_bindings.cmo ffi_eigen_generated.cmo ml_dsmat_s.ml -cclib -lstdc++
 	ocamlfind ocamlc -linkpkg -custom -package ctypes.stubs libeigen.o ffi_eigen_bindings.cmo ffi_eigen_generated.cmo ml_dsmat_s.cmo example.ml -o example.byte -cclib -lstdc++
 	#ocamlfind ocamlc -linkpkg -custom -package ctypes.stubs libeigen.o ffi_eigen_bindings.cmo ffi_eigen_generated.cmo eigen_dsmat_s.ml -o example.byte -cclib -L. -cclib -leigen_stub -cclib -lstdc++
+install:
+	ocamlfind install eigen *.cmo *.cmi
+uninstall:
+	ocamlfind remove eigen
 clean:
 	rm -rf _build *.byte *.o *.so *.cmo *.cmi
