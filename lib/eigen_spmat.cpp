@@ -6,7 +6,7 @@
 #include <iostream>
 #include <Eigen/Core>
 #include <Eigen/Sparse>
-#include "eigen.h"
+#include "eigen_spmat.h"
 
 using namespace Eigen;
 
