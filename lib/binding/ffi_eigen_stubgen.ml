@@ -17,5 +17,6 @@ let _ =
   | true, false ->
     Cstubs.write_ml Format.std_formatter ~prefix (module Ffi_eigen_bindings.Bindings)
   | false, true ->
-    print_endline "#include \"libowl_eigen.h\"";
+    print_endline "#include \"eigen_dsmat.h\"";
+    print_endline "#include \"eigen_spmat.h\"";
     Cstubs.write_c Format.std_formatter ~prefix (module Ffi_eigen_bindings.Bindings)
