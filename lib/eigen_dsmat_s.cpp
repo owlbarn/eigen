@@ -5,7 +5,7 @@
 
 /******************** DenseMatrix_S: pointer conversion  ********************/
 
-typedef Matrix<elt_s, Dynamic, Dynamic, Eigen::RowMajor> dsmat_s;
+typedef Matrix<dsmat_s_elt, Dynamic, Dynamic, RowMajor> dsmat_s;
 
 inline dsmat_s& c_to_eigen(c_dsmat_s* ptr)
 {

@@ -13,14 +13,8 @@ extern "C"
 #ifdef __cplusplus
   typedef struct { float r, i; } complex_c;
   typedef struct { double r, i; } complex_z;
-  typedef float elt_s;
-  typedef double elt_d;
-  typedef std::complex<float> elt_c;
-  typedef std::complex<double> elt_z;
-  const elt_s zero_s = 0.;
-  const elt_d zero_d = 0.;
-  const elt_z zero_z = 0.;
-  const elt_c zero_c = 0.;
+  typedef float dsmat_s_elt;
+  typedef double dsmat_d_elt;
   #define CELT_C complex_c
   #define CELT_Z complex_z
 #else
@@ -32,6 +26,11 @@ extern "C"
   /**************************** DenseMatrix_S ****************************/
 
   struct c_dsmat_s {};
+
+
+  /**************************** DenseMatrix_D ****************************/
+
+  struct c_dsmat_d {};
 
 
 #ifdef __cplusplus

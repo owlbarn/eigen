@@ -11,3 +11,4 @@
 using namespace Eigen;
 
 #include "eigen_dsmat_s.cpp"
+#include "eigen_dsmat_d.cpp"
