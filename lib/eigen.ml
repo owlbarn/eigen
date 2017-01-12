@@ -1,3 +1,7 @@
+(*
+ * Eigen - an OCaml interface to C++ Eigen library
+ * Copyright (c) 2016 Liang Wang <liang.wang@cl.cam.ac.uk>
+ *)
 
 module Dense = struct
 
@@ -13,5 +17,13 @@ end
 
 
 module Sparse = struct
+
+  module S = Eigen_spmat_s
+
+  module D = Eigen_spmat_d
+
+  module C = Eigen_spmat_c
+
+  module Z = Eigen_spmat_z
 
 end
