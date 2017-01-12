@@ -25,7 +25,7 @@ PreBuildCommand:    ${rm} ${libdir}/libeigen.so;
                     make clean;
                     cd -;
 
-PostBuildCommand:   echo "";
+PostBuildCommand:   echo "Phew ... it is done!";
 
 # +-------------------------------------------------------------------+
 # | Libraries                                                         |
