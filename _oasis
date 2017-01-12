@@ -20,12 +20,12 @@ Homepage:     https://github.com/ryanrhymes/eigen
 
 PreBuildCommand:    ${rm} ${libdir}/libeigen.o;
                     cd lib/;
-                    make;
+                    make all;
                     cp libeigen.o ${libdir};
                     make clean;
                     cd -;
 
-PostBuildCommand:   ${rm} ${prefix}/include/eigen;
+PostBuildCommand:   echo "";
 
 # +-------------------------------------------------------------------+
 # | Libraries                                                         |
