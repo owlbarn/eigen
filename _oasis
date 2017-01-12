@@ -18,10 +18,10 @@ Homepage:     https://github.com/ryanrhymes/eigen
 # | Pre- & Post-build                                                 |
 # +-------------------------------------------------------------------+
 
-PreBuildCommand:    ${rm} ${libdir}/libeigen.o;
+PreBuildCommand:    ${rm} ${libdir}/libeigen.so;
                     cd lib/;
                     make all;
-                    cp libeigen.o ${libdir};
+                    cp libeigen.so ${libdir};
                     make clean;
                     cd -;
 
@@ -49,7 +49,7 @@ Library eigen
                     eigen_spmat.h,
                     ffi_eigen_generated_stub.c
   CCOpt:            -I$pkg_ctypes
-  CCLib:            ${libdir}/libeigen.o
+  CCLib:            ${libdir}/libeigen.so
                     -lstdc++
   BuildDepends:     ctypes, ctypes.stubs
 
