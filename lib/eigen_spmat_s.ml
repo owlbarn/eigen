@@ -44,7 +44,7 @@ let valueptr x =
   let l = allocate int64_t (Signed.Int64.of_int 0) in
   let raw = ml_eigen_valueptr x l in
   let l = Signed.Int64.to_int !@l in
-  bigarray_of_ptr array1 l Bigarray.float64 raw
+  bigarray_of_ptr array1 l Bigarray.float32 raw
 
 let innerindexptr x =
   let raw = ml_eigen_innerindexptr x in
