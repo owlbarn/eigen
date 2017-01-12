@@ -4,7 +4,7 @@
  */
 
 
-/******************** SparseMatrix_S: pointer conversion  ********************/
+/******************** pointer conversion  ********************/
 
 typedef SparseMatrix<spmat_s_elt, Eigen::RowMajor, INDEX> spmat_s;
 
@@ -19,7 +19,7 @@ inline c_spmat_s* eigen_to_c(spmat_s& ref)
 }
 
 
-/***************** SparseMatrix_S: c stubs for c++ functions *****************/
+/***************** c stubs for c++ functions *****************/
 
 c_spmat_s* c_eigen_spmat_s_new(INDEX rows, INDEX cols)
 {

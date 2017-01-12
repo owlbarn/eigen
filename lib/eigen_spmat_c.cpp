@@ -3,7 +3,7 @@
  * Copyright (c) 2016 Liang Wang <liang.wang@cl.cam.ac.uk>
  */
 
-/******************** SparseMatrix_C: pointer conversion  ********************/
+/******************** pointer conversion  ********************/
 
 typedef SparseMatrix<spmat_c_elt, Eigen::RowMajor, INDEX> spmat_c;
 
