@@ -22,6 +22,7 @@ inline c_spmat_z_elt eigen_to_c(spmat_z_elt& ref)
 {
   return *reinterpret_cast<c_spmat_z_elt*>(&ref);
 }
+
 inline spmat_z_elt c_to_eigen(c_spmat_z_elt c)
 {
   return spmat_z_elt(c.r, c.i);
@@ -103,9 +104,10 @@ void c_eigen_spmat_z_reshape(c_spmat_z *m, INDEX rows, INDEX cols)
   (c_to_eigen(m)).resize(rows, cols);
 }
 
-void c_eigen_spmat_z_prune(c_spmat_z *m, spmat_z_elt ref, float eps)
+void c_eigen_spmat_z_prune(c_spmat_z *m, c_spmat_z_elt ref, double eps)
 {
-  (c_to_eigen(m)).prune(ref, eps);
+  spmat_z_elt a = c_to_eigen(ref);
+  (c_to_eigen(m)).prune(a, eps);
 }
 
 c_spmat_z_elt* c_eigen_spmat_z_valueptr(c_spmat_z *m, INDEX *l)

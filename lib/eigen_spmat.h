@@ -218,7 +218,7 @@ typedef long long INDEX;
   void c_eigen_spmat_z_compress(struct c_spmat_z *m);
   void c_eigen_spmat_z_uncompress(struct c_spmat_z *m);
   void c_eigen_spmat_z_reshape(struct c_spmat_z *m, INDEX rows, INDEX cols);
-  void c_eigen_spmat_z_prune(struct c_spmat_z *m, c_spmat_z_elt ref, float eps);
+  void c_eigen_spmat_z_prune(struct c_spmat_z *m, c_spmat_z_elt ref, double eps);
   c_spmat_z_elt* c_eigen_spmat_z_valueptr(struct c_spmat_z *m, INDEX *l);
   INDEX* c_eigen_spmat_z_innerindexptr(struct c_spmat_z *m);
   INDEX* c_eigen_spmat_z_outerindexptr(struct c_spmat_z *m);
