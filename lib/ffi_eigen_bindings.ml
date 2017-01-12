@@ -417,7 +417,7 @@ module Bindings (F : Cstubs.FOREIGN) = struct
     let ml_eigen_sqrt = foreign "c_eigen_spmat_c_sqrt" (ptr c_spmat_c @-> returning (ptr c_spmat_c))
 
     let ml_eigen_print = foreign "c_eigen_spmat_c_print" (ptr c_spmat_c @-> returning void)
-  
+
   end
 
 
@@ -426,6 +426,102 @@ module Bindings (F : Cstubs.FOREIGN) = struct
     type c_spmat_z
     let c_spmat_z : c_spmat_z structure typ = structure "c_spmat_z"
     let elt = complex64
+
+    let ml_eigen_new = foreign "c_eigen_spmat_z_new" (int64_t @-> int64_t @-> returning (ptr c_spmat_z))
+
+    let ml_eigen_delete = foreign "c_eigen_spmat_z_delete" (ptr c_spmat_z @-> returning void)
+
+    let ml_eigen_eye = foreign "c_eigen_spmat_z_eye" (int64_t @-> returning (ptr c_spmat_z))
+
+    let ml_eigen_rows = foreign "c_eigen_spmat_z_rows" (ptr c_spmat_z @-> returning int64_t)
+
+    let ml_eigen_cols = foreign "c_eigen_spmat_z_cols" (ptr c_spmat_z @-> returning int64_t)
+
+    let ml_eigen_nnz = foreign "c_eigen_spmat_z_nnz" (ptr c_spmat_z @-> returning int64_t)
+
+    let ml_eigen_get = foreign "c_eigen_spmat_z_get" (ptr c_spmat_z @-> int64_t @-> int64_t @-> returning elt)
+
+    let ml_eigen_set = foreign "c_eigen_spmat_z_set" (ptr c_spmat_z @-> int64_t @-> int64_t @-> elt @-> returning void)
+
+    let ml_eigen_reset = foreign "c_eigen_spmat_z_reset" (ptr c_spmat_z @-> returning void)
+
+    let ml_eigen_is_compressed = foreign "c_eigen_spmat_z_is_compressed" (ptr c_spmat_z @-> returning int)
+
+    let ml_eigen_compress = foreign "c_eigen_spmat_z_compress" (ptr c_spmat_z @-> returning void)
+
+    let ml_eigen_uncompress = foreign "c_eigen_spmat_z_uncompress" (ptr c_spmat_z @-> returning void)
+
+    let ml_eigen_reshape = foreign "c_eigen_spmat_z_reshape" (ptr c_spmat_z @-> int64_t @-> int64_t @-> returning void)
+
+    let ml_eigen_prune = foreign "c_eigen_spmat_z_prune" (ptr c_spmat_z @-> elt @-> double @-> returning void)
+
+    let ml_eigen_valueptr = foreign "c_eigen_spmat_z_valueptr" (ptr c_spmat_z @-> ptr int64_t @-> returning (ptr elt))
+
+    let ml_eigen_innerindexptr = foreign "c_eigen_spmat_z_innerindexptr" (ptr c_spmat_z @-> returning (ptr int64_t))
+
+    let ml_eigen_outerindexptr = foreign "c_eigen_spmat_z_outerindexptr" (ptr c_spmat_z @-> returning (ptr int64_t))
+
+    let ml_eigen_clone = foreign "c_eigen_spmat_z_clone" (ptr c_spmat_z @-> returning (ptr c_spmat_z))
+
+    let ml_eigen_row = foreign "c_eigen_spmat_z_row" (ptr c_spmat_z @-> int64_t @-> returning (ptr c_spmat_z))
+
+    let ml_eigen_col = foreign "c_eigen_spmat_z_col" (ptr c_spmat_z @-> int64_t @-> returning (ptr c_spmat_z))
+
+    let ml_eigen_transpose = foreign "c_eigen_spmat_z_transpose" (ptr c_spmat_z @-> returning (ptr c_spmat_z))
+
+    let ml_eigen_adjoint = foreign "c_eigen_spmat_z_adjoint" (ptr c_spmat_z @-> returning (ptr c_spmat_z))
+
+    let ml_eigen_diagonal = foreign "c_eigen_spmat_z_diagonal" (ptr c_spmat_z @-> returning (ptr c_spmat_z))
+
+    let ml_eigen_trace = foreign "c_eigen_spmat_z_trace" (ptr c_spmat_z @-> returning elt)
+
+    let ml_eigen_is_zero = foreign "c_eigen_spmat_z_is_zero" (ptr c_spmat_z @-> returning int)
+
+    let ml_eigen_is_positive = foreign "c_eigen_spmat_z_is_positive" (ptr c_spmat_z @-> returning int)
+
+    let ml_eigen_is_negative = foreign "c_eigen_spmat_z_is_negative" (ptr c_spmat_z @-> returning int)
+
+    let ml_eigen_is_nonpositive = foreign "c_eigen_spmat_z_is_nonpositive" (ptr c_spmat_z @-> returning int)
+
+    let ml_eigen_is_nonnegative = foreign "c_eigen_spmat_z_is_nonnegative" (ptr c_spmat_z @-> returning int)
+
+    let ml_eigen_is_equal = foreign "c_eigen_spmat_z_is_equal" (ptr c_spmat_z @-> ptr c_spmat_z @-> returning int)
+
+    let ml_eigen_is_unequal = foreign "c_eigen_spmat_z_is_unequal" (ptr c_spmat_z @-> ptr c_spmat_z @-> returning int)
+
+    let ml_eigen_is_greater = foreign "c_eigen_spmat_z_is_greater" (ptr c_spmat_z @-> ptr c_spmat_z @-> returning int)
+
+    let ml_eigen_is_smaller = foreign "c_eigen_spmat_z_is_smaller" (ptr c_spmat_z @-> ptr c_spmat_z @-> returning int)
+
+    let ml_eigen_equal_or_greater = foreign "c_eigen_spmat_z_equal_or_greater" (ptr c_spmat_z @-> ptr c_spmat_z @-> returning int)
+
+    let ml_eigen_equal_or_smaller = foreign "c_eigen_spmat_z_equal_or_smaller" (ptr c_spmat_z @-> ptr c_spmat_z @-> returning int)
+
+    let ml_eigen_add = foreign "c_eigen_spmat_z_add" (ptr c_spmat_z @-> ptr c_spmat_z @-> returning (ptr c_spmat_z))
+
+    let ml_eigen_sub = foreign "c_eigen_spmat_z_sub" (ptr c_spmat_z @-> ptr c_spmat_z @-> returning (ptr c_spmat_z))
+
+    let ml_eigen_mul = foreign "c_eigen_spmat_z_mul" (ptr c_spmat_z @-> ptr c_spmat_z @-> returning (ptr c_spmat_z))
+
+    let ml_eigen_div = foreign "c_eigen_spmat_z_div" (ptr c_spmat_z @-> ptr c_spmat_z @-> returning (ptr c_spmat_z))
+
+    let ml_eigen_dot = foreign "c_eigen_spmat_z_dot" (ptr c_spmat_z @-> ptr c_spmat_z @-> returning (ptr c_spmat_z))
+
+    let ml_eigen_add_scalar = foreign "c_eigen_spmat_z_add_scalar" (ptr c_spmat_z @-> elt @-> returning (ptr c_spmat_z))
+
+    let ml_eigen_sub_scalar = foreign "c_eigen_spmat_z_sub_scalar" (ptr c_spmat_z @-> elt @-> returning (ptr c_spmat_z))
+
+    let ml_eigen_mul_scalar = foreign "c_eigen_spmat_z_mul_scalar" (ptr c_spmat_z @-> elt @-> returning (ptr c_spmat_z))
+
+    let ml_eigen_div_scalar = foreign "c_eigen_spmat_z_div_scalar" (ptr c_spmat_z @-> elt @-> returning (ptr c_spmat_z))
+
+    let ml_eigen_sum = foreign "c_eigen_spmat_z_sum" (ptr c_spmat_z @-> returning elt)
+
+    let ml_eigen_neg = foreign "c_eigen_spmat_z_neg" (ptr c_spmat_z @-> returning (ptr c_spmat_z))
+
+    let ml_eigen_sqrt = foreign "c_eigen_spmat_z_sqrt" (ptr c_spmat_z @-> returning (ptr c_spmat_z))
+
+    let ml_eigen_print = foreign "c_eigen_spmat_z_print" (ptr c_spmat_z @-> returning void)
 
   end
 
