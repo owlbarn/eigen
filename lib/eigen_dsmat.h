@@ -8,7 +8,7 @@ extern "C"
 {
 #endif
 
-#define INDEX long long
+typedef long long INDEX;
 
 #ifdef __cplusplus
   typedef float dsmat_s_elt;
@@ -17,6 +17,10 @@ extern "C"
   typedef std::complex<double> dsmat_z_elt;
   typedef struct { float r, i; } c_dsmat_c_elt;
   typedef struct { double r, i; } c_dsmat_z_elt;
+  const dsmat_s_elt dsmat_s_zero = 0.;
+  const dsmat_d_elt dsmat_d_zero = 0.;
+  const dsmat_c_elt dsmat_c_zero = 0.;
+  const dsmat_z_elt dsmat_z_zero = 0.;
 #else
   typedef float dsmat_s_elt;
   typedef double dsmat_d_elt;

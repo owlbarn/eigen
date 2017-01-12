@@ -6,7 +6,7 @@
 
 /******************** SparseMatrix_Z: pointer conversion  ********************/
 
-typedef SparseMatrix<elt_z, Eigen::RowMajor, INDEX> spmat_z;
+typedef SparseMatrix<spmat_z_elt, Eigen::RowMajor, INDEX> spmat_z;
 
 inline spmat_z& c_to_eigen(c_spmat_z* ptr)
 {
@@ -18,18 +18,18 @@ inline c_spmat_z* eigen_to_c(spmat_z& ref)
   return reinterpret_cast<c_spmat_z*>(&ref);
 }
 
-inline CELT_Z eigen_to_c(elt_z& ref)
+inline c_spmat_z_elt eigen_to_c(spmat_z_elt& ref)
 {
-  return *reinterpret_cast<CELT_Z*>(&ref);
+  return *reinterpret_cast<c_spmat_z_elt*>(&ref);
 }
-inline elt_z c_to_eigen(CELT_Z c)
+inline spmat_z_elt c_to_eigen(c_spmat_z_elt c)
 {
-  return elt_z(c.r, c.i);
+  return spmat_z_elt(c.r, c.i);
 }
 
-inline CELT_Z* eigen_to_c_ptr(elt_z* ref)
+inline c_spmat_z_elt* eigen_to_c_ptr(spmat_z_elt* ref)
 {
-  return reinterpret_cast<CELT_Z*>(ref);
+  return reinterpret_cast<c_spmat_z_elt*>(ref);
 }
 
 /***************** SparseMatrix_Z: c stubs for c++ functions *****************/
@@ -66,13 +66,13 @@ INDEX c_eigen_spmat_z_nnz(c_spmat_z *m)
   return (c_to_eigen(m)).nonZeros();
 }
 
-CELT_Z c_eigen_spmat_z_get(c_spmat_z *m, INDEX i, INDEX j)
+c_spmat_z_elt c_eigen_spmat_z_get(c_spmat_z *m, INDEX i, INDEX j)
 {
-  elt_z a = (c_to_eigen(m)).coeff(i,j);
+  spmat_z_elt a = (c_to_eigen(m)).coeff(i,j);
   return eigen_to_c(a);
 }
 
-void c_eigen_spmat_z_set(c_spmat_z *m, INDEX i, INDEX j, CELT_Z x)
+void c_eigen_spmat_z_set(c_spmat_z *m, INDEX i, INDEX j, c_spmat_z_elt x)
 {
   (c_to_eigen(m)).coeffRef(i,j) = c_to_eigen(x);
 }
@@ -103,12 +103,12 @@ void c_eigen_spmat_z_reshape(c_spmat_z *m, INDEX rows, INDEX cols)
   (c_to_eigen(m)).resize(rows, cols);
 }
 
-void c_eigen_spmat_z_prune(c_spmat_z *m, elt_z ref, float eps)
+void c_eigen_spmat_z_prune(c_spmat_z *m, spmat_z_elt ref, float eps)
 {
   (c_to_eigen(m)).prune(ref, eps);
 }
 
-CELT_Z* c_eigen_spmat_z_valueptr(c_spmat_z *m, INDEX *l)
+c_spmat_z_elt* c_eigen_spmat_z_valueptr(c_spmat_z *m, INDEX *l)
 {
   spmat_z& x = c_to_eigen(m);
   x.makeCompressed();
@@ -166,9 +166,9 @@ c_spmat_z* c_eigen_spmat_z_diagonal(c_spmat_z *m)
   return eigen_to_c(*new spmat_z(x.diagonal().sparseView()));
 }
 
-CELT_Z c_eigen_spmat_z_trace(c_spmat_z *m)
+c_spmat_z_elt c_eigen_spmat_z_trace(c_spmat_z *m)
 {
-  elt_z a = c_to_eigen(m).diagonal().sparseView().sum();
+  spmat_z_elt a = c_to_eigen(m).diagonal().sparseView().sum();
   return eigen_to_c(a);
 }
 
@@ -178,11 +178,11 @@ int c_eigen_spmat_z_is_zero(c_spmat_z *m)
   if (x.nonZeros() == 0)
     return 1;
 
-  elt_z* a = x.valuePtr();
+  spmat_z_elt* a = x.valuePtr();
   int b = 1;
   for (INDEX k = 0; k < x.data().size(); ++k)
   {
-    if (a[k] != zero_z) {
+    if (a[k] != spmat_z_zero) {
       b = 0;
       break;
     }
@@ -197,7 +197,7 @@ int c_eigen_spmat_z_is_positive(c_spmat_z *m)
   if (x.nonZeros() < (x.rows() * x.cols()))
     return 0;
 
-  elt_z* a = x.valuePtr();
+  spmat_z_elt* a = x.valuePtr();
   int b = 1;
   for (INDEX k = 0; k < x.data().size(); ++k)
   {
@@ -217,7 +217,7 @@ int c_eigen_spmat_z_is_negative(c_spmat_z *m)
   if (x.nonZeros() < (x.rows() * x.cols()))
     return 0;
 
-  elt_z* a = x.valuePtr();
+  spmat_z_elt* a = x.valuePtr();
   int b = 1;
   for (INDEX k = 0; k < x.data().size(); ++k)
   {
@@ -234,7 +234,7 @@ int c_eigen_spmat_z_is_nonpositive(c_spmat_z *m)
 {
   spmat_z& x = c_to_eigen(m);
   x.makeCompressed();
-  elt_z* a = x.valuePtr();
+  spmat_z_elt* a = x.valuePtr();
   int b = 1;
   for (INDEX k = 0; k < x.data().size(); ++k)
   {
@@ -251,7 +251,7 @@ int c_eigen_spmat_z_is_nonnegative(c_spmat_z *m)
 {
   spmat_z& x = c_to_eigen(m);
   x.makeCompressed();
-  elt_z* a = x.valuePtr();
+  spmat_z_elt* a = x.valuePtr();
   int b = 1;
   for (INDEX k = 0; k < x.data().size(); ++k)
   {
@@ -267,14 +267,14 @@ int c_eigen_spmat_z_is_nonnegative(c_spmat_z *m)
 int c_eigen_spmat_z_is_equal(c_spmat_z *m0, c_spmat_z *m1)
 {
   spmat_z x = c_to_eigen(m0) - c_to_eigen(m1);
-  x.prune(zero_z, 0.);
+  x.prune(spmat_z_zero, 0.);
   return (x.nonZeros() == 0);
 }
 
 int c_eigen_spmat_z_is_unequal(c_spmat_z *m0, c_spmat_z *m1)
 {
   spmat_z x = c_to_eigen(m0) - c_to_eigen(m1);
-  x.prune(zero_z, 0.);
+  x.prune(spmat_z_zero, 0.);
   return (x.nonZeros() != 0);
 }
 
@@ -337,9 +337,9 @@ c_spmat_z* c_eigen_spmat_z_dot(c_spmat_z *m0, c_spmat_z *m1)
   return eigen_to_c(*new spmat_z(x0 * x1));
 }
 
-c_spmat_z* c_eigen_spmat_z_add_scalar(c_spmat_z *m, CELT_Z a)
+c_spmat_z* c_eigen_spmat_z_add_scalar(c_spmat_z *m, c_spmat_z_elt a)
 {
-  elt_z b = c_to_eigen(a);
+  spmat_z_elt b = c_to_eigen(a);
   spmat_z* x = new spmat_z(c_to_eigen(m));
   for (INDEX k = 0; k < (*x).outerSize(); ++k)
     for (spmat_z::InnerIterator it(*x,k); it; ++it)
@@ -347,9 +347,9 @@ c_spmat_z* c_eigen_spmat_z_add_scalar(c_spmat_z *m, CELT_Z a)
   return eigen_to_c(*x);
 }
 
-c_spmat_z* c_eigen_spmat_z_sub_scalar(c_spmat_z *m, CELT_Z a)
+c_spmat_z* c_eigen_spmat_z_sub_scalar(c_spmat_z *m, c_spmat_z_elt a)
 {
-  elt_z b = c_to_eigen(a);
+  spmat_z_elt b = c_to_eigen(a);
   spmat_z* x = new spmat_z(c_to_eigen(m));
   for (INDEX k = 0; k < (*x).outerSize(); ++k)
     for (spmat_z::InnerIterator it(*x,k); it; ++it)
@@ -357,16 +357,16 @@ c_spmat_z* c_eigen_spmat_z_sub_scalar(c_spmat_z *m, CELT_Z a)
   return eigen_to_c(*x);
 }
 
-c_spmat_z* c_eigen_spmat_z_mul_scalar(c_spmat_z *m, CELT_Z a)
+c_spmat_z* c_eigen_spmat_z_mul_scalar(c_spmat_z *m, c_spmat_z_elt a)
 {
-  elt_z b = c_to_eigen(a);
+  spmat_z_elt b = c_to_eigen(a);
   spmat_z& x = c_to_eigen(m);
   return eigen_to_c(*new spmat_z(x * b));
 }
 
-c_spmat_z* c_eigen_spmat_z_div_scalar(c_spmat_z *m, CELT_Z a)
+c_spmat_z* c_eigen_spmat_z_div_scalar(c_spmat_z *m, c_spmat_z_elt a)
 {
-  elt_z b = c_to_eigen(a);
+  spmat_z_elt b = c_to_eigen(a);
   spmat_z* x = new spmat_z(c_to_eigen(m));
   for (INDEX k = 0; k < (*x).outerSize(); ++k)
     for (spmat_z::InnerIterator it(*x,k); it; ++it)
@@ -374,15 +374,15 @@ c_spmat_z* c_eigen_spmat_z_div_scalar(c_spmat_z *m, CELT_Z a)
   return eigen_to_c(*x);
 }
 
-CELT_Z c_eigen_spmat_z_sum(c_spmat_z *m)
+c_spmat_z_elt c_eigen_spmat_z_sum(c_spmat_z *m)
 {
-  elt_z a = (c_to_eigen(m)).sum();
+  spmat_z_elt a = (c_to_eigen(m)).sum();
   return eigen_to_c(a);
 }
 /*
-elt_z c_eigen_spmat_z_min(c_spmat_z *m)
+spmat_z_elt c_eigen_spmat_z_min(c_spmat_z *m)
 {
-  elt_z a = std::numeric_limits<elt_z>::infinity();
+  spmat_z_elt a = std::numeric_limits<spmat_z_elt>::infinity();
   spmat_z& x = c_to_eigen(m);
   for (INDEX k = 0; k < x.outerSize(); ++k)
     for (spmat_z::InnerIterator it(x,k); it; ++it)
@@ -395,9 +395,9 @@ elt_z c_eigen_spmat_z_min(c_spmat_z *m)
   return a;
 }
 
-elt_z c_eigen_spmat_z_max(c_spmat_z *m)
+spmat_z_elt c_eigen_spmat_z_max(c_spmat_z *m)
 {
-  elt_z a = -std::numeric_limits<elt_z>::infinity();
+  spmat_z_elt a = -std::numeric_limits<spmat_z_elt>::infinity();
   spmat_z& x = c_to_eigen(m);
   for (INDEX k = 0; k < x.outerSize(); ++k)
     for (spmat_z::InnerIterator it(x,k); it; ++it)

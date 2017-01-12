@@ -8,24 +8,24 @@ extern "C"
 {
 #endif
 
-#define INDEX long long
+typedef long long INDEX;
 
 #ifdef __cplusplus
-  typedef struct { float r, i; } complex_c;
-  typedef struct { double r, i; } complex_z;
-  typedef float elt_s;
-  typedef double elt_d;
-  typedef std::complex<float> elt_c;
-  typedef std::complex<double> elt_z;
-  const elt_s zero_s = 0.;
-  const elt_d zero_d = 0.;
-  const elt_z zero_z = 0.;
-  const elt_c zero_c = 0.;
-  #define CELT_C complex_c
-  #define CELT_Z complex_z
+  typedef float spmat_s_elt;
+  typedef double spmat_d_elt;
+  typedef std::complex<float> spmat_c_elt;
+  typedef std::complex<double> spmat_z_elt;
+  typedef struct { float r, i; } c_spmat_c_elt;
+  typedef struct { double r, i; } c_spmat_z_elt;
+  const spmat_s_elt spmat_s_zero = 0.;
+  const spmat_d_elt spmat_d_zero = 0.;
+  const spmat_c_elt spmat_c_zero = 0.;
+  const spmat_z_elt spmat_z_zero = 0.;
 #else
-  #define CELT_C float _Complex
-  #define CELT_Z double _Complex
+  typedef float spmat_s_elt;
+  typedef double spmat_d_elt;
+  typedef float _Complex c_spmat_c_elt;
+  typedef double _Complex c_spmat_z_elt;
 #endif
 
 
@@ -157,15 +157,15 @@ extern "C"
   INDEX c_eigen_spmat_c_rows(struct c_spmat_c *m);
   INDEX c_eigen_spmat_c_cols(struct c_spmat_c *m);
   INDEX c_eigen_spmat_c_nnz(struct c_spmat_c *m);
-  CELT_C c_eigen_spmat_c_get(struct c_spmat_c *m, INDEX i, INDEX j);
-  void c_eigen_spmat_c_set(struct c_spmat_c *m, INDEX i, INDEX j, CELT_C x);
+  c_spmat_c_elt c_eigen_spmat_c_get(struct c_spmat_c *m, INDEX i, INDEX j);
+  void c_eigen_spmat_c_set(struct c_spmat_c *m, INDEX i, INDEX j, c_spmat_c_elt x);
   void c_eigen_spmat_c_reset(struct c_spmat_c *m);
   int c_eigen_spmat_c_is_compressed(struct c_spmat_c *m);
   void c_eigen_spmat_c_compress(struct c_spmat_c *m);
   void c_eigen_spmat_c_uncompress(struct c_spmat_c *m);
   void c_eigen_spmat_c_reshape(struct c_spmat_c *m, INDEX rows, INDEX cols);
-  void c_eigen_spmat_c_prune(struct c_spmat_c *m, CELT_C ref, float eps);
-  CELT_C* c_eigen_spmat_c_valueptr(struct c_spmat_c *m, INDEX *l);
+  void c_eigen_spmat_c_prune(struct c_spmat_c *m, c_spmat_c_elt ref, float eps);
+  c_spmat_c_elt* c_eigen_spmat_c_valueptr(struct c_spmat_c *m, INDEX *l);
   INDEX* c_eigen_spmat_c_innerindexptr(struct c_spmat_c *m);
   INDEX* c_eigen_spmat_c_outerindexptr(struct c_spmat_c *m);
   struct c_spmat_c* c_eigen_spmat_c_clone(struct c_spmat_c *m);
@@ -174,7 +174,7 @@ extern "C"
   struct c_spmat_c* c_eigen_spmat_c_transpose(struct c_spmat_c *m);
   struct c_spmat_c* c_eigen_spmat_c_adjoint(struct c_spmat_c *m);
   struct c_spmat_c* c_eigen_spmat_c_diagonal(struct c_spmat_c *m);
-  CELT_C c_eigen_spmat_c_trace(struct c_spmat_c *m);
+  c_spmat_c_elt c_eigen_spmat_c_trace(struct c_spmat_c *m);
   int c_eigen_spmat_c_is_zero(struct c_spmat_c *m);
   int c_eigen_spmat_c_is_positive(struct c_spmat_c *m);
   int c_eigen_spmat_c_is_negative(struct c_spmat_c *m);
@@ -191,11 +191,11 @@ extern "C"
   struct c_spmat_c* c_eigen_spmat_c_mul(struct c_spmat_c *m0, struct c_spmat_c *m1);
   struct c_spmat_c* c_eigen_spmat_c_div(struct c_spmat_c *m0, struct c_spmat_c *m1);
   struct c_spmat_c* c_eigen_spmat_c_dot(struct c_spmat_c *m0, struct c_spmat_c *m1);
-  struct c_spmat_c* c_eigen_spmat_c_add_scalar(struct c_spmat_c *m, CELT_C a);
-  struct c_spmat_c* c_eigen_spmat_c_sub_scalar(struct c_spmat_c *m, CELT_C a);
-  struct c_spmat_c* c_eigen_spmat_c_mul_scalar(struct c_spmat_c *m, CELT_C a);
-  struct c_spmat_c* c_eigen_spmat_c_div_scalar(struct c_spmat_c *m, CELT_C a);
-  CELT_C c_eigen_spmat_c_sum(struct c_spmat_c *m);
+  struct c_spmat_c* c_eigen_spmat_c_add_scalar(struct c_spmat_c *m, c_spmat_c_elt a);
+  struct c_spmat_c* c_eigen_spmat_c_sub_scalar(struct c_spmat_c *m, c_spmat_c_elt a);
+  struct c_spmat_c* c_eigen_spmat_c_mul_scalar(struct c_spmat_c *m, c_spmat_c_elt a);
+  struct c_spmat_c* c_eigen_spmat_c_div_scalar(struct c_spmat_c *m, c_spmat_c_elt a);
+  c_spmat_c_elt c_eigen_spmat_c_sum(struct c_spmat_c *m);
   struct c_spmat_c* c_eigen_spmat_c_neg(struct c_spmat_c *m);
   struct c_spmat_c* c_eigen_spmat_c_sqrt(struct c_spmat_c *m);
   void c_eigen_spmat_c_print(struct c_spmat_c *m);
@@ -211,15 +211,15 @@ extern "C"
   INDEX c_eigen_spmat_z_rows(struct c_spmat_z *m);
   INDEX c_eigen_spmat_z_cols(struct c_spmat_z *m);
   INDEX c_eigen_spmat_z_nnz(struct c_spmat_z *m);
-  CELT_Z c_eigen_spmat_z_get(struct c_spmat_z *m, INDEX i, INDEX j);
-  void c_eigen_spmat_z_set(struct c_spmat_z *m, INDEX i, INDEX j, CELT_Z x);
+  c_spmat_z_elt c_eigen_spmat_z_get(struct c_spmat_z *m, INDEX i, INDEX j);
+  void c_eigen_spmat_z_set(struct c_spmat_z *m, INDEX i, INDEX j, c_spmat_z_elt x);
   void c_eigen_spmat_z_reset(struct c_spmat_z *m);
   int c_eigen_spmat_z_is_compressed(struct c_spmat_z *m);
   void c_eigen_spmat_z_compress(struct c_spmat_z *m);
   void c_eigen_spmat_z_uncompress(struct c_spmat_z *m);
   void c_eigen_spmat_z_reshape(struct c_spmat_z *m, INDEX rows, INDEX cols);
-  void c_eigen_spmat_z_prune(struct c_spmat_z *m, CELT_Z ref, float eps);
-  CELT_Z* c_eigen_spmat_z_valueptr(struct c_spmat_z *m, INDEX *l);
+  void c_eigen_spmat_z_prune(struct c_spmat_z *m, c_spmat_z_elt ref, float eps);
+  c_spmat_z_elt* c_eigen_spmat_z_valueptr(struct c_spmat_z *m, INDEX *l);
   INDEX* c_eigen_spmat_z_innerindexptr(struct c_spmat_z *m);
   INDEX* c_eigen_spmat_z_outerindexptr(struct c_spmat_z *m);
   struct c_spmat_z* c_eigen_spmat_z_clone(struct c_spmat_z *m);
@@ -228,7 +228,7 @@ extern "C"
   struct c_spmat_z* c_eigen_spmat_z_transpose(struct c_spmat_z *m);
   struct c_spmat_z* c_eigen_spmat_z_adjoint(struct c_spmat_z *m);
   struct c_spmat_z* c_eigen_spmat_z_diagonal(struct c_spmat_z *m);
-  CELT_Z c_eigen_spmat_z_trace(struct c_spmat_z *m);
+  c_spmat_z_elt c_eigen_spmat_z_trace(struct c_spmat_z *m);
   int c_eigen_spmat_z_is_zero(struct c_spmat_z *m);
   int c_eigen_spmat_z_is_positive(struct c_spmat_z *m);
   int c_eigen_spmat_z_is_negative(struct c_spmat_z *m);
@@ -245,11 +245,11 @@ extern "C"
   struct c_spmat_z* c_eigen_spmat_z_mul(struct c_spmat_z *m0, struct c_spmat_z *m1);
   struct c_spmat_z* c_eigen_spmat_z_div(struct c_spmat_z *m0, struct c_spmat_z *m1);
   struct c_spmat_z* c_eigen_spmat_z_dot(struct c_spmat_z *m0, struct c_spmat_z *m1);
-  struct c_spmat_z* c_eigen_spmat_z_add_scalar(struct c_spmat_z *m, CELT_Z a);
-  struct c_spmat_z* c_eigen_spmat_z_sub_scalar(struct c_spmat_z *m, CELT_Z a);
-  struct c_spmat_z* c_eigen_spmat_z_mul_scalar(struct c_spmat_z *m, CELT_Z a);
-  struct c_spmat_z* c_eigen_spmat_z_div_scalar(struct c_spmat_z *m, CELT_Z a);
-  CELT_Z c_eigen_spmat_z_sum(struct c_spmat_z *m);
+  struct c_spmat_z* c_eigen_spmat_z_add_scalar(struct c_spmat_z *m, c_spmat_z_elt a);
+  struct c_spmat_z* c_eigen_spmat_z_sub_scalar(struct c_spmat_z *m, c_spmat_z_elt a);
+  struct c_spmat_z* c_eigen_spmat_z_mul_scalar(struct c_spmat_z *m, c_spmat_z_elt a);
+  struct c_spmat_z* c_eigen_spmat_z_div_scalar(struct c_spmat_z *m, c_spmat_z_elt a);
+  c_spmat_z_elt c_eigen_spmat_z_sum(struct c_spmat_z *m);
   struct c_spmat_z* c_eigen_spmat_z_neg(struct c_spmat_z *m);
   struct c_spmat_z* c_eigen_spmat_z_sqrt(struct c_spmat_z *m);
   void c_eigen_spmat_z_print(struct c_spmat_z *m);
