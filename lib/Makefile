@@ -5,7 +5,7 @@ CXXFLAGS2 = -c -ansi -Wno-extern-c-compat -Wno-c++11-long-long
 all:
 	g++ ${CXXFLAGS2} -I. eigen_dsmat.cpp -o eigen_dsmat.o
 	g++ ${CXXFLAGS2} -I. eigen_spmat.cpp -o eigen_spmat.o
-	gcc -c ffi_eigen_generated_stub.c -I. -I`ocamlfind query ctypes` -I`ocamlc -where` -o eigen_stub.o
+	#gcc -c ffi_eigen_generated_stub.c -I. -I`ocamlfind query ctypes` -I`ocamlc -where` -o eigen_stub.o
 	ld -r eigen_*.o -o libeigen.o
 	ocamlfind ocamlc -c -package ctypes ffi_eigen_generated.ml
 	ocamlfind ocamlc -c -package ctypes ffi_eigen_bindings.ml
@@ -27,3 +27,7 @@ uninstall:
 	ocamlfind remove eigen
 clean:
 	rm -rf _build *.byte *.o *.so *.cmo *.cmi
+eigen:
+	g++ ${CXXFLAGS2} -I. eigen_dsmat.cpp -o eigen_dsmat.o
+	g++ ${CXXFLAGS2} -I. eigen_spmat.cpp -o eigen_spmat.o
+	ld -r eigen_*.o -o libeigen.o
