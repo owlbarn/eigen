@@ -18,10 +18,8 @@ Homepage:     https://github.com/ryanrhymes/eigen
 # | Pre- & Post-build                                                 |
 # +-------------------------------------------------------------------+
 
-PreBuildCommand:    ${rm} ${prefix}/include/eigen;
-                    ${rm} ${libdir}/libeigen.o;
-                    ln -s `pwd`/lib ${prefix}/include/eigen;
-                    cd ${prefix}/include/eigen;
+PreBuildCommand:    ${rm} ${libdir}/libeigen.o;
+                    cd lib/;
                     make;
                     cp libeigen.o ${libdir};
                     make clean;
@@ -37,8 +35,12 @@ Library eigen
   Path:             lib
   BuildTools:       ocamlbuild
   Modules:          Eigen,
-                    Ffi_eigen_bindings, Ffi_eigen_generated,
-                    Ml_dsmat_s, Ml_dsmat_d, Ml_dsmat_c, Ml_dsmat_z
+                    Ffi_eigen_bindings,
+                    Ffi_eigen_generated,
+                    Ml_dsmat_s,
+                    Ml_dsmat_d,
+                    Ml_dsmat_c,
+                    Ml_dsmat_z
   CSources:         eigen_dsmat.h,
                     eigen_spmat.h,
                     ffi_eigen_generated_stub.c
