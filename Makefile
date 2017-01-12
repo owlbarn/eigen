@@ -10,7 +10,6 @@ clean:
 	rm -rf _build
 cleanall:
 	rm -rf _build setup.* myocamlbuild.ml _tags
-	rm -rf lib/META lib/*.mldylib lib/*.mllib lib/libowl_stubs.clib
+	rm -rf lib/META lib/*.mldylib lib/*.mllib lib/*.clib
 	rm -rf *.byte *.native
-	# remove installed library files
 	ocamlfind remove eigen
