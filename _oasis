@@ -49,7 +49,7 @@ Library eigen
                     eigen_spmat.h,
                     ffi_eigen_generated_stub.c
   CCOpt:            -I$pkg_ctypes
-  CCLib:            ${libdir}/libeigen.so
+  CCLib:            -L${libdir} -leigen
                     -lstdc++
   BuildDepends:     ctypes, ctypes.stubs
 
