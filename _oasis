@@ -1,0 +1,40 @@
+# +-------------------------------------------------------------------+
+# | Package parameters                                                |
+# +-------------------------------------------------------------------+
+
+OASISFormat:  0.4
+Name:         eigen
+Version:      0.1
+Description:  Eigen is Owl's OCaml interface to Eigen C++ library
+Synopsis:     Owl's OCaml interface to Eigen
+Authors:      Liang Wang (ryanrhymes@gmail.com)
+License:      MIT
+Plugins:      META (0.4)
+OCamlVersion: >= 4.04
+BuildTools:   ocamlbuild
+Homepage:     https://github.com/ryanrhymes/eigen
+
+# +-------------------------------------------------------------------+
+# | Pre- & Post-build                                                 |
+# +-------------------------------------------------------------------+
+
+# +-------------------------------------------------------------------+
+# | Libraries                                                         |
+# +-------------------------------------------------------------------+
+
+Library owl
+  Path:             lib
+  BuildTools:       ocamlbuild
+  Modules:          Eigen
+  BuildDepends:     ctypes, ctypes.stubs
+
+
+# +-------------------------------------------------------------------+
+# | Misc                                                              |
+# +-------------------------------------------------------------------+
+
+SourceRepository head
+  Type: git
+  Location: https://github.com/ryanrhymes/eigen.git
+  Browser: https://github.com/ryanrhymes/eigen
+  Branch: master
