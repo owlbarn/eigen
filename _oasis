@@ -40,7 +40,11 @@ Library eigen
                     Eigen_dsmat_s,
                     Eigen_dsmat_d,
                     Eigen_dsmat_c,
-                    Eigen_dsmat_z
+                    Eigen_dsmat_z,
+                    Eigen_spmat_s,
+                    Eigen_spmat_d,
+                    Eigen_spmat_c,
+                    Eigen_spmat_z
   CSources:         eigen_dsmat.h,
                     eigen_spmat.h,
                     ffi_eigen_generated_stub.c
@@ -48,7 +52,6 @@ Library eigen
   CCLib:            ${libdir}/libeigen.o
                     -lstdc++
   BuildDepends:     ctypes, ctypes.stubs
-
 
 # +-------------------------------------------------------------------+
 # | Misc                                                              |
