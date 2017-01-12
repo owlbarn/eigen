@@ -18,10 +18,10 @@ Homepage:     https://github.com/ryanrhymes/eigen
 # | Pre- & Post-build                                                 |
 # +-------------------------------------------------------------------+
 
-PreBuildCommand:    ${rm} ${libdir}/libeigen.so;
+PreBuildCommand:    ${rm} ${libdir}/libeigen.a;
                     cd lib/;
                     make all;
-                    cp libeigen.so ${libdir};
+                    cp libeigen.a ${libdir};
                     make clean;
                     cd -;
 
