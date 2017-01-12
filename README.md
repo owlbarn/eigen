@@ -3,6 +3,12 @@ Simply put, Eigen is a very thin OCaml interface to [Eigen3 C++ template library
 
 Even though Eigen3 itself provides a rich set of matrix operations. This OCaml library only interfaces to the most necessary functions needed by Owl library. **Therefore, you should only use [Owl](https://github.com/ryanrhymes/owl) (which is much more powerful) to perform numerical operations.**
 
+To install the library from the source code, execute the following `bash` command.
+
+```bash
+make oasis && make && make install
+```
+
 ## Module Structure
 This section is not meant for a tutorial but to help you understand how Eigen's OCaml modules are organised. In case you want to contribute in extending either Eigen or Owl, this would be helpful.
 
