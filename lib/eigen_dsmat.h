@@ -8,7 +8,7 @@ extern "C"
 {
 #endif
 
-typedef long long INDEX;
+typedef int64_t INDEX;
 
 #ifdef __cplusplus
   typedef float dsmat_s_elt;
