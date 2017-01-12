@@ -13,8 +13,10 @@ all:
 	ocamlfind ocamlc -c -linkpkg -custom -package ctypes.stubs ffi_eigen_bindings.cmo ffi_eigen_generated.cmo ml_dsmat_d.ml -cclib -lstdc++
 	ocamlfind ocamlc -c -linkpkg -custom -package ctypes.stubs ffi_eigen_bindings.cmo ffi_eigen_generated.cmo ml_dsmat_c.ml -cclib -lstdc++
 	ocamlfind ocamlc -c -linkpkg -custom -package ctypes.stubs ffi_eigen_bindings.cmo ffi_eigen_generated.cmo ml_dsmat_z.ml -cclib -lstdc++
+	ocamlfind ocamlc -c -linkpkg -custom -package ctypes.stubs eigen.ml
 example: all
-	ocamlfind ocamlc -linkpkg -custom -package ctypes.stubs libeigen.o ffi_eigen_bindings.cmo ffi_eigen_generated.cmo ml_dsmat_s.cmo example.ml -o example.byte -cclib -lstdc++
+	ocamlfind ocamlc -linkpkg -custom -package ctypes.stubs libeigen.o ffi_eigen_bindings.cmo ffi_eigen_generated.cmo Ml_dsmat_s.cmo Ml_dsmat_d.cmo Ml_dsmat_c.cmo Ml_dsmat_z.cmo eigen.cmo example.ml -o example.byte -cclib -lstdc++
+	#ocamlfind ocamlc -linkpkg -custom -package ctypes.stubs libeigen.o ffi_eigen_bindings.cmo ffi_eigen_generated.cmo ml_dsmat_s.cmo example.ml -o example.byte -cclib -lstdc++
 	#ocamlfind ocamlc -linkpkg -custom -package ctypes.stubs libeigen.o ffi_eigen_bindings.cmo ffi_eigen_generated.cmo eigen_dsmat_s.ml -o example.byte -cclib -L. -cclib -leigen_stub -cclib -lstdc++
 install:
 	ocamlfind install eigen *.cmo *.cmi
