@@ -45,6 +45,36 @@ void c_eigen_dsmat_c_delete(c_dsmat_c *m)
   delete &c_to_eigen(m);
 }
 
+c_dsmat_c* c_eigen_dsmat_c_zeros(INDEX m, INDEX n)
+{
+  dsmat_c* x = new dsmat_c(m, n);
+  (*x).setZero();
+  return eigen_to_c(*x);
+}
+
+c_dsmat_c* c_eigen_dsmat_c_ones(INDEX m, INDEX n)
+{
+  dsmat_c* x = new dsmat_c(dsmat_c::Ones(m, n));
+  return eigen_to_c(*x);
+}
+
+c_dsmat_c* c_eigen_dsmat_c_eye(INDEX m)
+{
+  dsmat_c* x = new dsmat_c(m, m);
+  (*x).setIdentity();
+  return eigen_to_c(*x);
+}
+
+INDEX c_eigen_dsmat_c_rows(c_dsmat_c *m)
+{
+  return c_to_eigen(m).rows();
+}
+
+INDEX c_eigen_dsmat_c_cols(c_dsmat_c *m)
+{
+  return c_to_eigen(m).cols();
+}
+
 c_dsmat_c_elt c_eigen_dsmat_c_get(c_dsmat_c *m, INDEX i, INDEX j)
 {
   dsmat_c_elt a = (c_to_eigen(m)).coeff(i,j);

@@ -20,6 +20,16 @@ module Bindings (F : Cstubs.FOREIGN) = struct
 
     let ml_eigen_delete = foreign "c_eigen_dsmat_s_delete" (ptr c_dsmat_s @-> returning void)
 
+    let ml_eigen_zeros = foreign "c_eigen_dsmat_s_zeros" (int64_t @-> int64_t @-> returning (ptr c_dsmat_s))
+
+    let ml_eigen_ones = foreign "c_eigen_dsmat_s_ones" (int64_t @-> int64_t @-> returning (ptr c_dsmat_s))
+
+    let ml_eigen_eye = foreign "c_eigen_dsmat_s_eye" (int64_t @-> returning (ptr c_dsmat_s))
+
+    let ml_eigen_rows = foreign "c_eigen_dsmat_s_rows" (ptr c_dsmat_s @-> returning int64_t)
+
+    let ml_eigen_cols = foreign "c_eigen_dsmat_s_cols" (ptr c_dsmat_s @-> returning int64_t)
+
     let ml_eigen_get = foreign "c_eigen_dsmat_s_get" (ptr c_dsmat_s @-> int64_t @-> int64_t @-> returning elt)
 
     let ml_eigen_set = foreign "c_eigen_dsmat_s_set" (ptr c_dsmat_s @-> int64_t @-> int64_t @-> elt @-> returning void)
@@ -38,6 +48,16 @@ module Bindings (F : Cstubs.FOREIGN) = struct
     let ml_eigen_new = foreign "c_eigen_dsmat_d_new" (int64_t @-> int64_t @-> returning (ptr c_dsmat_d))
 
     let ml_eigen_delete = foreign "c_eigen_dsmat_d_delete" (ptr c_dsmat_d @-> returning void)
+
+    let ml_eigen_zeros = foreign "c_eigen_dsmat_d_zeros" (int64_t @-> int64_t @-> returning (ptr c_dsmat_d))
+
+    let ml_eigen_ones = foreign "c_eigen_dsmat_d_ones" (int64_t @-> int64_t @-> returning (ptr c_dsmat_d))
+
+    let ml_eigen_eye = foreign "c_eigen_dsmat_d_eye" (int64_t @-> returning (ptr c_dsmat_d))
+
+    let ml_eigen_rows = foreign "c_eigen_dsmat_d_rows" (ptr c_dsmat_d @-> returning int64_t)
+
+    let ml_eigen_cols = foreign "c_eigen_dsmat_d_cols" (ptr c_dsmat_d @-> returning int64_t)
 
     let ml_eigen_get = foreign "c_eigen_dsmat_d_get" (ptr c_dsmat_d @-> int64_t @-> int64_t @-> returning elt)
 
@@ -58,6 +78,16 @@ module Bindings (F : Cstubs.FOREIGN) = struct
 
     let ml_eigen_delete = foreign "c_eigen_dsmat_c_delete" (ptr c_dsmat_c @-> returning void)
 
+    let ml_eigen_zeros = foreign "c_eigen_dsmat_c_zeros" (int64_t @-> int64_t @-> returning (ptr c_dsmat_c))
+
+    let ml_eigen_ones = foreign "c_eigen_dsmat_c_ones" (int64_t @-> int64_t @-> returning (ptr c_dsmat_c))
+
+    let ml_eigen_eye = foreign "c_eigen_dsmat_c_eye" (int64_t @-> returning (ptr c_dsmat_c))
+
+    let ml_eigen_rows = foreign "c_eigen_dsmat_c_rows" (ptr c_dsmat_c @-> returning int64_t)
+
+    let ml_eigen_cols = foreign "c_eigen_dsmat_c_cols" (ptr c_dsmat_c @-> returning int64_t)
+
     let ml_eigen_get = foreign "c_eigen_dsmat_c_get" (ptr c_dsmat_c @-> int64_t @-> int64_t @-> returning elt)
 
     let ml_eigen_set = foreign "c_eigen_dsmat_c_set" (ptr c_dsmat_c @-> int64_t @-> int64_t @-> elt @-> returning void)
@@ -77,6 +107,16 @@ module Bindings (F : Cstubs.FOREIGN) = struct
 
     let ml_eigen_delete = foreign "c_eigen_dsmat_z_delete" (ptr c_dsmat_z @-> returning void)
 
+    let ml_eigen_zeros = foreign "c_eigen_dsmat_z_zeros" (int64_t @-> int64_t @-> returning (ptr c_dsmat_z))
+
+    let ml_eigen_ones = foreign "c_eigen_dsmat_z_ones" (int64_t @-> int64_t @-> returning (ptr c_dsmat_z))
+
+    let ml_eigen_eye = foreign "c_eigen_dsmat_z_eye" (int64_t @-> returning (ptr c_dsmat_z))
+
+    let ml_eigen_rows = foreign "c_eigen_dsmat_z_rows" (ptr c_dsmat_z @-> returning int64_t)
+
+    let ml_eigen_cols = foreign "c_eigen_dsmat_z_cols" (ptr c_dsmat_z @-> returning int64_t)
+    
     let ml_eigen_get = foreign "c_eigen_dsmat_z_get" (ptr c_dsmat_z @-> int64_t @-> int64_t @-> returning elt)
 
     let ml_eigen_set = foreign "c_eigen_dsmat_z_set" (ptr c_dsmat_z @-> int64_t @-> int64_t @-> elt @-> returning void)
