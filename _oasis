@@ -37,6 +37,7 @@ Library eigen
   Modules:          Eigen,
                     Ffi_eigen_bindings,
                     Ffi_eigen_generated,
+                    Eigen_types,
                     Eigen_dsmat_s,
                     Eigen_dsmat_d,
                     Eigen_dsmat_c,
