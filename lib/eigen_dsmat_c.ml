@@ -3,10 +3,8 @@
  * Copyright (c) 2016-2017 Liang Wang <liang.wang@cl.cam.ac.uk>
  *)
 
-
-module EigenFB = Ffi_eigen_bindings.Bindings(Ffi_eigen_generated)
-
-open EigenFB.DSMAT_C
+open Ctypes
+open Eigen_types.DSMAT_C
 
 let create m n =
   let x = ml_eigen_new (Int64.of_int m) (Int64.of_int n) in
@@ -15,7 +13,7 @@ let create m n =
 
 let delete x = ml_eigen_delete x
 
-let zeros m n = 
+let zeros m n =
   let x = ml_eigen_zeros (Int64.of_int m) (Int64.of_int n) in
   Gc.finalise ml_eigen_delete x;
   x
