@@ -29,4 +29,6 @@ let x = Eigen.Dense.C.eye 5 in Eigen.Dense.C.print x;;
 ```
 
 ## Technical Info
-Because Eigen3 is developed in C++ and heavily utilises template programming, I first expose the class methods as C functions then use [Ctypes](https://github.com/ocamllabs/ocaml-ctypes) to interface to these functions.
+Interfacing betwee `C` and `OCaml` is relatively straightforward. However, Eigen3 is developed in `C++` and heavily utilises template programming, I first expose the native `C++` class methods as individual functions then use [Ctypes](https://github.com/ocamllabs/ocaml-ctypes) to generate `C` stubs and interface to these functions.
+
+The `C++` functions are compiled into a static library `libeigen.a` which is linked using `-lstdc++`. The library is installed in `${libdir}` (`Oasis` environment variable) which should be `/usr/local/lib` on both Mac and Linux platforms.
