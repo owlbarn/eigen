@@ -9,6 +9,9 @@ To install the library from the source code, execute the following `bash` comman
 make oasis && make && make install
 ```
 
+If you have questions or suggestions, please contact me via [Email](liang.wang@cl.cam.ac.uk), [LinkedIn](http://uk.linkedin.com/in/liangsuomi/), or [Twitter](https://twitter.com/ryan_liang).
+
+
 ## Module Structure
 This section is not meant for a tutorial but to help you understand how Eigen's OCaml modules are organised. In case you want to contribute in extending either Eigen or Owl, this would be helpful.
 
@@ -24,7 +27,6 @@ The following code snippet creates a `complex32` dense identity matrix then prin
 ```ocaml
 let x = Eigen.Dense.C.eye 5 in Eigen.Dense.C.print x;;
 ```
-
 
 ## Technical Info
 Because Eigen3 is developed in C++ and heavily utilises template programming, I first expose the class methods as C functions then use [Ctypes](https://github.com/ocamllabs/ocaml-ctypes) to interface to these functions.
