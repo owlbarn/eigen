@@ -49,7 +49,7 @@ let innerindexptr x =
 
 let outerindexptr x =
   let raw = ml_eigen_outerindexptr x in
-  bigarray_of_ptr array1 (rows x) Bigarray.int64 raw
+  bigarray_of_ptr array1 (rows x + 1) Bigarray.int64 raw
 
 let clone x = ml_eigen_clone x
 
