@@ -325,7 +325,6 @@ c_spmat_d* c_eigen_spmat_d_dot(c_spmat_d *m0, c_spmat_d *m1)
 c_spmat_d* c_eigen_spmat_d_add_scalar(c_spmat_d *m, spmat_d_elt a)
 {
   spmat_d* x = new spmat_d(c_to_eigen(m));
-  x->makeCompressed();
   for (INDEX k = 0; k < (*x).outerSize(); ++k)
     for (spmat_d::InnerIterator it(*x,k); it; ++it)
       it.valueRef() += a;
@@ -335,7 +334,6 @@ c_spmat_d* c_eigen_spmat_d_add_scalar(c_spmat_d *m, spmat_d_elt a)
 c_spmat_d* c_eigen_spmat_d_sub_scalar(c_spmat_d *m, spmat_d_elt a)
 {
   spmat_d* x = new spmat_d(c_to_eigen(m));
-  x->makeCompressed();
   for (INDEX k = 0; k < (*x).outerSize(); ++k)
     for (spmat_d::InnerIterator it(*x,k); it; ++it)
       it.valueRef() -= a;
@@ -351,7 +349,6 @@ c_spmat_d* c_eigen_spmat_d_mul_scalar(c_spmat_d *m, spmat_d_elt a)
 c_spmat_d* c_eigen_spmat_d_div_scalar(c_spmat_d *m, spmat_d_elt a)
 {
   spmat_d* x = new spmat_d(c_to_eigen(m));
-  x->makeCompressed();
   for (INDEX k = 0; k < (*x).outerSize(); ++k)
     for (spmat_d::InnerIterator it(*x,k); it; ++it)
       it.valueRef() /= a;
@@ -381,7 +378,6 @@ spmat_d_elt c_eigen_spmat_d_min(c_spmat_d *m)
 {
   spmat_d_elt a = std::numeric_limits<spmat_d_elt>::infinity();
   spmat_d& x = c_to_eigen(m);
-  x.makeCompressed();
   for (INDEX k = 0; k < x.outerSize(); ++k)
     for (spmat_d::InnerIterator it(x,k); it; ++it)
     {
@@ -397,7 +393,6 @@ spmat_d_elt c_eigen_spmat_d_max(c_spmat_d *m)
 {
   spmat_d_elt a = -std::numeric_limits<spmat_d_elt>::infinity();
   spmat_d& x = c_to_eigen(m);
-  x.makeCompressed();
   for (INDEX k = 0; k < x.outerSize(); ++k)
     for (spmat_d::InnerIterator it(x,k); it; ++it)
     {
@@ -418,7 +413,6 @@ c_spmat_d* c_eigen_spmat_d_abs(c_spmat_d *m)
 c_spmat_d* c_eigen_spmat_d_neg(c_spmat_d *m)
 {
   spmat_d* x = new spmat_d(c_to_eigen(m));
-  x->makeCompressed();
   for (INDEX k = 0; k < (*x).outerSize(); ++k)
     for (spmat_d::InnerIterator it(*x,k); it; ++it)
       it.valueRef() = -it.value();
