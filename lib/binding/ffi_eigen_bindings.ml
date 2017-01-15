@@ -148,6 +148,8 @@ module Bindings (F : Cstubs.FOREIGN) = struct
 
     let ml_eigen_set = foreign "c_eigen_spmat_s_set" (ptr c_spmat_s @-> int64_t @-> int64_t @-> elt @-> returning void)
 
+    let ml_eigen_insert = foreign "c_eigen_spmat_s_insert" (ptr c_spmat_s @-> int64_t @-> int64_t @-> elt @-> returning void)
+
     let ml_eigen_reset = foreign "c_eigen_spmat_s_reset" (ptr c_spmat_s @-> returning void)
 
     let ml_eigen_is_compressed = foreign "c_eigen_spmat_s_is_compressed" (ptr c_spmat_s @-> returning int)
@@ -262,6 +264,8 @@ module Bindings (F : Cstubs.FOREIGN) = struct
     let ml_eigen_get = foreign "c_eigen_spmat_d_get" (ptr c_spmat_d @-> int64_t @-> int64_t @-> returning elt)
 
     let ml_eigen_set = foreign "c_eigen_spmat_d_set" (ptr c_spmat_d @-> int64_t @-> int64_t @-> elt @-> returning void)
+
+    let ml_eigen_insert = foreign "c_eigen_spmat_d_insert" (ptr c_spmat_d @-> int64_t @-> int64_t @-> elt @-> returning void)
 
     let ml_eigen_reset = foreign "c_eigen_spmat_d_reset" (ptr c_spmat_d @-> returning void)
 
@@ -378,6 +382,8 @@ module Bindings (F : Cstubs.FOREIGN) = struct
 
     let ml_eigen_set = foreign "c_eigen_spmat_c_set" (ptr c_spmat_c @-> int64_t @-> int64_t @-> elt @-> returning void)
 
+    let ml_eigen_insert = foreign "c_eigen_spmat_c_insert" (ptr c_spmat_c @-> int64_t @-> int64_t @-> elt @-> returning void)
+
     let ml_eigen_reset = foreign "c_eigen_spmat_c_reset" (ptr c_spmat_c @-> returning void)
 
     let ml_eigen_is_compressed = foreign "c_eigen_spmat_c_is_compressed" (ptr c_spmat_c @-> returning int)
@@ -482,6 +488,8 @@ module Bindings (F : Cstubs.FOREIGN) = struct
     let ml_eigen_get = foreign "c_eigen_spmat_z_get" (ptr c_spmat_z @-> int64_t @-> int64_t @-> returning elt)
 
     let ml_eigen_set = foreign "c_eigen_spmat_z_set" (ptr c_spmat_z @-> int64_t @-> int64_t @-> elt @-> returning void)
+
+    let ml_eigen_insert = foreign "c_eigen_spmat_z_insert" (ptr c_spmat_z @-> int64_t @-> int64_t @-> elt @-> returning void)
 
     let ml_eigen_reset = foreign "c_eigen_spmat_z_reset" (ptr c_spmat_z @-> returning void)
 

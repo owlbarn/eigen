@@ -65,6 +65,11 @@ void c_eigen_spmat_s_set(c_spmat_s *m, INDEX i, INDEX j, spmat_s_elt x)
   (c_to_eigen(m)).coeffRef(i,j) = x;
 }
 
+void c_eigen_spmat_s_insert(c_spmat_s *m, INDEX i, INDEX j, spmat_s_elt x)
+{
+  (c_to_eigen(m)).insert(i,j) = x;
+}
+
 void c_eigen_spmat_s_reset(c_spmat_s *m)
 {
   (c_to_eigen(m)).setZero();

@@ -26,6 +26,8 @@ let get x i j = ml_eigen_get x (Int64.of_int i) (Int64.of_int j)
 
 let set x i j a = ml_eigen_set x (Int64.of_int i) (Int64.of_int j) a
 
+let insert x i j a = ml_eigen_insert x (Int64.of_int i) (Int64.of_int j) a
+
 let reset x = ml_eigen_reset x
 
 let is_compressed x = ml_eigen_is_compressed x = 1
