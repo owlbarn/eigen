@@ -21,9 +21,11 @@ inline c_spmat_s* eigen_to_c(spmat_s& ref)
 
 /***************** c stubs for c++ functions *****************/
 
-c_spmat_s* c_eigen_spmat_s_new(INDEX rows, INDEX cols)
+c_spmat_s* c_eigen_spmat_s_new(INDEX size, INDEX rows, INDEX cols)
 {
-  return eigen_to_c(*new spmat_s(rows, cols));
+  spmat_s* x = new spmat_s(rows, cols);
+  (*x).reserve(size);
+  return eigen_to_c(*x);
 }
 
 void c_eigen_spmat_s_delete(c_spmat_s *m)

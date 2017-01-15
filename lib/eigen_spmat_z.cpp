@@ -35,9 +35,11 @@ inline c_spmat_z_elt* eigen_to_c_ptr(spmat_z_elt* ref)
 
 /***************** c stubs for c++ functions *****************/
 
-c_spmat_z* c_eigen_spmat_z_new(INDEX rows, INDEX cols)
+c_spmat_z* c_eigen_spmat_z_new(INDEX size, INDEX rows, INDEX cols)
 {
-  return eigen_to_c(*new spmat_z(rows, cols));
+  spmat_z* x = new spmat_z(rows, cols);
+  (*x).reserve(size);
+  return eigen_to_c(*x);
 }
 
 void c_eigen_spmat_z_delete(c_spmat_z *m)

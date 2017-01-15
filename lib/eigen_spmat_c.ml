@@ -6,8 +6,9 @@
 open Ctypes
 open Eigen_types.SPMAT_C
 
-let create m n =
-  let x = ml_eigen_new (Int64.of_int m) (Int64.of_int n) in
+let create ?(reserve=0.01) m n =
+  let s = max 1024 (float_of_int (m * n) *. reserve |> int_of_float) in
+  let x = ml_eigen_new (Int64.of_int s) (Int64.of_int m) (Int64.of_int n) in
   Gc.finalise ml_eigen_delete x;
   x
 

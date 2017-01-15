@@ -35,9 +35,11 @@ inline c_spmat_c_elt* eigen_to_c_ptr(spmat_c_elt* ref)
 
 /***************** SparseMatrix_C: c stubs for c++ functions *****************/
 
-c_spmat_c* c_eigen_spmat_c_new(INDEX rows, INDEX cols)
+c_spmat_c* c_eigen_spmat_c_new(INDEX size, INDEX rows, INDEX cols)
 {
-  return eigen_to_c(*new spmat_c(rows, cols));
+  spmat_c* x = new spmat_c(rows, cols);
+  (*x).reserve(size);
+  return eigen_to_c(*x);
 }
 
 void c_eigen_spmat_c_delete(c_spmat_c *m)

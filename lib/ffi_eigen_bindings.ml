@@ -116,7 +116,7 @@ module Bindings (F : Cstubs.FOREIGN) = struct
     let ml_eigen_rows = foreign "c_eigen_dsmat_z_rows" (ptr c_dsmat_z @-> returning int64_t)
 
     let ml_eigen_cols = foreign "c_eigen_dsmat_z_cols" (ptr c_dsmat_z @-> returning int64_t)
-    
+
     let ml_eigen_get = foreign "c_eigen_dsmat_z_get" (ptr c_dsmat_z @-> int64_t @-> int64_t @-> returning elt)
 
     let ml_eigen_set = foreign "c_eigen_dsmat_z_set" (ptr c_dsmat_z @-> int64_t @-> int64_t @-> elt @-> returning void)
@@ -132,7 +132,7 @@ module Bindings (F : Cstubs.FOREIGN) = struct
     let c_spmat_s : c_spmat_s structure typ = structure "c_spmat_s"
     let elt = float
 
-    let ml_eigen_new = foreign "c_eigen_spmat_s_new" (int64_t @-> int64_t @-> returning (ptr c_spmat_s))
+    let ml_eigen_new = foreign "c_eigen_spmat_s_new" (int64_t @-> int64_t @-> int64_t @-> returning (ptr c_spmat_s))
 
     let ml_eigen_delete = foreign "c_eigen_spmat_s_delete" (ptr c_spmat_s @-> returning void)
 
@@ -247,7 +247,7 @@ module Bindings (F : Cstubs.FOREIGN) = struct
     let c_spmat_d : c_spmat_d structure typ = structure "c_spmat_d"
     let elt = double
 
-    let ml_eigen_new = foreign "c_eigen_spmat_d_new" (int64_t @-> int64_t @-> returning (ptr c_spmat_d))
+    let ml_eigen_new = foreign "c_eigen_spmat_d_new" (int64_t @-> int64_t @-> int64_t @-> returning (ptr c_spmat_d))
 
     let ml_eigen_delete = foreign "c_eigen_spmat_d_delete" (ptr c_spmat_d @-> returning void)
 
@@ -362,7 +362,7 @@ module Bindings (F : Cstubs.FOREIGN) = struct
     let c_spmat_c : c_spmat_c structure typ = structure "c_spmat_c"
     let elt = complex32
 
-    let ml_eigen_new = foreign "c_eigen_spmat_c_new" (int64_t @-> int64_t @-> returning (ptr c_spmat_c))
+    let ml_eigen_new = foreign "c_eigen_spmat_c_new" (int64_t @-> int64_t @-> int64_t @-> returning (ptr c_spmat_c))
 
     let ml_eigen_delete = foreign "c_eigen_spmat_c_delete" (ptr c_spmat_c @-> returning void)
 
@@ -467,7 +467,7 @@ module Bindings (F : Cstubs.FOREIGN) = struct
     let c_spmat_z : c_spmat_z structure typ = structure "c_spmat_z"
     let elt = complex64
 
-    let ml_eigen_new = foreign "c_eigen_spmat_z_new" (int64_t @-> int64_t @-> returning (ptr c_spmat_z))
+    let ml_eigen_new = foreign "c_eigen_spmat_z_new" (int64_t @-> int64_t @-> int64_t @-> returning (ptr c_spmat_z))
 
     let ml_eigen_delete = foreign "c_eigen_spmat_z_delete" (ptr c_spmat_z @-> returning void)
 

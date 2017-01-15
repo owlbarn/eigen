@@ -33,7 +33,7 @@ typedef int64_t INDEX;
 
   struct c_spmat_s {};
 
-  struct c_spmat_s* c_eigen_spmat_s_new(INDEX rows, INDEX cols);
+  struct c_spmat_s* c_eigen_spmat_s_new(INDEX size, INDEX rows, INDEX cols);
   void c_eigen_spmat_s_delete(struct c_spmat_s *m);
   struct c_spmat_s* c_eigen_spmat_s_eye(INDEX m);
   INDEX c_eigen_spmat_s_rows(struct c_spmat_s *m);
@@ -92,7 +92,7 @@ typedef int64_t INDEX;
 
   struct c_spmat_d {};
 
-  struct c_spmat_d* c_eigen_spmat_d_new(INDEX rows, INDEX cols);
+  struct c_spmat_d* c_eigen_spmat_d_new(INDEX size, INDEX rows, INDEX cols);
   void c_eigen_spmat_d_delete(struct c_spmat_d *m);
   struct c_spmat_d* c_eigen_spmat_d_eye(INDEX m);
   INDEX c_eigen_spmat_d_rows(struct c_spmat_d *m);
@@ -151,7 +151,7 @@ typedef int64_t INDEX;
 
   struct c_spmat_c {};
 
-  struct c_spmat_c* c_eigen_spmat_c_new(INDEX rows, INDEX cols);
+  struct c_spmat_c* c_eigen_spmat_c_new(INDEX size, INDEX rows, INDEX cols);
   void c_eigen_spmat_c_delete(struct c_spmat_c *m);
   struct c_spmat_c* c_eigen_spmat_c_eye(INDEX m);
   INDEX c_eigen_spmat_c_rows(struct c_spmat_c *m);
@@ -205,7 +205,7 @@ typedef int64_t INDEX;
 
   struct c_spmat_z {};
 
-  struct c_spmat_z* c_eigen_spmat_z_new(INDEX rows, INDEX cols);
+  struct c_spmat_z* c_eigen_spmat_z_new(INDEX size, INDEX rows, INDEX cols);
   void c_eigen_spmat_z_delete(struct c_spmat_z *m);
   struct c_spmat_z* c_eigen_spmat_z_eye(INDEX m);
   INDEX c_eigen_spmat_z_rows(struct c_spmat_z *m);
