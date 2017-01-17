@@ -1,6 +1,6 @@
 all:
 	ocaml setup.ml -build
-install: all
+install:
 	ocaml setup.ml -uninstall
 	ocaml setup.ml -install
 uninstall:
