@@ -28,7 +28,27 @@ The following code snippet creates a `complex32` dense identity matrix then prin
 let x = Eigen.Dense.C.eye 5 in Eigen.Dense.C.print x;;
 ```
 
-## Technical Info
+
+## Polymorphic Functions
+The matrix created by each specific module has its own types. For example, `Eigen.Sparse.C.create 3 3;;` returns `Eigen_types.SPMAT_C.c_spmat_c Ctypes.structure Ctypes_static.ptr`. Hence a matrix needs to be passed to the functions in the corresponding module to process it.
+
+However, if you want to implement polymorphic function atop of Eigen (e.g., in [Owl](https://github.com/ryanrhymes/owl)), `Eigen_types` module provides some useful constructors to wrap these matrices into generic data types. Here are some examples.
+
+```ocaml
+Eigen_types.SPMAT_S (Eigen.Sparse.S.create 3 3);;
+Eigen_types.SPMAT_D (Eigen.Sparse.D.create 3 3);;
+Eigen_types.SPMAT_C (Eigen.Sparse.C.create 3 3);;
+Eigen_types.SPMAT_Z (Eigen.Sparse.Z.create 3 3);;
+...
+Eigen_types.DSMAT_S (Eigen.Dense.S.create 3 3);;
+Eigen_types.DSMAT_D (Eigen.Dense.D.create 3 3);;
+Eigen_types.DSMAT_C (Eigen.Dense.C.create 3 3);;
+Eigen_types.DSMAT_Z (Eigen.Dense.Z.create 3 3);;
+...
+```
+
+
+## Interfacing to C++
 Interfacing between `C` and `OCaml` is relatively straightforward with [Ctypes](https://github.com/ocamllabs/ocaml-ctypes). However, Eigen3 is developed in `C++` and heavily utilises template programming, I first expose the native `C++` class methods as individual functions then use [Ctypes](https://github.com/ocamllabs/ocaml-ctypes) to generate `C` stubs and interface to these functions.
 
 The `C++` functions are compiled into a static library `libeigen.a` which is linked using `-lstdc++`. The library is installed in `${libdir}` (`Oasis` environment variable) which should be `/usr/local/lib` on both Mac and Linux platforms.
