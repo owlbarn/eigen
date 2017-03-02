@@ -42,6 +42,8 @@ typedef int64_t INDEX;
   INDEX c_eigen_dsmat_s_cols(struct c_dsmat_s *m);
   dsmat_s_elt c_eigen_dsmat_s_get(struct c_dsmat_s *m, INDEX i, INDEX j);
   void c_eigen_dsmat_s_set(struct c_dsmat_s *m, INDEX i, INDEX j, dsmat_s_elt x);
+  dsmat_s_elt* c_eigen_dsmat_s_data(struct c_dsmat_s *m);
+  struct c_dsmat_s* c_eigen_dsmat_s_of_bigarray(dsmat_s_elt*, INDEX m, INDEX n);
   void c_eigen_dsmat_s_print(struct c_dsmat_s *m);
 
 

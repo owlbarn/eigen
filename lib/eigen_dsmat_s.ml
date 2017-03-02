@@ -36,4 +36,14 @@ let get x i j = ml_eigen_get x (Int64.of_int i) (Int64.of_int j)
 
 let set x i j a = ml_eigen_set x (Int64.of_int i) (Int64.of_int j) a
 
+let data x = ml_eigen_data x
+
+let to_bigarray x = bigarray_of_ptr array2 (rows x, cols x) Bigarray.float32 (data x)
+
+let of_bigarray x =
+  let _ptr = Ctypes.bigarray_start Ctypes_static.Array2 x in
+  let m = Bigarray.Array2.dim1 x |> Int64.of_int in
+  let n = Bigarray.Array2.dim2 x |> Int64.of_int in
+  ml_eigen_of_bigarray _ptr m n
+
 let print x = ml_eigen_print x

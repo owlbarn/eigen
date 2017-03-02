@@ -70,6 +70,18 @@ void c_eigen_dsmat_s_set(c_dsmat_s *m, INDEX i, INDEX j, dsmat_s_elt x)
   (c_to_eigen(m)).coeffRef(i,j) = x;
 }
 
+dsmat_s_elt* c_eigen_dsmat_s_data(c_dsmat_s *m)
+{
+  return (c_to_eigen(m)).data();
+}
+
+// FIXME : segment fault
+c_dsmat_s* c_eigen_dsmat_s_of_bigarray(dsmat_s_elt* ptr, INDEX m, INDEX n)
+{
+  dsmat_s* x = new dsmat_s(Map<dsmat_s>(ptr, m, n));
+  return eigen_to_c(*x);
+}
+
 void c_eigen_dsmat_s_print(c_dsmat_s *m)
 {
   std::cout << c_to_eigen(m) << std::endl;
