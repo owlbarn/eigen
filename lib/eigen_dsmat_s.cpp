@@ -94,16 +94,29 @@ void c_eigen_dsmat_s_print(c_dsmat_s *m)
   std::cout << c_to_eigen(m) << std::endl;
 }
 
+// The following functions works on the ocaml bigarray
+
 c_dsmat_s* c_eigen_dsmat_s_dot(dsmat_s_elt* x_ptr, INDEX xm, INDEX xn, dsmat_s_elt* y_ptr, INDEX ym, INDEX yn)
 {
-  dsmat_s x = Map<dsmat_s>(x_ptr, xm, xn);
-  dsmat_s y = Map<dsmat_s>(y_ptr, ym, yn);
+  Map<dsmat_s>x(x_ptr, xm, xn);
+  Map<dsmat_s>y(y_ptr, ym, yn);
   return eigen_to_c(*new dsmat_s(x * y));
 }
 
 c_dsmat_s* c_eigen_dsmat_s_transpose(dsmat_s_elt* x_ptr, INDEX xm, INDEX xn)
 {
-  dsmat_s x = Map<dsmat_s>(x_ptr, xm, xn);
-  x.transposeInPlace();
-  return eigen_to_c(*new dsmat_s(x));
+  Map<dsmat_s>x(x_ptr, xm, xn);
+  return eigen_to_c(*new dsmat_s(x.transpose()));
+}
+
+void c_eigen_dsmat_s_swap_rows(dsmat_s_elt* ptr, INDEX m, INDEX n, INDEX i, INDEX j)
+{
+  Map<dsmat_s>x(ptr, m, n);
+  x.row(i).swap(x.row(j));
+}
+
+void c_eigen_dsmat_s_swap_cols(dsmat_s_elt* ptr, INDEX m, INDEX n, INDEX i, INDEX j)
+{
+  Map<dsmat_s>x(ptr, m, n);
+  x.col(i).swap(x.col(j));
 }

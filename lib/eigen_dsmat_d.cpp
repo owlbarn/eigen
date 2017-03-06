@@ -70,7 +70,39 @@ void c_eigen_dsmat_d_set(c_dsmat_d *m, INDEX i, INDEX j, dsmat_d_elt x)
   (c_to_eigen(m)).coeffRef(i,j) = x;
 }
 
+dsmat_d_elt* c_eigen_dsmat_d_data(c_dsmat_d *m)
+{
+  return (c_to_eigen(m)).data();
+}
+
 void c_eigen_dsmat_d_print(c_dsmat_d *m)
 {
   std::cout << c_to_eigen(m) << std::endl;
+}
+
+// The following functions works on the ocaml bigarray
+
+c_dsmat_d* c_eigen_dsmat_d_dot(dsmat_d_elt* x_ptr, INDEX xm, INDEX xn, dsmat_d_elt* y_ptr, INDEX ym, INDEX yn)
+{
+  Map<dsmat_d>x(x_ptr, xm, xn);
+  Map<dsmat_d>y(y_ptr, ym, yn);
+  return eigen_to_c(*new dsmat_d(x * y));
+}
+
+c_dsmat_d* c_eigen_dsmat_d_transpose(dsmat_d_elt* x_ptr, INDEX xm, INDEX xn)
+{
+  Map<dsmat_d>x(x_ptr, xm, xn);
+  return eigen_to_c(*new dsmat_d(x.transpose()));
+}
+
+void c_eigen_dsmat_d_swap_rows(dsmat_d_elt* ptr, INDEX m, INDEX n, INDEX i, INDEX j)
+{
+  Map<dsmat_d>x(ptr, m, n);
+  x.row(i).swap(x.row(j));
+}
+
+void c_eigen_dsmat_d_swap_cols(dsmat_d_elt* ptr, INDEX m, INDEX n, INDEX i, INDEX j)
+{
+  Map<dsmat_d>x(ptr, m, n);
+  x.col(i).swap(x.col(j));
 }

@@ -49,6 +49,8 @@ typedef int64_t INDEX;
   // The following functions works on the ocaml bigarray
   struct c_dsmat_s* c_eigen_dsmat_s_dot(dsmat_s_elt*, INDEX, INDEX, dsmat_s_elt*, INDEX, INDEX);
   struct c_dsmat_s* c_eigen_dsmat_s_transpose(dsmat_s_elt*, INDEX, INDEX);
+  void c_eigen_dsmat_s_swap_rows(dsmat_s_elt*, INDEX, INDEX, INDEX, INDEX);
+  void c_eigen_dsmat_s_swap_cols(dsmat_s_elt*, INDEX, INDEX, INDEX, INDEX);
 
 
   /**************************** DenseMatrix_D ****************************/
@@ -64,7 +66,13 @@ typedef int64_t INDEX;
   INDEX c_eigen_dsmat_d_cols(struct c_dsmat_d *m);
   dsmat_d_elt c_eigen_dsmat_d_get(struct c_dsmat_d *m, INDEX i, INDEX j);
   void c_eigen_dsmat_d_set(struct c_dsmat_d *m, INDEX i, INDEX j, dsmat_d_elt x);
+  dsmat_d_elt* c_eigen_dsmat_d_data(struct c_dsmat_d *m);
   void c_eigen_dsmat_d_print(struct c_dsmat_d *m);
+  // The following functions works on the ocaml bigarray
+  struct c_dsmat_d* c_eigen_dsmat_d_dot(dsmat_d_elt*, INDEX, INDEX, dsmat_d_elt*, INDEX, INDEX);
+  struct c_dsmat_d* c_eigen_dsmat_d_transpose(dsmat_d_elt*, INDEX, INDEX);
+  void c_eigen_dsmat_d_swap_rows(dsmat_d_elt*, INDEX, INDEX, INDEX, INDEX);
+  void c_eigen_dsmat_d_swap_cols(dsmat_d_elt*, INDEX, INDEX, INDEX, INDEX);
 
 
   /**************************** DenseMatrix_C ****************************/
@@ -80,7 +88,13 @@ typedef int64_t INDEX;
   INDEX c_eigen_dsmat_c_cols(struct c_dsmat_c *m);
   c_dsmat_c_elt c_eigen_dsmat_c_get(struct c_dsmat_c *m, INDEX i, INDEX j);
   void c_eigen_dsmat_c_set(struct c_dsmat_c *m, INDEX i, INDEX j, c_dsmat_c_elt x);
+  c_dsmat_c_elt* c_eigen_dsmat_c_data(struct c_dsmat_c *m);
   void c_eigen_dsmat_c_print(struct c_dsmat_c *m);
+  // The following functions works on the ocaml bigarray
+  struct c_dsmat_c* c_eigen_dsmat_c_dot(c_dsmat_c_elt*, INDEX, INDEX, c_dsmat_c_elt*, INDEX, INDEX);
+  struct c_dsmat_c* c_eigen_dsmat_c_transpose(c_dsmat_c_elt*, INDEX, INDEX);
+  void c_eigen_dsmat_c_swap_rows(c_dsmat_c_elt*, INDEX, INDEX, INDEX, INDEX);
+  void c_eigen_dsmat_c_swap_cols(c_dsmat_c_elt*, INDEX, INDEX, INDEX, INDEX);
 
 
   /**************************** DenseMatrix_Z ****************************/
@@ -96,7 +110,13 @@ typedef int64_t INDEX;
   INDEX c_eigen_dsmat_z_cols(struct c_dsmat_z *m);
   c_dsmat_z_elt c_eigen_dsmat_z_get(struct c_dsmat_z *m, INDEX i, INDEX j);
   void c_eigen_dsmat_z_set(struct c_dsmat_z *m, INDEX i, INDEX j, c_dsmat_z_elt x);
+  c_dsmat_z_elt* c_eigen_dsmat_z_data(struct c_dsmat_z *m);
   void c_eigen_dsmat_z_print(struct c_dsmat_z *m);
+  // The following functions works on the ocaml bigarray
+  struct c_dsmat_z* c_eigen_dsmat_z_dot(c_dsmat_z_elt*, INDEX, INDEX, c_dsmat_z_elt*, INDEX, INDEX);
+  struct c_dsmat_z* c_eigen_dsmat_z_transpose(c_dsmat_z_elt*, INDEX, INDEX);
+  void c_eigen_dsmat_z_swap_rows(c_dsmat_z_elt*, INDEX, INDEX, INDEX, INDEX);
+  void c_eigen_dsmat_z_swap_cols(c_dsmat_z_elt*, INDEX, INDEX, INDEX, INDEX);
 
 
 #ifdef __cplusplus

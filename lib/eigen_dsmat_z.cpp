@@ -32,6 +32,10 @@ inline c_dsmat_z_elt* eigen_to_c_ptr(dsmat_z_elt* ref)
   return reinterpret_cast<c_dsmat_z_elt*>(ref);
 }
 
+inline dsmat_z_elt* c_ptr_to_eign(c_dsmat_z_elt* ptr)
+{
+  return reinterpret_cast<dsmat_z_elt*>(ptr);
+}
 
 /***************** c stubs for c++ functions *****************/
 
@@ -86,7 +90,39 @@ void c_eigen_dsmat_z_set(c_dsmat_z *m, INDEX i, INDEX j, c_dsmat_z_elt x)
   (c_to_eigen(m)).coeffRef(i,j) = c_to_eigen(x);
 }
 
+c_dsmat_z_elt* c_eigen_dsmat_z_data(c_dsmat_z *m)
+{
+  return eigen_to_c_ptr(c_to_eigen(m).data());
+}
+
 void c_eigen_dsmat_z_print(c_dsmat_z *m)
 {
   std::cout << c_to_eigen(m) << std::endl;
+}
+
+// The following functions works on the ocaml bigarray
+
+c_dsmat_z* c_eigen_dsmat_z_dot(c_dsmat_z_elt* x_ptr, INDEX xm, INDEX xn, c_dsmat_z_elt* y_ptr, INDEX ym, INDEX yn)
+{
+  Map<dsmat_z>x(c_ptr_to_eign(x_ptr), xm, xn);
+  Map<dsmat_z>y(c_ptr_to_eign(y_ptr), ym, yn);
+  return eigen_to_c(*new dsmat_z(x * y));
+}
+
+c_dsmat_z* c_eigen_dsmat_z_transpose(c_dsmat_z_elt* x_ptr, INDEX xm, INDEX xn)
+{
+  Map<dsmat_z>x(c_ptr_to_eign(x_ptr), xm, xn);
+  return eigen_to_c(*new dsmat_z(x.transpose()));
+}
+
+void c_eigen_dsmat_z_swap_rows(c_dsmat_z_elt* ptr, INDEX m, INDEX n, INDEX i, INDEX j)
+{
+  Map<dsmat_z>x(c_ptr_to_eign(ptr), m, n);
+  x.row(i).swap(x.row(j));
+}
+
+void c_eigen_dsmat_z_swap_cols(c_dsmat_z_elt* ptr, INDEX m, INDEX n, INDEX i, INDEX j)
+{
+  Map<dsmat_z>x(c_ptr_to_eign(ptr), m, n);
+  x.col(i).swap(x.col(j));
 }

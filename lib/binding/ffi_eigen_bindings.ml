@@ -46,6 +46,10 @@ module Bindings (F : Cstubs.FOREIGN) = struct
 
     let ml_eigen_transpose = foreign "c_eigen_dsmat_s_transpose" (ptr elt @-> int64_t @-> int64_t @-> returning (ptr c_dsmat_s))
 
+    let ml_eigen_swap_rows = foreign "c_eigen_dsmat_s_swap_rows" (ptr elt @-> int64_t @-> int64_t @-> int64_t @-> int64_t @-> returning void)
+
+    let ml_eigen_swap_cols = foreign "c_eigen_dsmat_s_swap_cols" (ptr elt @-> int64_t @-> int64_t @-> int64_t @-> int64_t @-> returning void)
+
   end
 
 
@@ -73,7 +77,17 @@ module Bindings (F : Cstubs.FOREIGN) = struct
 
     let ml_eigen_set = foreign "c_eigen_dsmat_d_set" (ptr c_dsmat_d @-> int64_t @-> int64_t @-> elt @-> returning void)
 
+    let ml_eigen_data = foreign "c_eigen_dsmat_d_data" (ptr c_dsmat_d @-> returning (ptr elt))
+
     let ml_eigen_print = foreign "c_eigen_dsmat_d_print" (ptr c_dsmat_d @-> returning void)
+
+    let ml_eigen_dot = foreign "c_eigen_dsmat_d_dot" (ptr elt @-> int64_t @-> int64_t @-> ptr elt @-> int64_t @-> int64_t @-> returning (ptr c_dsmat_d))
+
+    let ml_eigen_transpose = foreign "c_eigen_dsmat_d_transpose" (ptr elt @-> int64_t @-> int64_t @-> returning (ptr c_dsmat_d))
+
+    let ml_eigen_swap_rows = foreign "c_eigen_dsmat_d_swap_rows" (ptr elt @-> int64_t @-> int64_t @-> int64_t @-> int64_t @-> returning void)
+
+    let ml_eigen_swap_cols = foreign "c_eigen_dsmat_d_swap_cols" (ptr elt @-> int64_t @-> int64_t @-> int64_t @-> int64_t @-> returning void)
 
   end
 
@@ -102,7 +116,17 @@ module Bindings (F : Cstubs.FOREIGN) = struct
 
     let ml_eigen_set = foreign "c_eigen_dsmat_c_set" (ptr c_dsmat_c @-> int64_t @-> int64_t @-> elt @-> returning void)
 
+    let ml_eigen_data = foreign "c_eigen_dsmat_c_data" (ptr c_dsmat_c @-> returning (ptr elt))
+
     let ml_eigen_print = foreign "c_eigen_dsmat_c_print" (ptr c_dsmat_c @-> returning void)
+
+    let ml_eigen_dot = foreign "c_eigen_dsmat_c_dot" (ptr elt @-> int64_t @-> int64_t @-> ptr elt @-> int64_t @-> int64_t @-> returning (ptr c_dsmat_c))
+
+    let ml_eigen_transpose = foreign "c_eigen_dsmat_c_transpose" (ptr elt @-> int64_t @-> int64_t @-> returning (ptr c_dsmat_c))
+
+    let ml_eigen_swap_rows = foreign "c_eigen_dsmat_c_swap_rows" (ptr elt @-> int64_t @-> int64_t @-> int64_t @-> int64_t @-> returning void)
+
+    let ml_eigen_swap_cols = foreign "c_eigen_dsmat_c_swap_cols" (ptr elt @-> int64_t @-> int64_t @-> int64_t @-> int64_t @-> returning void)
 
   end
 
@@ -131,7 +155,17 @@ module Bindings (F : Cstubs.FOREIGN) = struct
 
     let ml_eigen_set = foreign "c_eigen_dsmat_z_set" (ptr c_dsmat_z @-> int64_t @-> int64_t @-> elt @-> returning void)
 
+    let ml_eigen_data = foreign "c_eigen_dsmat_z_data" (ptr c_dsmat_z @-> returning (ptr elt))
+
     let ml_eigen_print = foreign "c_eigen_dsmat_z_print" (ptr c_dsmat_z @-> returning void)
+
+    let ml_eigen_dot = foreign "c_eigen_dsmat_z_dot" (ptr elt @-> int64_t @-> int64_t @-> ptr elt @-> int64_t @-> int64_t @-> returning (ptr c_dsmat_z))
+
+    let ml_eigen_transpose = foreign "c_eigen_dsmat_z_transpose" (ptr elt @-> int64_t @-> int64_t @-> returning (ptr c_dsmat_z))
+
+    let ml_eigen_swap_rows = foreign "c_eigen_dsmat_z_swap_rows" (ptr elt @-> int64_t @-> int64_t @-> int64_t @-> int64_t @-> returning void)
+
+    let ml_eigen_swap_cols = foreign "c_eigen_dsmat_z_swap_cols" (ptr elt @-> int64_t @-> int64_t @-> int64_t @-> int64_t @-> returning void)
 
   end
 
