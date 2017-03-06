@@ -43,8 +43,12 @@ typedef int64_t INDEX;
   dsmat_s_elt c_eigen_dsmat_s_get(struct c_dsmat_s *m, INDEX i, INDEX j);
   void c_eigen_dsmat_s_set(struct c_dsmat_s *m, INDEX i, INDEX j, dsmat_s_elt x);
   dsmat_s_elt* c_eigen_dsmat_s_data(struct c_dsmat_s *m);
-  struct c_dsmat_s* c_eigen_dsmat_s_of_bigarray(dsmat_s_elt*, INDEX m, INDEX n);
+  struct c_dsmat_s* c_eigen_dsmat_s_of_bigarray(dsmat_s_elt* x, INDEX m, INDEX n);
+  void c_eigen_dsmat_s_of_bigarray2(struct c_dsmat_s *x, dsmat_s_elt* y, INDEX m, INDEX n);
   void c_eigen_dsmat_s_print(struct c_dsmat_s *m);
+  // The following functions works on the ocaml bigarray
+  struct c_dsmat_s* c_eigen_dsmat_s_dot(dsmat_s_elt*, INDEX, INDEX, dsmat_s_elt*, INDEX, INDEX);
+  struct c_dsmat_s* c_eigen_dsmat_s_transpose(dsmat_s_elt*, INDEX, INDEX);
 
 
   /**************************** DenseMatrix_D ****************************/

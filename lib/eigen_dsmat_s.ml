@@ -46,4 +46,33 @@ let of_bigarray x =
   let n = Bigarray.Array2.dim2 x |> Int64.of_int in
   ml_eigen_of_bigarray _ptr m n
 
+let of_bigarray2 x =
+  let _mat = Ctypes.allocate (ptr void) null |> Obj.repr |> Obj.obj in
+  let _ptr = Ctypes.bigarray_start Ctypes_static.Array2 x in
+  let m = Bigarray.Array2.dim1 x |> Int64.of_int in
+  let n = Bigarray.Array2.dim2 x |> Int64.of_int in
+  ml_eigen_of_bigarray2 _mat _ptr m n;
+  _mat
+
 let print x = ml_eigen_print x
+
+let dot x y =
+  let x_ptr = Ctypes.bigarray_start Ctypes_static.Array2 x in
+  let xm = Bigarray.Array2.dim1 x |> Int64.of_int in
+  let xn = Bigarray.Array2.dim2 x |> Int64.of_int in
+  let y_ptr = Ctypes.bigarray_start Ctypes_static.Array2 y in
+  let ym = Bigarray.Array2.dim1 y |> Int64.of_int in
+  let yn = Bigarray.Array2.dim2 y |> Int64.of_int in
+  let z = ml_eigen_dot x_ptr xm xn y_ptr ym yn in
+  Gc.finalise ml_eigen_delete z;
+  to_bigarray z
+
+let transpose x =
+  let x_ptr = Ctypes.bigarray_start Ctypes_static.Array2 x in
+  let m = Bigarray.Array2.dim1 x in
+  let n = Bigarray.Array2.dim2 x in
+  let xm = Int64.of_int m in
+  let xn = Int64.of_int n in
+  let y = ml_eigen_transpose x_ptr xm xn in
+  Gc.finalise ml_eigen_delete y;
+  to_bigarray y

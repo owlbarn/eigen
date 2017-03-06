@@ -38,7 +38,13 @@ module Bindings (F : Cstubs.FOREIGN) = struct
 
     let ml_eigen_of_bigarray = foreign "c_eigen_dsmat_s_of_bigarray" (ptr elt @-> int64_t @-> int64_t @-> returning (ptr c_dsmat_s))
 
+    let ml_eigen_of_bigarray2 = foreign "c_eigen_dsmat_s_of_bigarray2" (ptr c_dsmat_s @-> ptr elt @-> int64_t @-> int64_t @-> returning void)
+
     let ml_eigen_print = foreign "c_eigen_dsmat_s_print" (ptr c_dsmat_s @-> returning void)
+
+    let ml_eigen_dot = foreign "c_eigen_dsmat_s_dot" (ptr elt @-> int64_t @-> int64_t @-> ptr elt @-> int64_t @-> int64_t @-> returning (ptr c_dsmat_s))
+
+    let ml_eigen_transpose = foreign "c_eigen_dsmat_s_transpose" (ptr elt @-> int64_t @-> int64_t @-> returning (ptr c_dsmat_s))
 
   end
 
