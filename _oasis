@@ -10,7 +10,7 @@ Synopsis:     Owl's OCaml interface to Eigen
 Authors:      Liang Wang (ryanrhymes@gmail.com)
 License:      MIT
 Plugins:      META (0.4)
-OCamlVersion: >= 4.03
+OCamlVersion: >= 4.02
 BuildTools:   ocamlbuild
 Homepage:     https://github.com/ryanrhymes/eigen
 
@@ -38,6 +38,7 @@ Library eigen
                     Ffi_eigen_bindings,
                     Ffi_eigen_generated,
                     Eigen_types,
+                    Eigen_utils,
                     Eigen_dsmat_s,
                     Eigen_dsmat_d,
                     Eigen_dsmat_c,
@@ -48,6 +49,8 @@ Library eigen
                     Eigen_spmat_z
   CSources:         eigen_dsmat.h,
                     eigen_spmat.h,
+                    eigen_utils.h,
+                    eigen_utils_stubs.c,
                     ffi_eigen_generated_stub.c
   CCOpt:            -I$pkg_ctypes
   CCLib:            -L${libdir} -leigen

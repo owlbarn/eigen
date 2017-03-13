@@ -27,3 +27,6 @@ module Sparse = struct
   module Z = Eigen_spmat_z
 
 end
+
+
+module Utils = Eigen_utils
