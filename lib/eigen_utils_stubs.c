@@ -3,7 +3,7 @@
 #include "caml/memory.h"
 #include "eigen_utils.h"
 
-static void caml_ba_update_proxy(struct caml_ba_array * b1,
+static void caml_owl_update_proxy(struct caml_ba_array * b1,
                                  struct caml_ba_array * b2)
 {
   struct caml_ba_proxy * proxy;
@@ -26,7 +26,7 @@ static void caml_ba_update_proxy(struct caml_ba_array * b1,
   }
 }
 
-CAMLprim value caml_ba_change_layout(value vb, value vlayout)
+CAMLprim value caml_owl_change_layout(value vb, value vlayout)
 {
   CAMLparam2 (vb, vlayout);
   CAMLlocal1 (res);
@@ -40,7 +40,7 @@ CAMLprim value caml_ba_change_layout(value vb, value vlayout)
     unsigned int i;
     for(i = 0; i < b->num_dims; i++) new_dim[i] = b->dim[b->num_dims - i - 1];
     res = caml_ba_alloc(flags, b->num_dims, b->data, new_dim);
-    caml_ba_update_proxy(b, Caml_ba_array_val(res));
+    caml_owl_update_proxy(b, Caml_ba_array_val(res));
     CAMLreturn(res);
   } else {
   /* otherwise, do nothing */

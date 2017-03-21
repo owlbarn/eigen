@@ -2,7 +2,7 @@
 open Bigarray
 open Genarray
 
-external change_layout: ('a, 'b, 'c) t -> 'd layout -> ('a, 'b, 'd) t = "caml_ba_change_layout"
+external change_layout: ('a, 'b, 'c) t -> 'd layout -> ('a, 'b, 'd) t = "caml_owl_change_layout"
 
 let kind_size_in_bytes : type a b . (a, b) kind -> int = function
   | Float32 -> 4
