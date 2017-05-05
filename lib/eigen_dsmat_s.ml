@@ -94,3 +94,11 @@ let swap_cols x i j =
   let j = Int64.of_int j in
   let _ = ml_eigen_swap_cols ptr m n i j in
   ()
+
+let inv x =
+  let x_ptr = Ctypes.bigarray_start Ctypes_static.Array2 x in
+  let xm = Bigarray.Array2.dim1 x |> Int64.of_int in
+  let xn = Bigarray.Array2.dim2 x |> Int64.of_int in
+  let z = ml_eigen_inv x_ptr xm xn in
+  Gc.finalise ml_eigen_delete z;
+  to_bigarray z

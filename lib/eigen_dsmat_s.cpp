@@ -120,3 +120,9 @@ void c_eigen_dsmat_s_swap_cols(dsmat_s_elt* ptr, INDEX m, INDEX n, INDEX i, INDE
   Map<dsmat_s>x(ptr, m, n);
   x.col(i).swap(x.col(j));
 }
+
+c_dsmat_s* c_eigen_dsmat_s_inv(dsmat_s_elt* x_ptr, INDEX xm, INDEX xn)
+{
+  Map<dsmat_s>x(x_ptr, xm, xn);
+  return eigen_to_c(*new dsmat_s(x.inverse()));
+}

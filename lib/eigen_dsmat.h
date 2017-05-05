@@ -51,6 +51,7 @@ typedef int64_t INDEX;
   struct c_dsmat_s* c_eigen_dsmat_s_transpose(dsmat_s_elt*, INDEX, INDEX);
   void c_eigen_dsmat_s_swap_rows(dsmat_s_elt*, INDEX, INDEX, INDEX, INDEX);
   void c_eigen_dsmat_s_swap_cols(dsmat_s_elt*, INDEX, INDEX, INDEX, INDEX);
+  struct c_dsmat_s* c_eigen_dsmat_s_inv(dsmat_s_elt*, INDEX, INDEX);
 
 
   /**************************** DenseMatrix_D ****************************/
@@ -73,6 +74,7 @@ typedef int64_t INDEX;
   struct c_dsmat_d* c_eigen_dsmat_d_transpose(dsmat_d_elt*, INDEX, INDEX);
   void c_eigen_dsmat_d_swap_rows(dsmat_d_elt*, INDEX, INDEX, INDEX, INDEX);
   void c_eigen_dsmat_d_swap_cols(dsmat_d_elt*, INDEX, INDEX, INDEX, INDEX);
+  struct c_dsmat_d* c_eigen_dsmat_d_inv(dsmat_d_elt*, INDEX, INDEX);
 
 
   /**************************** DenseMatrix_C ****************************/
@@ -95,6 +97,7 @@ typedef int64_t INDEX;
   struct c_dsmat_c* c_eigen_dsmat_c_transpose(c_dsmat_c_elt*, INDEX, INDEX);
   void c_eigen_dsmat_c_swap_rows(c_dsmat_c_elt*, INDEX, INDEX, INDEX, INDEX);
   void c_eigen_dsmat_c_swap_cols(c_dsmat_c_elt*, INDEX, INDEX, INDEX, INDEX);
+  struct c_dsmat_c* c_eigen_dsmat_c_inv(c_dsmat_c_elt*, INDEX, INDEX);
 
 
   /**************************** DenseMatrix_Z ****************************/
@@ -117,6 +120,7 @@ typedef int64_t INDEX;
   struct c_dsmat_z* c_eigen_dsmat_z_transpose(c_dsmat_z_elt*, INDEX, INDEX);
   void c_eigen_dsmat_z_swap_rows(c_dsmat_z_elt*, INDEX, INDEX, INDEX, INDEX);
   void c_eigen_dsmat_z_swap_cols(c_dsmat_z_elt*, INDEX, INDEX, INDEX, INDEX);
+  struct c_dsmat_z* c_eigen_dsmat_z_inv(c_dsmat_z_elt*, INDEX, INDEX);
 
 
 #ifdef __cplusplus
