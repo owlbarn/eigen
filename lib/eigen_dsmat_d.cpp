@@ -82,7 +82,7 @@ void c_eigen_dsmat_d_print(c_dsmat_d *m)
 
 // The following functions works on the ocaml bigarray
 
-c_dsmat_d* c_eigen_dsmat_d_dot(dsmat_d_elt* x_ptr, INDEX xm, INDEX xn, dsmat_d_elt* y_ptr, INDEX ym, INDEX yn)
+c_dsmat_d* c_eigen_dsmat_d_gemm(dsmat_d_elt* x_ptr, INDEX xm, INDEX xn, dsmat_d_elt* y_ptr, INDEX ym, INDEX yn)
 {
   Map<dsmat_d>x(x_ptr, xm, xn);
   Map<dsmat_d>y(y_ptr, ym, yn);

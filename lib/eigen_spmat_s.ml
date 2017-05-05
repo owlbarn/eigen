@@ -98,7 +98,7 @@ let mul x y = ml_eigen_mul x y
 
 let div x y = ml_eigen_div x y
 
-let dot x y = ml_eigen_dot x y
+let gemm x y = ml_eigen_gemm x y
 
 let add_scalar x a = ml_eigen_add_scalar x a
 

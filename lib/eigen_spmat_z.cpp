@@ -339,7 +339,7 @@ c_spmat_z* c_eigen_spmat_z_div(c_spmat_z *m0, c_spmat_z *m1)
   return eigen_to_c(*new spmat_z(x0.cwiseQuotient(x1)));
 }
 
-c_spmat_z* c_eigen_spmat_z_dot(c_spmat_z *m0, c_spmat_z *m1)
+c_spmat_z* c_eigen_spmat_z_gemm(c_spmat_z *m0, c_spmat_z *m1)
 {
   spmat_z& x0 = c_to_eigen(m0);
   spmat_z& x1 = c_to_eigen(m1);

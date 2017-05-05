@@ -42,7 +42,7 @@ module Bindings (F : Cstubs.FOREIGN) = struct
 
     let ml_eigen_print = foreign "c_eigen_dsmat_s_print" (ptr c_dsmat_s @-> returning void)
 
-    let ml_eigen_dot = foreign "c_eigen_dsmat_s_dot" (ptr elt @-> int64_t @-> int64_t @-> ptr elt @-> int64_t @-> int64_t @-> returning (ptr c_dsmat_s))
+    let ml_eigen_gemm = foreign "c_eigen_dsmat_s_gemm" (ptr elt @-> int64_t @-> int64_t @-> ptr elt @-> int64_t @-> int64_t @-> returning (ptr c_dsmat_s))
 
     let ml_eigen_transpose = foreign "c_eigen_dsmat_s_transpose" (ptr elt @-> int64_t @-> int64_t @-> returning (ptr c_dsmat_s))
 
@@ -83,7 +83,7 @@ module Bindings (F : Cstubs.FOREIGN) = struct
 
     let ml_eigen_print = foreign "c_eigen_dsmat_d_print" (ptr c_dsmat_d @-> returning void)
 
-    let ml_eigen_dot = foreign "c_eigen_dsmat_d_dot" (ptr elt @-> int64_t @-> int64_t @-> ptr elt @-> int64_t @-> int64_t @-> returning (ptr c_dsmat_d))
+    let ml_eigen_gemm = foreign "c_eigen_dsmat_d_gemm" (ptr elt @-> int64_t @-> int64_t @-> ptr elt @-> int64_t @-> int64_t @-> returning (ptr c_dsmat_d))
 
     let ml_eigen_transpose = foreign "c_eigen_dsmat_d_transpose" (ptr elt @-> int64_t @-> int64_t @-> returning (ptr c_dsmat_d))
 
@@ -124,7 +124,7 @@ module Bindings (F : Cstubs.FOREIGN) = struct
 
     let ml_eigen_print = foreign "c_eigen_dsmat_c_print" (ptr c_dsmat_c @-> returning void)
 
-    let ml_eigen_dot = foreign "c_eigen_dsmat_c_dot" (ptr elt @-> int64_t @-> int64_t @-> ptr elt @-> int64_t @-> int64_t @-> returning (ptr c_dsmat_c))
+    let ml_eigen_gemm = foreign "c_eigen_dsmat_c_gemm" (ptr elt @-> int64_t @-> int64_t @-> ptr elt @-> int64_t @-> int64_t @-> returning (ptr c_dsmat_c))
 
     let ml_eigen_transpose = foreign "c_eigen_dsmat_c_transpose" (ptr elt @-> int64_t @-> int64_t @-> returning (ptr c_dsmat_c))
 
@@ -165,7 +165,7 @@ module Bindings (F : Cstubs.FOREIGN) = struct
 
     let ml_eigen_print = foreign "c_eigen_dsmat_z_print" (ptr c_dsmat_z @-> returning void)
 
-    let ml_eigen_dot = foreign "c_eigen_dsmat_z_dot" (ptr elt @-> int64_t @-> int64_t @-> ptr elt @-> int64_t @-> int64_t @-> returning (ptr c_dsmat_z))
+    let ml_eigen_gemm = foreign "c_eigen_dsmat_z_gemm" (ptr elt @-> int64_t @-> int64_t @-> ptr elt @-> int64_t @-> int64_t @-> returning (ptr c_dsmat_z))
 
     let ml_eigen_transpose = foreign "c_eigen_dsmat_z_transpose" (ptr elt @-> int64_t @-> int64_t @-> returning (ptr c_dsmat_z))
 
@@ -264,7 +264,7 @@ module Bindings (F : Cstubs.FOREIGN) = struct
 
     let ml_eigen_div = foreign "c_eigen_spmat_s_div" (ptr c_spmat_s @-> ptr c_spmat_s @-> returning (ptr c_spmat_s))
 
-    let ml_eigen_dot = foreign "c_eigen_spmat_s_dot" (ptr c_spmat_s @-> ptr c_spmat_s @-> returning (ptr c_spmat_s))
+    let ml_eigen_gemm = foreign "c_eigen_spmat_s_gemm" (ptr c_spmat_s @-> ptr c_spmat_s @-> returning (ptr c_spmat_s))
 
     let ml_eigen_add_scalar = foreign "c_eigen_spmat_s_add_scalar" (ptr c_spmat_s @-> elt @-> returning (ptr c_spmat_s))
 
@@ -381,7 +381,7 @@ module Bindings (F : Cstubs.FOREIGN) = struct
 
     let ml_eigen_div = foreign "c_eigen_spmat_d_div" (ptr c_spmat_d @-> ptr c_spmat_d @-> returning (ptr c_spmat_d))
 
-    let ml_eigen_dot = foreign "c_eigen_spmat_d_dot" (ptr c_spmat_d @-> ptr c_spmat_d @-> returning (ptr c_spmat_d))
+    let ml_eigen_gemm = foreign "c_eigen_spmat_d_gemm" (ptr c_spmat_d @-> ptr c_spmat_d @-> returning (ptr c_spmat_d))
 
     let ml_eigen_add_scalar = foreign "c_eigen_spmat_d_add_scalar" (ptr c_spmat_d @-> elt @-> returning (ptr c_spmat_d))
 
@@ -498,7 +498,7 @@ module Bindings (F : Cstubs.FOREIGN) = struct
 
     let ml_eigen_div = foreign "c_eigen_spmat_c_div" (ptr c_spmat_c @-> ptr c_spmat_c @-> returning (ptr c_spmat_c))
 
-    let ml_eigen_dot = foreign "c_eigen_spmat_c_dot" (ptr c_spmat_c @-> ptr c_spmat_c @-> returning (ptr c_spmat_c))
+    let ml_eigen_gemm = foreign "c_eigen_spmat_c_gemm" (ptr c_spmat_c @-> ptr c_spmat_c @-> returning (ptr c_spmat_c))
 
     let ml_eigen_add_scalar = foreign "c_eigen_spmat_c_add_scalar" (ptr c_spmat_c @-> elt @-> returning (ptr c_spmat_c))
 
@@ -605,7 +605,7 @@ module Bindings (F : Cstubs.FOREIGN) = struct
 
     let ml_eigen_div = foreign "c_eigen_spmat_z_div" (ptr c_spmat_z @-> ptr c_spmat_z @-> returning (ptr c_spmat_z))
 
-    let ml_eigen_dot = foreign "c_eigen_spmat_z_dot" (ptr c_spmat_z @-> ptr c_spmat_z @-> returning (ptr c_spmat_z))
+    let ml_eigen_gemm = foreign "c_eigen_spmat_z_gemm" (ptr c_spmat_z @-> ptr c_spmat_z @-> returning (ptr c_spmat_z))
 
     let ml_eigen_add_scalar = foreign "c_eigen_spmat_z_add_scalar" (ptr c_spmat_z @-> elt @-> returning (ptr c_spmat_z))
 
