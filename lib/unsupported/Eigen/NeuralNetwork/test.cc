@@ -21,10 +21,7 @@ limitations under the License.
 #include "eigen_cuboid_convolution.h"
 
 
-int main()
-{
-  std::cout << "Hello World!\n";
-
+void test_conv2d () {
   const int input_depth = 3;
   const int input_rows = 227;
   const int input_cols = 227;
@@ -48,8 +45,21 @@ int main()
   milliseconds t0 = duration_cast< milliseconds >(system_clock::now().time_since_epoch());
   result = SpatialConvolution(input, kernel, 4, 4, PADDING_SAME);
   milliseconds t1 = duration_cast< milliseconds >(system_clock::now().time_since_epoch());
-  auto difference = std::chrono::duration_cast<std::chrono::milliseconds>(t1 - t0).count();
+  int difference = std::chrono::duration_cast<std::chrono::milliseconds>(t1 - t0).count();
   std::cout << difference << " ms" << std::endl;
+}
+
+
+void test_conv2d_back_input () {
+
+}
+
+
+int main()
+{
+  std::cout << "Hello World!\n";
+
+  test_conv2d ();
 
   return 0;
 }
