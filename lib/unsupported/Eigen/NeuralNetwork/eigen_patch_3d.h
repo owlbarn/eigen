@@ -19,7 +19,7 @@ limitations under the License.
 #include "../CXX11/Tensor"
 
 #if not defined(__CUDACC__)
-#include <type_traits>
+//Liang: #include <type_traits>
 #endif
 
 namespace Eigen {

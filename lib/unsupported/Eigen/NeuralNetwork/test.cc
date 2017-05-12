@@ -12,33 +12,44 @@ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 See the License for the specific language governing permissions and
 limitations under the License.
 ==============================================================================*/
-#include <Eigen/Core>
+
 #include <iostream>
+#include <Eigen/Core>
+#include <chrono>
 
 #include "eigen_spatial_convolutions.h"
 #include "eigen_cuboid_convolution.h"
 
-namespace Eigen {
 
-  int main()
-  {
-    std::cout << "Hello World!\n";
+int main()
+{
+  std::cout << "Hello World!\n";
 
-    const int input_depth = 10;
-    const int input_rows = 5;
-    const int input_cols = 5;
-    const int num_batches = 13;
-    const int output_depth = 7;
-    const int patch_rows = 4;
-    const int patch_cols = 4;
-    const int output_rows = input_rows - patch_rows + 1;
-    const int output_cols = input_cols - patch_cols + 1;
+  const int input_depth = 3;
+  const int input_rows = 227;
+  const int input_cols = 227;
+  const int num_batches = 1;
+  const int output_depth = 296;
+  const int patch_rows = 11;
+  const int patch_cols = 11;
+  const int output_rows = input_rows - patch_rows + 1;
+  const int output_cols = input_cols - patch_cols + 1;
 
-    //Tensor<float, 4, RowMajor> input(num_batches, input_cols, input_rows, input_depth);
-    //Tensor<float, 4, RowMajor> kernel(patch_cols, patch_rows, input_depth, output_depth);
-    //Tensor<float, 4, RowMajor> result(num_batches, output_cols, output_rows, output_depth);
+  using namespace Eigen;
 
-    return 0;
-  }
+  Tensor<float, 4, RowMajor> input(num_batches, input_cols, input_rows, input_depth);
+  Tensor<float, 4, RowMajor> kernel(patch_cols, patch_rows, input_depth, output_depth);
+  Tensor<float, 4, RowMajor> result(num_batches, output_cols, output_rows, output_depth);
 
+  input = input.constant(11.0f) + input.random();
+  kernel = kernel.constant(2.0f) + kernel.random();
+
+  using namespace std::chrono;
+  milliseconds t0 = duration_cast< milliseconds >(system_clock::now().time_since_epoch());
+  result = SpatialConvolution(input, kernel, 4, 4, PADDING_SAME);
+  milliseconds t1 = duration_cast< milliseconds >(system_clock::now().time_since_epoch());
+  auto difference = std::chrono::duration_cast<std::chrono::milliseconds>(t1 - t0).count();
+  std::cout << difference << std::endl;
+
+  return 0;
 }
