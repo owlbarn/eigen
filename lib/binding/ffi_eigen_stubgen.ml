@@ -20,4 +20,5 @@ let _ =
     print_endline "#include <stdint.h>";
     print_endline "#include \"eigen_dsmat.h\"";
     print_endline "#include \"eigen_spmat.h\"";
+    print_endline "#include \"eigen_tensor.h\"";
     Cstubs.write_c Format.std_formatter ~prefix (module Ffi_eigen_bindings.Bindings)

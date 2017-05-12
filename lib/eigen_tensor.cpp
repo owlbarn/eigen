@@ -3,6 +3,7 @@
  * Copyright (c) 2016-2017 Liang Wang <liang.wang@cl.cam.ac.uk>
  */
 
+#include <iostream>
 #include <Eigen/Core>
 #include <Eigen/CXX11/Tensor>
 #include "eigen_tensor.h"

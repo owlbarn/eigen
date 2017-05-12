@@ -46,10 +46,12 @@ Library eigen
                     Eigen_spmat_s,
                     Eigen_spmat_d,
                     Eigen_spmat_c,
-                    Eigen_spmat_z
+                    Eigen_spmat_z,
+                    Eigen_tensor_d
   CSources:         eigen_dsmat.h,
                     eigen_spmat.h,
                     eigen_utils.h,
+                    eigen_tensor.h,
                     eigen_utils_stubs.c,
                     ffi_eigen_generated_stub.c
   CCOpt:            -O3 -I$pkg_ctypes

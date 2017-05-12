@@ -1,6 +1,7 @@
 #include <stdint.h>
 #include "eigen_dsmat.h"
 #include "eigen_spmat.h"
+#include "eigen_tensor.h"
 #include "ctypes_cstubs_internals.h"
 value owl_stub_1_c_eigen_dsmat_s_new(value x2, value x1)
 {
@@ -1961,5 +1962,11 @@ value owl_stub_272_c_eigen_spmat_z_print(value x1720)
 {
    struct c_spmat_z* x1721 = CTYPES_ADDR_OF_FATPTR(x1720);
    c_eigen_spmat_z_print(x1721);
+   return Val_unit;
+}
+value owl_stub_273_c_eigen_tensor_d_conv2d(value x1723)
+{
+   double* x1724 = CTYPES_ADDR_OF_FATPTR(x1723);
+   c_eigen_tensor_d_conv2d(x1724);
    return Val_unit;
 }

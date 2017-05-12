@@ -626,4 +626,17 @@ module Bindings (F : Cstubs.FOREIGN) = struct
   end
 
 
+  (* Experimental: interface to unsupported modules *)
+
+  module TENSOR_D = struct
+
+    type c_tensor_d
+    let c_tensor_d : c_tensor_d structure typ = structure "c_tensor_d"
+    let elt = double
+
+    let ml_eigen_tensor_conv2d = foreign "c_eigen_tensor_d_conv2d" (ptr elt @-> returning void)
+
+  end
+
+
 end
