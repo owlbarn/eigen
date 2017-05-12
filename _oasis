@@ -52,7 +52,7 @@ Library eigen
                     eigen_utils.h,
                     eigen_utils_stubs.c,
                     ffi_eigen_generated_stub.c
-  CCOpt:            -I$pkg_ctypes
+  CCOpt:            -O3 -I$pkg_ctypes
   CCLib:            -L${libdir} -leigen
                     -lstdc++
   BuildDepends:     ctypes, ctypes.stubs
