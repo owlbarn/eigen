@@ -29,7 +29,7 @@ int main()
   const int input_rows = 227;
   const int input_cols = 227;
   const int num_batches = 1;
-  const int output_depth = 296;
+  const int output_depth = 96;
   const int patch_rows = 11;
   const int patch_cols = 11;
   const int output_rows = input_rows - patch_rows + 1;
@@ -49,7 +49,7 @@ int main()
   result = SpatialConvolution(input, kernel, 4, 4, PADDING_SAME);
   milliseconds t1 = duration_cast< milliseconds >(system_clock::now().time_since_epoch());
   auto difference = std::chrono::duration_cast<std::chrono::milliseconds>(t1 - t0).count();
-  std::cout << difference << std::endl;
+  std::cout << difference << " ms" << std::endl;
 
   return 0;
 }
