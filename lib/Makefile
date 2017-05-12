@@ -1,6 +1,6 @@
-CXXFLAGS0 = -shared -fPIC -ansi -pedantic -W -Wall
-CXXFLAGS1 = -shared -fPIC -ansi -Wno-extern-c-compat -Wno-c++11-long-long
-CXXFLAGS2 = -c -fPIC -ansi -Wno-extern-c-compat -Wno-c++11-long-long
+CXXFLAGS0 = -O3 -shared -fPIC -ansi -pedantic -W -Wall
+CXXFLAGS1 = -O3 -shared -fPIC -ansi -Wno-extern-c-compat -Wno-c++11-long-long
+CXXFLAGS2 = -O3 -c -fPIC -ansi -Wno-extern-c-compat -Wno-c++11-long-long
 
 all:
 	g++ ${CXXFLAGS2} -I. eigen_dsmat.cpp -o eigen_dsmat.o
