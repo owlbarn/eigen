@@ -21,10 +21,20 @@ inline c_tensor_d* eigen_to_c(tensor_d& ref)
 
 /***************** c stubs for c++ functions *****************/
 
-void c_eigen_tensor_d_conv2d(tensor_d_elt* x_ptr)
+void c_eigen_tensor_d_test(tensor_d_elt* x_ptr)
 {
   //TensorMap<tensor_d>x(x_ptr, 3, 3);
   Eigen::TensorMap<tensor_d>x(x_ptr, 2, 2, 2, 2);
   std::cout << x << std::endl;
+  return;
+}
+
+void c_eigen_tensor_d_conv2d(tensor_d_elt* input_ptr, tensor_d_elt* output_ptr)
+{
+  //TensorMap<tensor_d>x(x_ptr, 3, 3);
+  Eigen::TensorMap<tensor_d>input(input_ptr, 2, 2, 2, 2);
+  Eigen::TensorMap<tensor_d>output(output_ptr, 2, 2, 2, 2);
+  output = input + 1.;
+
   return;
 }

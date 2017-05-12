@@ -6,7 +6,12 @@
 open Ctypes
 open Eigen_types.TENSOR_D
 
-let conv2d x =
+let test x =
   let x_ptr = Ctypes.bigarray_start Ctypes_static.Genarray x in
-  let z = ml_eigen_tensor_conv2d x_ptr in
-  ()
+  ml_eigen_tensor_test x_ptr
+
+let conv2d x y =
+  let x_ptr = Ctypes.bigarray_start Ctypes_static.Genarray x in
+  let y_ptr = Ctypes.bigarray_start Ctypes_static.Genarray y in
+  ml_eigen_tensor_conv2d x_ptr y_ptr;
+  y

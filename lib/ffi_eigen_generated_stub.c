@@ -1964,9 +1964,16 @@ value owl_stub_272_c_eigen_spmat_z_print(value x1720)
    c_eigen_spmat_z_print(x1721);
    return Val_unit;
 }
-value owl_stub_273_c_eigen_tensor_d_conv2d(value x1723)
+value owl_stub_273_c_eigen_tensor_d_test(value x1723)
 {
    double* x1724 = CTYPES_ADDR_OF_FATPTR(x1723);
-   c_eigen_tensor_d_conv2d(x1724);
+   c_eigen_tensor_d_test(x1724);
+   return Val_unit;
+}
+value owl_stub_274_c_eigen_tensor_d_conv2d(value x1727, value x1726)
+{
+   double* x1728 = CTYPES_ADDR_OF_FATPTR(x1727);
+   double* x1729 = CTYPES_ADDR_OF_FATPTR(x1726);
+   c_eigen_tensor_d_conv2d(x1728, x1729);
    return Val_unit;
 }

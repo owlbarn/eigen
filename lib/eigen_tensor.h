@@ -28,7 +28,8 @@
 
    struct c_tensor_d {};
 
-   void c_eigen_tensor_d_conv2d(tensor_d_elt* x_ptr);
+   void c_eigen_tensor_d_test(tensor_d_elt*);
+   void c_eigen_tensor_d_conv2d(tensor_d_elt*, tensor_d_elt*);
 
 
    /**************************** SparseMatrix_C ****************************/
