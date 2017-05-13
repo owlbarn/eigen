@@ -10,6 +10,9 @@
 //#include <Eigen/NeuralNetwork/eigen_cuboid_convolution.h>
 #include "eigen_tensor.h"
 
+#define C_PADDING_SAME 0
+#define C_PADDING_VALID 1
+
 using namespace Eigen;
 
 #include "eigen_tensor_s.cpp"

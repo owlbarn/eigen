@@ -1970,93 +1970,109 @@ value owl_stub_273_c_eigen_tensor_s_test(value x1723)
    c_eigen_tensor_s_test(x1724);
    return Val_unit;
 }
-value owl_stub_274_c_eigen_tensor_s_conv2d(value x1737, value x1736,
-                                           value x1735, value x1734,
-                                           value x1733, value x1732,
-                                           value x1731, value x1730,
-                                           value x1729, value x1728,
-                                           value x1727, value x1726)
+value owl_stub_274_c_eigen_tensor_s_conv2d(value x1742, value x1741,
+                                           value x1740, value x1739,
+                                           value x1738, value x1737,
+                                           value x1736, value x1735,
+                                           value x1734, value x1733,
+                                           value x1732, value x1731,
+                                           value x1730, value x1729,
+                                           value x1728, value x1727,
+                                           value x1726)
 {
-   float* x1738 = CTYPES_ADDR_OF_FATPTR(x1737);
-   float* x1739 = CTYPES_ADDR_OF_FATPTR(x1736);
-   float* x1740 = CTYPES_ADDR_OF_FATPTR(x1735);
-   int x1741 = Long_val(x1734);
-   int x1744 = Long_val(x1733);
-   int x1747 = Long_val(x1732);
-   int x1750 = Long_val(x1731);
-   int x1753 = Long_val(x1730);
-   int x1756 = Long_val(x1729);
-   int x1759 = Long_val(x1728);
-   int x1762 = Long_val(x1727);
-   int x1765 = Long_val(x1726);
-   c_eigen_tensor_s_conv2d(x1738, x1739, x1740, x1741, x1744, x1747, 
-                           x1750, x1753, x1756, x1759, x1762, x1765);
+   float* x1743 = CTYPES_ADDR_OF_FATPTR(x1742);
+   float* x1744 = CTYPES_ADDR_OF_FATPTR(x1741);
+   float* x1745 = CTYPES_ADDR_OF_FATPTR(x1740);
+   int x1746 = Long_val(x1739);
+   int x1749 = Long_val(x1738);
+   int x1752 = Long_val(x1737);
+   int x1755 = Long_val(x1736);
+   int x1758 = Long_val(x1735);
+   int x1761 = Long_val(x1734);
+   int x1764 = Long_val(x1733);
+   int x1767 = Long_val(x1732);
+   int x1770 = Long_val(x1731);
+   int x1773 = Long_val(x1730);
+   int x1776 = Long_val(x1729);
+   int x1779 = Long_val(x1728);
+   int x1782 = Long_val(x1727);
+   int x1785 = Long_val(x1726);
+   c_eigen_tensor_s_conv2d(x1743, x1744, x1745, x1746, x1749, x1752, 
+                           x1755, x1758, x1761, x1764, x1767, x1770, 
+                           x1773, x1776, x1779, x1782, x1785);
    return Val_unit;
 }
-value owl_stub_274_c_eigen_tensor_s_conv2d_byte12(value* argv, int argc)
+value owl_stub_274_c_eigen_tensor_s_conv2d_byte17(value* argv, int argc)
 {
-   value x1769 = argv[11];
-   value x1770 = argv[10];
-   value x1771 = argv[9];
-   value x1772 = argv[8];
-   value x1773 = argv[7];
-   value x1774 = argv[6];
-   value x1775 = argv[5];
-   value x1776 = argv[4];
-   value x1777 = argv[3];
-   value x1778 = argv[2];
-   value x1779 = argv[1];
-   value x1780 = argv[0];
+   value x1789 = argv[16];
+   value x1790 = argv[15];
+   value x1791 = argv[14];
+   value x1792 = argv[13];
+   value x1793 = argv[12];
+   value x1794 = argv[11];
+   value x1795 = argv[10];
+   value x1796 = argv[9];
+   value x1797 = argv[8];
+   value x1798 = argv[7];
+   value x1799 = argv[6];
+   value x1800 = argv[5];
+   value x1801 = argv[4];
+   value x1802 = argv[3];
+   value x1803 = argv[2];
+   value x1804 = argv[1];
+   value x1805 = argv[0];
    return
-     owl_stub_274_c_eigen_tensor_s_conv2d(x1780, x1779, x1778, x1777, 
-                                          x1776, x1775, x1774, x1773, 
-                                          x1772, x1771, x1770, x1769);
+     owl_stub_274_c_eigen_tensor_s_conv2d(x1805, x1804, x1803, x1802, 
+                                          x1801, x1800, x1799, x1798, 
+                                          x1797, x1796, x1795, x1794, 
+                                          x1793, x1792, x1791, x1790, 
+                                          x1789);
 }
-value owl_stub_275_c_eigen_tensor_d_test(value x1781)
+value owl_stub_275_c_eigen_tensor_d_test(value x1806)
 {
-   double* x1782 = CTYPES_ADDR_OF_FATPTR(x1781);
-   c_eigen_tensor_d_test(x1782);
+   double* x1807 = CTYPES_ADDR_OF_FATPTR(x1806);
+   c_eigen_tensor_d_test(x1807);
    return Val_unit;
 }
-value owl_stub_276_c_eigen_tensor_d_conv2d(value x1795, value x1794,
-                                           value x1793, value x1792,
-                                           value x1791, value x1790,
-                                           value x1789, value x1788,
-                                           value x1787, value x1786,
-                                           value x1785, value x1784)
+value owl_stub_276_c_eigen_tensor_d_conv2d(value x1820, value x1819,
+                                           value x1818, value x1817,
+                                           value x1816, value x1815,
+                                           value x1814, value x1813,
+                                           value x1812, value x1811,
+                                           value x1810, value x1809)
 {
-   double* x1796 = CTYPES_ADDR_OF_FATPTR(x1795);
-   double* x1797 = CTYPES_ADDR_OF_FATPTR(x1794);
-   double* x1798 = CTYPES_ADDR_OF_FATPTR(x1793);
-   int x1799 = Long_val(x1792);
-   int x1802 = Long_val(x1791);
-   int x1805 = Long_val(x1790);
-   int x1808 = Long_val(x1789);
-   int x1811 = Long_val(x1788);
-   int x1814 = Long_val(x1787);
-   int x1817 = Long_val(x1786);
-   int x1820 = Long_val(x1785);
-   int x1823 = Long_val(x1784);
-   c_eigen_tensor_d_conv2d(x1796, x1797, x1798, x1799, x1802, x1805, 
-                           x1808, x1811, x1814, x1817, x1820, x1823);
+   double* x1821 = CTYPES_ADDR_OF_FATPTR(x1820);
+   double* x1822 = CTYPES_ADDR_OF_FATPTR(x1819);
+   double* x1823 = CTYPES_ADDR_OF_FATPTR(x1818);
+   int x1824 = Long_val(x1817);
+   int x1827 = Long_val(x1816);
+   int x1830 = Long_val(x1815);
+   int x1833 = Long_val(x1814);
+   int x1836 = Long_val(x1813);
+   int x1839 = Long_val(x1812);
+   int x1842 = Long_val(x1811);
+   int x1845 = Long_val(x1810);
+   int x1848 = Long_val(x1809);
+   c_eigen_tensor_d_conv2d(x1821, x1822, x1823, x1824, x1827, x1830, 
+                           x1833, x1836, x1839, x1842, x1845, x1848);
    return Val_unit;
 }
 value owl_stub_276_c_eigen_tensor_d_conv2d_byte12(value* argv, int argc)
 {
-   value x1827 = argv[11];
-   value x1828 = argv[10];
-   value x1829 = argv[9];
-   value x1830 = argv[8];
-   value x1831 = argv[7];
-   value x1832 = argv[6];
-   value x1833 = argv[5];
-   value x1834 = argv[4];
-   value x1835 = argv[3];
-   value x1836 = argv[2];
-   value x1837 = argv[1];
-   value x1838 = argv[0];
+   value x1852 = argv[11];
+   value x1853 = argv[10];
+   value x1854 = argv[9];
+   value x1855 = argv[8];
+   value x1856 = argv[7];
+   value x1857 = argv[6];
+   value x1858 = argv[5];
+   value x1859 = argv[4];
+   value x1860 = argv[3];
+   value x1861 = argv[2];
+   value x1862 = argv[1];
+   value x1863 = argv[0];
    return
-     owl_stub_276_c_eigen_tensor_d_conv2d(x1838, x1837, x1836, x1835, 
-                                          x1834, x1833, x1832, x1831, 
-                                          x1830, x1829, x1828, x1827);
+     owl_stub_276_c_eigen_tensor_d_conv2d(x1863, x1862, x1861, x1860, 
+                                          x1859, x1858, x1857, x1856, 
+                                          x1855, x1854, x1853, x1852);
 }

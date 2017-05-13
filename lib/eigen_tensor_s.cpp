@@ -31,15 +31,17 @@ void c_eigen_tensor_s_test(tensor_s_elt* x_ptr)
 
 void c_eigen_tensor_s_conv2d(
   tensor_s_elt* input_ptr, tensor_s_elt* kernel_ptr, tensor_s_elt* output_ptr,
-  int batch, int input_height, int input_width, int in_channel,
-  int kernel_height, int kernel_width, int output_height, int output_width, int out_channel
+  int batches, int input_cols, int input_rows, int in_channel,
+  int kernel_cols, int kernel_rows, int output_cols, int output_rows, int out_channel,
+  int row_stride, int col_stride, int padding, int row_in_stride, int col_in_stride
 )
 {
-  Eigen::TensorMap<tensor_s>input(input_ptr, batch, input_height, input_width, in_channel);
-  Eigen::TensorMap<tensor_s>kernel(kernel_ptr, kernel_height, kernel_width, in_channel, out_channel);
-  Eigen::TensorMap<tensor_s>output(output_ptr, batch, output_height, output_width, out_channel);
+  Eigen::TensorMap<tensor_s>input(input_ptr, batches, input_cols, input_rows, in_channel);
+  Eigen::TensorMap<tensor_s>kernel(kernel_ptr, kernel_cols, kernel_rows, in_channel, out_channel);
+  Eigen::TensorMap<tensor_s>output(output_ptr, batches, output_cols, output_rows, out_channel);
 
-  output = SpatialConvolution(input, kernel, 4, 4, PADDING_SAME);
+  PaddingType pad_typ = (padding == C_PADDING_SAME) ? PADDING_SAME : PADDING_VALID;
+  output = SpatialConvolution(input, kernel, row_stride, col_stride, pad_typ, row_in_stride, col_in_stride);
 
   return;
 }
