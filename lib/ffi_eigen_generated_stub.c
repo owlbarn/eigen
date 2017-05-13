@@ -1964,22 +1964,22 @@ value owl_stub_272_c_eigen_spmat_z_print(value x1720)
    c_eigen_spmat_z_print(x1721);
    return Val_unit;
 }
-value owl_stub_273_c_eigen_tensor_d_test(value x1723)
+value owl_stub_273_c_eigen_tensor_s_test(value x1723)
 {
-   double* x1724 = CTYPES_ADDR_OF_FATPTR(x1723);
-   c_eigen_tensor_d_test(x1724);
+   float* x1724 = CTYPES_ADDR_OF_FATPTR(x1723);
+   c_eigen_tensor_s_test(x1724);
    return Val_unit;
 }
-value owl_stub_274_c_eigen_tensor_d_conv2d(value x1737, value x1736,
+value owl_stub_274_c_eigen_tensor_s_conv2d(value x1737, value x1736,
                                            value x1735, value x1734,
                                            value x1733, value x1732,
                                            value x1731, value x1730,
                                            value x1729, value x1728,
                                            value x1727, value x1726)
 {
-   double* x1738 = CTYPES_ADDR_OF_FATPTR(x1737);
-   double* x1739 = CTYPES_ADDR_OF_FATPTR(x1736);
-   double* x1740 = CTYPES_ADDR_OF_FATPTR(x1735);
+   float* x1738 = CTYPES_ADDR_OF_FATPTR(x1737);
+   float* x1739 = CTYPES_ADDR_OF_FATPTR(x1736);
+   float* x1740 = CTYPES_ADDR_OF_FATPTR(x1735);
    int x1741 = Long_val(x1734);
    int x1744 = Long_val(x1733);
    int x1747 = Long_val(x1732);
@@ -1989,11 +1989,11 @@ value owl_stub_274_c_eigen_tensor_d_conv2d(value x1737, value x1736,
    int x1759 = Long_val(x1728);
    int x1762 = Long_val(x1727);
    int x1765 = Long_val(x1726);
-   c_eigen_tensor_d_conv2d(x1738, x1739, x1740, x1741, x1744, x1747, 
+   c_eigen_tensor_s_conv2d(x1738, x1739, x1740, x1741, x1744, x1747, 
                            x1750, x1753, x1756, x1759, x1762, x1765);
    return Val_unit;
 }
-value owl_stub_274_c_eigen_tensor_d_conv2d_byte12(value* argv, int argc)
+value owl_stub_274_c_eigen_tensor_s_conv2d_byte12(value* argv, int argc)
 {
    value x1769 = argv[11];
    value x1770 = argv[10];
@@ -2008,7 +2008,55 @@ value owl_stub_274_c_eigen_tensor_d_conv2d_byte12(value* argv, int argc)
    value x1779 = argv[1];
    value x1780 = argv[0];
    return
-     owl_stub_274_c_eigen_tensor_d_conv2d(x1780, x1779, x1778, x1777, 
+     owl_stub_274_c_eigen_tensor_s_conv2d(x1780, x1779, x1778, x1777, 
                                           x1776, x1775, x1774, x1773, 
                                           x1772, x1771, x1770, x1769);
+}
+value owl_stub_275_c_eigen_tensor_d_test(value x1781)
+{
+   double* x1782 = CTYPES_ADDR_OF_FATPTR(x1781);
+   c_eigen_tensor_d_test(x1782);
+   return Val_unit;
+}
+value owl_stub_276_c_eigen_tensor_d_conv2d(value x1795, value x1794,
+                                           value x1793, value x1792,
+                                           value x1791, value x1790,
+                                           value x1789, value x1788,
+                                           value x1787, value x1786,
+                                           value x1785, value x1784)
+{
+   double* x1796 = CTYPES_ADDR_OF_FATPTR(x1795);
+   double* x1797 = CTYPES_ADDR_OF_FATPTR(x1794);
+   double* x1798 = CTYPES_ADDR_OF_FATPTR(x1793);
+   int x1799 = Long_val(x1792);
+   int x1802 = Long_val(x1791);
+   int x1805 = Long_val(x1790);
+   int x1808 = Long_val(x1789);
+   int x1811 = Long_val(x1788);
+   int x1814 = Long_val(x1787);
+   int x1817 = Long_val(x1786);
+   int x1820 = Long_val(x1785);
+   int x1823 = Long_val(x1784);
+   c_eigen_tensor_d_conv2d(x1796, x1797, x1798, x1799, x1802, x1805, 
+                           x1808, x1811, x1814, x1817, x1820, x1823);
+   return Val_unit;
+}
+value owl_stub_276_c_eigen_tensor_d_conv2d_byte12(value* argv, int argc)
+{
+   value x1827 = argv[11];
+   value x1828 = argv[10];
+   value x1829 = argv[9];
+   value x1830 = argv[8];
+   value x1831 = argv[7];
+   value x1832 = argv[6];
+   value x1833 = argv[5];
+   value x1834 = argv[4];
+   value x1835 = argv[3];
+   value x1836 = argv[2];
+   value x1837 = argv[1];
+   value x1838 = argv[0];
+   return
+     owl_stub_276_c_eigen_tensor_d_conv2d(x1838, x1837, x1836, x1835, 
+                                          x1834, x1833, x1832, x1831, 
+                                          x1830, x1829, x1828, x1827);
 }

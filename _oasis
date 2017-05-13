@@ -47,6 +47,7 @@ Library eigen
                     Eigen_spmat_d,
                     Eigen_spmat_c,
                     Eigen_spmat_z,
+                    Eigen_tensor_s,
                     Eigen_tensor_d
   CSources:         eigen_dsmat.h,
                     eigen_spmat.h,

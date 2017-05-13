@@ -12,4 +12,5 @@
 
 using namespace Eigen;
 
+#include "eigen_tensor_s.cpp"
 #include "eigen_tensor_d.cpp"
