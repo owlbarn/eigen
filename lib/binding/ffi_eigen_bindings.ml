@@ -630,22 +630,21 @@ module Bindings (F : Cstubs.FOREIGN) = struct
 
   module TENSOR_S = struct
 
-    type c_tensor_s
-    let c_tensor_s : c_tensor_s structure typ = structure "c_tensor_s"
     let elt = float
 
     let ml_eigen_tensor_test = foreign "c_eigen_tensor_s_test" (ptr elt @-> returning void)
     let ml_eigen_tensor_spatial_conv = foreign "c_eigen_tensor_s_spatial_conv" (ptr elt @-> ptr elt @-> ptr elt @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> returning void)
     let ml_eigen_tensor_spatial_conv_backward_input = foreign "c_eigen_tensor_s_spatial_conv_backward_input" (ptr elt @-> ptr elt @-> ptr elt @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> returning void)
     let ml_eigen_tensor_spatial_conv_backward_kernel = foreign "c_eigen_tensor_s_spatial_conv_backward_kernel" (ptr elt @-> ptr elt @-> ptr elt @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> returning void)
+    let ml_eigen_tensor_cuboid_conv = foreign "c_eigen_tensor_s_cuboid_conv" (ptr elt @-> ptr elt @-> ptr elt @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> returning void)
+    let ml_eigen_tensor_cuboid_conv_backward_input = foreign "c_eigen_tensor_s_cuboid_conv_backward_input" (ptr elt @-> ptr elt @-> ptr elt @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> returning void)
+    let ml_eigen_tensor_cuboid_conv_backward_kernel = foreign "c_eigen_tensor_s_cuboid_conv_backward_kernel" (ptr elt @-> ptr elt @-> ptr elt @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> returning void)
 
   end
 
 
   module TENSOR_D = struct
 
-    type c_tensor_d
-    let c_tensor_d : c_tensor_d structure typ = structure "c_tensor_d"
     let elt = double
 
     let ml_eigen_tensor_test = foreign "c_eigen_tensor_d_test" (ptr elt @-> returning void)
