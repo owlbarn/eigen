@@ -16,7 +16,7 @@ limitations under the License.
 #ifndef THIRD_PARTY_TENSORFLOW_CORE_KERNELS_EIGEN_SPATIAL_CONVOLUTIONS_H_
 #define THIRD_PARTY_TENSORFLOW_CORE_KERNELS_EIGEN_SPATIAL_CONVOLUTIONS_H_
 
-#include "../CXX11/Tensor"
+#include <Eigen/CXX11/Tensor>
 
 namespace Eigen {
 
@@ -991,6 +991,9 @@ EIGEN_DEVICE_FUNC
       out_width = numext::ceil(InputCols / static_cast<float>(col_stride));
       break;
     default:
+      // Initialize unused variables to avoid a compiler warning
+      out_height = 0;
+      out_width  = 0;
       eigen_assert(false && "unexpected padding");
   }
 

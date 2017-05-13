@@ -635,7 +635,7 @@ module Bindings (F : Cstubs.FOREIGN) = struct
     let elt = double
 
     let ml_eigen_tensor_test = foreign "c_eigen_tensor_d_test" (ptr elt @-> returning void)
-    let ml_eigen_tensor_conv2d = foreign "c_eigen_tensor_d_conv2d" (ptr elt @-> ptr elt @-> returning void)
+    let ml_eigen_tensor_conv2d = foreign "c_eigen_tensor_d_conv2d" (ptr elt @-> ptr elt @-> ptr elt @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> returning void)
 
   end
 

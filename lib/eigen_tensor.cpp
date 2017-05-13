@@ -6,6 +6,8 @@
 #include <iostream>
 #include <Eigen/Core>
 #include <Eigen/CXX11/Tensor>
+#include <Eigen/NeuralNetwork/eigen_spatial_convolutions.h>
+//#include <Eigen/NeuralNetwork/eigen_cuboid_convolution.h>
 #include "eigen_tensor.h"
 
 using namespace Eigen;

@@ -29,12 +29,19 @@ void c_eigen_tensor_d_test(tensor_d_elt* x_ptr)
   return;
 }
 
-void c_eigen_tensor_d_conv2d(tensor_d_elt* input_ptr, tensor_d_elt* output_ptr)
+void c_eigen_tensor_d_conv2d(
+  tensor_d_elt* input_ptr, tensor_d_elt* kernel_ptr, tensor_d_elt* output_ptr,
+  int batch, int input_height, int input_width, int in_channel,
+  int kernel_height, int kernel_width, int output_height, int output_width, int out_channel
+)
 {
-  //TensorMap<tensor_d>x(x_ptr, 3, 3);
-  Eigen::TensorMap<tensor_d>input(input_ptr, 2, 2, 2, 2);
-  Eigen::TensorMap<tensor_d>output(output_ptr, 2, 2, 2, 2);
-  output = input + 1.;
+  //Eigen::TensorMap<tensor_d>input(input_ptr, batch, input_height, input_width, in_channel);
+  //Eigen::TensorMap<tensor_d>kernel(kernel_ptr, kernel_height, kernel_width, in_channel, out_channel);
+  //Eigen::TensorMap<tensor_d>output(output_ptr, batch, output_height, output_width, out_channel);
+
+  //std::cout << SpatialConvolution(input, kernel, 4, 4, PADDING_SAME);
+  //std::cout << input << std::endl;
+  //output = output + 1.;
 
   return;
 }
