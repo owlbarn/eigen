@@ -29,4 +29,14 @@ module Sparse = struct
 end
 
 
+
+module Tensor = struct
+
+  module S = Eigen_tensor_s
+
+  module D = Eigen_tensor_d
+
+end
+
+
 module Utils = Eigen_utils

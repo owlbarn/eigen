@@ -944,22 +944,22 @@ external owl_stub_272_c_eigen_spmat_z_print : _ CI.fatptr -> unit
 external owl_stub_273_c_eigen_tensor_s_test : _ CI.fatptr -> unit
   = "owl_stub_273_c_eigen_tensor_s_test" 
 
-external owl_stub_274_c_eigen_tensor_s_conv2d
+external owl_stub_274_c_eigen_tensor_s_spatial_conv
   : _ CI.fatptr -> _ CI.fatptr -> _ CI.fatptr -> int -> int -> int -> 
     int -> int -> int -> int -> int -> int -> int -> int -> int -> int ->
     int -> unit
   =
-  "owl_stub_274_c_eigen_tensor_s_conv2d_byte17" "owl_stub_274_c_eigen_tensor_s_conv2d"
+  "owl_stub_274_c_eigen_tensor_s_spatial_conv_byte17" "owl_stub_274_c_eigen_tensor_s_spatial_conv"
   
 
 external owl_stub_275_c_eigen_tensor_d_test : _ CI.fatptr -> unit
   = "owl_stub_275_c_eigen_tensor_d_test" 
 
-external owl_stub_276_c_eigen_tensor_d_conv2d
+external owl_stub_276_c_eigen_tensor_d_spatial_conv
   : _ CI.fatptr -> _ CI.fatptr -> _ CI.fatptr -> int -> int -> int -> 
     int -> int -> int -> int -> int -> int -> unit
   =
-  "owl_stub_276_c_eigen_tensor_d_conv2d_byte12" "owl_stub_276_c_eigen_tensor_d_conv2d"
+  "owl_stub_276_c_eigen_tensor_d_spatial_conv_byte12" "owl_stub_276_c_eigen_tensor_d_spatial_conv"
   
 
 type 'a result = 'a
@@ -996,9 +996,9 @@ let foreign : type a b. string -> (a -> b) fn -> (a -> b) =
                                   (CI.Primitive CI.Int,
                                    Function
                                      (CI.Primitive CI.Int, Returns CI.Void)))))))))))),
-  "c_eigen_tensor_d_conv2d" ->
+  "c_eigen_tensor_d_spatial_conv" ->
   (fun x1 x3 x5 x7 x8 x9 x10 x11 x12 x13 x14 x15 ->
-    owl_stub_276_c_eigen_tensor_d_conv2d (CI.cptr x1) (CI.cptr x3)
+    owl_stub_276_c_eigen_tensor_d_spatial_conv (CI.cptr x1) (CI.cptr x3)
     (CI.cptr x5) x7 x8 x9 x10 x11 x12 x13 x14 x15)
 | Function (CI.Pointer x17, Returns CI.Void), "c_eigen_tensor_d_test" ->
   (fun x16 -> owl_stub_275_c_eigen_tensor_d_test (CI.cptr x16))
@@ -1037,9 +1037,9 @@ let foreign : type a b. string -> (a -> b) fn -> (a -> b) =
                                                   Function
                                                     (CI.Primitive CI.Int,
                                                      Returns CI.Void))))))))))))))))),
-  "c_eigen_tensor_s_conv2d" ->
+  "c_eigen_tensor_s_spatial_conv" ->
   (fun x18 x20 x22 x24 x25 x26 x27 x28 x29 x30 x31 x32 x33 x34 x35 x36 x37 ->
-    owl_stub_274_c_eigen_tensor_s_conv2d (CI.cptr x18) (CI.cptr x20)
+    owl_stub_274_c_eigen_tensor_s_spatial_conv (CI.cptr x18) (CI.cptr x20)
     (CI.cptr x22) x24 x25 x26 x27 x28 x29 x30 x31 x32 x33 x34 x35 x36 x37)
 | Function (CI.Pointer x39, Returns CI.Void), "c_eigen_tensor_s_test" ->
   (fun x38 -> owl_stub_273_c_eigen_tensor_s_test (CI.cptr x38))

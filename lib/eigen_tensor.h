@@ -19,26 +19,26 @@
  #endif
 
 
-   /**************************** SparseMatrix_S ****************************/
+   /**************************** Tensor_S ****************************/
 
    struct c_tensor_s {};
    void c_eigen_tensor_s_test(tensor_s_elt*);
-   void c_eigen_tensor_s_conv2d(tensor_s_elt*, tensor_s_elt*, tensor_s_elt*, int, int, int, int, int, int, int, int, int, int, int, int, int, int);
+   void c_eigen_tensor_s_spatial_conv(tensor_s_elt*, tensor_s_elt*, tensor_s_elt*, int, int, int, int, int, int, int, int, int, int, int, int, int, int);
 
 
-   /**************************** SparseMatrix_D ****************************/
+   /**************************** Tensor_D ****************************/
 
    struct c_tensor_d {};
 
    void c_eigen_tensor_d_test(tensor_d_elt*);
-   void c_eigen_tensor_d_conv2d(tensor_d_elt*, tensor_d_elt*, tensor_d_elt*, int, int, int, int, int, int, int, int, int);
+   void c_eigen_tensor_d_spatial_conv(tensor_d_elt*, tensor_d_elt*, tensor_d_elt*, int, int, int, int, int, int, int, int, int);
 
 
-   /**************************** SparseMatrix_C ****************************/
+   /**************************** Tensor_C ****************************/
 
 
 
-   /**************************** SparseMatrix_Z ****************************/
+   /**************************** Tensor_Z ****************************/
 
 
 

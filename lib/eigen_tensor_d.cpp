@@ -29,7 +29,7 @@ void c_eigen_tensor_d_test(tensor_d_elt* x_ptr)
   return;
 }
 
-void c_eigen_tensor_d_conv2d(
+void c_eigen_tensor_d_spatial_conv(
   tensor_d_elt* input_ptr, tensor_d_elt* kernel_ptr, tensor_d_elt* output_ptr,
   int batch, int input_height, int input_width, int in_channel,
   int kernel_height, int kernel_width, int output_height, int output_width, int out_channel

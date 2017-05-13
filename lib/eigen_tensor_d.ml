@@ -10,4 +10,4 @@ let test x =
   let x_ptr = Ctypes.bigarray_start Ctypes_static.Genarray x in
   ml_eigen_tensor_test x_ptr
 
-let conv2d input kernel output = ()
+let spatial_conv input kernel output = ()
