@@ -16,7 +16,7 @@ limitations under the License.
 #ifndef THIRD_PARTY_TENSORFLOW_CORE_KERNELS_EIGEN_PATCH_3D_H_
 #define THIRD_PARTY_TENSORFLOW_CORE_KERNELS_EIGEN_PATCH_3D_H_
 
-#include "../CXX11/Tensor"
+#include <Eigen/CXX11/Tensor>
 
 #if not defined(__CUDACC__)
 //Liang: #include <type_traits>

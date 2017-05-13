@@ -16,7 +16,7 @@ limitations under the License.
 #ifndef THIRD_PARTY_TENSORFLOW_CORE_KERNELS_EIGEN_CUBOID_CONVOLUTION_H_
 #define THIRD_PARTY_TENSORFLOW_CORE_KERNELS_EIGEN_CUBOID_CONVOLUTION_H_
 
-#include "../CXX11/Tensor"
+#include <Eigen/CXX11/Tensor>
 #include "eigen_patch_3d.h"
 
 namespace Eigen {

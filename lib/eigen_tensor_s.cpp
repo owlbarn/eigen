@@ -45,3 +45,35 @@ void c_eigen_tensor_s_spatial_conv(
 
   return;
 }
+
+void c_eigen_tensor_s_spatial_conv_backward_input(
+  tensor_s_elt* input_ptr, tensor_s_elt* kernel_ptr, tensor_s_elt* output_ptr,
+  int batches, int input_cols, int input_rows, int in_channel,
+  int kernel_cols, int kernel_rows, int output_cols, int output_rows, int out_channel,
+  int row_stride, int col_stride, int row_in_stride, int col_in_stride
+)
+{
+  Eigen::TensorMap<tensor_s>input(input_ptr, batches, input_cols, input_rows, in_channel);
+  Eigen::TensorMap<tensor_s>kernel(kernel_ptr, kernel_cols, kernel_rows, in_channel, out_channel);
+  Eigen::TensorMap<tensor_s>output(output_ptr, batches, output_cols, output_rows, out_channel);
+
+  input = SpatialConvolutionBackwardInput(kernel, output, input_rows, input_cols, row_stride, row_stride, row_in_stride, col_in_stride);
+
+  return;
+}
+
+void c_eigen_tensor_s_spatial_conv_backward_kernel(
+  tensor_s_elt* input_ptr, tensor_s_elt* kernel_ptr, tensor_s_elt* output_ptr,
+  int batches, int input_cols, int input_rows, int in_channel,
+  int kernel_cols, int kernel_rows, int output_cols, int output_rows, int out_channel,
+  int row_stride, int col_stride, int row_in_stride, int col_in_stride
+)
+{
+  Eigen::TensorMap<tensor_s>input(input_ptr, batches, input_cols, input_rows, in_channel);
+  Eigen::TensorMap<tensor_s>kernel(kernel_ptr, kernel_cols, kernel_rows, in_channel, out_channel);
+  Eigen::TensorMap<tensor_s>output(output_ptr, batches, output_cols, output_rows, out_channel);
+
+  kernel = SpatialConvolutionBackwardKernel(input, output, input_rows, input_cols, row_stride, row_stride, row_in_stride, col_in_stride);
+
+  return;
+}
