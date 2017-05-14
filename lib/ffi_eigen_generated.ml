@@ -997,10 +997,51 @@ external owl_stub_280_c_eigen_tensor_d_test : _ CI.fatptr -> unit
 
 external owl_stub_281_c_eigen_tensor_d_spatial_conv
   : _ CI.fatptr -> _ CI.fatptr -> _ CI.fatptr -> int -> int -> int -> 
-    int -> int -> int -> int -> int -> int -> unit
+    int -> int -> int -> int -> int -> int -> int -> int -> int -> int ->
+    int -> unit
   =
-  "owl_stub_281_c_eigen_tensor_d_spatial_conv_byte12" "owl_stub_281_c_eigen_tensor_d_spatial_conv"
+  "owl_stub_281_c_eigen_tensor_d_spatial_conv_byte17" "owl_stub_281_c_eigen_tensor_d_spatial_conv"
   
+
+external owl_stub_282_c_eigen_tensor_d_spatial_conv_backward_input
+  : _ CI.fatptr -> _ CI.fatptr -> _ CI.fatptr -> int -> int -> int -> 
+    int -> int -> int -> int -> int -> int -> int -> int -> int -> int ->
+    unit
+  =
+  "owl_stub_282_c_eigen_tensor_d_spatial_conv_backward_input_byte16" 
+  "owl_stub_282_c_eigen_tensor_d_spatial_conv_backward_input" 
+
+external owl_stub_283_c_eigen_tensor_d_spatial_conv_backward_kernel
+  : _ CI.fatptr -> _ CI.fatptr -> _ CI.fatptr -> int -> int -> int -> 
+    int -> int -> int -> int -> int -> int -> int -> int -> int -> int ->
+    unit
+  =
+  "owl_stub_283_c_eigen_tensor_d_spatial_conv_backward_kernel_byte16" 
+  "owl_stub_283_c_eigen_tensor_d_spatial_conv_backward_kernel" 
+
+external owl_stub_284_c_eigen_tensor_d_cuboid_conv
+  : _ CI.fatptr -> _ CI.fatptr -> _ CI.fatptr -> int -> int -> int -> 
+    int -> int -> int -> int -> int -> int -> int -> int -> int -> int ->
+    int -> int -> int -> unit
+  =
+  "owl_stub_284_c_eigen_tensor_d_cuboid_conv_byte19" "owl_stub_284_c_eigen_tensor_d_cuboid_conv"
+  
+
+external owl_stub_285_c_eigen_tensor_d_cuboid_conv_backward_input
+  : _ CI.fatptr -> _ CI.fatptr -> _ CI.fatptr -> int -> int -> int -> 
+    int -> int -> int -> int -> int -> int -> int -> int -> int -> int ->
+    int -> int -> unit
+  =
+  "owl_stub_285_c_eigen_tensor_d_cuboid_conv_backward_input_byte18" "owl_stub_285_c_eigen_tensor_d_cuboid_conv_backward_input"
+  
+
+external owl_stub_286_c_eigen_tensor_d_cuboid_conv_backward_kernel
+  : _ CI.fatptr -> _ CI.fatptr -> _ CI.fatptr -> int -> int -> int -> 
+    int -> int -> int -> int -> int -> int -> int -> int -> int -> int ->
+    int -> int -> unit
+  =
+  "owl_stub_286_c_eigen_tensor_d_cuboid_conv_backward_kernel_byte18" 
+  "owl_stub_286_c_eigen_tensor_d_cuboid_conv_backward_kernel" 
 
 type 'a result = 'a
 type 'a return = 'a
@@ -1035,19 +1076,239 @@ let foreign : type a b. string -> (a -> b) fn -> (a -> b) =
                                 Function
                                   (CI.Primitive CI.Int,
                                    Function
-                                     (CI.Primitive CI.Int, Returns CI.Void)))))))))))),
-  "c_eigen_tensor_d_spatial_conv" ->
-  (fun x1 x3 x5 x7 x8 x9 x10 x11 x12 x13 x14 x15 ->
-    owl_stub_281_c_eigen_tensor_d_spatial_conv (CI.cptr x1) (CI.cptr x3)
-    (CI.cptr x5) x7 x8 x9 x10 x11 x12 x13 x14 x15)
-| Function (CI.Pointer x17, Returns CI.Void), "c_eigen_tensor_d_test" ->
-  (fun x16 -> owl_stub_280_c_eigen_tensor_d_test (CI.cptr x16))
+                                     (CI.Primitive CI.Int,
+                                      Function
+                                        (CI.Primitive CI.Int,
+                                         Function
+                                           (CI.Primitive CI.Int,
+                                            Function
+                                              (CI.Primitive CI.Int,
+                                               Function
+                                                 (CI.Primitive CI.Int,
+                                                  Function
+                                                    (CI.Primitive CI.Int,
+                                                     Function
+                                                       (CI.Primitive CI.Int,
+                                                        Returns CI.Void)))))))))))))))))),
+  "c_eigen_tensor_d_cuboid_conv_backward_kernel" ->
+  (fun x1 x3 x5 x7 x8 x9 x10 x11 x12 x13 x14 x15 x16 x17 x18 x19 x20 x21 ->
+    owl_stub_286_c_eigen_tensor_d_cuboid_conv_backward_kernel (CI.cptr x1)
+    (CI.cptr x3) (CI.cptr x5) x7 x8 x9 x10 x11 x12 x13 x14 x15 x16 x17 x18
+    x19 x20 x21)
 | Function
-    (CI.Pointer x19,
+    (CI.Pointer x23,
      Function
-       (CI.Pointer x21,
+       (CI.Pointer x25,
         Function
-          (CI.Pointer x23,
+          (CI.Pointer x27,
+           Function
+             (CI.Primitive CI.Int,
+              Function
+                (CI.Primitive CI.Int,
+                 Function
+                   (CI.Primitive CI.Int,
+                    Function
+                      (CI.Primitive CI.Int,
+                       Function
+                         (CI.Primitive CI.Int,
+                          Function
+                            (CI.Primitive CI.Int,
+                             Function
+                               (CI.Primitive CI.Int,
+                                Function
+                                  (CI.Primitive CI.Int,
+                                   Function
+                                     (CI.Primitive CI.Int,
+                                      Function
+                                        (CI.Primitive CI.Int,
+                                         Function
+                                           (CI.Primitive CI.Int,
+                                            Function
+                                              (CI.Primitive CI.Int,
+                                               Function
+                                                 (CI.Primitive CI.Int,
+                                                  Function
+                                                    (CI.Primitive CI.Int,
+                                                     Function
+                                                       (CI.Primitive CI.Int,
+                                                        Returns CI.Void)))))))))))))))))),
+  "c_eigen_tensor_d_cuboid_conv_backward_input" ->
+  (fun x22 x24 x26 x28 x29 x30 x31 x32 x33 x34 x35 x36 x37 x38 x39 x40 x41
+    x42 ->
+    owl_stub_285_c_eigen_tensor_d_cuboid_conv_backward_input (CI.cptr x22)
+    (CI.cptr x24) (CI.cptr x26) x28 x29 x30 x31 x32 x33 x34 x35 x36 x37 x38
+    x39 x40 x41 x42)
+| Function
+    (CI.Pointer x44,
+     Function
+       (CI.Pointer x46,
+        Function
+          (CI.Pointer x48,
+           Function
+             (CI.Primitive CI.Int,
+              Function
+                (CI.Primitive CI.Int,
+                 Function
+                   (CI.Primitive CI.Int,
+                    Function
+                      (CI.Primitive CI.Int,
+                       Function
+                         (CI.Primitive CI.Int,
+                          Function
+                            (CI.Primitive CI.Int,
+                             Function
+                               (CI.Primitive CI.Int,
+                                Function
+                                  (CI.Primitive CI.Int,
+                                   Function
+                                     (CI.Primitive CI.Int,
+                                      Function
+                                        (CI.Primitive CI.Int,
+                                         Function
+                                           (CI.Primitive CI.Int,
+                                            Function
+                                              (CI.Primitive CI.Int,
+                                               Function
+                                                 (CI.Primitive CI.Int,
+                                                  Function
+                                                    (CI.Primitive CI.Int,
+                                                     Function
+                                                       (CI.Primitive CI.Int,
+                                                        Function
+                                                          (CI.Primitive
+                                                             CI.Int,
+                                                           Returns CI.Void))))))))))))))))))),
+  "c_eigen_tensor_d_cuboid_conv" ->
+  (fun x43 x45 x47 x49 x50 x51 x52 x53 x54 x55 x56 x57 x58 x59 x60 x61 x62
+    x63 x64 ->
+    owl_stub_284_c_eigen_tensor_d_cuboid_conv (CI.cptr x43) (CI.cptr x45)
+    (CI.cptr x47) x49 x50 x51 x52 x53 x54 x55 x56 x57 x58 x59 x60 x61 x62 x63
+    x64)
+| Function
+    (CI.Pointer x66,
+     Function
+       (CI.Pointer x68,
+        Function
+          (CI.Pointer x70,
+           Function
+             (CI.Primitive CI.Int,
+              Function
+                (CI.Primitive CI.Int,
+                 Function
+                   (CI.Primitive CI.Int,
+                    Function
+                      (CI.Primitive CI.Int,
+                       Function
+                         (CI.Primitive CI.Int,
+                          Function
+                            (CI.Primitive CI.Int,
+                             Function
+                               (CI.Primitive CI.Int,
+                                Function
+                                  (CI.Primitive CI.Int,
+                                   Function
+                                     (CI.Primitive CI.Int,
+                                      Function
+                                        (CI.Primitive CI.Int,
+                                         Function
+                                           (CI.Primitive CI.Int,
+                                            Function
+                                              (CI.Primitive CI.Int,
+                                               Function
+                                                 (CI.Primitive CI.Int,
+                                                  Returns CI.Void)))))))))))))))),
+  "c_eigen_tensor_d_spatial_conv_backward_kernel" ->
+  (fun x65 x67 x69 x71 x72 x73 x74 x75 x76 x77 x78 x79 x80 x81 x82 x83 ->
+    owl_stub_283_c_eigen_tensor_d_spatial_conv_backward_kernel (CI.cptr x65)
+    (CI.cptr x67) (CI.cptr x69) x71 x72 x73 x74 x75 x76 x77 x78 x79 x80 x81
+    x82 x83)
+| Function
+    (CI.Pointer x85,
+     Function
+       (CI.Pointer x87,
+        Function
+          (CI.Pointer x89,
+           Function
+             (CI.Primitive CI.Int,
+              Function
+                (CI.Primitive CI.Int,
+                 Function
+                   (CI.Primitive CI.Int,
+                    Function
+                      (CI.Primitive CI.Int,
+                       Function
+                         (CI.Primitive CI.Int,
+                          Function
+                            (CI.Primitive CI.Int,
+                             Function
+                               (CI.Primitive CI.Int,
+                                Function
+                                  (CI.Primitive CI.Int,
+                                   Function
+                                     (CI.Primitive CI.Int,
+                                      Function
+                                        (CI.Primitive CI.Int,
+                                         Function
+                                           (CI.Primitive CI.Int,
+                                            Function
+                                              (CI.Primitive CI.Int,
+                                               Function
+                                                 (CI.Primitive CI.Int,
+                                                  Returns CI.Void)))))))))))))))),
+  "c_eigen_tensor_d_spatial_conv_backward_input" ->
+  (fun x84 x86 x88 x90 x91 x92 x93 x94 x95 x96 x97 x98 x99 x100 x101 x102 ->
+    owl_stub_282_c_eigen_tensor_d_spatial_conv_backward_input (CI.cptr x84)
+    (CI.cptr x86) (CI.cptr x88) x90 x91 x92 x93 x94 x95 x96 x97 x98 x99 x100
+    x101 x102)
+| Function
+    (CI.Pointer x104,
+     Function
+       (CI.Pointer x106,
+        Function
+          (CI.Pointer x108,
+           Function
+             (CI.Primitive CI.Int,
+              Function
+                (CI.Primitive CI.Int,
+                 Function
+                   (CI.Primitive CI.Int,
+                    Function
+                      (CI.Primitive CI.Int,
+                       Function
+                         (CI.Primitive CI.Int,
+                          Function
+                            (CI.Primitive CI.Int,
+                             Function
+                               (CI.Primitive CI.Int,
+                                Function
+                                  (CI.Primitive CI.Int,
+                                   Function
+                                     (CI.Primitive CI.Int,
+                                      Function
+                                        (CI.Primitive CI.Int,
+                                         Function
+                                           (CI.Primitive CI.Int,
+                                            Function
+                                              (CI.Primitive CI.Int,
+                                               Function
+                                                 (CI.Primitive CI.Int,
+                                                  Function
+                                                    (CI.Primitive CI.Int,
+                                                     Returns CI.Void))))))))))))))))),
+  "c_eigen_tensor_d_spatial_conv" ->
+  (fun x103 x105 x107 x109 x110 x111 x112 x113 x114 x115 x116 x117 x118 x119
+    x120 x121 x122 ->
+    owl_stub_281_c_eigen_tensor_d_spatial_conv (CI.cptr x103) (CI.cptr x105)
+    (CI.cptr x107) x109 x110 x111 x112 x113 x114 x115 x116 x117 x118 x119
+    x120 x121 x122)
+| Function (CI.Pointer x124, Returns CI.Void), "c_eigen_tensor_d_test" ->
+  (fun x123 -> owl_stub_280_c_eigen_tensor_d_test (CI.cptr x123))
+| Function
+    (CI.Pointer x126,
+     Function
+       (CI.Pointer x128,
+        Function
+          (CI.Pointer x130,
            Function
              (CI.Primitive CI.Int,
               Function
@@ -1080,17 +1341,17 @@ let foreign : type a b. string -> (a -> b) fn -> (a -> b) =
                                                        (CI.Primitive CI.Int,
                                                         Returns CI.Void)))))))))))))))))),
   "c_eigen_tensor_s_cuboid_conv_backward_kernel" ->
-  (fun x18 x20 x22 x24 x25 x26 x27 x28 x29 x30 x31 x32 x33 x34 x35 x36 x37
-    x38 ->
-    owl_stub_279_c_eigen_tensor_s_cuboid_conv_backward_kernel (CI.cptr x18)
-    (CI.cptr x20) (CI.cptr x22) x24 x25 x26 x27 x28 x29 x30 x31 x32 x33 x34
-    x35 x36 x37 x38)
+  (fun x125 x127 x129 x131 x132 x133 x134 x135 x136 x137 x138 x139 x140 x141
+    x142 x143 x144 x145 ->
+    owl_stub_279_c_eigen_tensor_s_cuboid_conv_backward_kernel (CI.cptr x125)
+    (CI.cptr x127) (CI.cptr x129) x131 x132 x133 x134 x135 x136 x137 x138
+    x139 x140 x141 x142 x143 x144 x145)
 | Function
-    (CI.Pointer x40,
+    (CI.Pointer x147,
      Function
-       (CI.Pointer x42,
+       (CI.Pointer x149,
         Function
-          (CI.Pointer x44,
+          (CI.Pointer x151,
            Function
              (CI.Primitive CI.Int,
               Function
@@ -1123,17 +1384,17 @@ let foreign : type a b. string -> (a -> b) fn -> (a -> b) =
                                                        (CI.Primitive CI.Int,
                                                         Returns CI.Void)))))))))))))))))),
   "c_eigen_tensor_s_cuboid_conv_backward_input" ->
-  (fun x39 x41 x43 x45 x46 x47 x48 x49 x50 x51 x52 x53 x54 x55 x56 x57 x58
-    x59 ->
-    owl_stub_278_c_eigen_tensor_s_cuboid_conv_backward_input (CI.cptr x39)
-    (CI.cptr x41) (CI.cptr x43) x45 x46 x47 x48 x49 x50 x51 x52 x53 x54 x55
-    x56 x57 x58 x59)
+  (fun x146 x148 x150 x152 x153 x154 x155 x156 x157 x158 x159 x160 x161 x162
+    x163 x164 x165 x166 ->
+    owl_stub_278_c_eigen_tensor_s_cuboid_conv_backward_input (CI.cptr x146)
+    (CI.cptr x148) (CI.cptr x150) x152 x153 x154 x155 x156 x157 x158 x159
+    x160 x161 x162 x163 x164 x165 x166)
 | Function
-    (CI.Pointer x61,
+    (CI.Pointer x168,
      Function
-       (CI.Pointer x63,
+       (CI.Pointer x170,
         Function
-          (CI.Pointer x65,
+          (CI.Pointer x172,
            Function
              (CI.Primitive CI.Int,
               Function
@@ -1169,17 +1430,17 @@ let foreign : type a b. string -> (a -> b) fn -> (a -> b) =
                                                              CI.Int,
                                                            Returns CI.Void))))))))))))))))))),
   "c_eigen_tensor_s_cuboid_conv" ->
-  (fun x60 x62 x64 x66 x67 x68 x69 x70 x71 x72 x73 x74 x75 x76 x77 x78 x79
-    x80 x81 ->
-    owl_stub_277_c_eigen_tensor_s_cuboid_conv (CI.cptr x60) (CI.cptr x62)
-    (CI.cptr x64) x66 x67 x68 x69 x70 x71 x72 x73 x74 x75 x76 x77 x78 x79 x80
-    x81)
+  (fun x167 x169 x171 x173 x174 x175 x176 x177 x178 x179 x180 x181 x182 x183
+    x184 x185 x186 x187 x188 ->
+    owl_stub_277_c_eigen_tensor_s_cuboid_conv (CI.cptr x167) (CI.cptr x169)
+    (CI.cptr x171) x173 x174 x175 x176 x177 x178 x179 x180 x181 x182 x183
+    x184 x185 x186 x187 x188)
 | Function
-    (CI.Pointer x83,
+    (CI.Pointer x190,
      Function
-       (CI.Pointer x85,
+       (CI.Pointer x192,
         Function
-          (CI.Pointer x87,
+          (CI.Pointer x194,
            Function
              (CI.Primitive CI.Int,
               Function
@@ -1208,16 +1469,17 @@ let foreign : type a b. string -> (a -> b) fn -> (a -> b) =
                                                  (CI.Primitive CI.Int,
                                                   Returns CI.Void)))))))))))))))),
   "c_eigen_tensor_s_spatial_conv_backward_kernel" ->
-  (fun x82 x84 x86 x88 x89 x90 x91 x92 x93 x94 x95 x96 x97 x98 x99 x100 ->
-    owl_stub_276_c_eigen_tensor_s_spatial_conv_backward_kernel (CI.cptr x82)
-    (CI.cptr x84) (CI.cptr x86) x88 x89 x90 x91 x92 x93 x94 x95 x96 x97 x98
-    x99 x100)
+  (fun x189 x191 x193 x195 x196 x197 x198 x199 x200 x201 x202 x203 x204 x205
+    x206 x207 ->
+    owl_stub_276_c_eigen_tensor_s_spatial_conv_backward_kernel (CI.cptr x189)
+    (CI.cptr x191) (CI.cptr x193) x195 x196 x197 x198 x199 x200 x201 x202
+    x203 x204 x205 x206 x207)
 | Function
-    (CI.Pointer x102,
+    (CI.Pointer x209,
      Function
-       (CI.Pointer x104,
+       (CI.Pointer x211,
         Function
-          (CI.Pointer x106,
+          (CI.Pointer x213,
            Function
              (CI.Primitive CI.Int,
               Function
@@ -1246,17 +1508,17 @@ let foreign : type a b. string -> (a -> b) fn -> (a -> b) =
                                                  (CI.Primitive CI.Int,
                                                   Returns CI.Void)))))))))))))))),
   "c_eigen_tensor_s_spatial_conv_backward_input" ->
-  (fun x101 x103 x105 x107 x108 x109 x110 x111 x112 x113 x114 x115 x116 x117
-    x118 x119 ->
-    owl_stub_275_c_eigen_tensor_s_spatial_conv_backward_input (CI.cptr x101)
-    (CI.cptr x103) (CI.cptr x105) x107 x108 x109 x110 x111 x112 x113 x114
-    x115 x116 x117 x118 x119)
+  (fun x208 x210 x212 x214 x215 x216 x217 x218 x219 x220 x221 x222 x223 x224
+    x225 x226 ->
+    owl_stub_275_c_eigen_tensor_s_spatial_conv_backward_input (CI.cptr x208)
+    (CI.cptr x210) (CI.cptr x212) x214 x215 x216 x217 x218 x219 x220 x221
+    x222 x223 x224 x225 x226)
 | Function
-    (CI.Pointer x121,
+    (CI.Pointer x228,
      Function
-       (CI.Pointer x123,
+       (CI.Pointer x230,
         Function
-          (CI.Pointer x125,
+          (CI.Pointer x232,
            Function
              (CI.Primitive CI.Int,
               Function
@@ -1287,1054 +1549,1054 @@ let foreign : type a b. string -> (a -> b) fn -> (a -> b) =
                                                     (CI.Primitive CI.Int,
                                                      Returns CI.Void))))))))))))))))),
   "c_eigen_tensor_s_spatial_conv" ->
-  (fun x120 x122 x124 x126 x127 x128 x129 x130 x131 x132 x133 x134 x135 x136
-    x137 x138 x139 ->
-    owl_stub_274_c_eigen_tensor_s_spatial_conv (CI.cptr x120) (CI.cptr x122)
-    (CI.cptr x124) x126 x127 x128 x129 x130 x131 x132 x133 x134 x135 x136
-    x137 x138 x139)
-| Function (CI.Pointer x141, Returns CI.Void), "c_eigen_tensor_s_test" ->
-  (fun x140 -> owl_stub_273_c_eigen_tensor_s_test (CI.cptr x140))
-| Function (CI.Pointer x143, Returns CI.Void), "c_eigen_spmat_z_print" ->
-  (fun x142 -> owl_stub_272_c_eigen_spmat_z_print (CI.cptr x142))
-| Function (CI.Pointer x145, Returns (CI.Pointer x146)),
+  (fun x227 x229 x231 x233 x234 x235 x236 x237 x238 x239 x240 x241 x242 x243
+    x244 x245 x246 ->
+    owl_stub_274_c_eigen_tensor_s_spatial_conv (CI.cptr x227) (CI.cptr x229)
+    (CI.cptr x231) x233 x234 x235 x236 x237 x238 x239 x240 x241 x242 x243
+    x244 x245 x246)
+| Function (CI.Pointer x248, Returns CI.Void), "c_eigen_tensor_s_test" ->
+  (fun x247 -> owl_stub_273_c_eigen_tensor_s_test (CI.cptr x247))
+| Function (CI.Pointer x250, Returns CI.Void), "c_eigen_spmat_z_print" ->
+  (fun x249 -> owl_stub_272_c_eigen_spmat_z_print (CI.cptr x249))
+| Function (CI.Pointer x252, Returns (CI.Pointer x253)),
   "c_eigen_spmat_z_sqrt" ->
-  (fun x144 ->
-    CI.make_ptr x146 (owl_stub_271_c_eigen_spmat_z_sqrt (CI.cptr x144)))
-| Function (CI.Pointer x148, Returns (CI.Pointer x149)),
+  (fun x251 ->
+    CI.make_ptr x253 (owl_stub_271_c_eigen_spmat_z_sqrt (CI.cptr x251)))
+| Function (CI.Pointer x255, Returns (CI.Pointer x256)),
   "c_eigen_spmat_z_neg" ->
-  (fun x147 ->
-    CI.make_ptr x149 (owl_stub_270_c_eigen_spmat_z_neg (CI.cptr x147)))
-| Function (CI.Pointer x151, Returns (CI.Primitive CI.Complex64)),
+  (fun x254 ->
+    CI.make_ptr x256 (owl_stub_270_c_eigen_spmat_z_neg (CI.cptr x254)))
+| Function (CI.Pointer x258, Returns (CI.Primitive CI.Complex64)),
   "c_eigen_spmat_z_sum" ->
-  (fun x150 -> owl_stub_269_c_eigen_spmat_z_sum (CI.cptr x150))
+  (fun x257 -> owl_stub_269_c_eigen_spmat_z_sum (CI.cptr x257))
 | Function
-    (CI.Pointer x153,
-     Function (CI.Primitive CI.Complex64, Returns (CI.Pointer x155))),
+    (CI.Pointer x260,
+     Function (CI.Primitive CI.Complex64, Returns (CI.Pointer x262))),
   "c_eigen_spmat_z_div_scalar" ->
-  (fun x152 x154 ->
-    CI.make_ptr x155
-      (owl_stub_268_c_eigen_spmat_z_div_scalar (CI.cptr x152) x154))
+  (fun x259 x261 ->
+    CI.make_ptr x262
+      (owl_stub_268_c_eigen_spmat_z_div_scalar (CI.cptr x259) x261))
 | Function
-    (CI.Pointer x157,
-     Function (CI.Primitive CI.Complex64, Returns (CI.Pointer x159))),
+    (CI.Pointer x264,
+     Function (CI.Primitive CI.Complex64, Returns (CI.Pointer x266))),
   "c_eigen_spmat_z_mul_scalar" ->
-  (fun x156 x158 ->
-    CI.make_ptr x159
-      (owl_stub_267_c_eigen_spmat_z_mul_scalar (CI.cptr x156) x158))
+  (fun x263 x265 ->
+    CI.make_ptr x266
+      (owl_stub_267_c_eigen_spmat_z_mul_scalar (CI.cptr x263) x265))
 | Function
-    (CI.Pointer x161,
-     Function (CI.Primitive CI.Complex64, Returns (CI.Pointer x163))),
+    (CI.Pointer x268,
+     Function (CI.Primitive CI.Complex64, Returns (CI.Pointer x270))),
   "c_eigen_spmat_z_sub_scalar" ->
-  (fun x160 x162 ->
-    CI.make_ptr x163
-      (owl_stub_266_c_eigen_spmat_z_sub_scalar (CI.cptr x160) x162))
+  (fun x267 x269 ->
+    CI.make_ptr x270
+      (owl_stub_266_c_eigen_spmat_z_sub_scalar (CI.cptr x267) x269))
 | Function
-    (CI.Pointer x165,
-     Function (CI.Primitive CI.Complex64, Returns (CI.Pointer x167))),
+    (CI.Pointer x272,
+     Function (CI.Primitive CI.Complex64, Returns (CI.Pointer x274))),
   "c_eigen_spmat_z_add_scalar" ->
-  (fun x164 x166 ->
-    CI.make_ptr x167
-      (owl_stub_265_c_eigen_spmat_z_add_scalar (CI.cptr x164) x166))
+  (fun x271 x273 ->
+    CI.make_ptr x274
+      (owl_stub_265_c_eigen_spmat_z_add_scalar (CI.cptr x271) x273))
 | Function
-    (CI.Pointer x169, Function (CI.Pointer x171, Returns (CI.Pointer x172))),
+    (CI.Pointer x276, Function (CI.Pointer x278, Returns (CI.Pointer x279))),
   "c_eigen_spmat_z_gemm" ->
-  (fun x168 x170 ->
-    CI.make_ptr x172
-      (owl_stub_264_c_eigen_spmat_z_gemm (CI.cptr x168) (CI.cptr x170)))
+  (fun x275 x277 ->
+    CI.make_ptr x279
+      (owl_stub_264_c_eigen_spmat_z_gemm (CI.cptr x275) (CI.cptr x277)))
 | Function
-    (CI.Pointer x174, Function (CI.Pointer x176, Returns (CI.Pointer x177))),
+    (CI.Pointer x281, Function (CI.Pointer x283, Returns (CI.Pointer x284))),
   "c_eigen_spmat_z_div" ->
-  (fun x173 x175 ->
-    CI.make_ptr x177
-      (owl_stub_263_c_eigen_spmat_z_div (CI.cptr x173) (CI.cptr x175)))
+  (fun x280 x282 ->
+    CI.make_ptr x284
+      (owl_stub_263_c_eigen_spmat_z_div (CI.cptr x280) (CI.cptr x282)))
 | Function
-    (CI.Pointer x179, Function (CI.Pointer x181, Returns (CI.Pointer x182))),
+    (CI.Pointer x286, Function (CI.Pointer x288, Returns (CI.Pointer x289))),
   "c_eigen_spmat_z_mul" ->
-  (fun x178 x180 ->
-    CI.make_ptr x182
-      (owl_stub_262_c_eigen_spmat_z_mul (CI.cptr x178) (CI.cptr x180)))
+  (fun x285 x287 ->
+    CI.make_ptr x289
+      (owl_stub_262_c_eigen_spmat_z_mul (CI.cptr x285) (CI.cptr x287)))
 | Function
-    (CI.Pointer x184, Function (CI.Pointer x186, Returns (CI.Pointer x187))),
+    (CI.Pointer x291, Function (CI.Pointer x293, Returns (CI.Pointer x294))),
   "c_eigen_spmat_z_sub" ->
-  (fun x183 x185 ->
-    CI.make_ptr x187
-      (owl_stub_261_c_eigen_spmat_z_sub (CI.cptr x183) (CI.cptr x185)))
+  (fun x290 x292 ->
+    CI.make_ptr x294
+      (owl_stub_261_c_eigen_spmat_z_sub (CI.cptr x290) (CI.cptr x292)))
 | Function
-    (CI.Pointer x189, Function (CI.Pointer x191, Returns (CI.Pointer x192))),
+    (CI.Pointer x296, Function (CI.Pointer x298, Returns (CI.Pointer x299))),
   "c_eigen_spmat_z_add" ->
-  (fun x188 x190 ->
-    CI.make_ptr x192
-      (owl_stub_260_c_eigen_spmat_z_add (CI.cptr x188) (CI.cptr x190)))
+  (fun x295 x297 ->
+    CI.make_ptr x299
+      (owl_stub_260_c_eigen_spmat_z_add (CI.cptr x295) (CI.cptr x297)))
 | Function
-    (CI.Pointer x194,
-     Function (CI.Pointer x196, Returns (CI.Primitive CI.Int))),
+    (CI.Pointer x301,
+     Function (CI.Pointer x303, Returns (CI.Primitive CI.Int))),
   "c_eigen_spmat_z_equal_or_smaller" ->
-  (fun x193 x195 ->
-    owl_stub_259_c_eigen_spmat_z_equal_or_smaller (CI.cptr x193)
-    (CI.cptr x195))
+  (fun x300 x302 ->
+    owl_stub_259_c_eigen_spmat_z_equal_or_smaller (CI.cptr x300)
+    (CI.cptr x302))
 | Function
-    (CI.Pointer x198,
-     Function (CI.Pointer x200, Returns (CI.Primitive CI.Int))),
+    (CI.Pointer x305,
+     Function (CI.Pointer x307, Returns (CI.Primitive CI.Int))),
   "c_eigen_spmat_z_equal_or_greater" ->
-  (fun x197 x199 ->
-    owl_stub_258_c_eigen_spmat_z_equal_or_greater (CI.cptr x197)
-    (CI.cptr x199))
+  (fun x304 x306 ->
+    owl_stub_258_c_eigen_spmat_z_equal_or_greater (CI.cptr x304)
+    (CI.cptr x306))
 | Function
-    (CI.Pointer x202,
-     Function (CI.Pointer x204, Returns (CI.Primitive CI.Int))),
+    (CI.Pointer x309,
+     Function (CI.Pointer x311, Returns (CI.Primitive CI.Int))),
   "c_eigen_spmat_z_is_smaller" ->
-  (fun x201 x203 ->
-    owl_stub_257_c_eigen_spmat_z_is_smaller (CI.cptr x201) (CI.cptr x203))
+  (fun x308 x310 ->
+    owl_stub_257_c_eigen_spmat_z_is_smaller (CI.cptr x308) (CI.cptr x310))
 | Function
-    (CI.Pointer x206,
-     Function (CI.Pointer x208, Returns (CI.Primitive CI.Int))),
+    (CI.Pointer x313,
+     Function (CI.Pointer x315, Returns (CI.Primitive CI.Int))),
   "c_eigen_spmat_z_is_greater" ->
-  (fun x205 x207 ->
-    owl_stub_256_c_eigen_spmat_z_is_greater (CI.cptr x205) (CI.cptr x207))
+  (fun x312 x314 ->
+    owl_stub_256_c_eigen_spmat_z_is_greater (CI.cptr x312) (CI.cptr x314))
 | Function
-    (CI.Pointer x210,
-     Function (CI.Pointer x212, Returns (CI.Primitive CI.Int))),
+    (CI.Pointer x317,
+     Function (CI.Pointer x319, Returns (CI.Primitive CI.Int))),
   "c_eigen_spmat_z_is_unequal" ->
-  (fun x209 x211 ->
-    owl_stub_255_c_eigen_spmat_z_is_unequal (CI.cptr x209) (CI.cptr x211))
+  (fun x316 x318 ->
+    owl_stub_255_c_eigen_spmat_z_is_unequal (CI.cptr x316) (CI.cptr x318))
 | Function
-    (CI.Pointer x214,
-     Function (CI.Pointer x216, Returns (CI.Primitive CI.Int))),
+    (CI.Pointer x321,
+     Function (CI.Pointer x323, Returns (CI.Primitive CI.Int))),
   "c_eigen_spmat_z_is_equal" ->
-  (fun x213 x215 ->
-    owl_stub_254_c_eigen_spmat_z_is_equal (CI.cptr x213) (CI.cptr x215))
-| Function (CI.Pointer x218, Returns (CI.Primitive CI.Int)),
+  (fun x320 x322 ->
+    owl_stub_254_c_eigen_spmat_z_is_equal (CI.cptr x320) (CI.cptr x322))
+| Function (CI.Pointer x325, Returns (CI.Primitive CI.Int)),
   "c_eigen_spmat_z_is_nonnegative" ->
-  (fun x217 -> owl_stub_253_c_eigen_spmat_z_is_nonnegative (CI.cptr x217))
-| Function (CI.Pointer x220, Returns (CI.Primitive CI.Int)),
+  (fun x324 -> owl_stub_253_c_eigen_spmat_z_is_nonnegative (CI.cptr x324))
+| Function (CI.Pointer x327, Returns (CI.Primitive CI.Int)),
   "c_eigen_spmat_z_is_nonpositive" ->
-  (fun x219 -> owl_stub_252_c_eigen_spmat_z_is_nonpositive (CI.cptr x219))
-| Function (CI.Pointer x222, Returns (CI.Primitive CI.Int)),
+  (fun x326 -> owl_stub_252_c_eigen_spmat_z_is_nonpositive (CI.cptr x326))
+| Function (CI.Pointer x329, Returns (CI.Primitive CI.Int)),
   "c_eigen_spmat_z_is_negative" ->
-  (fun x221 -> owl_stub_251_c_eigen_spmat_z_is_negative (CI.cptr x221))
-| Function (CI.Pointer x224, Returns (CI.Primitive CI.Int)),
+  (fun x328 -> owl_stub_251_c_eigen_spmat_z_is_negative (CI.cptr x328))
+| Function (CI.Pointer x331, Returns (CI.Primitive CI.Int)),
   "c_eigen_spmat_z_is_positive" ->
-  (fun x223 -> owl_stub_250_c_eigen_spmat_z_is_positive (CI.cptr x223))
-| Function (CI.Pointer x226, Returns (CI.Primitive CI.Int)),
+  (fun x330 -> owl_stub_250_c_eigen_spmat_z_is_positive (CI.cptr x330))
+| Function (CI.Pointer x333, Returns (CI.Primitive CI.Int)),
   "c_eigen_spmat_z_is_zero" ->
-  (fun x225 -> owl_stub_249_c_eigen_spmat_z_is_zero (CI.cptr x225))
-| Function (CI.Pointer x228, Returns (CI.Primitive CI.Complex64)),
+  (fun x332 -> owl_stub_249_c_eigen_spmat_z_is_zero (CI.cptr x332))
+| Function (CI.Pointer x335, Returns (CI.Primitive CI.Complex64)),
   "c_eigen_spmat_z_trace" ->
-  (fun x227 -> owl_stub_248_c_eigen_spmat_z_trace (CI.cptr x227))
-| Function (CI.Pointer x230, Returns (CI.Pointer x231)),
+  (fun x334 -> owl_stub_248_c_eigen_spmat_z_trace (CI.cptr x334))
+| Function (CI.Pointer x337, Returns (CI.Pointer x338)),
   "c_eigen_spmat_z_diagonal" ->
-  (fun x229 ->
-    CI.make_ptr x231 (owl_stub_247_c_eigen_spmat_z_diagonal (CI.cptr x229)))
-| Function (CI.Pointer x233, Returns (CI.Pointer x234)),
+  (fun x336 ->
+    CI.make_ptr x338 (owl_stub_247_c_eigen_spmat_z_diagonal (CI.cptr x336)))
+| Function (CI.Pointer x340, Returns (CI.Pointer x341)),
   "c_eigen_spmat_z_adjoint" ->
-  (fun x232 ->
-    CI.make_ptr x234 (owl_stub_246_c_eigen_spmat_z_adjoint (CI.cptr x232)))
-| Function (CI.Pointer x236, Returns (CI.Pointer x237)),
+  (fun x339 ->
+    CI.make_ptr x341 (owl_stub_246_c_eigen_spmat_z_adjoint (CI.cptr x339)))
+| Function (CI.Pointer x343, Returns (CI.Pointer x344)),
   "c_eigen_spmat_z_transpose" ->
-  (fun x235 ->
-    CI.make_ptr x237 (owl_stub_245_c_eigen_spmat_z_transpose (CI.cptr x235)))
+  (fun x342 ->
+    CI.make_ptr x344 (owl_stub_245_c_eigen_spmat_z_transpose (CI.cptr x342)))
 | Function
-    (CI.Pointer x239,
-     Function (CI.Primitive CI.Int64_t, Returns (CI.Pointer x241))),
+    (CI.Pointer x346,
+     Function (CI.Primitive CI.Int64_t, Returns (CI.Pointer x348))),
   "c_eigen_spmat_z_col" ->
-  (fun x238 x240 ->
-    CI.make_ptr x241 (owl_stub_244_c_eigen_spmat_z_col (CI.cptr x238) x240))
+  (fun x345 x347 ->
+    CI.make_ptr x348 (owl_stub_244_c_eigen_spmat_z_col (CI.cptr x345) x347))
 | Function
-    (CI.Pointer x243,
-     Function (CI.Primitive CI.Int64_t, Returns (CI.Pointer x245))),
+    (CI.Pointer x350,
+     Function (CI.Primitive CI.Int64_t, Returns (CI.Pointer x352))),
   "c_eigen_spmat_z_row" ->
-  (fun x242 x244 ->
-    CI.make_ptr x245 (owl_stub_243_c_eigen_spmat_z_row (CI.cptr x242) x244))
-| Function (CI.Pointer x247, Returns (CI.Pointer x248)),
+  (fun x349 x351 ->
+    CI.make_ptr x352 (owl_stub_243_c_eigen_spmat_z_row (CI.cptr x349) x351))
+| Function (CI.Pointer x354, Returns (CI.Pointer x355)),
   "c_eigen_spmat_z_clone" ->
-  (fun x246 ->
-    CI.make_ptr x248 (owl_stub_242_c_eigen_spmat_z_clone (CI.cptr x246)))
-| Function (CI.Pointer x250, Returns (CI.Pointer x251)),
+  (fun x353 ->
+    CI.make_ptr x355 (owl_stub_242_c_eigen_spmat_z_clone (CI.cptr x353)))
+| Function (CI.Pointer x357, Returns (CI.Pointer x358)),
   "c_eigen_spmat_z_outerindexptr" ->
-  (fun x249 ->
-    CI.make_ptr x251
-      (owl_stub_241_c_eigen_spmat_z_outerindexptr (CI.cptr x249)))
-| Function (CI.Pointer x253, Returns (CI.Pointer x254)),
+  (fun x356 ->
+    CI.make_ptr x358
+      (owl_stub_241_c_eigen_spmat_z_outerindexptr (CI.cptr x356)))
+| Function (CI.Pointer x360, Returns (CI.Pointer x361)),
   "c_eigen_spmat_z_innerindexptr" ->
-  (fun x252 ->
-    CI.make_ptr x254
-      (owl_stub_240_c_eigen_spmat_z_innerindexptr (CI.cptr x252)))
+  (fun x359 ->
+    CI.make_ptr x361
+      (owl_stub_240_c_eigen_spmat_z_innerindexptr (CI.cptr x359)))
 | Function
-    (CI.Pointer x256, Function (CI.Pointer x258, Returns (CI.Pointer x259))),
+    (CI.Pointer x363, Function (CI.Pointer x365, Returns (CI.Pointer x366))),
   "c_eigen_spmat_z_valueptr" ->
-  (fun x255 x257 ->
-    CI.make_ptr x259
-      (owl_stub_239_c_eigen_spmat_z_valueptr (CI.cptr x255) (CI.cptr x257)))
+  (fun x362 x364 ->
+    CI.make_ptr x366
+      (owl_stub_239_c_eigen_spmat_z_valueptr (CI.cptr x362) (CI.cptr x364)))
 | Function
-    (CI.Pointer x261,
+    (CI.Pointer x368,
      Function
        (CI.Primitive CI.Complex64,
         Function (CI.Primitive CI.Double, Returns CI.Void))),
   "c_eigen_spmat_z_prune" ->
-  (fun x260 x262 x263 ->
-    owl_stub_238_c_eigen_spmat_z_prune (CI.cptr x260) x262 x263)
+  (fun x367 x369 x370 ->
+    owl_stub_238_c_eigen_spmat_z_prune (CI.cptr x367) x369 x370)
 | Function
-    (CI.Pointer x265,
+    (CI.Pointer x372,
      Function
        (CI.Primitive CI.Int64_t,
         Function (CI.Primitive CI.Int64_t, Returns CI.Void))),
   "c_eigen_spmat_z_reshape" ->
-  (fun x264 x266 x267 ->
-    owl_stub_237_c_eigen_spmat_z_reshape (CI.cptr x264) x266 x267)
-| Function (CI.Pointer x269, Returns CI.Void), "c_eigen_spmat_z_uncompress" ->
-  (fun x268 -> owl_stub_236_c_eigen_spmat_z_uncompress (CI.cptr x268))
-| Function (CI.Pointer x271, Returns CI.Void), "c_eigen_spmat_z_compress" ->
-  (fun x270 -> owl_stub_235_c_eigen_spmat_z_compress (CI.cptr x270))
-| Function (CI.Pointer x273, Returns (CI.Primitive CI.Int)),
+  (fun x371 x373 x374 ->
+    owl_stub_237_c_eigen_spmat_z_reshape (CI.cptr x371) x373 x374)
+| Function (CI.Pointer x376, Returns CI.Void), "c_eigen_spmat_z_uncompress" ->
+  (fun x375 -> owl_stub_236_c_eigen_spmat_z_uncompress (CI.cptr x375))
+| Function (CI.Pointer x378, Returns CI.Void), "c_eigen_spmat_z_compress" ->
+  (fun x377 -> owl_stub_235_c_eigen_spmat_z_compress (CI.cptr x377))
+| Function (CI.Pointer x380, Returns (CI.Primitive CI.Int)),
   "c_eigen_spmat_z_is_compressed" ->
-  (fun x272 -> owl_stub_234_c_eigen_spmat_z_is_compressed (CI.cptr x272))
-| Function (CI.Pointer x275, Returns CI.Void), "c_eigen_spmat_z_reset" ->
-  (fun x274 -> owl_stub_233_c_eigen_spmat_z_reset (CI.cptr x274))
+  (fun x379 -> owl_stub_234_c_eigen_spmat_z_is_compressed (CI.cptr x379))
+| Function (CI.Pointer x382, Returns CI.Void), "c_eigen_spmat_z_reset" ->
+  (fun x381 -> owl_stub_233_c_eigen_spmat_z_reset (CI.cptr x381))
 | Function
-    (CI.Pointer x277,
+    (CI.Pointer x384,
      Function
        (CI.Primitive CI.Int64_t,
         Function
           (CI.Primitive CI.Int64_t,
            Function (CI.Primitive CI.Complex64, Returns CI.Void)))),
   "c_eigen_spmat_z_insert" ->
-  (fun x276 x278 x279 x280 ->
-    owl_stub_232_c_eigen_spmat_z_insert (CI.cptr x276) x278 x279 x280)
+  (fun x383 x385 x386 x387 ->
+    owl_stub_232_c_eigen_spmat_z_insert (CI.cptr x383) x385 x386 x387)
 | Function
-    (CI.Pointer x282,
+    (CI.Pointer x389,
      Function
        (CI.Primitive CI.Int64_t,
         Function
           (CI.Primitive CI.Int64_t,
            Function (CI.Primitive CI.Complex64, Returns CI.Void)))),
   "c_eigen_spmat_z_set" ->
-  (fun x281 x283 x284 x285 ->
-    owl_stub_231_c_eigen_spmat_z_set (CI.cptr x281) x283 x284 x285)
+  (fun x388 x390 x391 x392 ->
+    owl_stub_231_c_eigen_spmat_z_set (CI.cptr x388) x390 x391 x392)
 | Function
-    (CI.Pointer x287,
+    (CI.Pointer x394,
      Function
        (CI.Primitive CI.Int64_t,
         Function
           (CI.Primitive CI.Int64_t, Returns (CI.Primitive CI.Complex64)))),
   "c_eigen_spmat_z_get" ->
-  (fun x286 x288 x289 ->
-    owl_stub_230_c_eigen_spmat_z_get (CI.cptr x286) x288 x289)
-| Function (CI.Pointer x291, Returns (CI.Primitive CI.Int64_t)),
+  (fun x393 x395 x396 ->
+    owl_stub_230_c_eigen_spmat_z_get (CI.cptr x393) x395 x396)
+| Function (CI.Pointer x398, Returns (CI.Primitive CI.Int64_t)),
   "c_eigen_spmat_z_nnz" ->
-  (fun x290 -> owl_stub_229_c_eigen_spmat_z_nnz (CI.cptr x290))
-| Function (CI.Pointer x293, Returns (CI.Primitive CI.Int64_t)),
+  (fun x397 -> owl_stub_229_c_eigen_spmat_z_nnz (CI.cptr x397))
+| Function (CI.Pointer x400, Returns (CI.Primitive CI.Int64_t)),
   "c_eigen_spmat_z_cols" ->
-  (fun x292 -> owl_stub_228_c_eigen_spmat_z_cols (CI.cptr x292))
-| Function (CI.Pointer x295, Returns (CI.Primitive CI.Int64_t)),
+  (fun x399 -> owl_stub_228_c_eigen_spmat_z_cols (CI.cptr x399))
+| Function (CI.Pointer x402, Returns (CI.Primitive CI.Int64_t)),
   "c_eigen_spmat_z_rows" ->
-  (fun x294 -> owl_stub_227_c_eigen_spmat_z_rows (CI.cptr x294))
-| Function (CI.Primitive CI.Int64_t, Returns (CI.Pointer x297)),
+  (fun x401 -> owl_stub_227_c_eigen_spmat_z_rows (CI.cptr x401))
+| Function (CI.Primitive CI.Int64_t, Returns (CI.Pointer x404)),
   "c_eigen_spmat_z_eye" ->
-  (fun x296 -> CI.make_ptr x297 (owl_stub_226_c_eigen_spmat_z_eye x296))
-| Function (CI.Pointer x299, Returns CI.Void), "c_eigen_spmat_z_delete" ->
-  (fun x298 -> owl_stub_225_c_eigen_spmat_z_delete (CI.cptr x298))
+  (fun x403 -> CI.make_ptr x404 (owl_stub_226_c_eigen_spmat_z_eye x403))
+| Function (CI.Pointer x406, Returns CI.Void), "c_eigen_spmat_z_delete" ->
+  (fun x405 -> owl_stub_225_c_eigen_spmat_z_delete (CI.cptr x405))
 | Function
     (CI.Primitive CI.Int64_t,
      Function
        (CI.Primitive CI.Int64_t,
-        Function (CI.Primitive CI.Int64_t, Returns (CI.Pointer x303)))),
+        Function (CI.Primitive CI.Int64_t, Returns (CI.Pointer x410)))),
   "c_eigen_spmat_z_new" ->
-  (fun x300 x301 x302 ->
-    CI.make_ptr x303 (owl_stub_224_c_eigen_spmat_z_new x300 x301 x302))
-| Function (CI.Pointer x305, Returns CI.Void), "c_eigen_spmat_c_print" ->
-  (fun x304 -> owl_stub_223_c_eigen_spmat_c_print (CI.cptr x304))
-| Function (CI.Pointer x307, Returns (CI.Pointer x308)),
+  (fun x407 x408 x409 ->
+    CI.make_ptr x410 (owl_stub_224_c_eigen_spmat_z_new x407 x408 x409))
+| Function (CI.Pointer x412, Returns CI.Void), "c_eigen_spmat_c_print" ->
+  (fun x411 -> owl_stub_223_c_eigen_spmat_c_print (CI.cptr x411))
+| Function (CI.Pointer x414, Returns (CI.Pointer x415)),
   "c_eigen_spmat_c_sqrt" ->
-  (fun x306 ->
-    CI.make_ptr x308 (owl_stub_222_c_eigen_spmat_c_sqrt (CI.cptr x306)))
-| Function (CI.Pointer x310, Returns (CI.Pointer x311)),
+  (fun x413 ->
+    CI.make_ptr x415 (owl_stub_222_c_eigen_spmat_c_sqrt (CI.cptr x413)))
+| Function (CI.Pointer x417, Returns (CI.Pointer x418)),
   "c_eigen_spmat_c_neg" ->
-  (fun x309 ->
-    CI.make_ptr x311 (owl_stub_221_c_eigen_spmat_c_neg (CI.cptr x309)))
-| Function (CI.Pointer x313, Returns (CI.Primitive CI.Complex32)),
+  (fun x416 ->
+    CI.make_ptr x418 (owl_stub_221_c_eigen_spmat_c_neg (CI.cptr x416)))
+| Function (CI.Pointer x420, Returns (CI.Primitive CI.Complex32)),
   "c_eigen_spmat_c_sum" ->
-  (fun x312 -> owl_stub_220_c_eigen_spmat_c_sum (CI.cptr x312))
+  (fun x419 -> owl_stub_220_c_eigen_spmat_c_sum (CI.cptr x419))
 | Function
-    (CI.Pointer x315,
-     Function (CI.Primitive CI.Complex32, Returns (CI.Pointer x317))),
+    (CI.Pointer x422,
+     Function (CI.Primitive CI.Complex32, Returns (CI.Pointer x424))),
   "c_eigen_spmat_c_div_scalar" ->
-  (fun x314 x316 ->
-    CI.make_ptr x317
-      (owl_stub_219_c_eigen_spmat_c_div_scalar (CI.cptr x314) x316))
+  (fun x421 x423 ->
+    CI.make_ptr x424
+      (owl_stub_219_c_eigen_spmat_c_div_scalar (CI.cptr x421) x423))
 | Function
-    (CI.Pointer x319,
-     Function (CI.Primitive CI.Complex32, Returns (CI.Pointer x321))),
+    (CI.Pointer x426,
+     Function (CI.Primitive CI.Complex32, Returns (CI.Pointer x428))),
   "c_eigen_spmat_c_mul_scalar" ->
-  (fun x318 x320 ->
-    CI.make_ptr x321
-      (owl_stub_218_c_eigen_spmat_c_mul_scalar (CI.cptr x318) x320))
+  (fun x425 x427 ->
+    CI.make_ptr x428
+      (owl_stub_218_c_eigen_spmat_c_mul_scalar (CI.cptr x425) x427))
 | Function
-    (CI.Pointer x323,
-     Function (CI.Primitive CI.Complex32, Returns (CI.Pointer x325))),
+    (CI.Pointer x430,
+     Function (CI.Primitive CI.Complex32, Returns (CI.Pointer x432))),
   "c_eigen_spmat_c_sub_scalar" ->
-  (fun x322 x324 ->
-    CI.make_ptr x325
-      (owl_stub_217_c_eigen_spmat_c_sub_scalar (CI.cptr x322) x324))
+  (fun x429 x431 ->
+    CI.make_ptr x432
+      (owl_stub_217_c_eigen_spmat_c_sub_scalar (CI.cptr x429) x431))
 | Function
-    (CI.Pointer x327,
-     Function (CI.Primitive CI.Complex32, Returns (CI.Pointer x329))),
+    (CI.Pointer x434,
+     Function (CI.Primitive CI.Complex32, Returns (CI.Pointer x436))),
   "c_eigen_spmat_c_add_scalar" ->
-  (fun x326 x328 ->
-    CI.make_ptr x329
-      (owl_stub_216_c_eigen_spmat_c_add_scalar (CI.cptr x326) x328))
+  (fun x433 x435 ->
+    CI.make_ptr x436
+      (owl_stub_216_c_eigen_spmat_c_add_scalar (CI.cptr x433) x435))
 | Function
-    (CI.Pointer x331, Function (CI.Pointer x333, Returns (CI.Pointer x334))),
+    (CI.Pointer x438, Function (CI.Pointer x440, Returns (CI.Pointer x441))),
   "c_eigen_spmat_c_gemm" ->
-  (fun x330 x332 ->
-    CI.make_ptr x334
-      (owl_stub_215_c_eigen_spmat_c_gemm (CI.cptr x330) (CI.cptr x332)))
+  (fun x437 x439 ->
+    CI.make_ptr x441
+      (owl_stub_215_c_eigen_spmat_c_gemm (CI.cptr x437) (CI.cptr x439)))
 | Function
-    (CI.Pointer x336, Function (CI.Pointer x338, Returns (CI.Pointer x339))),
+    (CI.Pointer x443, Function (CI.Pointer x445, Returns (CI.Pointer x446))),
   "c_eigen_spmat_c_div" ->
-  (fun x335 x337 ->
-    CI.make_ptr x339
-      (owl_stub_214_c_eigen_spmat_c_div (CI.cptr x335) (CI.cptr x337)))
+  (fun x442 x444 ->
+    CI.make_ptr x446
+      (owl_stub_214_c_eigen_spmat_c_div (CI.cptr x442) (CI.cptr x444)))
 | Function
-    (CI.Pointer x341, Function (CI.Pointer x343, Returns (CI.Pointer x344))),
+    (CI.Pointer x448, Function (CI.Pointer x450, Returns (CI.Pointer x451))),
   "c_eigen_spmat_c_mul" ->
-  (fun x340 x342 ->
-    CI.make_ptr x344
-      (owl_stub_213_c_eigen_spmat_c_mul (CI.cptr x340) (CI.cptr x342)))
+  (fun x447 x449 ->
+    CI.make_ptr x451
+      (owl_stub_213_c_eigen_spmat_c_mul (CI.cptr x447) (CI.cptr x449)))
 | Function
-    (CI.Pointer x346, Function (CI.Pointer x348, Returns (CI.Pointer x349))),
+    (CI.Pointer x453, Function (CI.Pointer x455, Returns (CI.Pointer x456))),
   "c_eigen_spmat_c_sub" ->
-  (fun x345 x347 ->
-    CI.make_ptr x349
-      (owl_stub_212_c_eigen_spmat_c_sub (CI.cptr x345) (CI.cptr x347)))
+  (fun x452 x454 ->
+    CI.make_ptr x456
+      (owl_stub_212_c_eigen_spmat_c_sub (CI.cptr x452) (CI.cptr x454)))
 | Function
-    (CI.Pointer x351, Function (CI.Pointer x353, Returns (CI.Pointer x354))),
+    (CI.Pointer x458, Function (CI.Pointer x460, Returns (CI.Pointer x461))),
   "c_eigen_spmat_c_add" ->
-  (fun x350 x352 ->
-    CI.make_ptr x354
-      (owl_stub_211_c_eigen_spmat_c_add (CI.cptr x350) (CI.cptr x352)))
+  (fun x457 x459 ->
+    CI.make_ptr x461
+      (owl_stub_211_c_eigen_spmat_c_add (CI.cptr x457) (CI.cptr x459)))
 | Function
-    (CI.Pointer x356,
-     Function (CI.Pointer x358, Returns (CI.Primitive CI.Int))),
+    (CI.Pointer x463,
+     Function (CI.Pointer x465, Returns (CI.Primitive CI.Int))),
   "c_eigen_spmat_c_equal_or_smaller" ->
-  (fun x355 x357 ->
-    owl_stub_210_c_eigen_spmat_c_equal_or_smaller (CI.cptr x355)
-    (CI.cptr x357))
+  (fun x462 x464 ->
+    owl_stub_210_c_eigen_spmat_c_equal_or_smaller (CI.cptr x462)
+    (CI.cptr x464))
 | Function
-    (CI.Pointer x360,
-     Function (CI.Pointer x362, Returns (CI.Primitive CI.Int))),
+    (CI.Pointer x467,
+     Function (CI.Pointer x469, Returns (CI.Primitive CI.Int))),
   "c_eigen_spmat_c_equal_or_greater" ->
-  (fun x359 x361 ->
-    owl_stub_209_c_eigen_spmat_c_equal_or_greater (CI.cptr x359)
-    (CI.cptr x361))
+  (fun x466 x468 ->
+    owl_stub_209_c_eigen_spmat_c_equal_or_greater (CI.cptr x466)
+    (CI.cptr x468))
 | Function
-    (CI.Pointer x364,
-     Function (CI.Pointer x366, Returns (CI.Primitive CI.Int))),
+    (CI.Pointer x471,
+     Function (CI.Pointer x473, Returns (CI.Primitive CI.Int))),
   "c_eigen_spmat_c_is_smaller" ->
-  (fun x363 x365 ->
-    owl_stub_208_c_eigen_spmat_c_is_smaller (CI.cptr x363) (CI.cptr x365))
+  (fun x470 x472 ->
+    owl_stub_208_c_eigen_spmat_c_is_smaller (CI.cptr x470) (CI.cptr x472))
 | Function
-    (CI.Pointer x368,
-     Function (CI.Pointer x370, Returns (CI.Primitive CI.Int))),
+    (CI.Pointer x475,
+     Function (CI.Pointer x477, Returns (CI.Primitive CI.Int))),
   "c_eigen_spmat_c_is_greater" ->
-  (fun x367 x369 ->
-    owl_stub_207_c_eigen_spmat_c_is_greater (CI.cptr x367) (CI.cptr x369))
+  (fun x474 x476 ->
+    owl_stub_207_c_eigen_spmat_c_is_greater (CI.cptr x474) (CI.cptr x476))
 | Function
-    (CI.Pointer x372,
-     Function (CI.Pointer x374, Returns (CI.Primitive CI.Int))),
+    (CI.Pointer x479,
+     Function (CI.Pointer x481, Returns (CI.Primitive CI.Int))),
   "c_eigen_spmat_c_is_unequal" ->
-  (fun x371 x373 ->
-    owl_stub_206_c_eigen_spmat_c_is_unequal (CI.cptr x371) (CI.cptr x373))
+  (fun x478 x480 ->
+    owl_stub_206_c_eigen_spmat_c_is_unequal (CI.cptr x478) (CI.cptr x480))
 | Function
-    (CI.Pointer x376,
-     Function (CI.Pointer x378, Returns (CI.Primitive CI.Int))),
+    (CI.Pointer x483,
+     Function (CI.Pointer x485, Returns (CI.Primitive CI.Int))),
   "c_eigen_spmat_c_is_equal" ->
-  (fun x375 x377 ->
-    owl_stub_205_c_eigen_spmat_c_is_equal (CI.cptr x375) (CI.cptr x377))
-| Function (CI.Pointer x380, Returns (CI.Primitive CI.Int)),
+  (fun x482 x484 ->
+    owl_stub_205_c_eigen_spmat_c_is_equal (CI.cptr x482) (CI.cptr x484))
+| Function (CI.Pointer x487, Returns (CI.Primitive CI.Int)),
   "c_eigen_spmat_c_is_nonnegative" ->
-  (fun x379 -> owl_stub_204_c_eigen_spmat_c_is_nonnegative (CI.cptr x379))
-| Function (CI.Pointer x382, Returns (CI.Primitive CI.Int)),
+  (fun x486 -> owl_stub_204_c_eigen_spmat_c_is_nonnegative (CI.cptr x486))
+| Function (CI.Pointer x489, Returns (CI.Primitive CI.Int)),
   "c_eigen_spmat_c_is_nonpositive" ->
-  (fun x381 -> owl_stub_203_c_eigen_spmat_c_is_nonpositive (CI.cptr x381))
-| Function (CI.Pointer x384, Returns (CI.Primitive CI.Int)),
+  (fun x488 -> owl_stub_203_c_eigen_spmat_c_is_nonpositive (CI.cptr x488))
+| Function (CI.Pointer x491, Returns (CI.Primitive CI.Int)),
   "c_eigen_spmat_c_is_negative" ->
-  (fun x383 -> owl_stub_202_c_eigen_spmat_c_is_negative (CI.cptr x383))
-| Function (CI.Pointer x386, Returns (CI.Primitive CI.Int)),
+  (fun x490 -> owl_stub_202_c_eigen_spmat_c_is_negative (CI.cptr x490))
+| Function (CI.Pointer x493, Returns (CI.Primitive CI.Int)),
   "c_eigen_spmat_c_is_positive" ->
-  (fun x385 -> owl_stub_201_c_eigen_spmat_c_is_positive (CI.cptr x385))
-| Function (CI.Pointer x388, Returns (CI.Primitive CI.Int)),
+  (fun x492 -> owl_stub_201_c_eigen_spmat_c_is_positive (CI.cptr x492))
+| Function (CI.Pointer x495, Returns (CI.Primitive CI.Int)),
   "c_eigen_spmat_c_is_zero" ->
-  (fun x387 -> owl_stub_200_c_eigen_spmat_c_is_zero (CI.cptr x387))
-| Function (CI.Pointer x390, Returns (CI.Primitive CI.Complex32)),
+  (fun x494 -> owl_stub_200_c_eigen_spmat_c_is_zero (CI.cptr x494))
+| Function (CI.Pointer x497, Returns (CI.Primitive CI.Complex32)),
   "c_eigen_spmat_c_trace" ->
-  (fun x389 -> owl_stub_199_c_eigen_spmat_c_trace (CI.cptr x389))
-| Function (CI.Pointer x392, Returns (CI.Pointer x393)),
+  (fun x496 -> owl_stub_199_c_eigen_spmat_c_trace (CI.cptr x496))
+| Function (CI.Pointer x499, Returns (CI.Pointer x500)),
   "c_eigen_spmat_c_diagonal" ->
-  (fun x391 ->
-    CI.make_ptr x393 (owl_stub_198_c_eigen_spmat_c_diagonal (CI.cptr x391)))
-| Function (CI.Pointer x395, Returns (CI.Pointer x396)),
+  (fun x498 ->
+    CI.make_ptr x500 (owl_stub_198_c_eigen_spmat_c_diagonal (CI.cptr x498)))
+| Function (CI.Pointer x502, Returns (CI.Pointer x503)),
   "c_eigen_spmat_c_adjoint" ->
-  (fun x394 ->
-    CI.make_ptr x396 (owl_stub_197_c_eigen_spmat_c_adjoint (CI.cptr x394)))
-| Function (CI.Pointer x398, Returns (CI.Pointer x399)),
+  (fun x501 ->
+    CI.make_ptr x503 (owl_stub_197_c_eigen_spmat_c_adjoint (CI.cptr x501)))
+| Function (CI.Pointer x505, Returns (CI.Pointer x506)),
   "c_eigen_spmat_c_transpose" ->
-  (fun x397 ->
-    CI.make_ptr x399 (owl_stub_196_c_eigen_spmat_c_transpose (CI.cptr x397)))
+  (fun x504 ->
+    CI.make_ptr x506 (owl_stub_196_c_eigen_spmat_c_transpose (CI.cptr x504)))
 | Function
-    (CI.Pointer x401,
-     Function (CI.Primitive CI.Int64_t, Returns (CI.Pointer x403))),
+    (CI.Pointer x508,
+     Function (CI.Primitive CI.Int64_t, Returns (CI.Pointer x510))),
   "c_eigen_spmat_c_col" ->
-  (fun x400 x402 ->
-    CI.make_ptr x403 (owl_stub_195_c_eigen_spmat_c_col (CI.cptr x400) x402))
+  (fun x507 x509 ->
+    CI.make_ptr x510 (owl_stub_195_c_eigen_spmat_c_col (CI.cptr x507) x509))
 | Function
-    (CI.Pointer x405,
-     Function (CI.Primitive CI.Int64_t, Returns (CI.Pointer x407))),
+    (CI.Pointer x512,
+     Function (CI.Primitive CI.Int64_t, Returns (CI.Pointer x514))),
   "c_eigen_spmat_c_row" ->
-  (fun x404 x406 ->
-    CI.make_ptr x407 (owl_stub_194_c_eigen_spmat_c_row (CI.cptr x404) x406))
-| Function (CI.Pointer x409, Returns (CI.Pointer x410)),
+  (fun x511 x513 ->
+    CI.make_ptr x514 (owl_stub_194_c_eigen_spmat_c_row (CI.cptr x511) x513))
+| Function (CI.Pointer x516, Returns (CI.Pointer x517)),
   "c_eigen_spmat_c_clone" ->
-  (fun x408 ->
-    CI.make_ptr x410 (owl_stub_193_c_eigen_spmat_c_clone (CI.cptr x408)))
-| Function (CI.Pointer x412, Returns (CI.Pointer x413)),
+  (fun x515 ->
+    CI.make_ptr x517 (owl_stub_193_c_eigen_spmat_c_clone (CI.cptr x515)))
+| Function (CI.Pointer x519, Returns (CI.Pointer x520)),
   "c_eigen_spmat_c_outerindexptr" ->
-  (fun x411 ->
-    CI.make_ptr x413
-      (owl_stub_192_c_eigen_spmat_c_outerindexptr (CI.cptr x411)))
-| Function (CI.Pointer x415, Returns (CI.Pointer x416)),
+  (fun x518 ->
+    CI.make_ptr x520
+      (owl_stub_192_c_eigen_spmat_c_outerindexptr (CI.cptr x518)))
+| Function (CI.Pointer x522, Returns (CI.Pointer x523)),
   "c_eigen_spmat_c_innerindexptr" ->
-  (fun x414 ->
-    CI.make_ptr x416
-      (owl_stub_191_c_eigen_spmat_c_innerindexptr (CI.cptr x414)))
+  (fun x521 ->
+    CI.make_ptr x523
+      (owl_stub_191_c_eigen_spmat_c_innerindexptr (CI.cptr x521)))
 | Function
-    (CI.Pointer x418, Function (CI.Pointer x420, Returns (CI.Pointer x421))),
+    (CI.Pointer x525, Function (CI.Pointer x527, Returns (CI.Pointer x528))),
   "c_eigen_spmat_c_valueptr" ->
-  (fun x417 x419 ->
-    CI.make_ptr x421
-      (owl_stub_190_c_eigen_spmat_c_valueptr (CI.cptr x417) (CI.cptr x419)))
+  (fun x524 x526 ->
+    CI.make_ptr x528
+      (owl_stub_190_c_eigen_spmat_c_valueptr (CI.cptr x524) (CI.cptr x526)))
 | Function
-    (CI.Pointer x423,
+    (CI.Pointer x530,
      Function
        (CI.Primitive CI.Complex32,
         Function (CI.Primitive CI.Float, Returns CI.Void))),
   "c_eigen_spmat_c_prune" ->
-  (fun x422 x424 x425 ->
-    owl_stub_189_c_eigen_spmat_c_prune (CI.cptr x422) x424 x425)
+  (fun x529 x531 x532 ->
+    owl_stub_189_c_eigen_spmat_c_prune (CI.cptr x529) x531 x532)
 | Function
-    (CI.Pointer x427,
+    (CI.Pointer x534,
      Function
        (CI.Primitive CI.Int64_t,
         Function (CI.Primitive CI.Int64_t, Returns CI.Void))),
   "c_eigen_spmat_c_reshape" ->
-  (fun x426 x428 x429 ->
-    owl_stub_188_c_eigen_spmat_c_reshape (CI.cptr x426) x428 x429)
-| Function (CI.Pointer x431, Returns CI.Void), "c_eigen_spmat_c_uncompress" ->
-  (fun x430 -> owl_stub_187_c_eigen_spmat_c_uncompress (CI.cptr x430))
-| Function (CI.Pointer x433, Returns CI.Void), "c_eigen_spmat_c_compress" ->
-  (fun x432 -> owl_stub_186_c_eigen_spmat_c_compress (CI.cptr x432))
-| Function (CI.Pointer x435, Returns (CI.Primitive CI.Int)),
+  (fun x533 x535 x536 ->
+    owl_stub_188_c_eigen_spmat_c_reshape (CI.cptr x533) x535 x536)
+| Function (CI.Pointer x538, Returns CI.Void), "c_eigen_spmat_c_uncompress" ->
+  (fun x537 -> owl_stub_187_c_eigen_spmat_c_uncompress (CI.cptr x537))
+| Function (CI.Pointer x540, Returns CI.Void), "c_eigen_spmat_c_compress" ->
+  (fun x539 -> owl_stub_186_c_eigen_spmat_c_compress (CI.cptr x539))
+| Function (CI.Pointer x542, Returns (CI.Primitive CI.Int)),
   "c_eigen_spmat_c_is_compressed" ->
-  (fun x434 -> owl_stub_185_c_eigen_spmat_c_is_compressed (CI.cptr x434))
-| Function (CI.Pointer x437, Returns CI.Void), "c_eigen_spmat_c_reset" ->
-  (fun x436 -> owl_stub_184_c_eigen_spmat_c_reset (CI.cptr x436))
+  (fun x541 -> owl_stub_185_c_eigen_spmat_c_is_compressed (CI.cptr x541))
+| Function (CI.Pointer x544, Returns CI.Void), "c_eigen_spmat_c_reset" ->
+  (fun x543 -> owl_stub_184_c_eigen_spmat_c_reset (CI.cptr x543))
 | Function
-    (CI.Pointer x439,
+    (CI.Pointer x546,
      Function
        (CI.Primitive CI.Int64_t,
         Function
           (CI.Primitive CI.Int64_t,
            Function (CI.Primitive CI.Complex32, Returns CI.Void)))),
   "c_eigen_spmat_c_insert" ->
-  (fun x438 x440 x441 x442 ->
-    owl_stub_183_c_eigen_spmat_c_insert (CI.cptr x438) x440 x441 x442)
+  (fun x545 x547 x548 x549 ->
+    owl_stub_183_c_eigen_spmat_c_insert (CI.cptr x545) x547 x548 x549)
 | Function
-    (CI.Pointer x444,
+    (CI.Pointer x551,
      Function
        (CI.Primitive CI.Int64_t,
         Function
           (CI.Primitive CI.Int64_t,
            Function (CI.Primitive CI.Complex32, Returns CI.Void)))),
   "c_eigen_spmat_c_set" ->
-  (fun x443 x445 x446 x447 ->
-    owl_stub_182_c_eigen_spmat_c_set (CI.cptr x443) x445 x446 x447)
+  (fun x550 x552 x553 x554 ->
+    owl_stub_182_c_eigen_spmat_c_set (CI.cptr x550) x552 x553 x554)
 | Function
-    (CI.Pointer x449,
+    (CI.Pointer x556,
      Function
        (CI.Primitive CI.Int64_t,
         Function
           (CI.Primitive CI.Int64_t, Returns (CI.Primitive CI.Complex32)))),
   "c_eigen_spmat_c_get" ->
-  (fun x448 x450 x451 ->
-    owl_stub_181_c_eigen_spmat_c_get (CI.cptr x448) x450 x451)
-| Function (CI.Pointer x453, Returns (CI.Primitive CI.Int64_t)),
+  (fun x555 x557 x558 ->
+    owl_stub_181_c_eigen_spmat_c_get (CI.cptr x555) x557 x558)
+| Function (CI.Pointer x560, Returns (CI.Primitive CI.Int64_t)),
   "c_eigen_spmat_c_nnz" ->
-  (fun x452 -> owl_stub_180_c_eigen_spmat_c_nnz (CI.cptr x452))
-| Function (CI.Pointer x455, Returns (CI.Primitive CI.Int64_t)),
+  (fun x559 -> owl_stub_180_c_eigen_spmat_c_nnz (CI.cptr x559))
+| Function (CI.Pointer x562, Returns (CI.Primitive CI.Int64_t)),
   "c_eigen_spmat_c_cols" ->
-  (fun x454 -> owl_stub_179_c_eigen_spmat_c_cols (CI.cptr x454))
-| Function (CI.Pointer x457, Returns (CI.Primitive CI.Int64_t)),
+  (fun x561 -> owl_stub_179_c_eigen_spmat_c_cols (CI.cptr x561))
+| Function (CI.Pointer x564, Returns (CI.Primitive CI.Int64_t)),
   "c_eigen_spmat_c_rows" ->
-  (fun x456 -> owl_stub_178_c_eigen_spmat_c_rows (CI.cptr x456))
-| Function (CI.Primitive CI.Int64_t, Returns (CI.Pointer x459)),
+  (fun x563 -> owl_stub_178_c_eigen_spmat_c_rows (CI.cptr x563))
+| Function (CI.Primitive CI.Int64_t, Returns (CI.Pointer x566)),
   "c_eigen_spmat_c_eye" ->
-  (fun x458 -> CI.make_ptr x459 (owl_stub_177_c_eigen_spmat_c_eye x458))
-| Function (CI.Pointer x461, Returns CI.Void), "c_eigen_spmat_c_delete" ->
-  (fun x460 -> owl_stub_176_c_eigen_spmat_c_delete (CI.cptr x460))
+  (fun x565 -> CI.make_ptr x566 (owl_stub_177_c_eigen_spmat_c_eye x565))
+| Function (CI.Pointer x568, Returns CI.Void), "c_eigen_spmat_c_delete" ->
+  (fun x567 -> owl_stub_176_c_eigen_spmat_c_delete (CI.cptr x567))
 | Function
     (CI.Primitive CI.Int64_t,
      Function
        (CI.Primitive CI.Int64_t,
-        Function (CI.Primitive CI.Int64_t, Returns (CI.Pointer x465)))),
+        Function (CI.Primitive CI.Int64_t, Returns (CI.Pointer x572)))),
   "c_eigen_spmat_c_new" ->
-  (fun x462 x463 x464 ->
-    CI.make_ptr x465 (owl_stub_175_c_eigen_spmat_c_new x462 x463 x464))
-| Function (CI.Pointer x467, Returns CI.Void), "c_eigen_spmat_d_print" ->
-  (fun x466 -> owl_stub_174_c_eigen_spmat_d_print (CI.cptr x466))
-| Function (CI.Pointer x469, Returns (CI.Pointer x470)),
+  (fun x569 x570 x571 ->
+    CI.make_ptr x572 (owl_stub_175_c_eigen_spmat_c_new x569 x570 x571))
+| Function (CI.Pointer x574, Returns CI.Void), "c_eigen_spmat_d_print" ->
+  (fun x573 -> owl_stub_174_c_eigen_spmat_d_print (CI.cptr x573))
+| Function (CI.Pointer x576, Returns (CI.Pointer x577)),
   "c_eigen_spmat_d_sqrt" ->
-  (fun x468 ->
-    CI.make_ptr x470 (owl_stub_173_c_eigen_spmat_d_sqrt (CI.cptr x468)))
-| Function (CI.Pointer x472, Returns (CI.Pointer x473)),
+  (fun x575 ->
+    CI.make_ptr x577 (owl_stub_173_c_eigen_spmat_d_sqrt (CI.cptr x575)))
+| Function (CI.Pointer x579, Returns (CI.Pointer x580)),
   "c_eigen_spmat_d_neg" ->
-  (fun x471 ->
-    CI.make_ptr x473 (owl_stub_172_c_eigen_spmat_d_neg (CI.cptr x471)))
-| Function (CI.Pointer x475, Returns (CI.Pointer x476)),
+  (fun x578 ->
+    CI.make_ptr x580 (owl_stub_172_c_eigen_spmat_d_neg (CI.cptr x578)))
+| Function (CI.Pointer x582, Returns (CI.Pointer x583)),
   "c_eigen_spmat_d_abs" ->
-  (fun x474 ->
-    CI.make_ptr x476 (owl_stub_171_c_eigen_spmat_d_abs (CI.cptr x474)))
-| Function (CI.Pointer x478, Returns (CI.Primitive CI.Double)),
+  (fun x581 ->
+    CI.make_ptr x583 (owl_stub_171_c_eigen_spmat_d_abs (CI.cptr x581)))
+| Function (CI.Pointer x585, Returns (CI.Primitive CI.Double)),
   "c_eigen_spmat_d_max" ->
-  (fun x477 -> owl_stub_170_c_eigen_spmat_d_max (CI.cptr x477))
-| Function (CI.Pointer x480, Returns (CI.Primitive CI.Double)),
+  (fun x584 -> owl_stub_170_c_eigen_spmat_d_max (CI.cptr x584))
+| Function (CI.Pointer x587, Returns (CI.Primitive CI.Double)),
   "c_eigen_spmat_d_min" ->
-  (fun x479 -> owl_stub_169_c_eigen_spmat_d_min (CI.cptr x479))
-| Function (CI.Pointer x482, Returns (CI.Primitive CI.Double)),
+  (fun x586 -> owl_stub_169_c_eigen_spmat_d_min (CI.cptr x586))
+| Function (CI.Pointer x589, Returns (CI.Primitive CI.Double)),
   "c_eigen_spmat_d_sum" ->
-  (fun x481 -> owl_stub_168_c_eigen_spmat_d_sum (CI.cptr x481))
+  (fun x588 -> owl_stub_168_c_eigen_spmat_d_sum (CI.cptr x588))
 | Function
-    (CI.Pointer x484, Function (CI.Pointer x486, Returns (CI.Pointer x487))),
+    (CI.Pointer x591, Function (CI.Pointer x593, Returns (CI.Pointer x594))),
   "c_eigen_spmat_d_max2" ->
-  (fun x483 x485 ->
-    CI.make_ptr x487
-      (owl_stub_167_c_eigen_spmat_d_max2 (CI.cptr x483) (CI.cptr x485)))
+  (fun x590 x592 ->
+    CI.make_ptr x594
+      (owl_stub_167_c_eigen_spmat_d_max2 (CI.cptr x590) (CI.cptr x592)))
 | Function
-    (CI.Pointer x489, Function (CI.Pointer x491, Returns (CI.Pointer x492))),
+    (CI.Pointer x596, Function (CI.Pointer x598, Returns (CI.Pointer x599))),
   "c_eigen_spmat_d_min2" ->
-  (fun x488 x490 ->
-    CI.make_ptr x492
-      (owl_stub_166_c_eigen_spmat_d_min2 (CI.cptr x488) (CI.cptr x490)))
+  (fun x595 x597 ->
+    CI.make_ptr x599
+      (owl_stub_166_c_eigen_spmat_d_min2 (CI.cptr x595) (CI.cptr x597)))
 | Function
-    (CI.Pointer x494,
-     Function (CI.Primitive CI.Double, Returns (CI.Pointer x496))),
+    (CI.Pointer x601,
+     Function (CI.Primitive CI.Double, Returns (CI.Pointer x603))),
   "c_eigen_spmat_d_div_scalar" ->
-  (fun x493 x495 ->
-    CI.make_ptr x496
-      (owl_stub_165_c_eigen_spmat_d_div_scalar (CI.cptr x493) x495))
+  (fun x600 x602 ->
+    CI.make_ptr x603
+      (owl_stub_165_c_eigen_spmat_d_div_scalar (CI.cptr x600) x602))
 | Function
-    (CI.Pointer x498,
-     Function (CI.Primitive CI.Double, Returns (CI.Pointer x500))),
+    (CI.Pointer x605,
+     Function (CI.Primitive CI.Double, Returns (CI.Pointer x607))),
   "c_eigen_spmat_d_mul_scalar" ->
-  (fun x497 x499 ->
-    CI.make_ptr x500
-      (owl_stub_164_c_eigen_spmat_d_mul_scalar (CI.cptr x497) x499))
+  (fun x604 x606 ->
+    CI.make_ptr x607
+      (owl_stub_164_c_eigen_spmat_d_mul_scalar (CI.cptr x604) x606))
 | Function
-    (CI.Pointer x502,
-     Function (CI.Primitive CI.Double, Returns (CI.Pointer x504))),
+    (CI.Pointer x609,
+     Function (CI.Primitive CI.Double, Returns (CI.Pointer x611))),
   "c_eigen_spmat_d_sub_scalar" ->
-  (fun x501 x503 ->
-    CI.make_ptr x504
-      (owl_stub_163_c_eigen_spmat_d_sub_scalar (CI.cptr x501) x503))
+  (fun x608 x610 ->
+    CI.make_ptr x611
+      (owl_stub_163_c_eigen_spmat_d_sub_scalar (CI.cptr x608) x610))
 | Function
-    (CI.Pointer x506,
-     Function (CI.Primitive CI.Double, Returns (CI.Pointer x508))),
+    (CI.Pointer x613,
+     Function (CI.Primitive CI.Double, Returns (CI.Pointer x615))),
   "c_eigen_spmat_d_add_scalar" ->
-  (fun x505 x507 ->
-    CI.make_ptr x508
-      (owl_stub_162_c_eigen_spmat_d_add_scalar (CI.cptr x505) x507))
+  (fun x612 x614 ->
+    CI.make_ptr x615
+      (owl_stub_162_c_eigen_spmat_d_add_scalar (CI.cptr x612) x614))
 | Function
-    (CI.Pointer x510, Function (CI.Pointer x512, Returns (CI.Pointer x513))),
+    (CI.Pointer x617, Function (CI.Pointer x619, Returns (CI.Pointer x620))),
   "c_eigen_spmat_d_gemm" ->
-  (fun x509 x511 ->
-    CI.make_ptr x513
-      (owl_stub_161_c_eigen_spmat_d_gemm (CI.cptr x509) (CI.cptr x511)))
+  (fun x616 x618 ->
+    CI.make_ptr x620
+      (owl_stub_161_c_eigen_spmat_d_gemm (CI.cptr x616) (CI.cptr x618)))
 | Function
-    (CI.Pointer x515, Function (CI.Pointer x517, Returns (CI.Pointer x518))),
+    (CI.Pointer x622, Function (CI.Pointer x624, Returns (CI.Pointer x625))),
   "c_eigen_spmat_d_div" ->
-  (fun x514 x516 ->
-    CI.make_ptr x518
-      (owl_stub_160_c_eigen_spmat_d_div (CI.cptr x514) (CI.cptr x516)))
+  (fun x621 x623 ->
+    CI.make_ptr x625
+      (owl_stub_160_c_eigen_spmat_d_div (CI.cptr x621) (CI.cptr x623)))
 | Function
-    (CI.Pointer x520, Function (CI.Pointer x522, Returns (CI.Pointer x523))),
+    (CI.Pointer x627, Function (CI.Pointer x629, Returns (CI.Pointer x630))),
   "c_eigen_spmat_d_mul" ->
-  (fun x519 x521 ->
-    CI.make_ptr x523
-      (owl_stub_159_c_eigen_spmat_d_mul (CI.cptr x519) (CI.cptr x521)))
+  (fun x626 x628 ->
+    CI.make_ptr x630
+      (owl_stub_159_c_eigen_spmat_d_mul (CI.cptr x626) (CI.cptr x628)))
 | Function
-    (CI.Pointer x525, Function (CI.Pointer x527, Returns (CI.Pointer x528))),
+    (CI.Pointer x632, Function (CI.Pointer x634, Returns (CI.Pointer x635))),
   "c_eigen_spmat_d_sub" ->
-  (fun x524 x526 ->
-    CI.make_ptr x528
-      (owl_stub_158_c_eigen_spmat_d_sub (CI.cptr x524) (CI.cptr x526)))
+  (fun x631 x633 ->
+    CI.make_ptr x635
+      (owl_stub_158_c_eigen_spmat_d_sub (CI.cptr x631) (CI.cptr x633)))
 | Function
-    (CI.Pointer x530, Function (CI.Pointer x532, Returns (CI.Pointer x533))),
+    (CI.Pointer x637, Function (CI.Pointer x639, Returns (CI.Pointer x640))),
   "c_eigen_spmat_d_add" ->
-  (fun x529 x531 ->
-    CI.make_ptr x533
-      (owl_stub_157_c_eigen_spmat_d_add (CI.cptr x529) (CI.cptr x531)))
+  (fun x636 x638 ->
+    CI.make_ptr x640
+      (owl_stub_157_c_eigen_spmat_d_add (CI.cptr x636) (CI.cptr x638)))
 | Function
-    (CI.Pointer x535,
-     Function (CI.Pointer x537, Returns (CI.Primitive CI.Int))),
+    (CI.Pointer x642,
+     Function (CI.Pointer x644, Returns (CI.Primitive CI.Int))),
   "c_eigen_spmat_d_equal_or_smaller" ->
-  (fun x534 x536 ->
-    owl_stub_156_c_eigen_spmat_d_equal_or_smaller (CI.cptr x534)
-    (CI.cptr x536))
+  (fun x641 x643 ->
+    owl_stub_156_c_eigen_spmat_d_equal_or_smaller (CI.cptr x641)
+    (CI.cptr x643))
 | Function
-    (CI.Pointer x539,
-     Function (CI.Pointer x541, Returns (CI.Primitive CI.Int))),
+    (CI.Pointer x646,
+     Function (CI.Pointer x648, Returns (CI.Primitive CI.Int))),
   "c_eigen_spmat_d_equal_or_greater" ->
-  (fun x538 x540 ->
-    owl_stub_155_c_eigen_spmat_d_equal_or_greater (CI.cptr x538)
-    (CI.cptr x540))
+  (fun x645 x647 ->
+    owl_stub_155_c_eigen_spmat_d_equal_or_greater (CI.cptr x645)
+    (CI.cptr x647))
 | Function
-    (CI.Pointer x543,
-     Function (CI.Pointer x545, Returns (CI.Primitive CI.Int))),
+    (CI.Pointer x650,
+     Function (CI.Pointer x652, Returns (CI.Primitive CI.Int))),
   "c_eigen_spmat_d_is_smaller" ->
-  (fun x542 x544 ->
-    owl_stub_154_c_eigen_spmat_d_is_smaller (CI.cptr x542) (CI.cptr x544))
+  (fun x649 x651 ->
+    owl_stub_154_c_eigen_spmat_d_is_smaller (CI.cptr x649) (CI.cptr x651))
 | Function
-    (CI.Pointer x547,
-     Function (CI.Pointer x549, Returns (CI.Primitive CI.Int))),
+    (CI.Pointer x654,
+     Function (CI.Pointer x656, Returns (CI.Primitive CI.Int))),
   "c_eigen_spmat_d_is_greater" ->
-  (fun x546 x548 ->
-    owl_stub_153_c_eigen_spmat_d_is_greater (CI.cptr x546) (CI.cptr x548))
+  (fun x653 x655 ->
+    owl_stub_153_c_eigen_spmat_d_is_greater (CI.cptr x653) (CI.cptr x655))
 | Function
-    (CI.Pointer x551,
-     Function (CI.Pointer x553, Returns (CI.Primitive CI.Int))),
+    (CI.Pointer x658,
+     Function (CI.Pointer x660, Returns (CI.Primitive CI.Int))),
   "c_eigen_spmat_d_is_unequal" ->
-  (fun x550 x552 ->
-    owl_stub_152_c_eigen_spmat_d_is_unequal (CI.cptr x550) (CI.cptr x552))
+  (fun x657 x659 ->
+    owl_stub_152_c_eigen_spmat_d_is_unequal (CI.cptr x657) (CI.cptr x659))
 | Function
-    (CI.Pointer x555,
-     Function (CI.Pointer x557, Returns (CI.Primitive CI.Int))),
+    (CI.Pointer x662,
+     Function (CI.Pointer x664, Returns (CI.Primitive CI.Int))),
   "c_eigen_spmat_d_is_equal" ->
-  (fun x554 x556 ->
-    owl_stub_151_c_eigen_spmat_d_is_equal (CI.cptr x554) (CI.cptr x556))
-| Function (CI.Pointer x559, Returns (CI.Primitive CI.Int)),
+  (fun x661 x663 ->
+    owl_stub_151_c_eigen_spmat_d_is_equal (CI.cptr x661) (CI.cptr x663))
+| Function (CI.Pointer x666, Returns (CI.Primitive CI.Int)),
   "c_eigen_spmat_d_is_nonnegative" ->
-  (fun x558 -> owl_stub_150_c_eigen_spmat_d_is_nonnegative (CI.cptr x558))
-| Function (CI.Pointer x561, Returns (CI.Primitive CI.Int)),
+  (fun x665 -> owl_stub_150_c_eigen_spmat_d_is_nonnegative (CI.cptr x665))
+| Function (CI.Pointer x668, Returns (CI.Primitive CI.Int)),
   "c_eigen_spmat_d_is_nonpositive" ->
-  (fun x560 -> owl_stub_149_c_eigen_spmat_d_is_nonpositive (CI.cptr x560))
-| Function (CI.Pointer x563, Returns (CI.Primitive CI.Int)),
+  (fun x667 -> owl_stub_149_c_eigen_spmat_d_is_nonpositive (CI.cptr x667))
+| Function (CI.Pointer x670, Returns (CI.Primitive CI.Int)),
   "c_eigen_spmat_d_is_negative" ->
-  (fun x562 -> owl_stub_148_c_eigen_spmat_d_is_negative (CI.cptr x562))
-| Function (CI.Pointer x565, Returns (CI.Primitive CI.Int)),
+  (fun x669 -> owl_stub_148_c_eigen_spmat_d_is_negative (CI.cptr x669))
+| Function (CI.Pointer x672, Returns (CI.Primitive CI.Int)),
   "c_eigen_spmat_d_is_positive" ->
-  (fun x564 -> owl_stub_147_c_eigen_spmat_d_is_positive (CI.cptr x564))
-| Function (CI.Pointer x567, Returns (CI.Primitive CI.Int)),
+  (fun x671 -> owl_stub_147_c_eigen_spmat_d_is_positive (CI.cptr x671))
+| Function (CI.Pointer x674, Returns (CI.Primitive CI.Int)),
   "c_eigen_spmat_d_is_zero" ->
-  (fun x566 -> owl_stub_146_c_eigen_spmat_d_is_zero (CI.cptr x566))
-| Function (CI.Pointer x569, Returns (CI.Primitive CI.Double)),
+  (fun x673 -> owl_stub_146_c_eigen_spmat_d_is_zero (CI.cptr x673))
+| Function (CI.Pointer x676, Returns (CI.Primitive CI.Double)),
   "c_eigen_spmat_d_trace" ->
-  (fun x568 -> owl_stub_145_c_eigen_spmat_d_trace (CI.cptr x568))
-| Function (CI.Pointer x571, Returns (CI.Pointer x572)),
+  (fun x675 -> owl_stub_145_c_eigen_spmat_d_trace (CI.cptr x675))
+| Function (CI.Pointer x678, Returns (CI.Pointer x679)),
   "c_eigen_spmat_d_diagonal" ->
-  (fun x570 ->
-    CI.make_ptr x572 (owl_stub_144_c_eigen_spmat_d_diagonal (CI.cptr x570)))
-| Function (CI.Pointer x574, Returns (CI.Pointer x575)),
+  (fun x677 ->
+    CI.make_ptr x679 (owl_stub_144_c_eigen_spmat_d_diagonal (CI.cptr x677)))
+| Function (CI.Pointer x681, Returns (CI.Pointer x682)),
   "c_eigen_spmat_d_adjoint" ->
-  (fun x573 ->
-    CI.make_ptr x575 (owl_stub_143_c_eigen_spmat_d_adjoint (CI.cptr x573)))
-| Function (CI.Pointer x577, Returns (CI.Pointer x578)),
+  (fun x680 ->
+    CI.make_ptr x682 (owl_stub_143_c_eigen_spmat_d_adjoint (CI.cptr x680)))
+| Function (CI.Pointer x684, Returns (CI.Pointer x685)),
   "c_eigen_spmat_d_transpose" ->
-  (fun x576 ->
-    CI.make_ptr x578 (owl_stub_142_c_eigen_spmat_d_transpose (CI.cptr x576)))
+  (fun x683 ->
+    CI.make_ptr x685 (owl_stub_142_c_eigen_spmat_d_transpose (CI.cptr x683)))
 | Function
-    (CI.Pointer x580,
-     Function (CI.Primitive CI.Int64_t, Returns (CI.Pointer x582))),
+    (CI.Pointer x687,
+     Function (CI.Primitive CI.Int64_t, Returns (CI.Pointer x689))),
   "c_eigen_spmat_d_col" ->
-  (fun x579 x581 ->
-    CI.make_ptr x582 (owl_stub_141_c_eigen_spmat_d_col (CI.cptr x579) x581))
+  (fun x686 x688 ->
+    CI.make_ptr x689 (owl_stub_141_c_eigen_spmat_d_col (CI.cptr x686) x688))
 | Function
-    (CI.Pointer x584,
-     Function (CI.Primitive CI.Int64_t, Returns (CI.Pointer x586))),
+    (CI.Pointer x691,
+     Function (CI.Primitive CI.Int64_t, Returns (CI.Pointer x693))),
   "c_eigen_spmat_d_row" ->
-  (fun x583 x585 ->
-    CI.make_ptr x586 (owl_stub_140_c_eigen_spmat_d_row (CI.cptr x583) x585))
-| Function (CI.Pointer x588, Returns (CI.Pointer x589)),
+  (fun x690 x692 ->
+    CI.make_ptr x693 (owl_stub_140_c_eigen_spmat_d_row (CI.cptr x690) x692))
+| Function (CI.Pointer x695, Returns (CI.Pointer x696)),
   "c_eigen_spmat_d_clone" ->
-  (fun x587 ->
-    CI.make_ptr x589 (owl_stub_139_c_eigen_spmat_d_clone (CI.cptr x587)))
-| Function (CI.Pointer x591, Returns (CI.Pointer x592)),
+  (fun x694 ->
+    CI.make_ptr x696 (owl_stub_139_c_eigen_spmat_d_clone (CI.cptr x694)))
+| Function (CI.Pointer x698, Returns (CI.Pointer x699)),
   "c_eigen_spmat_d_outerindexptr" ->
-  (fun x590 ->
-    CI.make_ptr x592
-      (owl_stub_138_c_eigen_spmat_d_outerindexptr (CI.cptr x590)))
-| Function (CI.Pointer x594, Returns (CI.Pointer x595)),
+  (fun x697 ->
+    CI.make_ptr x699
+      (owl_stub_138_c_eigen_spmat_d_outerindexptr (CI.cptr x697)))
+| Function (CI.Pointer x701, Returns (CI.Pointer x702)),
   "c_eigen_spmat_d_innerindexptr" ->
-  (fun x593 ->
-    CI.make_ptr x595
-      (owl_stub_137_c_eigen_spmat_d_innerindexptr (CI.cptr x593)))
+  (fun x700 ->
+    CI.make_ptr x702
+      (owl_stub_137_c_eigen_spmat_d_innerindexptr (CI.cptr x700)))
 | Function
-    (CI.Pointer x597, Function (CI.Pointer x599, Returns (CI.Pointer x600))),
+    (CI.Pointer x704, Function (CI.Pointer x706, Returns (CI.Pointer x707))),
   "c_eigen_spmat_d_valueptr" ->
-  (fun x596 x598 ->
-    CI.make_ptr x600
-      (owl_stub_136_c_eigen_spmat_d_valueptr (CI.cptr x596) (CI.cptr x598)))
+  (fun x703 x705 ->
+    CI.make_ptr x707
+      (owl_stub_136_c_eigen_spmat_d_valueptr (CI.cptr x703) (CI.cptr x705)))
 | Function
-    (CI.Pointer x602,
+    (CI.Pointer x709,
      Function
        (CI.Primitive CI.Double,
         Function (CI.Primitive CI.Double, Returns CI.Void))),
   "c_eigen_spmat_d_prune" ->
-  (fun x601 x603 x604 ->
-    owl_stub_135_c_eigen_spmat_d_prune (CI.cptr x601) x603 x604)
+  (fun x708 x710 x711 ->
+    owl_stub_135_c_eigen_spmat_d_prune (CI.cptr x708) x710 x711)
 | Function
-    (CI.Pointer x606,
+    (CI.Pointer x713,
      Function
        (CI.Primitive CI.Int64_t,
         Function (CI.Primitive CI.Int64_t, Returns CI.Void))),
   "c_eigen_spmat_d_reshape" ->
-  (fun x605 x607 x608 ->
-    owl_stub_134_c_eigen_spmat_d_reshape (CI.cptr x605) x607 x608)
-| Function (CI.Pointer x610, Returns CI.Void), "c_eigen_spmat_d_uncompress" ->
-  (fun x609 -> owl_stub_133_c_eigen_spmat_d_uncompress (CI.cptr x609))
-| Function (CI.Pointer x612, Returns CI.Void), "c_eigen_spmat_d_compress" ->
-  (fun x611 -> owl_stub_132_c_eigen_spmat_d_compress (CI.cptr x611))
-| Function (CI.Pointer x614, Returns (CI.Primitive CI.Int)),
+  (fun x712 x714 x715 ->
+    owl_stub_134_c_eigen_spmat_d_reshape (CI.cptr x712) x714 x715)
+| Function (CI.Pointer x717, Returns CI.Void), "c_eigen_spmat_d_uncompress" ->
+  (fun x716 -> owl_stub_133_c_eigen_spmat_d_uncompress (CI.cptr x716))
+| Function (CI.Pointer x719, Returns CI.Void), "c_eigen_spmat_d_compress" ->
+  (fun x718 -> owl_stub_132_c_eigen_spmat_d_compress (CI.cptr x718))
+| Function (CI.Pointer x721, Returns (CI.Primitive CI.Int)),
   "c_eigen_spmat_d_is_compressed" ->
-  (fun x613 -> owl_stub_131_c_eigen_spmat_d_is_compressed (CI.cptr x613))
-| Function (CI.Pointer x616, Returns CI.Void), "c_eigen_spmat_d_reset" ->
-  (fun x615 -> owl_stub_130_c_eigen_spmat_d_reset (CI.cptr x615))
+  (fun x720 -> owl_stub_131_c_eigen_spmat_d_is_compressed (CI.cptr x720))
+| Function (CI.Pointer x723, Returns CI.Void), "c_eigen_spmat_d_reset" ->
+  (fun x722 -> owl_stub_130_c_eigen_spmat_d_reset (CI.cptr x722))
 | Function
-    (CI.Pointer x618,
+    (CI.Pointer x725,
      Function
        (CI.Primitive CI.Int64_t,
         Function
           (CI.Primitive CI.Int64_t,
            Function (CI.Primitive CI.Double, Returns CI.Void)))),
   "c_eigen_spmat_d_insert" ->
-  (fun x617 x619 x620 x621 ->
-    owl_stub_129_c_eigen_spmat_d_insert (CI.cptr x617) x619 x620 x621)
+  (fun x724 x726 x727 x728 ->
+    owl_stub_129_c_eigen_spmat_d_insert (CI.cptr x724) x726 x727 x728)
 | Function
-    (CI.Pointer x623,
+    (CI.Pointer x730,
      Function
        (CI.Primitive CI.Int64_t,
         Function
           (CI.Primitive CI.Int64_t,
            Function (CI.Primitive CI.Double, Returns CI.Void)))),
   "c_eigen_spmat_d_set" ->
-  (fun x622 x624 x625 x626 ->
-    owl_stub_128_c_eigen_spmat_d_set (CI.cptr x622) x624 x625 x626)
+  (fun x729 x731 x732 x733 ->
+    owl_stub_128_c_eigen_spmat_d_set (CI.cptr x729) x731 x732 x733)
 | Function
-    (CI.Pointer x628,
+    (CI.Pointer x735,
      Function
        (CI.Primitive CI.Int64_t,
         Function (CI.Primitive CI.Int64_t, Returns (CI.Primitive CI.Double)))),
   "c_eigen_spmat_d_get" ->
-  (fun x627 x629 x630 ->
-    owl_stub_127_c_eigen_spmat_d_get (CI.cptr x627) x629 x630)
-| Function (CI.Pointer x632, Returns (CI.Primitive CI.Int64_t)),
+  (fun x734 x736 x737 ->
+    owl_stub_127_c_eigen_spmat_d_get (CI.cptr x734) x736 x737)
+| Function (CI.Pointer x739, Returns (CI.Primitive CI.Int64_t)),
   "c_eigen_spmat_d_nnz" ->
-  (fun x631 -> owl_stub_126_c_eigen_spmat_d_nnz (CI.cptr x631))
-| Function (CI.Pointer x634, Returns (CI.Primitive CI.Int64_t)),
+  (fun x738 -> owl_stub_126_c_eigen_spmat_d_nnz (CI.cptr x738))
+| Function (CI.Pointer x741, Returns (CI.Primitive CI.Int64_t)),
   "c_eigen_spmat_d_cols" ->
-  (fun x633 -> owl_stub_125_c_eigen_spmat_d_cols (CI.cptr x633))
-| Function (CI.Pointer x636, Returns (CI.Primitive CI.Int64_t)),
+  (fun x740 -> owl_stub_125_c_eigen_spmat_d_cols (CI.cptr x740))
+| Function (CI.Pointer x743, Returns (CI.Primitive CI.Int64_t)),
   "c_eigen_spmat_d_rows" ->
-  (fun x635 -> owl_stub_124_c_eigen_spmat_d_rows (CI.cptr x635))
-| Function (CI.Primitive CI.Int64_t, Returns (CI.Pointer x638)),
+  (fun x742 -> owl_stub_124_c_eigen_spmat_d_rows (CI.cptr x742))
+| Function (CI.Primitive CI.Int64_t, Returns (CI.Pointer x745)),
   "c_eigen_spmat_d_eye" ->
-  (fun x637 -> CI.make_ptr x638 (owl_stub_123_c_eigen_spmat_d_eye x637))
-| Function (CI.Pointer x640, Returns CI.Void), "c_eigen_spmat_d_delete" ->
-  (fun x639 -> owl_stub_122_c_eigen_spmat_d_delete (CI.cptr x639))
+  (fun x744 -> CI.make_ptr x745 (owl_stub_123_c_eigen_spmat_d_eye x744))
+| Function (CI.Pointer x747, Returns CI.Void), "c_eigen_spmat_d_delete" ->
+  (fun x746 -> owl_stub_122_c_eigen_spmat_d_delete (CI.cptr x746))
 | Function
     (CI.Primitive CI.Int64_t,
      Function
        (CI.Primitive CI.Int64_t,
-        Function (CI.Primitive CI.Int64_t, Returns (CI.Pointer x644)))),
+        Function (CI.Primitive CI.Int64_t, Returns (CI.Pointer x751)))),
   "c_eigen_spmat_d_new" ->
-  (fun x641 x642 x643 ->
-    CI.make_ptr x644 (owl_stub_121_c_eigen_spmat_d_new x641 x642 x643))
-| Function (CI.Pointer x646, Returns CI.Void), "c_eigen_spmat_s_print" ->
-  (fun x645 -> owl_stub_120_c_eigen_spmat_s_print (CI.cptr x645))
-| Function (CI.Pointer x648, Returns (CI.Pointer x649)),
+  (fun x748 x749 x750 ->
+    CI.make_ptr x751 (owl_stub_121_c_eigen_spmat_d_new x748 x749 x750))
+| Function (CI.Pointer x753, Returns CI.Void), "c_eigen_spmat_s_print" ->
+  (fun x752 -> owl_stub_120_c_eigen_spmat_s_print (CI.cptr x752))
+| Function (CI.Pointer x755, Returns (CI.Pointer x756)),
   "c_eigen_spmat_s_sqrt" ->
-  (fun x647 ->
-    CI.make_ptr x649 (owl_stub_119_c_eigen_spmat_s_sqrt (CI.cptr x647)))
-| Function (CI.Pointer x651, Returns (CI.Pointer x652)),
+  (fun x754 ->
+    CI.make_ptr x756 (owl_stub_119_c_eigen_spmat_s_sqrt (CI.cptr x754)))
+| Function (CI.Pointer x758, Returns (CI.Pointer x759)),
   "c_eigen_spmat_s_neg" ->
-  (fun x650 ->
-    CI.make_ptr x652 (owl_stub_118_c_eigen_spmat_s_neg (CI.cptr x650)))
-| Function (CI.Pointer x654, Returns (CI.Pointer x655)),
+  (fun x757 ->
+    CI.make_ptr x759 (owl_stub_118_c_eigen_spmat_s_neg (CI.cptr x757)))
+| Function (CI.Pointer x761, Returns (CI.Pointer x762)),
   "c_eigen_spmat_s_abs" ->
-  (fun x653 ->
-    CI.make_ptr x655 (owl_stub_117_c_eigen_spmat_s_abs (CI.cptr x653)))
-| Function (CI.Pointer x657, Returns (CI.Primitive CI.Float)),
+  (fun x760 ->
+    CI.make_ptr x762 (owl_stub_117_c_eigen_spmat_s_abs (CI.cptr x760)))
+| Function (CI.Pointer x764, Returns (CI.Primitive CI.Float)),
   "c_eigen_spmat_s_max" ->
-  (fun x656 -> owl_stub_116_c_eigen_spmat_s_max (CI.cptr x656))
-| Function (CI.Pointer x659, Returns (CI.Primitive CI.Float)),
+  (fun x763 -> owl_stub_116_c_eigen_spmat_s_max (CI.cptr x763))
+| Function (CI.Pointer x766, Returns (CI.Primitive CI.Float)),
   "c_eigen_spmat_s_min" ->
-  (fun x658 -> owl_stub_115_c_eigen_spmat_s_min (CI.cptr x658))
-| Function (CI.Pointer x661, Returns (CI.Primitive CI.Float)),
+  (fun x765 -> owl_stub_115_c_eigen_spmat_s_min (CI.cptr x765))
+| Function (CI.Pointer x768, Returns (CI.Primitive CI.Float)),
   "c_eigen_spmat_s_sum" ->
-  (fun x660 -> owl_stub_114_c_eigen_spmat_s_sum (CI.cptr x660))
+  (fun x767 -> owl_stub_114_c_eigen_spmat_s_sum (CI.cptr x767))
 | Function
-    (CI.Pointer x663, Function (CI.Pointer x665, Returns (CI.Pointer x666))),
+    (CI.Pointer x770, Function (CI.Pointer x772, Returns (CI.Pointer x773))),
   "c_eigen_spmat_s_max2" ->
-  (fun x662 x664 ->
-    CI.make_ptr x666
-      (owl_stub_113_c_eigen_spmat_s_max2 (CI.cptr x662) (CI.cptr x664)))
+  (fun x769 x771 ->
+    CI.make_ptr x773
+      (owl_stub_113_c_eigen_spmat_s_max2 (CI.cptr x769) (CI.cptr x771)))
 | Function
-    (CI.Pointer x668, Function (CI.Pointer x670, Returns (CI.Pointer x671))),
+    (CI.Pointer x775, Function (CI.Pointer x777, Returns (CI.Pointer x778))),
   "c_eigen_spmat_s_min2" ->
-  (fun x667 x669 ->
-    CI.make_ptr x671
-      (owl_stub_112_c_eigen_spmat_s_min2 (CI.cptr x667) (CI.cptr x669)))
+  (fun x774 x776 ->
+    CI.make_ptr x778
+      (owl_stub_112_c_eigen_spmat_s_min2 (CI.cptr x774) (CI.cptr x776)))
 | Function
-    (CI.Pointer x673,
-     Function (CI.Primitive CI.Float, Returns (CI.Pointer x675))),
+    (CI.Pointer x780,
+     Function (CI.Primitive CI.Float, Returns (CI.Pointer x782))),
   "c_eigen_spmat_s_div_scalar" ->
-  (fun x672 x674 ->
-    CI.make_ptr x675
-      (owl_stub_111_c_eigen_spmat_s_div_scalar (CI.cptr x672) x674))
+  (fun x779 x781 ->
+    CI.make_ptr x782
+      (owl_stub_111_c_eigen_spmat_s_div_scalar (CI.cptr x779) x781))
 | Function
-    (CI.Pointer x677,
-     Function (CI.Primitive CI.Float, Returns (CI.Pointer x679))),
+    (CI.Pointer x784,
+     Function (CI.Primitive CI.Float, Returns (CI.Pointer x786))),
   "c_eigen_spmat_s_mul_scalar" ->
-  (fun x676 x678 ->
-    CI.make_ptr x679
-      (owl_stub_110_c_eigen_spmat_s_mul_scalar (CI.cptr x676) x678))
+  (fun x783 x785 ->
+    CI.make_ptr x786
+      (owl_stub_110_c_eigen_spmat_s_mul_scalar (CI.cptr x783) x785))
 | Function
-    (CI.Pointer x681,
-     Function (CI.Primitive CI.Float, Returns (CI.Pointer x683))),
+    (CI.Pointer x788,
+     Function (CI.Primitive CI.Float, Returns (CI.Pointer x790))),
   "c_eigen_spmat_s_sub_scalar" ->
-  (fun x680 x682 ->
-    CI.make_ptr x683
-      (owl_stub_109_c_eigen_spmat_s_sub_scalar (CI.cptr x680) x682))
+  (fun x787 x789 ->
+    CI.make_ptr x790
+      (owl_stub_109_c_eigen_spmat_s_sub_scalar (CI.cptr x787) x789))
 | Function
-    (CI.Pointer x685,
-     Function (CI.Primitive CI.Float, Returns (CI.Pointer x687))),
+    (CI.Pointer x792,
+     Function (CI.Primitive CI.Float, Returns (CI.Pointer x794))),
   "c_eigen_spmat_s_add_scalar" ->
-  (fun x684 x686 ->
-    CI.make_ptr x687
-      (owl_stub_108_c_eigen_spmat_s_add_scalar (CI.cptr x684) x686))
+  (fun x791 x793 ->
+    CI.make_ptr x794
+      (owl_stub_108_c_eigen_spmat_s_add_scalar (CI.cptr x791) x793))
 | Function
-    (CI.Pointer x689, Function (CI.Pointer x691, Returns (CI.Pointer x692))),
+    (CI.Pointer x796, Function (CI.Pointer x798, Returns (CI.Pointer x799))),
   "c_eigen_spmat_s_gemm" ->
-  (fun x688 x690 ->
-    CI.make_ptr x692
-      (owl_stub_107_c_eigen_spmat_s_gemm (CI.cptr x688) (CI.cptr x690)))
+  (fun x795 x797 ->
+    CI.make_ptr x799
+      (owl_stub_107_c_eigen_spmat_s_gemm (CI.cptr x795) (CI.cptr x797)))
 | Function
-    (CI.Pointer x694, Function (CI.Pointer x696, Returns (CI.Pointer x697))),
+    (CI.Pointer x801, Function (CI.Pointer x803, Returns (CI.Pointer x804))),
   "c_eigen_spmat_s_div" ->
-  (fun x693 x695 ->
-    CI.make_ptr x697
-      (owl_stub_106_c_eigen_spmat_s_div (CI.cptr x693) (CI.cptr x695)))
+  (fun x800 x802 ->
+    CI.make_ptr x804
+      (owl_stub_106_c_eigen_spmat_s_div (CI.cptr x800) (CI.cptr x802)))
 | Function
-    (CI.Pointer x699, Function (CI.Pointer x701, Returns (CI.Pointer x702))),
+    (CI.Pointer x806, Function (CI.Pointer x808, Returns (CI.Pointer x809))),
   "c_eigen_spmat_s_mul" ->
-  (fun x698 x700 ->
-    CI.make_ptr x702
-      (owl_stub_105_c_eigen_spmat_s_mul (CI.cptr x698) (CI.cptr x700)))
+  (fun x805 x807 ->
+    CI.make_ptr x809
+      (owl_stub_105_c_eigen_spmat_s_mul (CI.cptr x805) (CI.cptr x807)))
 | Function
-    (CI.Pointer x704, Function (CI.Pointer x706, Returns (CI.Pointer x707))),
+    (CI.Pointer x811, Function (CI.Pointer x813, Returns (CI.Pointer x814))),
   "c_eigen_spmat_s_sub" ->
-  (fun x703 x705 ->
-    CI.make_ptr x707
-      (owl_stub_104_c_eigen_spmat_s_sub (CI.cptr x703) (CI.cptr x705)))
+  (fun x810 x812 ->
+    CI.make_ptr x814
+      (owl_stub_104_c_eigen_spmat_s_sub (CI.cptr x810) (CI.cptr x812)))
 | Function
-    (CI.Pointer x709, Function (CI.Pointer x711, Returns (CI.Pointer x712))),
+    (CI.Pointer x816, Function (CI.Pointer x818, Returns (CI.Pointer x819))),
   "c_eigen_spmat_s_add" ->
-  (fun x708 x710 ->
-    CI.make_ptr x712
-      (owl_stub_103_c_eigen_spmat_s_add (CI.cptr x708) (CI.cptr x710)))
+  (fun x815 x817 ->
+    CI.make_ptr x819
+      (owl_stub_103_c_eigen_spmat_s_add (CI.cptr x815) (CI.cptr x817)))
 | Function
-    (CI.Pointer x714,
-     Function (CI.Pointer x716, Returns (CI.Primitive CI.Int))),
+    (CI.Pointer x821,
+     Function (CI.Pointer x823, Returns (CI.Primitive CI.Int))),
   "c_eigen_spmat_s_equal_or_smaller" ->
-  (fun x713 x715 ->
-    owl_stub_102_c_eigen_spmat_s_equal_or_smaller (CI.cptr x713)
-    (CI.cptr x715))
+  (fun x820 x822 ->
+    owl_stub_102_c_eigen_spmat_s_equal_or_smaller (CI.cptr x820)
+    (CI.cptr x822))
 | Function
-    (CI.Pointer x718,
-     Function (CI.Pointer x720, Returns (CI.Primitive CI.Int))),
+    (CI.Pointer x825,
+     Function (CI.Pointer x827, Returns (CI.Primitive CI.Int))),
   "c_eigen_spmat_s_equal_or_greater" ->
-  (fun x717 x719 ->
-    owl_stub_101_c_eigen_spmat_s_equal_or_greater (CI.cptr x717)
-    (CI.cptr x719))
+  (fun x824 x826 ->
+    owl_stub_101_c_eigen_spmat_s_equal_or_greater (CI.cptr x824)
+    (CI.cptr x826))
 | Function
-    (CI.Pointer x722,
-     Function (CI.Pointer x724, Returns (CI.Primitive CI.Int))),
+    (CI.Pointer x829,
+     Function (CI.Pointer x831, Returns (CI.Primitive CI.Int))),
   "c_eigen_spmat_s_is_smaller" ->
-  (fun x721 x723 ->
-    owl_stub_100_c_eigen_spmat_s_is_smaller (CI.cptr x721) (CI.cptr x723))
+  (fun x828 x830 ->
+    owl_stub_100_c_eigen_spmat_s_is_smaller (CI.cptr x828) (CI.cptr x830))
 | Function
-    (CI.Pointer x726,
-     Function (CI.Pointer x728, Returns (CI.Primitive CI.Int))),
+    (CI.Pointer x833,
+     Function (CI.Pointer x835, Returns (CI.Primitive CI.Int))),
   "c_eigen_spmat_s_is_greater" ->
-  (fun x725 x727 ->
-    owl_stub_99_c_eigen_spmat_s_is_greater (CI.cptr x725) (CI.cptr x727))
+  (fun x832 x834 ->
+    owl_stub_99_c_eigen_spmat_s_is_greater (CI.cptr x832) (CI.cptr x834))
 | Function
-    (CI.Pointer x730,
-     Function (CI.Pointer x732, Returns (CI.Primitive CI.Int))),
+    (CI.Pointer x837,
+     Function (CI.Pointer x839, Returns (CI.Primitive CI.Int))),
   "c_eigen_spmat_s_is_unequal" ->
-  (fun x729 x731 ->
-    owl_stub_98_c_eigen_spmat_s_is_unequal (CI.cptr x729) (CI.cptr x731))
+  (fun x836 x838 ->
+    owl_stub_98_c_eigen_spmat_s_is_unequal (CI.cptr x836) (CI.cptr x838))
 | Function
-    (CI.Pointer x734,
-     Function (CI.Pointer x736, Returns (CI.Primitive CI.Int))),
+    (CI.Pointer x841,
+     Function (CI.Pointer x843, Returns (CI.Primitive CI.Int))),
   "c_eigen_spmat_s_is_equal" ->
-  (fun x733 x735 ->
-    owl_stub_97_c_eigen_spmat_s_is_equal (CI.cptr x733) (CI.cptr x735))
-| Function (CI.Pointer x738, Returns (CI.Primitive CI.Int)),
+  (fun x840 x842 ->
+    owl_stub_97_c_eigen_spmat_s_is_equal (CI.cptr x840) (CI.cptr x842))
+| Function (CI.Pointer x845, Returns (CI.Primitive CI.Int)),
   "c_eigen_spmat_s_is_nonnegative" ->
-  (fun x737 -> owl_stub_96_c_eigen_spmat_s_is_nonnegative (CI.cptr x737))
-| Function (CI.Pointer x740, Returns (CI.Primitive CI.Int)),
+  (fun x844 -> owl_stub_96_c_eigen_spmat_s_is_nonnegative (CI.cptr x844))
+| Function (CI.Pointer x847, Returns (CI.Primitive CI.Int)),
   "c_eigen_spmat_s_is_nonpositive" ->
-  (fun x739 -> owl_stub_95_c_eigen_spmat_s_is_nonpositive (CI.cptr x739))
-| Function (CI.Pointer x742, Returns (CI.Primitive CI.Int)),
+  (fun x846 -> owl_stub_95_c_eigen_spmat_s_is_nonpositive (CI.cptr x846))
+| Function (CI.Pointer x849, Returns (CI.Primitive CI.Int)),
   "c_eigen_spmat_s_is_negative" ->
-  (fun x741 -> owl_stub_94_c_eigen_spmat_s_is_negative (CI.cptr x741))
-| Function (CI.Pointer x744, Returns (CI.Primitive CI.Int)),
+  (fun x848 -> owl_stub_94_c_eigen_spmat_s_is_negative (CI.cptr x848))
+| Function (CI.Pointer x851, Returns (CI.Primitive CI.Int)),
   "c_eigen_spmat_s_is_positive" ->
-  (fun x743 -> owl_stub_93_c_eigen_spmat_s_is_positive (CI.cptr x743))
-| Function (CI.Pointer x746, Returns (CI.Primitive CI.Int)),
+  (fun x850 -> owl_stub_93_c_eigen_spmat_s_is_positive (CI.cptr x850))
+| Function (CI.Pointer x853, Returns (CI.Primitive CI.Int)),
   "c_eigen_spmat_s_is_zero" ->
-  (fun x745 -> owl_stub_92_c_eigen_spmat_s_is_zero (CI.cptr x745))
-| Function (CI.Pointer x748, Returns (CI.Primitive CI.Float)),
+  (fun x852 -> owl_stub_92_c_eigen_spmat_s_is_zero (CI.cptr x852))
+| Function (CI.Pointer x855, Returns (CI.Primitive CI.Float)),
   "c_eigen_spmat_s_trace" ->
-  (fun x747 -> owl_stub_91_c_eigen_spmat_s_trace (CI.cptr x747))
-| Function (CI.Pointer x750, Returns (CI.Pointer x751)),
+  (fun x854 -> owl_stub_91_c_eigen_spmat_s_trace (CI.cptr x854))
+| Function (CI.Pointer x857, Returns (CI.Pointer x858)),
   "c_eigen_spmat_s_diagonal" ->
-  (fun x749 ->
-    CI.make_ptr x751 (owl_stub_90_c_eigen_spmat_s_diagonal (CI.cptr x749)))
-| Function (CI.Pointer x753, Returns (CI.Pointer x754)),
+  (fun x856 ->
+    CI.make_ptr x858 (owl_stub_90_c_eigen_spmat_s_diagonal (CI.cptr x856)))
+| Function (CI.Pointer x860, Returns (CI.Pointer x861)),
   "c_eigen_spmat_s_adjoint" ->
-  (fun x752 ->
-    CI.make_ptr x754 (owl_stub_89_c_eigen_spmat_s_adjoint (CI.cptr x752)))
-| Function (CI.Pointer x756, Returns (CI.Pointer x757)),
+  (fun x859 ->
+    CI.make_ptr x861 (owl_stub_89_c_eigen_spmat_s_adjoint (CI.cptr x859)))
+| Function (CI.Pointer x863, Returns (CI.Pointer x864)),
   "c_eigen_spmat_s_transpose" ->
-  (fun x755 ->
-    CI.make_ptr x757 (owl_stub_88_c_eigen_spmat_s_transpose (CI.cptr x755)))
+  (fun x862 ->
+    CI.make_ptr x864 (owl_stub_88_c_eigen_spmat_s_transpose (CI.cptr x862)))
 | Function
-    (CI.Pointer x759,
-     Function (CI.Primitive CI.Int64_t, Returns (CI.Pointer x761))),
+    (CI.Pointer x866,
+     Function (CI.Primitive CI.Int64_t, Returns (CI.Pointer x868))),
   "c_eigen_spmat_s_col" ->
-  (fun x758 x760 ->
-    CI.make_ptr x761 (owl_stub_87_c_eigen_spmat_s_col (CI.cptr x758) x760))
+  (fun x865 x867 ->
+    CI.make_ptr x868 (owl_stub_87_c_eigen_spmat_s_col (CI.cptr x865) x867))
 | Function
-    (CI.Pointer x763,
-     Function (CI.Primitive CI.Int64_t, Returns (CI.Pointer x765))),
+    (CI.Pointer x870,
+     Function (CI.Primitive CI.Int64_t, Returns (CI.Pointer x872))),
   "c_eigen_spmat_s_row" ->
-  (fun x762 x764 ->
-    CI.make_ptr x765 (owl_stub_86_c_eigen_spmat_s_row (CI.cptr x762) x764))
-| Function (CI.Pointer x767, Returns (CI.Pointer x768)),
+  (fun x869 x871 ->
+    CI.make_ptr x872 (owl_stub_86_c_eigen_spmat_s_row (CI.cptr x869) x871))
+| Function (CI.Pointer x874, Returns (CI.Pointer x875)),
   "c_eigen_spmat_s_clone" ->
-  (fun x766 ->
-    CI.make_ptr x768 (owl_stub_85_c_eigen_spmat_s_clone (CI.cptr x766)))
-| Function (CI.Pointer x770, Returns (CI.Pointer x771)),
+  (fun x873 ->
+    CI.make_ptr x875 (owl_stub_85_c_eigen_spmat_s_clone (CI.cptr x873)))
+| Function (CI.Pointer x877, Returns (CI.Pointer x878)),
   "c_eigen_spmat_s_outerindexptr" ->
-  (fun x769 ->
-    CI.make_ptr x771
-      (owl_stub_84_c_eigen_spmat_s_outerindexptr (CI.cptr x769)))
-| Function (CI.Pointer x773, Returns (CI.Pointer x774)),
+  (fun x876 ->
+    CI.make_ptr x878
+      (owl_stub_84_c_eigen_spmat_s_outerindexptr (CI.cptr x876)))
+| Function (CI.Pointer x880, Returns (CI.Pointer x881)),
   "c_eigen_spmat_s_innerindexptr" ->
-  (fun x772 ->
-    CI.make_ptr x774
-      (owl_stub_83_c_eigen_spmat_s_innerindexptr (CI.cptr x772)))
+  (fun x879 ->
+    CI.make_ptr x881
+      (owl_stub_83_c_eigen_spmat_s_innerindexptr (CI.cptr x879)))
 | Function
-    (CI.Pointer x776, Function (CI.Pointer x778, Returns (CI.Pointer x779))),
+    (CI.Pointer x883, Function (CI.Pointer x885, Returns (CI.Pointer x886))),
   "c_eigen_spmat_s_valueptr" ->
-  (fun x775 x777 ->
-    CI.make_ptr x779
-      (owl_stub_82_c_eigen_spmat_s_valueptr (CI.cptr x775) (CI.cptr x777)))
+  (fun x882 x884 ->
+    CI.make_ptr x886
+      (owl_stub_82_c_eigen_spmat_s_valueptr (CI.cptr x882) (CI.cptr x884)))
 | Function
-    (CI.Pointer x781,
+    (CI.Pointer x888,
      Function
        (CI.Primitive CI.Float,
         Function (CI.Primitive CI.Float, Returns CI.Void))),
   "c_eigen_spmat_s_prune" ->
-  (fun x780 x782 x783 ->
-    owl_stub_81_c_eigen_spmat_s_prune (CI.cptr x780) x782 x783)
+  (fun x887 x889 x890 ->
+    owl_stub_81_c_eigen_spmat_s_prune (CI.cptr x887) x889 x890)
 | Function
-    (CI.Pointer x785,
+    (CI.Pointer x892,
      Function
        (CI.Primitive CI.Int64_t,
         Function (CI.Primitive CI.Int64_t, Returns CI.Void))),
   "c_eigen_spmat_s_reshape" ->
-  (fun x784 x786 x787 ->
-    owl_stub_80_c_eigen_spmat_s_reshape (CI.cptr x784) x786 x787)
-| Function (CI.Pointer x789, Returns CI.Void), "c_eigen_spmat_s_uncompress" ->
-  (fun x788 -> owl_stub_79_c_eigen_spmat_s_uncompress (CI.cptr x788))
-| Function (CI.Pointer x791, Returns CI.Void), "c_eigen_spmat_s_compress" ->
-  (fun x790 -> owl_stub_78_c_eigen_spmat_s_compress (CI.cptr x790))
-| Function (CI.Pointer x793, Returns (CI.Primitive CI.Int)),
+  (fun x891 x893 x894 ->
+    owl_stub_80_c_eigen_spmat_s_reshape (CI.cptr x891) x893 x894)
+| Function (CI.Pointer x896, Returns CI.Void), "c_eigen_spmat_s_uncompress" ->
+  (fun x895 -> owl_stub_79_c_eigen_spmat_s_uncompress (CI.cptr x895))
+| Function (CI.Pointer x898, Returns CI.Void), "c_eigen_spmat_s_compress" ->
+  (fun x897 -> owl_stub_78_c_eigen_spmat_s_compress (CI.cptr x897))
+| Function (CI.Pointer x900, Returns (CI.Primitive CI.Int)),
   "c_eigen_spmat_s_is_compressed" ->
-  (fun x792 -> owl_stub_77_c_eigen_spmat_s_is_compressed (CI.cptr x792))
-| Function (CI.Pointer x795, Returns CI.Void), "c_eigen_spmat_s_reset" ->
-  (fun x794 -> owl_stub_76_c_eigen_spmat_s_reset (CI.cptr x794))
+  (fun x899 -> owl_stub_77_c_eigen_spmat_s_is_compressed (CI.cptr x899))
+| Function (CI.Pointer x902, Returns CI.Void), "c_eigen_spmat_s_reset" ->
+  (fun x901 -> owl_stub_76_c_eigen_spmat_s_reset (CI.cptr x901))
 | Function
-    (CI.Pointer x797,
+    (CI.Pointer x904,
      Function
        (CI.Primitive CI.Int64_t,
         Function
           (CI.Primitive CI.Int64_t,
            Function (CI.Primitive CI.Float, Returns CI.Void)))),
   "c_eigen_spmat_s_insert" ->
-  (fun x796 x798 x799 x800 ->
-    owl_stub_75_c_eigen_spmat_s_insert (CI.cptr x796) x798 x799 x800)
+  (fun x903 x905 x906 x907 ->
+    owl_stub_75_c_eigen_spmat_s_insert (CI.cptr x903) x905 x906 x907)
 | Function
-    (CI.Pointer x802,
+    (CI.Pointer x909,
      Function
        (CI.Primitive CI.Int64_t,
         Function
           (CI.Primitive CI.Int64_t,
            Function (CI.Primitive CI.Float, Returns CI.Void)))),
   "c_eigen_spmat_s_set" ->
-  (fun x801 x803 x804 x805 ->
-    owl_stub_74_c_eigen_spmat_s_set (CI.cptr x801) x803 x804 x805)
+  (fun x908 x910 x911 x912 ->
+    owl_stub_74_c_eigen_spmat_s_set (CI.cptr x908) x910 x911 x912)
 | Function
-    (CI.Pointer x807,
+    (CI.Pointer x914,
      Function
        (CI.Primitive CI.Int64_t,
         Function (CI.Primitive CI.Int64_t, Returns (CI.Primitive CI.Float)))),
   "c_eigen_spmat_s_get" ->
-  (fun x806 x808 x809 ->
-    owl_stub_73_c_eigen_spmat_s_get (CI.cptr x806) x808 x809)
-| Function (CI.Pointer x811, Returns (CI.Primitive CI.Int64_t)),
+  (fun x913 x915 x916 ->
+    owl_stub_73_c_eigen_spmat_s_get (CI.cptr x913) x915 x916)
+| Function (CI.Pointer x918, Returns (CI.Primitive CI.Int64_t)),
   "c_eigen_spmat_s_nnz" ->
-  (fun x810 -> owl_stub_72_c_eigen_spmat_s_nnz (CI.cptr x810))
-| Function (CI.Pointer x813, Returns (CI.Primitive CI.Int64_t)),
+  (fun x917 -> owl_stub_72_c_eigen_spmat_s_nnz (CI.cptr x917))
+| Function (CI.Pointer x920, Returns (CI.Primitive CI.Int64_t)),
   "c_eigen_spmat_s_cols" ->
-  (fun x812 -> owl_stub_71_c_eigen_spmat_s_cols (CI.cptr x812))
-| Function (CI.Pointer x815, Returns (CI.Primitive CI.Int64_t)),
+  (fun x919 -> owl_stub_71_c_eigen_spmat_s_cols (CI.cptr x919))
+| Function (CI.Pointer x922, Returns (CI.Primitive CI.Int64_t)),
   "c_eigen_spmat_s_rows" ->
-  (fun x814 -> owl_stub_70_c_eigen_spmat_s_rows (CI.cptr x814))
-| Function (CI.Primitive CI.Int64_t, Returns (CI.Pointer x817)),
+  (fun x921 -> owl_stub_70_c_eigen_spmat_s_rows (CI.cptr x921))
+| Function (CI.Primitive CI.Int64_t, Returns (CI.Pointer x924)),
   "c_eigen_spmat_s_eye" ->
-  (fun x816 -> CI.make_ptr x817 (owl_stub_69_c_eigen_spmat_s_eye x816))
-| Function (CI.Pointer x819, Returns CI.Void), "c_eigen_spmat_s_delete" ->
-  (fun x818 -> owl_stub_68_c_eigen_spmat_s_delete (CI.cptr x818))
+  (fun x923 -> CI.make_ptr x924 (owl_stub_69_c_eigen_spmat_s_eye x923))
+| Function (CI.Pointer x926, Returns CI.Void), "c_eigen_spmat_s_delete" ->
+  (fun x925 -> owl_stub_68_c_eigen_spmat_s_delete (CI.cptr x925))
 | Function
     (CI.Primitive CI.Int64_t,
      Function
        (CI.Primitive CI.Int64_t,
-        Function (CI.Primitive CI.Int64_t, Returns (CI.Pointer x823)))),
+        Function (CI.Primitive CI.Int64_t, Returns (CI.Pointer x930)))),
   "c_eigen_spmat_s_new" ->
-  (fun x820 x821 x822 ->
-    CI.make_ptr x823 (owl_stub_67_c_eigen_spmat_s_new x820 x821 x822))
+  (fun x927 x928 x929 ->
+    CI.make_ptr x930 (owl_stub_67_c_eigen_spmat_s_new x927 x928 x929))
 | Function
-    (CI.Pointer x825,
+    (CI.Pointer x932,
      Function
        (CI.Primitive CI.Int64_t,
-        Function (CI.Primitive CI.Int64_t, Returns (CI.Pointer x828)))),
+        Function (CI.Primitive CI.Int64_t, Returns (CI.Pointer x935)))),
   "c_eigen_dsmat_z_inv" ->
-  (fun x824 x826 x827 ->
-    CI.make_ptr x828
-      (owl_stub_66_c_eigen_dsmat_z_inv (CI.cptr x824) x826 x827))
+  (fun x931 x933 x934 ->
+    CI.make_ptr x935
+      (owl_stub_66_c_eigen_dsmat_z_inv (CI.cptr x931) x933 x934))
 | Function
-    (CI.Pointer x830,
+    (CI.Pointer x937,
      Function
        (CI.Primitive CI.Int64_t,
         Function
@@ -2343,10 +2605,10 @@ let foreign : type a b. string -> (a -> b) fn -> (a -> b) =
              (CI.Primitive CI.Int64_t,
               Function (CI.Primitive CI.Int64_t, Returns CI.Void))))),
   "c_eigen_dsmat_z_swap_cols" ->
-  (fun x829 x831 x832 x833 x834 ->
-    owl_stub_65_c_eigen_dsmat_z_swap_cols (CI.cptr x829) x831 x832 x833 x834)
+  (fun x936 x938 x939 x940 x941 ->
+    owl_stub_65_c_eigen_dsmat_z_swap_cols (CI.cptr x936) x938 x939 x940 x941)
 | Function
-    (CI.Pointer x836,
+    (CI.Pointer x943,
      Function
        (CI.Primitive CI.Int64_t,
         Function
@@ -2355,99 +2617,99 @@ let foreign : type a b. string -> (a -> b) fn -> (a -> b) =
              (CI.Primitive CI.Int64_t,
               Function (CI.Primitive CI.Int64_t, Returns CI.Void))))),
   "c_eigen_dsmat_z_swap_rows" ->
-  (fun x835 x837 x838 x839 x840 ->
-    owl_stub_64_c_eigen_dsmat_z_swap_rows (CI.cptr x835) x837 x838 x839 x840)
+  (fun x942 x944 x945 x946 x947 ->
+    owl_stub_64_c_eigen_dsmat_z_swap_rows (CI.cptr x942) x944 x945 x946 x947)
 | Function
-    (CI.Pointer x842,
+    (CI.Pointer x949,
      Function
        (CI.Primitive CI.Int64_t,
-        Function (CI.Primitive CI.Int64_t, Returns (CI.Pointer x845)))),
+        Function (CI.Primitive CI.Int64_t, Returns (CI.Pointer x952)))),
   "c_eigen_dsmat_z_transpose" ->
-  (fun x841 x843 x844 ->
-    CI.make_ptr x845
-      (owl_stub_63_c_eigen_dsmat_z_transpose (CI.cptr x841) x843 x844))
+  (fun x948 x950 x951 ->
+    CI.make_ptr x952
+      (owl_stub_63_c_eigen_dsmat_z_transpose (CI.cptr x948) x950 x951))
 | Function
-    (CI.Pointer x847,
+    (CI.Pointer x954,
      Function
        (CI.Primitive CI.Int64_t,
         Function
           (CI.Primitive CI.Int64_t,
            Function
-             (CI.Pointer x851,
+             (CI.Pointer x958,
               Function
                 (CI.Primitive CI.Int64_t,
                  Function
-                   (CI.Primitive CI.Int64_t, Returns (CI.Pointer x854))))))),
+                   (CI.Primitive CI.Int64_t, Returns (CI.Pointer x961))))))),
   "c_eigen_dsmat_z_gemm" ->
-  (fun x846 x848 x849 x850 x852 x853 ->
-    CI.make_ptr x854
-      (owl_stub_62_c_eigen_dsmat_z_gemm (CI.cptr x846) x848 x849
-       (CI.cptr x850) x852 x853))
-| Function (CI.Pointer x856, Returns CI.Void), "c_eigen_dsmat_z_print" ->
-  (fun x855 -> owl_stub_61_c_eigen_dsmat_z_print (CI.cptr x855))
-| Function (CI.Pointer x858, Returns (CI.Pointer x859)),
+  (fun x953 x955 x956 x957 x959 x960 ->
+    CI.make_ptr x961
+      (owl_stub_62_c_eigen_dsmat_z_gemm (CI.cptr x953) x955 x956
+       (CI.cptr x957) x959 x960))
+| Function (CI.Pointer x963, Returns CI.Void), "c_eigen_dsmat_z_print" ->
+  (fun x962 -> owl_stub_61_c_eigen_dsmat_z_print (CI.cptr x962))
+| Function (CI.Pointer x965, Returns (CI.Pointer x966)),
   "c_eigen_dsmat_z_data" ->
-  (fun x857 ->
-    CI.make_ptr x859 (owl_stub_60_c_eigen_dsmat_z_data (CI.cptr x857)))
+  (fun x964 ->
+    CI.make_ptr x966 (owl_stub_60_c_eigen_dsmat_z_data (CI.cptr x964)))
 | Function
-    (CI.Pointer x861,
+    (CI.Pointer x968,
      Function
        (CI.Primitive CI.Int64_t,
         Function
           (CI.Primitive CI.Int64_t,
            Function (CI.Primitive CI.Complex64, Returns CI.Void)))),
   "c_eigen_dsmat_z_set" ->
-  (fun x860 x862 x863 x864 ->
-    owl_stub_59_c_eigen_dsmat_z_set (CI.cptr x860) x862 x863 x864)
+  (fun x967 x969 x970 x971 ->
+    owl_stub_59_c_eigen_dsmat_z_set (CI.cptr x967) x969 x970 x971)
 | Function
-    (CI.Pointer x866,
+    (CI.Pointer x973,
      Function
        (CI.Primitive CI.Int64_t,
         Function
           (CI.Primitive CI.Int64_t, Returns (CI.Primitive CI.Complex64)))),
   "c_eigen_dsmat_z_get" ->
-  (fun x865 x867 x868 ->
-    owl_stub_58_c_eigen_dsmat_z_get (CI.cptr x865) x867 x868)
-| Function (CI.Pointer x870, Returns (CI.Primitive CI.Int64_t)),
+  (fun x972 x974 x975 ->
+    owl_stub_58_c_eigen_dsmat_z_get (CI.cptr x972) x974 x975)
+| Function (CI.Pointer x977, Returns (CI.Primitive CI.Int64_t)),
   "c_eigen_dsmat_z_cols" ->
-  (fun x869 -> owl_stub_57_c_eigen_dsmat_z_cols (CI.cptr x869))
-| Function (CI.Pointer x872, Returns (CI.Primitive CI.Int64_t)),
+  (fun x976 -> owl_stub_57_c_eigen_dsmat_z_cols (CI.cptr x976))
+| Function (CI.Pointer x979, Returns (CI.Primitive CI.Int64_t)),
   "c_eigen_dsmat_z_rows" ->
-  (fun x871 -> owl_stub_56_c_eigen_dsmat_z_rows (CI.cptr x871))
-| Function (CI.Primitive CI.Int64_t, Returns (CI.Pointer x874)),
+  (fun x978 -> owl_stub_56_c_eigen_dsmat_z_rows (CI.cptr x978))
+| Function (CI.Primitive CI.Int64_t, Returns (CI.Pointer x981)),
   "c_eigen_dsmat_z_eye" ->
-  (fun x873 -> CI.make_ptr x874 (owl_stub_55_c_eigen_dsmat_z_eye x873))
+  (fun x980 -> CI.make_ptr x981 (owl_stub_55_c_eigen_dsmat_z_eye x980))
 | Function
     (CI.Primitive CI.Int64_t,
-     Function (CI.Primitive CI.Int64_t, Returns (CI.Pointer x877))),
+     Function (CI.Primitive CI.Int64_t, Returns (CI.Pointer x984))),
   "c_eigen_dsmat_z_ones" ->
-  (fun x875 x876 ->
-    CI.make_ptr x877 (owl_stub_54_c_eigen_dsmat_z_ones x875 x876))
+  (fun x982 x983 ->
+    CI.make_ptr x984 (owl_stub_54_c_eigen_dsmat_z_ones x982 x983))
 | Function
     (CI.Primitive CI.Int64_t,
-     Function (CI.Primitive CI.Int64_t, Returns (CI.Pointer x880))),
+     Function (CI.Primitive CI.Int64_t, Returns (CI.Pointer x987))),
   "c_eigen_dsmat_z_zeros" ->
-  (fun x878 x879 ->
-    CI.make_ptr x880 (owl_stub_53_c_eigen_dsmat_z_zeros x878 x879))
-| Function (CI.Pointer x882, Returns CI.Void), "c_eigen_dsmat_z_delete" ->
-  (fun x881 -> owl_stub_52_c_eigen_dsmat_z_delete (CI.cptr x881))
+  (fun x985 x986 ->
+    CI.make_ptr x987 (owl_stub_53_c_eigen_dsmat_z_zeros x985 x986))
+| Function (CI.Pointer x989, Returns CI.Void), "c_eigen_dsmat_z_delete" ->
+  (fun x988 -> owl_stub_52_c_eigen_dsmat_z_delete (CI.cptr x988))
 | Function
     (CI.Primitive CI.Int64_t,
-     Function (CI.Primitive CI.Int64_t, Returns (CI.Pointer x885))),
+     Function (CI.Primitive CI.Int64_t, Returns (CI.Pointer x992))),
   "c_eigen_dsmat_z_new" ->
-  (fun x883 x884 ->
-    CI.make_ptr x885 (owl_stub_51_c_eigen_dsmat_z_new x883 x884))
+  (fun x990 x991 ->
+    CI.make_ptr x992 (owl_stub_51_c_eigen_dsmat_z_new x990 x991))
 | Function
-    (CI.Pointer x887,
+    (CI.Pointer x994,
      Function
        (CI.Primitive CI.Int64_t,
-        Function (CI.Primitive CI.Int64_t, Returns (CI.Pointer x890)))),
+        Function (CI.Primitive CI.Int64_t, Returns (CI.Pointer x997)))),
   "c_eigen_dsmat_c_inv" ->
-  (fun x886 x888 x889 ->
-    CI.make_ptr x890
-      (owl_stub_50_c_eigen_dsmat_c_inv (CI.cptr x886) x888 x889))
+  (fun x993 x995 x996 ->
+    CI.make_ptr x997
+      (owl_stub_50_c_eigen_dsmat_c_inv (CI.cptr x993) x995 x996))
 | Function
-    (CI.Pointer x892,
+    (CI.Pointer x999,
      Function
        (CI.Primitive CI.Int64_t,
         Function
@@ -2456,10 +2718,11 @@ let foreign : type a b. string -> (a -> b) fn -> (a -> b) =
              (CI.Primitive CI.Int64_t,
               Function (CI.Primitive CI.Int64_t, Returns CI.Void))))),
   "c_eigen_dsmat_c_swap_cols" ->
-  (fun x891 x893 x894 x895 x896 ->
-    owl_stub_49_c_eigen_dsmat_c_swap_cols (CI.cptr x891) x893 x894 x895 x896)
+  (fun x998 x1000 x1001 x1002 x1003 ->
+    owl_stub_49_c_eigen_dsmat_c_swap_cols (CI.cptr x998) x1000 x1001 x1002
+    x1003)
 | Function
-    (CI.Pointer x898,
+    (CI.Pointer x1005,
      Function
        (CI.Primitive CI.Int64_t,
         Function
@@ -2468,99 +2731,100 @@ let foreign : type a b. string -> (a -> b) fn -> (a -> b) =
              (CI.Primitive CI.Int64_t,
               Function (CI.Primitive CI.Int64_t, Returns CI.Void))))),
   "c_eigen_dsmat_c_swap_rows" ->
-  (fun x897 x899 x900 x901 x902 ->
-    owl_stub_48_c_eigen_dsmat_c_swap_rows (CI.cptr x897) x899 x900 x901 x902)
+  (fun x1004 x1006 x1007 x1008 x1009 ->
+    owl_stub_48_c_eigen_dsmat_c_swap_rows (CI.cptr x1004) x1006 x1007 x1008
+    x1009)
 | Function
-    (CI.Pointer x904,
+    (CI.Pointer x1011,
      Function
        (CI.Primitive CI.Int64_t,
-        Function (CI.Primitive CI.Int64_t, Returns (CI.Pointer x907)))),
+        Function (CI.Primitive CI.Int64_t, Returns (CI.Pointer x1014)))),
   "c_eigen_dsmat_c_transpose" ->
-  (fun x903 x905 x906 ->
-    CI.make_ptr x907
-      (owl_stub_47_c_eigen_dsmat_c_transpose (CI.cptr x903) x905 x906))
+  (fun x1010 x1012 x1013 ->
+    CI.make_ptr x1014
+      (owl_stub_47_c_eigen_dsmat_c_transpose (CI.cptr x1010) x1012 x1013))
 | Function
-    (CI.Pointer x909,
+    (CI.Pointer x1016,
      Function
        (CI.Primitive CI.Int64_t,
         Function
           (CI.Primitive CI.Int64_t,
            Function
-             (CI.Pointer x913,
+             (CI.Pointer x1020,
               Function
                 (CI.Primitive CI.Int64_t,
                  Function
-                   (CI.Primitive CI.Int64_t, Returns (CI.Pointer x916))))))),
+                   (CI.Primitive CI.Int64_t, Returns (CI.Pointer x1023))))))),
   "c_eigen_dsmat_c_gemm" ->
-  (fun x908 x910 x911 x912 x914 x915 ->
-    CI.make_ptr x916
-      (owl_stub_46_c_eigen_dsmat_c_gemm (CI.cptr x908) x910 x911
-       (CI.cptr x912) x914 x915))
-| Function (CI.Pointer x918, Returns CI.Void), "c_eigen_dsmat_c_print" ->
-  (fun x917 -> owl_stub_45_c_eigen_dsmat_c_print (CI.cptr x917))
-| Function (CI.Pointer x920, Returns (CI.Pointer x921)),
+  (fun x1015 x1017 x1018 x1019 x1021 x1022 ->
+    CI.make_ptr x1023
+      (owl_stub_46_c_eigen_dsmat_c_gemm (CI.cptr x1015) x1017 x1018
+       (CI.cptr x1019) x1021 x1022))
+| Function (CI.Pointer x1025, Returns CI.Void), "c_eigen_dsmat_c_print" ->
+  (fun x1024 -> owl_stub_45_c_eigen_dsmat_c_print (CI.cptr x1024))
+| Function (CI.Pointer x1027, Returns (CI.Pointer x1028)),
   "c_eigen_dsmat_c_data" ->
-  (fun x919 ->
-    CI.make_ptr x921 (owl_stub_44_c_eigen_dsmat_c_data (CI.cptr x919)))
+  (fun x1026 ->
+    CI.make_ptr x1028 (owl_stub_44_c_eigen_dsmat_c_data (CI.cptr x1026)))
 | Function
-    (CI.Pointer x923,
+    (CI.Pointer x1030,
      Function
        (CI.Primitive CI.Int64_t,
         Function
           (CI.Primitive CI.Int64_t,
            Function (CI.Primitive CI.Complex32, Returns CI.Void)))),
   "c_eigen_dsmat_c_set" ->
-  (fun x922 x924 x925 x926 ->
-    owl_stub_43_c_eigen_dsmat_c_set (CI.cptr x922) x924 x925 x926)
+  (fun x1029 x1031 x1032 x1033 ->
+    owl_stub_43_c_eigen_dsmat_c_set (CI.cptr x1029) x1031 x1032 x1033)
 | Function
-    (CI.Pointer x928,
+    (CI.Pointer x1035,
      Function
        (CI.Primitive CI.Int64_t,
         Function
           (CI.Primitive CI.Int64_t, Returns (CI.Primitive CI.Complex32)))),
   "c_eigen_dsmat_c_get" ->
-  (fun x927 x929 x930 ->
-    owl_stub_42_c_eigen_dsmat_c_get (CI.cptr x927) x929 x930)
-| Function (CI.Pointer x932, Returns (CI.Primitive CI.Int64_t)),
+  (fun x1034 x1036 x1037 ->
+    owl_stub_42_c_eigen_dsmat_c_get (CI.cptr x1034) x1036 x1037)
+| Function (CI.Pointer x1039, Returns (CI.Primitive CI.Int64_t)),
   "c_eigen_dsmat_c_cols" ->
-  (fun x931 -> owl_stub_41_c_eigen_dsmat_c_cols (CI.cptr x931))
-| Function (CI.Pointer x934, Returns (CI.Primitive CI.Int64_t)),
+  (fun x1038 -> owl_stub_41_c_eigen_dsmat_c_cols (CI.cptr x1038))
+| Function (CI.Pointer x1041, Returns (CI.Primitive CI.Int64_t)),
   "c_eigen_dsmat_c_rows" ->
-  (fun x933 -> owl_stub_40_c_eigen_dsmat_c_rows (CI.cptr x933))
-| Function (CI.Primitive CI.Int64_t, Returns (CI.Pointer x936)),
+  (fun x1040 -> owl_stub_40_c_eigen_dsmat_c_rows (CI.cptr x1040))
+| Function (CI.Primitive CI.Int64_t, Returns (CI.Pointer x1043)),
   "c_eigen_dsmat_c_eye" ->
-  (fun x935 -> CI.make_ptr x936 (owl_stub_39_c_eigen_dsmat_c_eye x935))
+  (fun x1042 -> CI.make_ptr x1043 (owl_stub_39_c_eigen_dsmat_c_eye x1042))
 | Function
     (CI.Primitive CI.Int64_t,
-     Function (CI.Primitive CI.Int64_t, Returns (CI.Pointer x939))),
+     Function (CI.Primitive CI.Int64_t, Returns (CI.Pointer x1046))),
   "c_eigen_dsmat_c_ones" ->
-  (fun x937 x938 ->
-    CI.make_ptr x939 (owl_stub_38_c_eigen_dsmat_c_ones x937 x938))
+  (fun x1044 x1045 ->
+    CI.make_ptr x1046 (owl_stub_38_c_eigen_dsmat_c_ones x1044 x1045))
 | Function
     (CI.Primitive CI.Int64_t,
-     Function (CI.Primitive CI.Int64_t, Returns (CI.Pointer x942))),
+     Function (CI.Primitive CI.Int64_t, Returns (CI.Pointer x1049))),
   "c_eigen_dsmat_c_zeros" ->
-  (fun x940 x941 ->
-    CI.make_ptr x942 (owl_stub_37_c_eigen_dsmat_c_zeros x940 x941))
-| Function (CI.Pointer x944, Returns CI.Void), "c_eigen_dsmat_c_delete" ->
-  (fun x943 -> owl_stub_36_c_eigen_dsmat_c_delete (CI.cptr x943))
+  (fun x1047 x1048 ->
+    CI.make_ptr x1049 (owl_stub_37_c_eigen_dsmat_c_zeros x1047 x1048))
+| Function (CI.Pointer x1051, Returns CI.Void), "c_eigen_dsmat_c_delete" ->
+  (fun x1050 -> owl_stub_36_c_eigen_dsmat_c_delete (CI.cptr x1050))
 | Function
     (CI.Primitive CI.Int64_t,
-     Function (CI.Primitive CI.Int64_t, Returns (CI.Pointer x947))),
+     Function (CI.Primitive CI.Int64_t, Returns (CI.Pointer x1054))),
   "c_eigen_dsmat_c_new" ->
-  (fun x945 x946 ->
-    CI.make_ptr x947 (owl_stub_35_c_eigen_dsmat_c_new x945 x946))
+  (fun x1052 x1053 ->
+    CI.make_ptr x1054 (owl_stub_35_c_eigen_dsmat_c_new x1052 x1053))
 | Function
-    (CI.Pointer x949,
+    (CI.Pointer x1056,
      Function
        (CI.Primitive CI.Int64_t,
-        Function (CI.Primitive CI.Int64_t, Returns (CI.Pointer x952)))),
+        Function (CI.Primitive CI.Int64_t, Returns (CI.Pointer x1059)))),
   "c_eigen_dsmat_d_inv" ->
-  (fun x948 x950 x951 ->
-    CI.make_ptr x952
-      (owl_stub_34_c_eigen_dsmat_d_inv (CI.cptr x948) x950 x951))
+  (fun x1055 x1057 x1058 ->
+    CI.make_ptr x1059
+      (owl_stub_34_c_eigen_dsmat_d_inv (CI.cptr x1055) x1057 x1058))
 | Function
-    (CI.Pointer x954,
+    (CI.Pointer x1061,
      Function
        (CI.Primitive CI.Int64_t,
         Function
@@ -2569,10 +2833,11 @@ let foreign : type a b. string -> (a -> b) fn -> (a -> b) =
              (CI.Primitive CI.Int64_t,
               Function (CI.Primitive CI.Int64_t, Returns CI.Void))))),
   "c_eigen_dsmat_d_swap_cols" ->
-  (fun x953 x955 x956 x957 x958 ->
-    owl_stub_33_c_eigen_dsmat_d_swap_cols (CI.cptr x953) x955 x956 x957 x958)
+  (fun x1060 x1062 x1063 x1064 x1065 ->
+    owl_stub_33_c_eigen_dsmat_d_swap_cols (CI.cptr x1060) x1062 x1063 x1064
+    x1065)
 | Function
-    (CI.Pointer x960,
+    (CI.Pointer x1067,
      Function
        (CI.Primitive CI.Int64_t,
         Function
@@ -2581,98 +2846,99 @@ let foreign : type a b. string -> (a -> b) fn -> (a -> b) =
              (CI.Primitive CI.Int64_t,
               Function (CI.Primitive CI.Int64_t, Returns CI.Void))))),
   "c_eigen_dsmat_d_swap_rows" ->
-  (fun x959 x961 x962 x963 x964 ->
-    owl_stub_32_c_eigen_dsmat_d_swap_rows (CI.cptr x959) x961 x962 x963 x964)
+  (fun x1066 x1068 x1069 x1070 x1071 ->
+    owl_stub_32_c_eigen_dsmat_d_swap_rows (CI.cptr x1066) x1068 x1069 x1070
+    x1071)
 | Function
-    (CI.Pointer x966,
+    (CI.Pointer x1073,
      Function
        (CI.Primitive CI.Int64_t,
-        Function (CI.Primitive CI.Int64_t, Returns (CI.Pointer x969)))),
+        Function (CI.Primitive CI.Int64_t, Returns (CI.Pointer x1076)))),
   "c_eigen_dsmat_d_transpose" ->
-  (fun x965 x967 x968 ->
-    CI.make_ptr x969
-      (owl_stub_31_c_eigen_dsmat_d_transpose (CI.cptr x965) x967 x968))
+  (fun x1072 x1074 x1075 ->
+    CI.make_ptr x1076
+      (owl_stub_31_c_eigen_dsmat_d_transpose (CI.cptr x1072) x1074 x1075))
 | Function
-    (CI.Pointer x971,
+    (CI.Pointer x1078,
      Function
        (CI.Primitive CI.Int64_t,
         Function
           (CI.Primitive CI.Int64_t,
            Function
-             (CI.Pointer x975,
+             (CI.Pointer x1082,
               Function
                 (CI.Primitive CI.Int64_t,
                  Function
-                   (CI.Primitive CI.Int64_t, Returns (CI.Pointer x978))))))),
+                   (CI.Primitive CI.Int64_t, Returns (CI.Pointer x1085))))))),
   "c_eigen_dsmat_d_gemm" ->
-  (fun x970 x972 x973 x974 x976 x977 ->
-    CI.make_ptr x978
-      (owl_stub_30_c_eigen_dsmat_d_gemm (CI.cptr x970) x972 x973
-       (CI.cptr x974) x976 x977))
-| Function (CI.Pointer x980, Returns CI.Void), "c_eigen_dsmat_d_print" ->
-  (fun x979 -> owl_stub_29_c_eigen_dsmat_d_print (CI.cptr x979))
-| Function (CI.Pointer x982, Returns (CI.Pointer x983)),
+  (fun x1077 x1079 x1080 x1081 x1083 x1084 ->
+    CI.make_ptr x1085
+      (owl_stub_30_c_eigen_dsmat_d_gemm (CI.cptr x1077) x1079 x1080
+       (CI.cptr x1081) x1083 x1084))
+| Function (CI.Pointer x1087, Returns CI.Void), "c_eigen_dsmat_d_print" ->
+  (fun x1086 -> owl_stub_29_c_eigen_dsmat_d_print (CI.cptr x1086))
+| Function (CI.Pointer x1089, Returns (CI.Pointer x1090)),
   "c_eigen_dsmat_d_data" ->
-  (fun x981 ->
-    CI.make_ptr x983 (owl_stub_28_c_eigen_dsmat_d_data (CI.cptr x981)))
+  (fun x1088 ->
+    CI.make_ptr x1090 (owl_stub_28_c_eigen_dsmat_d_data (CI.cptr x1088)))
 | Function
-    (CI.Pointer x985,
+    (CI.Pointer x1092,
      Function
        (CI.Primitive CI.Int64_t,
         Function
           (CI.Primitive CI.Int64_t,
            Function (CI.Primitive CI.Double, Returns CI.Void)))),
   "c_eigen_dsmat_d_set" ->
-  (fun x984 x986 x987 x988 ->
-    owl_stub_27_c_eigen_dsmat_d_set (CI.cptr x984) x986 x987 x988)
+  (fun x1091 x1093 x1094 x1095 ->
+    owl_stub_27_c_eigen_dsmat_d_set (CI.cptr x1091) x1093 x1094 x1095)
 | Function
-    (CI.Pointer x990,
+    (CI.Pointer x1097,
      Function
        (CI.Primitive CI.Int64_t,
         Function (CI.Primitive CI.Int64_t, Returns (CI.Primitive CI.Double)))),
   "c_eigen_dsmat_d_get" ->
-  (fun x989 x991 x992 ->
-    owl_stub_26_c_eigen_dsmat_d_get (CI.cptr x989) x991 x992)
-| Function (CI.Pointer x994, Returns (CI.Primitive CI.Int64_t)),
+  (fun x1096 x1098 x1099 ->
+    owl_stub_26_c_eigen_dsmat_d_get (CI.cptr x1096) x1098 x1099)
+| Function (CI.Pointer x1101, Returns (CI.Primitive CI.Int64_t)),
   "c_eigen_dsmat_d_cols" ->
-  (fun x993 -> owl_stub_25_c_eigen_dsmat_d_cols (CI.cptr x993))
-| Function (CI.Pointer x996, Returns (CI.Primitive CI.Int64_t)),
+  (fun x1100 -> owl_stub_25_c_eigen_dsmat_d_cols (CI.cptr x1100))
+| Function (CI.Pointer x1103, Returns (CI.Primitive CI.Int64_t)),
   "c_eigen_dsmat_d_rows" ->
-  (fun x995 -> owl_stub_24_c_eigen_dsmat_d_rows (CI.cptr x995))
-| Function (CI.Primitive CI.Int64_t, Returns (CI.Pointer x998)),
+  (fun x1102 -> owl_stub_24_c_eigen_dsmat_d_rows (CI.cptr x1102))
+| Function (CI.Primitive CI.Int64_t, Returns (CI.Pointer x1105)),
   "c_eigen_dsmat_d_eye" ->
-  (fun x997 -> CI.make_ptr x998 (owl_stub_23_c_eigen_dsmat_d_eye x997))
+  (fun x1104 -> CI.make_ptr x1105 (owl_stub_23_c_eigen_dsmat_d_eye x1104))
 | Function
     (CI.Primitive CI.Int64_t,
-     Function (CI.Primitive CI.Int64_t, Returns (CI.Pointer x1001))),
+     Function (CI.Primitive CI.Int64_t, Returns (CI.Pointer x1108))),
   "c_eigen_dsmat_d_ones" ->
-  (fun x999 x1000 ->
-    CI.make_ptr x1001 (owl_stub_22_c_eigen_dsmat_d_ones x999 x1000))
+  (fun x1106 x1107 ->
+    CI.make_ptr x1108 (owl_stub_22_c_eigen_dsmat_d_ones x1106 x1107))
 | Function
     (CI.Primitive CI.Int64_t,
-     Function (CI.Primitive CI.Int64_t, Returns (CI.Pointer x1004))),
+     Function (CI.Primitive CI.Int64_t, Returns (CI.Pointer x1111))),
   "c_eigen_dsmat_d_zeros" ->
-  (fun x1002 x1003 ->
-    CI.make_ptr x1004 (owl_stub_21_c_eigen_dsmat_d_zeros x1002 x1003))
-| Function (CI.Pointer x1006, Returns CI.Void), "c_eigen_dsmat_d_delete" ->
-  (fun x1005 -> owl_stub_20_c_eigen_dsmat_d_delete (CI.cptr x1005))
+  (fun x1109 x1110 ->
+    CI.make_ptr x1111 (owl_stub_21_c_eigen_dsmat_d_zeros x1109 x1110))
+| Function (CI.Pointer x1113, Returns CI.Void), "c_eigen_dsmat_d_delete" ->
+  (fun x1112 -> owl_stub_20_c_eigen_dsmat_d_delete (CI.cptr x1112))
 | Function
     (CI.Primitive CI.Int64_t,
-     Function (CI.Primitive CI.Int64_t, Returns (CI.Pointer x1009))),
+     Function (CI.Primitive CI.Int64_t, Returns (CI.Pointer x1116))),
   "c_eigen_dsmat_d_new" ->
-  (fun x1007 x1008 ->
-    CI.make_ptr x1009 (owl_stub_19_c_eigen_dsmat_d_new x1007 x1008))
+  (fun x1114 x1115 ->
+    CI.make_ptr x1116 (owl_stub_19_c_eigen_dsmat_d_new x1114 x1115))
 | Function
-    (CI.Pointer x1011,
+    (CI.Pointer x1118,
      Function
        (CI.Primitive CI.Int64_t,
-        Function (CI.Primitive CI.Int64_t, Returns (CI.Pointer x1014)))),
+        Function (CI.Primitive CI.Int64_t, Returns (CI.Pointer x1121)))),
   "c_eigen_dsmat_s_inv" ->
-  (fun x1010 x1012 x1013 ->
-    CI.make_ptr x1014
-      (owl_stub_18_c_eigen_dsmat_s_inv (CI.cptr x1010) x1012 x1013))
+  (fun x1117 x1119 x1120 ->
+    CI.make_ptr x1121
+      (owl_stub_18_c_eigen_dsmat_s_inv (CI.cptr x1117) x1119 x1120))
 | Function
-    (CI.Pointer x1016,
+    (CI.Pointer x1123,
      Function
        (CI.Primitive CI.Int64_t,
         Function
@@ -2681,11 +2947,11 @@ let foreign : type a b. string -> (a -> b) fn -> (a -> b) =
              (CI.Primitive CI.Int64_t,
               Function (CI.Primitive CI.Int64_t, Returns CI.Void))))),
   "c_eigen_dsmat_s_swap_cols" ->
-  (fun x1015 x1017 x1018 x1019 x1020 ->
-    owl_stub_17_c_eigen_dsmat_s_swap_cols (CI.cptr x1015) x1017 x1018 x1019
-    x1020)
+  (fun x1122 x1124 x1125 x1126 x1127 ->
+    owl_stub_17_c_eigen_dsmat_s_swap_cols (CI.cptr x1122) x1124 x1125 x1126
+    x1127)
 | Function
-    (CI.Pointer x1022,
+    (CI.Pointer x1129,
      Function
        (CI.Primitive CI.Int64_t,
         Function
@@ -2694,108 +2960,108 @@ let foreign : type a b. string -> (a -> b) fn -> (a -> b) =
              (CI.Primitive CI.Int64_t,
               Function (CI.Primitive CI.Int64_t, Returns CI.Void))))),
   "c_eigen_dsmat_s_swap_rows" ->
-  (fun x1021 x1023 x1024 x1025 x1026 ->
-    owl_stub_16_c_eigen_dsmat_s_swap_rows (CI.cptr x1021) x1023 x1024 x1025
-    x1026)
+  (fun x1128 x1130 x1131 x1132 x1133 ->
+    owl_stub_16_c_eigen_dsmat_s_swap_rows (CI.cptr x1128) x1130 x1131 x1132
+    x1133)
 | Function
-    (CI.Pointer x1028,
+    (CI.Pointer x1135,
      Function
        (CI.Primitive CI.Int64_t,
-        Function (CI.Primitive CI.Int64_t, Returns (CI.Pointer x1031)))),
+        Function (CI.Primitive CI.Int64_t, Returns (CI.Pointer x1138)))),
   "c_eigen_dsmat_s_transpose" ->
-  (fun x1027 x1029 x1030 ->
-    CI.make_ptr x1031
-      (owl_stub_15_c_eigen_dsmat_s_transpose (CI.cptr x1027) x1029 x1030))
+  (fun x1134 x1136 x1137 ->
+    CI.make_ptr x1138
+      (owl_stub_15_c_eigen_dsmat_s_transpose (CI.cptr x1134) x1136 x1137))
 | Function
-    (CI.Pointer x1033,
+    (CI.Pointer x1140,
      Function
        (CI.Primitive CI.Int64_t,
         Function
           (CI.Primitive CI.Int64_t,
            Function
-             (CI.Pointer x1037,
+             (CI.Pointer x1144,
               Function
                 (CI.Primitive CI.Int64_t,
                  Function
-                   (CI.Primitive CI.Int64_t, Returns (CI.Pointer x1040))))))),
+                   (CI.Primitive CI.Int64_t, Returns (CI.Pointer x1147))))))),
   "c_eigen_dsmat_s_gemm" ->
-  (fun x1032 x1034 x1035 x1036 x1038 x1039 ->
-    CI.make_ptr x1040
-      (owl_stub_14_c_eigen_dsmat_s_gemm (CI.cptr x1032) x1034 x1035
-       (CI.cptr x1036) x1038 x1039))
-| Function (CI.Pointer x1042, Returns CI.Void), "c_eigen_dsmat_s_print" ->
-  (fun x1041 -> owl_stub_13_c_eigen_dsmat_s_print (CI.cptr x1041))
+  (fun x1139 x1141 x1142 x1143 x1145 x1146 ->
+    CI.make_ptr x1147
+      (owl_stub_14_c_eigen_dsmat_s_gemm (CI.cptr x1139) x1141 x1142
+       (CI.cptr x1143) x1145 x1146))
+| Function (CI.Pointer x1149, Returns CI.Void), "c_eigen_dsmat_s_print" ->
+  (fun x1148 -> owl_stub_13_c_eigen_dsmat_s_print (CI.cptr x1148))
 | Function
-    (CI.Pointer x1044,
+    (CI.Pointer x1151,
      Function
-       (CI.Pointer x1046,
+       (CI.Pointer x1153,
         Function
           (CI.Primitive CI.Int64_t,
            Function (CI.Primitive CI.Int64_t, Returns CI.Void)))),
   "c_eigen_dsmat_s_of_bigarray2" ->
-  (fun x1043 x1045 x1047 x1048 ->
-    owl_stub_12_c_eigen_dsmat_s_of_bigarray2 (CI.cptr x1043) (CI.cptr x1045)
-    x1047 x1048)
+  (fun x1150 x1152 x1154 x1155 ->
+    owl_stub_12_c_eigen_dsmat_s_of_bigarray2 (CI.cptr x1150) (CI.cptr x1152)
+    x1154 x1155)
 | Function
-    (CI.Pointer x1050,
+    (CI.Pointer x1157,
      Function
        (CI.Primitive CI.Int64_t,
-        Function (CI.Primitive CI.Int64_t, Returns (CI.Pointer x1053)))),
+        Function (CI.Primitive CI.Int64_t, Returns (CI.Pointer x1160)))),
   "c_eigen_dsmat_s_of_bigarray" ->
-  (fun x1049 x1051 x1052 ->
-    CI.make_ptr x1053
-      (owl_stub_11_c_eigen_dsmat_s_of_bigarray (CI.cptr x1049) x1051 x1052))
-| Function (CI.Pointer x1055, Returns (CI.Pointer x1056)),
+  (fun x1156 x1158 x1159 ->
+    CI.make_ptr x1160
+      (owl_stub_11_c_eigen_dsmat_s_of_bigarray (CI.cptr x1156) x1158 x1159))
+| Function (CI.Pointer x1162, Returns (CI.Pointer x1163)),
   "c_eigen_dsmat_s_data" ->
-  (fun x1054 ->
-    CI.make_ptr x1056 (owl_stub_10_c_eigen_dsmat_s_data (CI.cptr x1054)))
+  (fun x1161 ->
+    CI.make_ptr x1163 (owl_stub_10_c_eigen_dsmat_s_data (CI.cptr x1161)))
 | Function
-    (CI.Pointer x1058,
+    (CI.Pointer x1165,
      Function
        (CI.Primitive CI.Int64_t,
         Function
           (CI.Primitive CI.Int64_t,
            Function (CI.Primitive CI.Float, Returns CI.Void)))),
   "c_eigen_dsmat_s_set" ->
-  (fun x1057 x1059 x1060 x1061 ->
-    owl_stub_9_c_eigen_dsmat_s_set (CI.cptr x1057) x1059 x1060 x1061)
+  (fun x1164 x1166 x1167 x1168 ->
+    owl_stub_9_c_eigen_dsmat_s_set (CI.cptr x1164) x1166 x1167 x1168)
 | Function
-    (CI.Pointer x1063,
+    (CI.Pointer x1170,
      Function
        (CI.Primitive CI.Int64_t,
         Function (CI.Primitive CI.Int64_t, Returns (CI.Primitive CI.Float)))),
   "c_eigen_dsmat_s_get" ->
-  (fun x1062 x1064 x1065 ->
-    owl_stub_8_c_eigen_dsmat_s_get (CI.cptr x1062) x1064 x1065)
-| Function (CI.Pointer x1067, Returns (CI.Primitive CI.Int64_t)),
+  (fun x1169 x1171 x1172 ->
+    owl_stub_8_c_eigen_dsmat_s_get (CI.cptr x1169) x1171 x1172)
+| Function (CI.Pointer x1174, Returns (CI.Primitive CI.Int64_t)),
   "c_eigen_dsmat_s_cols" ->
-  (fun x1066 -> owl_stub_7_c_eigen_dsmat_s_cols (CI.cptr x1066))
-| Function (CI.Pointer x1069, Returns (CI.Primitive CI.Int64_t)),
+  (fun x1173 -> owl_stub_7_c_eigen_dsmat_s_cols (CI.cptr x1173))
+| Function (CI.Pointer x1176, Returns (CI.Primitive CI.Int64_t)),
   "c_eigen_dsmat_s_rows" ->
-  (fun x1068 -> owl_stub_6_c_eigen_dsmat_s_rows (CI.cptr x1068))
-| Function (CI.Primitive CI.Int64_t, Returns (CI.Pointer x1071)),
+  (fun x1175 -> owl_stub_6_c_eigen_dsmat_s_rows (CI.cptr x1175))
+| Function (CI.Primitive CI.Int64_t, Returns (CI.Pointer x1178)),
   "c_eigen_dsmat_s_eye" ->
-  (fun x1070 -> CI.make_ptr x1071 (owl_stub_5_c_eigen_dsmat_s_eye x1070))
+  (fun x1177 -> CI.make_ptr x1178 (owl_stub_5_c_eigen_dsmat_s_eye x1177))
 | Function
     (CI.Primitive CI.Int64_t,
-     Function (CI.Primitive CI.Int64_t, Returns (CI.Pointer x1074))),
+     Function (CI.Primitive CI.Int64_t, Returns (CI.Pointer x1181))),
   "c_eigen_dsmat_s_ones" ->
-  (fun x1072 x1073 ->
-    CI.make_ptr x1074 (owl_stub_4_c_eigen_dsmat_s_ones x1072 x1073))
+  (fun x1179 x1180 ->
+    CI.make_ptr x1181 (owl_stub_4_c_eigen_dsmat_s_ones x1179 x1180))
 | Function
     (CI.Primitive CI.Int64_t,
-     Function (CI.Primitive CI.Int64_t, Returns (CI.Pointer x1077))),
+     Function (CI.Primitive CI.Int64_t, Returns (CI.Pointer x1184))),
   "c_eigen_dsmat_s_zeros" ->
-  (fun x1075 x1076 ->
-    CI.make_ptr x1077 (owl_stub_3_c_eigen_dsmat_s_zeros x1075 x1076))
-| Function (CI.Pointer x1079, Returns CI.Void), "c_eigen_dsmat_s_delete" ->
-  (fun x1078 -> owl_stub_2_c_eigen_dsmat_s_delete (CI.cptr x1078))
+  (fun x1182 x1183 ->
+    CI.make_ptr x1184 (owl_stub_3_c_eigen_dsmat_s_zeros x1182 x1183))
+| Function (CI.Pointer x1186, Returns CI.Void), "c_eigen_dsmat_s_delete" ->
+  (fun x1185 -> owl_stub_2_c_eigen_dsmat_s_delete (CI.cptr x1185))
 | Function
     (CI.Primitive CI.Int64_t,
-     Function (CI.Primitive CI.Int64_t, Returns (CI.Pointer x1082))),
+     Function (CI.Primitive CI.Int64_t, Returns (CI.Pointer x1189))),
   "c_eigen_dsmat_s_new" ->
-  (fun x1080 x1081 ->
-    CI.make_ptr x1082 (owl_stub_1_c_eigen_dsmat_s_new x1080 x1081))
+  (fun x1187 x1188 ->
+    CI.make_ptr x1189 (owl_stub_1_c_eigen_dsmat_s_new x1187 x1188))
 | _, s ->  Printf.ksprintf failwith "No match for %s" s
 
 

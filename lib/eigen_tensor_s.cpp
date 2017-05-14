@@ -104,7 +104,6 @@ void c_eigen_tensor_s_cuboid_conv_backward_input(
   return;
 }
 
-
 void c_eigen_tensor_s_cuboid_conv_backward_kernel(
   tensor_s_elt* input_ptr, tensor_s_elt* kernel_ptr, tensor_s_elt* output_ptr,
   int batches, int input_cols, int input_rows, int input_depth, int in_channel,

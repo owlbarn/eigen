@@ -648,7 +648,12 @@ module Bindings (F : Cstubs.FOREIGN) = struct
     let elt = double
 
     let ml_eigen_tensor_test = foreign "c_eigen_tensor_d_test" (ptr elt @-> returning void)
-    let ml_eigen_tensor_spatial_conv = foreign "c_eigen_tensor_d_spatial_conv" (ptr elt @-> ptr elt @-> ptr elt @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> returning void)
+    let ml_eigen_tensor_spatial_conv = foreign "c_eigen_tensor_d_spatial_conv" (ptr elt @-> ptr elt @-> ptr elt @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> returning void)
+    let ml_eigen_tensor_spatial_conv_backward_input = foreign "c_eigen_tensor_d_spatial_conv_backward_input" (ptr elt @-> ptr elt @-> ptr elt @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> returning void)
+    let ml_eigen_tensor_spatial_conv_backward_kernel = foreign "c_eigen_tensor_d_spatial_conv_backward_kernel" (ptr elt @-> ptr elt @-> ptr elt @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> returning void)
+    let ml_eigen_tensor_cuboid_conv = foreign "c_eigen_tensor_d_cuboid_conv" (ptr elt @-> ptr elt @-> ptr elt @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> returning void)
+    let ml_eigen_tensor_cuboid_conv_backward_input = foreign "c_eigen_tensor_d_cuboid_conv_backward_input" (ptr elt @-> ptr elt @-> ptr elt @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> returning void)
+    let ml_eigen_tensor_cuboid_conv_backward_kernel = foreign "c_eigen_tensor_d_cuboid_conv_backward_kernel" (ptr elt @-> ptr elt @-> ptr elt @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> returning void)
 
   end
 

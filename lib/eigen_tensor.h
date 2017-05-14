@@ -35,7 +35,12 @@
    struct c_tensor_d {};
 
    void c_eigen_tensor_d_test(tensor_d_elt*);
-   void c_eigen_tensor_d_spatial_conv(tensor_d_elt*, tensor_d_elt*, tensor_d_elt*, int, int, int, int, int, int, int, int, int);
+   void c_eigen_tensor_d_spatial_conv(tensor_d_elt*, tensor_d_elt*, tensor_d_elt*, int, int, int, int, int, int, int, int, int, int, int, int, int, int);
+   void c_eigen_tensor_d_spatial_conv_backward_input(tensor_d_elt*, tensor_d_elt*, tensor_d_elt*, int, int, int, int, int, int, int, int, int, int, int, int, int);
+   void c_eigen_tensor_d_spatial_conv_backward_kernel(tensor_d_elt*, tensor_d_elt*, tensor_d_elt*, int, int, int, int, int, int, int, int, int, int, int, int, int);
+   void c_eigen_tensor_d_cuboid_conv(tensor_d_elt*, tensor_d_elt*, tensor_d_elt*, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int);
+   void c_eigen_tensor_d_cuboid_conv_backward_input(tensor_d_elt*, tensor_d_elt*, tensor_d_elt*, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int);
+   void c_eigen_tensor_d_cuboid_conv_backward_kernel(tensor_d_elt*, tensor_d_elt*, tensor_d_elt*, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int);
 
 
    /**************************** Tensor_C ****************************/

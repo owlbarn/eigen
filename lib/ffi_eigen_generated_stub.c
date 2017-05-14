@@ -2427,47 +2427,454 @@ value owl_stub_280_c_eigen_tensor_d_test(value x2216)
    c_eigen_tensor_d_test(x2217);
    return Val_unit;
 }
-value owl_stub_281_c_eigen_tensor_d_spatial_conv(value x2230, value x2229,
-                                                 value x2228, value x2227,
-                                                 value x2226, value x2225,
-                                                 value x2224, value x2223,
-                                                 value x2222, value x2221,
-                                                 value x2220, value x2219)
+value owl_stub_281_c_eigen_tensor_d_spatial_conv(value x2235, value x2234,
+                                                 value x2233, value x2232,
+                                                 value x2231, value x2230,
+                                                 value x2229, value x2228,
+                                                 value x2227, value x2226,
+                                                 value x2225, value x2224,
+                                                 value x2223, value x2222,
+                                                 value x2221, value x2220,
+                                                 value x2219)
 {
-   double* x2231 = CTYPES_ADDR_OF_FATPTR(x2230);
-   double* x2232 = CTYPES_ADDR_OF_FATPTR(x2229);
-   double* x2233 = CTYPES_ADDR_OF_FATPTR(x2228);
-   int x2234 = Long_val(x2227);
-   int x2237 = Long_val(x2226);
-   int x2240 = Long_val(x2225);
-   int x2243 = Long_val(x2224);
-   int x2246 = Long_val(x2223);
-   int x2249 = Long_val(x2222);
-   int x2252 = Long_val(x2221);
-   int x2255 = Long_val(x2220);
-   int x2258 = Long_val(x2219);
-   c_eigen_tensor_d_spatial_conv(x2231, x2232, x2233, x2234, x2237, x2240,
-                                 x2243, x2246, x2249, x2252, x2255, x2258);
+   double* x2236 = CTYPES_ADDR_OF_FATPTR(x2235);
+   double* x2237 = CTYPES_ADDR_OF_FATPTR(x2234);
+   double* x2238 = CTYPES_ADDR_OF_FATPTR(x2233);
+   int x2239 = Long_val(x2232);
+   int x2242 = Long_val(x2231);
+   int x2245 = Long_val(x2230);
+   int x2248 = Long_val(x2229);
+   int x2251 = Long_val(x2228);
+   int x2254 = Long_val(x2227);
+   int x2257 = Long_val(x2226);
+   int x2260 = Long_val(x2225);
+   int x2263 = Long_val(x2224);
+   int x2266 = Long_val(x2223);
+   int x2269 = Long_val(x2222);
+   int x2272 = Long_val(x2221);
+   int x2275 = Long_val(x2220);
+   int x2278 = Long_val(x2219);
+   c_eigen_tensor_d_spatial_conv(x2236, x2237, x2238, x2239, x2242, x2245,
+                                 x2248, x2251, x2254, x2257, x2260, x2263,
+                                 x2266, x2269, x2272, x2275, x2278);
    return Val_unit;
 }
-value owl_stub_281_c_eigen_tensor_d_spatial_conv_byte12(value* argv,
+value owl_stub_281_c_eigen_tensor_d_spatial_conv_byte17(value* argv,
                                                         int argc)
 {
-   value x2262 = argv[11];
-   value x2263 = argv[10];
-   value x2264 = argv[9];
-   value x2265 = argv[8];
-   value x2266 = argv[7];
-   value x2267 = argv[6];
-   value x2268 = argv[5];
-   value x2269 = argv[4];
-   value x2270 = argv[3];
-   value x2271 = argv[2];
-   value x2272 = argv[1];
-   value x2273 = argv[0];
+   value x2282 = argv[16];
+   value x2283 = argv[15];
+   value x2284 = argv[14];
+   value x2285 = argv[13];
+   value x2286 = argv[12];
+   value x2287 = argv[11];
+   value x2288 = argv[10];
+   value x2289 = argv[9];
+   value x2290 = argv[8];
+   value x2291 = argv[7];
+   value x2292 = argv[6];
+   value x2293 = argv[5];
+   value x2294 = argv[4];
+   value x2295 = argv[3];
+   value x2296 = argv[2];
+   value x2297 = argv[1];
+   value x2298 = argv[0];
    return
-     owl_stub_281_c_eigen_tensor_d_spatial_conv(x2273, x2272, x2271, 
-                                                x2270, x2269, x2268, 
-                                                x2267, x2266, x2265, 
-                                                x2264, x2263, x2262);
+     owl_stub_281_c_eigen_tensor_d_spatial_conv(x2298, x2297, x2296, 
+                                                x2295, x2294, x2293, 
+                                                x2292, x2291, x2290, 
+                                                x2289, x2288, x2287, 
+                                                x2286, x2285, x2284, 
+                                                x2283, x2282);
+}
+value owl_stub_282_c_eigen_tensor_d_spatial_conv_backward_input(value x2314,
+                                                                value x2313,
+                                                                value x2312,
+                                                                value x2311,
+                                                                value x2310,
+                                                                value x2309,
+                                                                value x2308,
+                                                                value x2307,
+                                                                value x2306,
+                                                                value x2305,
+                                                                value x2304,
+                                                                value x2303,
+                                                                value x2302,
+                                                                value x2301,
+                                                                value x2300,
+                                                                value x2299)
+{
+   double* x2315 = CTYPES_ADDR_OF_FATPTR(x2314);
+   double* x2316 = CTYPES_ADDR_OF_FATPTR(x2313);
+   double* x2317 = CTYPES_ADDR_OF_FATPTR(x2312);
+   int x2318 = Long_val(x2311);
+   int x2321 = Long_val(x2310);
+   int x2324 = Long_val(x2309);
+   int x2327 = Long_val(x2308);
+   int x2330 = Long_val(x2307);
+   int x2333 = Long_val(x2306);
+   int x2336 = Long_val(x2305);
+   int x2339 = Long_val(x2304);
+   int x2342 = Long_val(x2303);
+   int x2345 = Long_val(x2302);
+   int x2348 = Long_val(x2301);
+   int x2351 = Long_val(x2300);
+   int x2354 = Long_val(x2299);
+   c_eigen_tensor_d_spatial_conv_backward_input(x2315, x2316, x2317, 
+                                                x2318, x2321, x2324, 
+                                                x2327, x2330, x2333, 
+                                                x2336, x2339, x2342, 
+                                                x2345, x2348, x2351, 
+                                                x2354);
+   return Val_unit;
+}
+value owl_stub_282_c_eigen_tensor_d_spatial_conv_backward_input_byte16
+     (value* argv, int argc)
+{
+   value x2358 = argv[15];
+   value x2359 = argv[14];
+   value x2360 = argv[13];
+   value x2361 = argv[12];
+   value x2362 = argv[11];
+   value x2363 = argv[10];
+   value x2364 = argv[9];
+   value x2365 = argv[8];
+   value x2366 = argv[7];
+   value x2367 = argv[6];
+   value x2368 = argv[5];
+   value x2369 = argv[4];
+   value x2370 = argv[3];
+   value x2371 = argv[2];
+   value x2372 = argv[1];
+   value x2373 = argv[0];
+   return
+     owl_stub_282_c_eigen_tensor_d_spatial_conv_backward_input(x2373, 
+                                                               x2372, 
+                                                               x2371, 
+                                                               x2370, 
+                                                               x2369, 
+                                                               x2368, 
+                                                               x2367, 
+                                                               x2366, 
+                                                               x2365, 
+                                                               x2364, 
+                                                               x2363, 
+                                                               x2362, 
+                                                               x2361, 
+                                                               x2360, 
+                                                               x2359, 
+                                                               x2358);
+}
+value owl_stub_283_c_eigen_tensor_d_spatial_conv_backward_kernel(value x2389,
+                                                                 value x2388,
+                                                                 value x2387,
+                                                                 value x2386,
+                                                                 value x2385,
+                                                                 value x2384,
+                                                                 value x2383,
+                                                                 value x2382,
+                                                                 value x2381,
+                                                                 value x2380,
+                                                                 value x2379,
+                                                                 value x2378,
+                                                                 value x2377,
+                                                                 value x2376,
+                                                                 value x2375,
+                                                                 value x2374)
+{
+   double* x2390 = CTYPES_ADDR_OF_FATPTR(x2389);
+   double* x2391 = CTYPES_ADDR_OF_FATPTR(x2388);
+   double* x2392 = CTYPES_ADDR_OF_FATPTR(x2387);
+   int x2393 = Long_val(x2386);
+   int x2396 = Long_val(x2385);
+   int x2399 = Long_val(x2384);
+   int x2402 = Long_val(x2383);
+   int x2405 = Long_val(x2382);
+   int x2408 = Long_val(x2381);
+   int x2411 = Long_val(x2380);
+   int x2414 = Long_val(x2379);
+   int x2417 = Long_val(x2378);
+   int x2420 = Long_val(x2377);
+   int x2423 = Long_val(x2376);
+   int x2426 = Long_val(x2375);
+   int x2429 = Long_val(x2374);
+   c_eigen_tensor_d_spatial_conv_backward_kernel(x2390, x2391, x2392, 
+                                                 x2393, x2396, x2399, 
+                                                 x2402, x2405, x2408, 
+                                                 x2411, x2414, x2417, 
+                                                 x2420, x2423, x2426, 
+                                                 x2429);
+   return Val_unit;
+}
+value owl_stub_283_c_eigen_tensor_d_spatial_conv_backward_kernel_byte16
+     (value* argv, int argc)
+{
+   value x2433 = argv[15];
+   value x2434 = argv[14];
+   value x2435 = argv[13];
+   value x2436 = argv[12];
+   value x2437 = argv[11];
+   value x2438 = argv[10];
+   value x2439 = argv[9];
+   value x2440 = argv[8];
+   value x2441 = argv[7];
+   value x2442 = argv[6];
+   value x2443 = argv[5];
+   value x2444 = argv[4];
+   value x2445 = argv[3];
+   value x2446 = argv[2];
+   value x2447 = argv[1];
+   value x2448 = argv[0];
+   return
+     owl_stub_283_c_eigen_tensor_d_spatial_conv_backward_kernel(x2448, 
+                                                                x2447, 
+                                                                x2446, 
+                                                                x2445, 
+                                                                x2444, 
+                                                                x2443, 
+                                                                x2442, 
+                                                                x2441, 
+                                                                x2440, 
+                                                                x2439, 
+                                                                x2438, 
+                                                                x2437, 
+                                                                x2436, 
+                                                                x2435, 
+                                                                x2434, 
+                                                                x2433);
+}
+value owl_stub_284_c_eigen_tensor_d_cuboid_conv(value x2467, value x2466,
+                                                value x2465, value x2464,
+                                                value x2463, value x2462,
+                                                value x2461, value x2460,
+                                                value x2459, value x2458,
+                                                value x2457, value x2456,
+                                                value x2455, value x2454,
+                                                value x2453, value x2452,
+                                                value x2451, value x2450,
+                                                value x2449)
+{
+   double* x2468 = CTYPES_ADDR_OF_FATPTR(x2467);
+   double* x2469 = CTYPES_ADDR_OF_FATPTR(x2466);
+   double* x2470 = CTYPES_ADDR_OF_FATPTR(x2465);
+   int x2471 = Long_val(x2464);
+   int x2474 = Long_val(x2463);
+   int x2477 = Long_val(x2462);
+   int x2480 = Long_val(x2461);
+   int x2483 = Long_val(x2460);
+   int x2486 = Long_val(x2459);
+   int x2489 = Long_val(x2458);
+   int x2492 = Long_val(x2457);
+   int x2495 = Long_val(x2456);
+   int x2498 = Long_val(x2455);
+   int x2501 = Long_val(x2454);
+   int x2504 = Long_val(x2453);
+   int x2507 = Long_val(x2452);
+   int x2510 = Long_val(x2451);
+   int x2513 = Long_val(x2450);
+   int x2516 = Long_val(x2449);
+   c_eigen_tensor_d_cuboid_conv(x2468, x2469, x2470, x2471, x2474, x2477,
+                                x2480, x2483, x2486, x2489, x2492, x2495,
+                                x2498, x2501, x2504, x2507, x2510, x2513,
+                                x2516);
+   return Val_unit;
+}
+value owl_stub_284_c_eigen_tensor_d_cuboid_conv_byte19(value* argv, int argc)
+{
+   value x2520 = argv[18];
+   value x2521 = argv[17];
+   value x2522 = argv[16];
+   value x2523 = argv[15];
+   value x2524 = argv[14];
+   value x2525 = argv[13];
+   value x2526 = argv[12];
+   value x2527 = argv[11];
+   value x2528 = argv[10];
+   value x2529 = argv[9];
+   value x2530 = argv[8];
+   value x2531 = argv[7];
+   value x2532 = argv[6];
+   value x2533 = argv[5];
+   value x2534 = argv[4];
+   value x2535 = argv[3];
+   value x2536 = argv[2];
+   value x2537 = argv[1];
+   value x2538 = argv[0];
+   return
+     owl_stub_284_c_eigen_tensor_d_cuboid_conv(x2538, x2537, x2536, x2535,
+                                               x2534, x2533, x2532, x2531,
+                                               x2530, x2529, x2528, x2527,
+                                               x2526, x2525, x2524, x2523,
+                                               x2522, x2521, x2520);
+}
+value owl_stub_285_c_eigen_tensor_d_cuboid_conv_backward_input(value x2556,
+                                                               value x2555,
+                                                               value x2554,
+                                                               value x2553,
+                                                               value x2552,
+                                                               value x2551,
+                                                               value x2550,
+                                                               value x2549,
+                                                               value x2548,
+                                                               value x2547,
+                                                               value x2546,
+                                                               value x2545,
+                                                               value x2544,
+                                                               value x2543,
+                                                               value x2542,
+                                                               value x2541,
+                                                               value x2540,
+                                                               value x2539)
+{
+   double* x2557 = CTYPES_ADDR_OF_FATPTR(x2556);
+   double* x2558 = CTYPES_ADDR_OF_FATPTR(x2555);
+   double* x2559 = CTYPES_ADDR_OF_FATPTR(x2554);
+   int x2560 = Long_val(x2553);
+   int x2563 = Long_val(x2552);
+   int x2566 = Long_val(x2551);
+   int x2569 = Long_val(x2550);
+   int x2572 = Long_val(x2549);
+   int x2575 = Long_val(x2548);
+   int x2578 = Long_val(x2547);
+   int x2581 = Long_val(x2546);
+   int x2584 = Long_val(x2545);
+   int x2587 = Long_val(x2544);
+   int x2590 = Long_val(x2543);
+   int x2593 = Long_val(x2542);
+   int x2596 = Long_val(x2541);
+   int x2599 = Long_val(x2540);
+   int x2602 = Long_val(x2539);
+   c_eigen_tensor_d_cuboid_conv_backward_input(x2557, x2558, x2559, x2560,
+                                               x2563, x2566, x2569, x2572,
+                                               x2575, x2578, x2581, x2584,
+                                               x2587, x2590, x2593, x2596,
+                                               x2599, x2602);
+   return Val_unit;
+}
+value owl_stub_285_c_eigen_tensor_d_cuboid_conv_backward_input_byte18
+     (value* argv, int argc)
+{
+   value x2606 = argv[17];
+   value x2607 = argv[16];
+   value x2608 = argv[15];
+   value x2609 = argv[14];
+   value x2610 = argv[13];
+   value x2611 = argv[12];
+   value x2612 = argv[11];
+   value x2613 = argv[10];
+   value x2614 = argv[9];
+   value x2615 = argv[8];
+   value x2616 = argv[7];
+   value x2617 = argv[6];
+   value x2618 = argv[5];
+   value x2619 = argv[4];
+   value x2620 = argv[3];
+   value x2621 = argv[2];
+   value x2622 = argv[1];
+   value x2623 = argv[0];
+   return
+     owl_stub_285_c_eigen_tensor_d_cuboid_conv_backward_input(x2623, 
+                                                              x2622, 
+                                                              x2621, 
+                                                              x2620, 
+                                                              x2619, 
+                                                              x2618, 
+                                                              x2617, 
+                                                              x2616, 
+                                                              x2615, 
+                                                              x2614, 
+                                                              x2613, 
+                                                              x2612, 
+                                                              x2611, 
+                                                              x2610, 
+                                                              x2609, 
+                                                              x2608, 
+                                                              x2607, 
+                                                              x2606);
+}
+value owl_stub_286_c_eigen_tensor_d_cuboid_conv_backward_kernel(value x2641,
+                                                                value x2640,
+                                                                value x2639,
+                                                                value x2638,
+                                                                value x2637,
+                                                                value x2636,
+                                                                value x2635,
+                                                                value x2634,
+                                                                value x2633,
+                                                                value x2632,
+                                                                value x2631,
+                                                                value x2630,
+                                                                value x2629,
+                                                                value x2628,
+                                                                value x2627,
+                                                                value x2626,
+                                                                value x2625,
+                                                                value x2624)
+{
+   double* x2642 = CTYPES_ADDR_OF_FATPTR(x2641);
+   double* x2643 = CTYPES_ADDR_OF_FATPTR(x2640);
+   double* x2644 = CTYPES_ADDR_OF_FATPTR(x2639);
+   int x2645 = Long_val(x2638);
+   int x2648 = Long_val(x2637);
+   int x2651 = Long_val(x2636);
+   int x2654 = Long_val(x2635);
+   int x2657 = Long_val(x2634);
+   int x2660 = Long_val(x2633);
+   int x2663 = Long_val(x2632);
+   int x2666 = Long_val(x2631);
+   int x2669 = Long_val(x2630);
+   int x2672 = Long_val(x2629);
+   int x2675 = Long_val(x2628);
+   int x2678 = Long_val(x2627);
+   int x2681 = Long_val(x2626);
+   int x2684 = Long_val(x2625);
+   int x2687 = Long_val(x2624);
+   c_eigen_tensor_d_cuboid_conv_backward_kernel(x2642, x2643, x2644, 
+                                                x2645, x2648, x2651, 
+                                                x2654, x2657, x2660, 
+                                                x2663, x2666, x2669, 
+                                                x2672, x2675, x2678, 
+                                                x2681, x2684, x2687);
+   return Val_unit;
+}
+value owl_stub_286_c_eigen_tensor_d_cuboid_conv_backward_kernel_byte18
+     (value* argv, int argc)
+{
+   value x2691 = argv[17];
+   value x2692 = argv[16];
+   value x2693 = argv[15];
+   value x2694 = argv[14];
+   value x2695 = argv[13];
+   value x2696 = argv[12];
+   value x2697 = argv[11];
+   value x2698 = argv[10];
+   value x2699 = argv[9];
+   value x2700 = argv[8];
+   value x2701 = argv[7];
+   value x2702 = argv[6];
+   value x2703 = argv[5];
+   value x2704 = argv[4];
+   value x2705 = argv[3];
+   value x2706 = argv[2];
+   value x2707 = argv[1];
+   value x2708 = argv[0];
+   return
+     owl_stub_286_c_eigen_tensor_d_cuboid_conv_backward_kernel(x2708, 
+                                                               x2707, 
+                                                               x2706, 
+                                                               x2705, 
+                                                               x2704, 
+                                                               x2703, 
+                                                               x2702, 
+                                                               x2701, 
+                                                               x2700, 
+                                                               x2699, 
+                                                               x2698, 
+                                                               x2697, 
+                                                               x2696, 
+                                                               x2695, 
+                                                               x2694, 
+                                                               x2693, 
+                                                               x2692, 
+                                                               x2691);
 }
