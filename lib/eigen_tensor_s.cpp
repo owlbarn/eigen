@@ -48,7 +48,7 @@ void c_eigen_tensor_s_spatial_conv_backward_input(
   Eigen::TensorMap<tensor_4_s>kernel(kernel_ptr, kernel_cols, kernel_rows, in_channel, out_channel);
   Eigen::TensorMap<tensor_4_s>output(output_ptr, batches, output_cols, output_rows, out_channel);
 
-  input = SpatialConvolutionBackwardInput(kernel, output, input_rows, input_cols, row_stride, row_stride, row_in_stride, col_in_stride);
+  input = SpatialConvolutionBackwardInput(kernel, output, input_rows, input_cols, row_stride, col_stride, row_in_stride, col_in_stride);
 
   return;
 }
@@ -64,7 +64,7 @@ void c_eigen_tensor_s_spatial_conv_backward_kernel(
   Eigen::TensorMap<tensor_4_s>kernel(kernel_ptr, kernel_cols, kernel_rows, in_channel, out_channel);
   Eigen::TensorMap<tensor_4_s>output(output_ptr, batches, output_cols, output_rows, out_channel);
 
-  kernel = SpatialConvolutionBackwardKernel(input, output, input_rows, input_cols, row_stride, row_stride, row_in_stride, col_in_stride);
+  kernel = SpatialConvolutionBackwardKernel(input, output, kernel_rows, kernel_cols, row_stride, col_stride, row_in_stride, col_in_stride);
 
   return;
 }
