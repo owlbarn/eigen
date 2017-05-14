@@ -83,7 +83,7 @@ let cuboid_conv_backward_input
   input_cols input_rows input_depth in_channel
   kernel_cols kernel_rows kernel_depth
   output_cols output_rows output_depth out_channel
-  depth_stride row_stride col_stride padding
+  depth_stride row_stride col_stride
   =
   let input_ptr = Ctypes.bigarray_start Ctypes_static.Genarray input in
   let kernel_ptr = Ctypes.bigarray_start Ctypes_static.Genarray kernel in
@@ -102,7 +102,7 @@ let cuboid_conv_backward_kernel
   input_cols input_rows input_depth in_channel
   kernel_cols kernel_rows kernel_depth
   output_cols output_rows output_depth out_channel
-  depth_stride row_stride col_stride padding
+  depth_stride row_stride col_stride
   =
   let input_ptr = Ctypes.bigarray_start Ctypes_static.Genarray input in
   let kernel_ptr = Ctypes.bigarray_start Ctypes_static.Genarray kernel in

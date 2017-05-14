@@ -10,6 +10,7 @@
 #include <Eigen/NeuralNetwork/eigen_backward_spatial_convolutions.h>
 #include <Eigen/NeuralNetwork/eigen_cuboid_convolution.h>
 #include <Eigen/NeuralNetwork/eigen_backward_cuboid_convolutions.h>
+#include <Eigen/NeuralNetwork/eigen_pooling.h>
 #include "eigen_tensor.h"
 
 #define C_PADDING_SAME 0
