@@ -6,6 +6,9 @@
 /******************** pointer conversion  ********************/
 
 typedef Matrix<dsmat_s_elt, Dynamic, Dynamic, RowMajor> dsmat_s;
+typedef Array<dsmat_s_elt, Dynamic, Dynamic, RowMajor> dsarr_s_rowxx;
+typedef Array<dsmat_s_elt, 1, Dynamic, RowMajor> dsarr_s_rowx;
+typedef Array<dsmat_s_elt, Dynamic, 1, ColMajor> dsarr_s_colx;
 
 inline dsmat_s& c_to_eigen(c_dsmat_s* ptr)
 {
@@ -119,6 +122,36 @@ void c_eigen_dsmat_s_swap_cols(dsmat_s_elt* ptr, INDEX m, INDEX n, INDEX i, INDE
 {
   Map<dsmat_s>x(ptr, m, n);
   x.col(i).swap(x.col(j));
+}
+
+void c_eigen_dsmat_s_rowwise_op (int op, dsmat_s_elt* x_ptr, INDEX m, INDEX n, dsmat_s_elt* y_ptr)
+{
+  Map<dsarr_s_rowxx>x(x_ptr, m, n);
+  Map<dsarr_s_rowx>y(y_ptr, n);
+
+  switch(op) {
+    case 0: x.rowwise() += y; break;
+    case 1: x.rowwise() -= y; break;
+    case 2: x.rowwise() *= y; break;
+    case 3: x.rowwise() /= y; break;
+  };
+
+  return;
+}
+
+void c_eigen_dsmat_s_colwise_op (int op, dsmat_s_elt* x_ptr, INDEX m, INDEX n, dsmat_s_elt* y_ptr)
+{
+  Map<dsarr_s_rowxx>x(x_ptr, m, n);
+  Map<dsarr_s_colx>y(y_ptr, m);
+
+  switch(op) {
+    case 0: x.colwise() += y; break;
+    case 1: x.colwise() -= y; break;
+    case 2: x.colwise() *= y; break;
+    case 3: x.colwise() /= y; break;
+  };
+
+  return;
 }
 
 c_dsmat_s* c_eigen_dsmat_s_inv(dsmat_s_elt* x_ptr, INDEX xm, INDEX xn)

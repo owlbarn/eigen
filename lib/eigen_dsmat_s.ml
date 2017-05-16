@@ -95,6 +95,22 @@ let swap_cols x i j =
   let _ = ml_eigen_swap_cols ptr m n i j in
   ()
 
+let rowwise_op op x y =
+  let x_ptr = Ctypes.bigarray_start Ctypes_static.Array2 x in
+  let y_ptr = Ctypes.bigarray_start Ctypes_static.Array2 y in
+  let m = Bigarray.Array2.dim1 x |> Int64.of_int in
+  let n = Bigarray.Array2.dim2 x |> Int64.of_int in
+  let _ = ml_eigen_rowwise_op op x_ptr m n y_ptr in
+  ()
+
+let colwise_op op x y =
+  let x_ptr = Ctypes.bigarray_start Ctypes_static.Array2 x in
+  let y_ptr = Ctypes.bigarray_start Ctypes_static.Array2 y in
+  let m = Bigarray.Array2.dim1 x |> Int64.of_int in
+  let n = Bigarray.Array2.dim2 x |> Int64.of_int in
+  let _ = ml_eigen_colwise_op op x_ptr m n y_ptr in
+  ()
+
 let inv x =
   let x_ptr = Ctypes.bigarray_start Ctypes_static.Array2 x in
   let xm = Bigarray.Array2.dim1 x |> Int64.of_int in

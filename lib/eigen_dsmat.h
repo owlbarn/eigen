@@ -51,6 +51,8 @@ typedef int64_t INDEX;
   struct c_dsmat_s* c_eigen_dsmat_s_transpose(dsmat_s_elt*, INDEX, INDEX);
   void c_eigen_dsmat_s_swap_rows(dsmat_s_elt*, INDEX, INDEX, INDEX, INDEX);
   void c_eigen_dsmat_s_swap_cols(dsmat_s_elt*, INDEX, INDEX, INDEX, INDEX);
+  void c_eigen_dsmat_s_rowwise_op(int, dsmat_s_elt*, INDEX, INDEX, dsmat_s_elt*);
+  void c_eigen_dsmat_s_colwise_op(int, dsmat_s_elt*, INDEX, INDEX, dsmat_s_elt*);
   struct c_dsmat_s* c_eigen_dsmat_s_inv(dsmat_s_elt*, INDEX, INDEX);
 
 
@@ -74,6 +76,8 @@ typedef int64_t INDEX;
   struct c_dsmat_d* c_eigen_dsmat_d_transpose(dsmat_d_elt*, INDEX, INDEX);
   void c_eigen_dsmat_d_swap_rows(dsmat_d_elt*, INDEX, INDEX, INDEX, INDEX);
   void c_eigen_dsmat_d_swap_cols(dsmat_d_elt*, INDEX, INDEX, INDEX, INDEX);
+  void c_eigen_dsmat_d_rowwise_op(int, dsmat_d_elt*, INDEX, INDEX, dsmat_d_elt*);
+  void c_eigen_dsmat_d_colwise_op(int, dsmat_d_elt*, INDEX, INDEX, dsmat_d_elt*);
   struct c_dsmat_d* c_eigen_dsmat_d_inv(dsmat_d_elt*, INDEX, INDEX);
 
 
@@ -97,6 +101,8 @@ typedef int64_t INDEX;
   struct c_dsmat_c* c_eigen_dsmat_c_transpose(c_dsmat_c_elt*, INDEX, INDEX);
   void c_eigen_dsmat_c_swap_rows(c_dsmat_c_elt*, INDEX, INDEX, INDEX, INDEX);
   void c_eigen_dsmat_c_swap_cols(c_dsmat_c_elt*, INDEX, INDEX, INDEX, INDEX);
+  void c_eigen_dsmat_c_rowwise_op(int, c_dsmat_c_elt*, INDEX, INDEX, c_dsmat_c_elt*);
+  void c_eigen_dsmat_c_colwise_op(int, c_dsmat_c_elt*, INDEX, INDEX, c_dsmat_c_elt*);
   struct c_dsmat_c* c_eigen_dsmat_c_inv(c_dsmat_c_elt*, INDEX, INDEX);
 
 
@@ -120,6 +126,8 @@ typedef int64_t INDEX;
   struct c_dsmat_z* c_eigen_dsmat_z_transpose(c_dsmat_z_elt*, INDEX, INDEX);
   void c_eigen_dsmat_z_swap_rows(c_dsmat_z_elt*, INDEX, INDEX, INDEX, INDEX);
   void c_eigen_dsmat_z_swap_cols(c_dsmat_z_elt*, INDEX, INDEX, INDEX, INDEX);
+  void c_eigen_dsmat_z_rowwise_op(int, c_dsmat_z_elt*, INDEX, INDEX, c_dsmat_z_elt*);
+  void c_eigen_dsmat_z_colwise_op(int, c_dsmat_z_elt*, INDEX, INDEX, c_dsmat_z_elt*);
   struct c_dsmat_z* c_eigen_dsmat_z_inv(c_dsmat_z_elt*, INDEX, INDEX);
 
 
