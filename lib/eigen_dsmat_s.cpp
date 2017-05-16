@@ -134,6 +134,8 @@ void c_eigen_dsmat_s_rowwise_op (int op, dsmat_s_elt* x_ptr, INDEX m, INDEX n, d
     case 1: x.rowwise() -= y; break;
     case 2: x.rowwise() *= y; break;
     case 3: x.rowwise() /= y; break;
+    case 4: x = -(x.rowwise() - y); break;
+    case 5: x = (x.rowwise() / y).inverse(); break;
   };
 
   return;
