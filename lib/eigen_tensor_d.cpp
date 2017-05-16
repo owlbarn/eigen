@@ -8,6 +8,7 @@
 
 typedef Tensor<tensor_d_elt, 4, Eigen::RowMajor> tensor_4_d;
 typedef Tensor<tensor_d_elt, 5, Eigen::RowMajor> tensor_5_d;
+typedef Tensor<tensor_d_elt, 16, Eigen::RowMajor> tensor_x_d;
 
 
 /***************** c stubs for c++ functions *****************/
@@ -130,5 +131,12 @@ void c_eigen_tensor_d_cuboid_conv_backward_kernel(
 
   kernel = CuboidConvolutionBackwardKernel(input, output, kernel_depth, kernel_rows, kernel_cols, depth_stride, row_stride, col_stride);
 
+  return;
+}
+
+void c_eigen_tensor_d_shuffle(tensor_d_elt* x_ptr, INDEX* idx_ptr)
+{
+  Map< Array<long long, 1, 16, RowMajor> >idx(idx_ptr);
+  //Eigen::TensorMap<tensor_x_d>x(x_ptr, idx);
   return;
 }
