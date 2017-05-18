@@ -32,6 +32,7 @@
    void c_eigen_tensor_s_spatial_avg_pooling(tensor_s_elt*, tensor_s_elt*, int, int, int, int, int, int, int, int, int, int, int, int, int);
    void c_eigen_tensor_s_cuboid_max_pooling(tensor_s_elt*, tensor_s_elt*, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int);
    void c_eigen_tensor_s_cuboid_avg_pooling(tensor_s_elt*, tensor_s_elt*, int, int, int, int, int, int, int, int, int, int, int, int, int, int, int);
+   void c_eigen_tensor_s_spatial_max_pooling_argmax(tensor_s_elt*, tensor_s_elt*, INDEX*, int, int, int, int, int, int, int, int, int, int, int, int);
 
 
    /**************************** Tensor_D ****************************/
