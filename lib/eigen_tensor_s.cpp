@@ -201,6 +201,10 @@ void c_eigen_tensor_s_spatial_max_pooling_argmax(
   EigenMatrixMap out_mat(output_ptr, batches*output_cols*output_rows, in_channel);
   EigenIndexMatrixMap out_argmax_mat(output_argmax_ptr, batches*output_cols*output_rows, in_channel);
 
+  // initialise the output matrices
+  out_mat.setConstant(Eigen::NumTraits<tensor_s_elt>::lowest());
+  out_argmax_mat.setConstant(-1);
+
   for (INDEX b = 0; b < batches; ++b) {
     for (int w = 0; w < input_cols; ++w) {
       for (int h = 0; h < input_rows; ++h) {
