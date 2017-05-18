@@ -186,3 +186,8 @@ void c_eigen_tensor_s_cuboid_avg_pooling(
 
   return;
 }
+
+void c_eigen_tensor_s_spatial_max_pooling_argmax()
+{
+  return;
+}
