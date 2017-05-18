@@ -116,4 +116,69 @@ let cuboid_conv_backward_kernel
     depth_stride row_stride col_stride
 
 
+let spatial_max_pooling
+  input output batches input_cols input_rows in_channel
+  kernel_cols kernel_rows output_cols output_rows
+  row_stride col_stride padding row_in_stride col_in_stride
+  =
+  let input_ptr = Ctypes.bigarray_start Ctypes_static.Genarray input in
+  let output_ptr = Ctypes.bigarray_start Ctypes_static.Genarray output in
+
+  ml_eigen_tensor_spatial_max_pooling
+    input_ptr output_ptr
+    batches input_cols input_rows in_channel
+    kernel_cols kernel_rows output_cols output_rows
+    row_stride col_stride padding row_in_stride col_in_stride
+
+
+let spatial_avg_pooling
+  input output batches input_cols input_rows in_channel
+  kernel_cols kernel_rows output_cols output_rows
+  row_stride col_stride padding row_in_stride col_in_stride
+  =
+  let input_ptr = Ctypes.bigarray_start Ctypes_static.Genarray input in
+  let output_ptr = Ctypes.bigarray_start Ctypes_static.Genarray output in
+
+  ml_eigen_tensor_spatial_avg_pooling
+    input_ptr output_ptr
+    batches input_cols input_rows in_channel
+    kernel_cols kernel_rows output_cols output_rows
+    row_stride col_stride padding row_in_stride col_in_stride
+
+
+let cuboid_max_pooling
+  input output batches input_cols input_rows input_depth in_channel
+  kernel_cols kernel_rows kernel_depth
+  output_cols output_rows output_depth
+  depth_stride row_stride col_stride padding
+  =
+  let input_ptr = Ctypes.bigarray_start Ctypes_static.Genarray input in
+  let output_ptr = Ctypes.bigarray_start Ctypes_static.Genarray output in
+
+  ml_eigen_tensor_cuboid_max_pooling
+    input_ptr output_ptr
+    batches input_cols input_rows input_depth in_channel
+    kernel_cols kernel_rows kernel_depth
+    output_cols output_rows output_depth
+    depth_stride row_stride col_stride padding
+
+
+let cuboid_avg_pooling
+  input output batches input_cols input_rows input_depth in_channel
+  kernel_cols kernel_rows kernel_depth
+  output_cols output_rows output_depth
+  depth_stride row_stride col_stride padding
+  =
+  let input_ptr = Ctypes.bigarray_start Ctypes_static.Genarray input in
+  let output_ptr = Ctypes.bigarray_start Ctypes_static.Genarray output in
+
+  ml_eigen_tensor_cuboid_avg_pooling
+    input_ptr output_ptr
+    batches input_cols input_rows input_depth in_channel
+    kernel_cols kernel_rows kernel_depth
+    output_cols output_rows output_depth
+    depth_stride row_stride col_stride padding
+
+
+
 (* ends here *)

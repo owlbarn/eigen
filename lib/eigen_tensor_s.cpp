@@ -120,3 +120,69 @@ void c_eigen_tensor_s_cuboid_conv_backward_kernel(
 
   return;
 }
+
+void c_eigen_tensor_s_spatial_max_pooling(
+  tensor_s_elt* input_ptr, tensor_s_elt* output_ptr,
+  int batches, int input_cols, int input_rows, int in_channel,
+  int kernel_cols, int kernel_rows, int output_cols, int output_rows,
+  int row_stride, int col_stride, int padding, int row_in_stride, int col_in_stride
+)
+{
+  Eigen::TensorMap<tensor_4_s>input(input_ptr, batches, input_cols, input_rows, in_channel);
+  Eigen::TensorMap<tensor_4_s>output(output_ptr, batches, output_cols, output_rows, in_channel);
+
+  PaddingType pad_typ = (padding == C_PADDING_SAME) ? PADDING_SAME : PADDING_VALID;
+  output = SpatialMaxPooling(input, kernel_rows, kernel_cols, row_stride, col_stride, pad_typ, row_in_stride, col_in_stride);
+
+  return;
+}
+
+void c_eigen_tensor_s_spatial_avg_pooling(
+  tensor_s_elt* input_ptr, tensor_s_elt* output_ptr,
+  int batches, int input_cols, int input_rows, int in_channel,
+  int kernel_cols, int kernel_rows, int output_cols, int output_rows,
+  int row_stride, int col_stride, int padding, int row_in_stride, int col_in_stride
+)
+{
+  Eigen::TensorMap<tensor_4_s>input(input_ptr, batches, input_cols, input_rows, in_channel);
+  Eigen::TensorMap<tensor_4_s>output(output_ptr, batches, output_cols, output_rows, in_channel);
+
+  PaddingType pad_typ = (padding == C_PADDING_SAME) ? PADDING_SAME : PADDING_VALID;
+  output = SpatialAvgPooling(input, kernel_rows, kernel_cols, row_stride, col_stride, pad_typ, row_in_stride, col_in_stride);
+
+  return;
+}
+
+void c_eigen_tensor_s_cuboid_max_pooling(
+  tensor_s_elt* input_ptr, tensor_s_elt* output_ptr,
+  int batches, int input_cols, int input_rows, int input_depth, int in_channel,
+  int kernel_cols, int kernel_rows, int kernel_depth,
+  int output_cols, int output_rows, int output_depth,
+  int depth_stride, int row_stride, int col_stride, int padding
+)
+{
+  Eigen::TensorMap<tensor_5_s>input(input_ptr, batches, input_cols, input_rows, input_depth, in_channel);
+  Eigen::TensorMap<tensor_5_s>output(output_ptr, batches, output_cols, output_rows, output_depth, in_channel);
+
+  PaddingType pad_typ = (padding == C_PADDING_SAME) ? PADDING_SAME : PADDING_VALID;
+  output = CuboidMaxPooling(input, kernel_depth, kernel_rows, kernel_cols, depth_stride, row_stride, col_stride, pad_typ);
+
+  return;
+}
+
+void c_eigen_tensor_s_cuboid_avg_pooling(
+  tensor_s_elt* input_ptr, tensor_s_elt* output_ptr,
+  int batches, int input_cols, int input_rows, int input_depth, int in_channel,
+  int kernel_cols, int kernel_rows, int kernel_depth,
+  int output_cols, int output_rows, int output_depth,
+  int depth_stride, int row_stride, int col_stride, int padding
+)
+{
+  Eigen::TensorMap<tensor_5_s>input(input_ptr, batches, input_cols, input_rows, input_depth, in_channel);
+  Eigen::TensorMap<tensor_5_s>output(output_ptr, batches, output_cols, output_rows, output_depth, in_channel);
+
+  PaddingType pad_typ = (padding == C_PADDING_SAME) ? PADDING_SAME : PADDING_VALID;
+  output = CuboidAvgPooling(input, kernel_depth, kernel_rows, kernel_cols, depth_stride, row_stride, col_stride, pad_typ);
+
+  return;
+}
