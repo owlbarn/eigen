@@ -57,4 +57,4 @@ The `C++` functions are compiled into a static library `libeigen.a` which is lin
 
 ## Other Information
 
-Some functions in `NeuralNetwork` folder use the code from Google's Tensorflow hence they are subject to MPL [Apache License](http://www.apache.org/licenses/LICENSE-2.0).
+Some functions in `NeuralNetwork` folder use the code from Google's Tensorflow hence they are subject to [Apache License](http://www.apache.org/licenses/LICENSE-2.0).
