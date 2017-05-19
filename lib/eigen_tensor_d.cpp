@@ -335,7 +335,7 @@ void c_eigen_tensor_d_spatial_max_pooling_backward(
 
 void c_eigen_tensor_d_shuffle(tensor_d_elt* x_ptr, INDEX* idx_ptr)
 {
-  Map< Array<long long, 1, 16, RowMajor> >idx(idx_ptr);
+  //Map< Array<long long, 1, 16, RowMajor> >idx(idx_ptr);
   //Eigen::TensorMap<tensor_x_d>x(x_ptr, idx);
   return;
 }
