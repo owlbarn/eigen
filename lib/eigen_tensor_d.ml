@@ -180,5 +180,38 @@ let cuboid_avg_pooling
     depth_stride row_stride col_stride padding
 
 
+let spatial_max_pooling_argmax
+  input output argmax
+  batches input_cols input_rows in_channel
+  kernel_cols kernel_rows output_cols output_rows
+  row_stride col_stride pad_rows pad_cols
+  =
+  let input_ptr = Ctypes.bigarray_start Ctypes_static.Genarray input in
+  let output_ptr = Ctypes.bigarray_start Ctypes_static.Genarray output in
+  let argmax_ptr = Ctypes.bigarray_start Ctypes_static.Genarray argmax in
+
+  ml_eigen_tensor_spatial_max_pooling_argmax
+    input_ptr output_ptr argmax_ptr
+    batches input_cols input_rows in_channel
+    kernel_cols kernel_rows output_cols output_rows
+    row_stride col_stride pad_rows pad_cols
+
+
+let spatial_max_pooling_backward
+  input output input'
+  batches input_cols input_rows in_channel
+  kernel_cols kernel_rows output_cols output_rows
+  row_stride col_stride pad_rows pad_cols
+  =
+  let input_ptr = Ctypes.bigarray_start Ctypes_static.Genarray input in
+  let output_ptr = Ctypes.bigarray_start Ctypes_static.Genarray output in
+  let input'_ptr = Ctypes.bigarray_start Ctypes_static.Genarray input' in
+
+  ml_eigen_tensor_spatial_max_pooling_backward
+    input_ptr output_ptr input'_ptr
+    batches input_cols input_rows in_channel
+    kernel_cols kernel_rows output_cols output_rows
+    row_stride col_stride pad_rows pad_cols
+
 
 (* ends here *)
