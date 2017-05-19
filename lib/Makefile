@@ -4,7 +4,6 @@ CXXFLAGS2 = -O3 -I. -c -fPIC -ansi -Wno-extern-c-compat -Wno-c++11-long-long
 CXXFLAGS3 = -O3 -I. -I./unsupported/ -c -fPIC -ansi -Wno-extern-c-compat -Wno-c++11-long-long
 
 all:
-	#g++ -O3 -I. -I./unsupported/ -o test test.cc -stdlib=libc++
 	g++ ${CXXFLAGS3} eigen_tensor.cpp -o eigen_tensor.o
 	g++ ${CXXFLAGS2} eigen_dsmat.cpp -o eigen_dsmat.o
 	g++ ${CXXFLAGS2} eigen_spmat.cpp -o eigen_spmat.o
