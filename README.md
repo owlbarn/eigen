@@ -52,3 +52,9 @@ Eigen_types.DSMAT_Z (Eigen.Dense.Z.create 3 3);;
 Interfacing between `C` and `OCaml` is relatively straightforward with [Ctypes](https://github.com/ocamllabs/ocaml-ctypes). However, Eigen3 is developed in `C++` and heavily utilises template programming, I first expose the native `C++` class methods as individual functions then use [Ctypes](https://github.com/ocamllabs/ocaml-ctypes) to generate `C` stubs and interface to these functions.
 
 The `C++` functions are compiled into a static library `libeigen.a` which is linked using `-lstdc++`. The library is installed in `${libdir}` (`Oasis` environment variable) which should be `/usr/local/lib` on both Mac and Linux platforms.
+
+
+
+## Other Information
+
+Some functions in `NeuralNetwork` folder use the code from Google's Tensorflow hence they are subject to MPL [Apache License](http://www.apache.org/licenses/LICENSE-2.0).
