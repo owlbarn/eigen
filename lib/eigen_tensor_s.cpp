@@ -309,3 +309,55 @@ void c_eigen_tensor_s_spatial_max_pooling_backward(
 
   return;
 }
+
+void c_eigen_tensor_s_spatial_avg_pooling_backward(
+  tensor_s_elt* input_backward_ptr, tensor_s_elt* output_backward_ptr,
+  int batches, int input_cols, int input_rows, int in_channel,
+  int kernel_cols, int kernel_rows, int output_cols, int output_rows,
+  int row_stride, int col_stride, int pad_rows, int pad_cols
+)
+{
+  typedef Map<Matrix<tensor_s_elt, Dynamic, Dynamic, RowMajor> > EigenMatrixMap;
+
+  EigenMatrixMap in_back_mat(input_backward_ptr, batches*input_cols*input_rows, in_channel);
+  EigenMatrixMap out_back_mat(output_backward_ptr, batches*output_cols*output_rows, in_channel);
+
+  // initialise the in_back_mat matrices
+  in_back_mat.setConstant(0.);
+  int kernel_size = kernel_cols * kernel_rows;
+
+  for (INDEX b = 0; b < batches; ++b) {
+    for (int w = 0; w < input_cols; ++w) {
+      for (int h = 0; h < input_rows; ++h) {
+        // compute the coordinates of the rectangular
+        const int wpad = w + pad_cols;
+        const int hpad = h + pad_rows;
+        const int w_start = (wpad < kernel_cols) ? 0 : (wpad - kernel_cols) / col_stride + 1;
+        const int w_end = std::min(wpad / col_stride + 1, output_cols);
+        const int h_start = (hpad < kernel_rows) ? 0 : (hpad - kernel_rows) / row_stride + 1;
+        const int h_end = std::min(hpad / row_stride + 1, output_rows);
+        // accumulate element-wise error
+        const INDEX in_index = (b * input_cols + w) * input_rows + h;
+        for (int pw = w_start; pw < w_end; ++pw) {
+          const INDEX out_index_base = (b * output_cols + pw) * output_rows;
+          for (int ph = h_start; ph < h_end; ++ph) {
+            const INDEX out_index = out_index_base + ph;
+
+            for (int d = 0; d < in_channel; ++d) {
+              tensor_s_elt& in_back_ref = in_back_mat.coeffRef(in_index, d);
+              tensor_s_elt& out_back_ref = out_back_mat.coeffRef(out_index, d);
+              in_back_ref += out_back_ref;
+            }
+          }
+        }
+        // calculate average
+        for (int d = 0; d < in_channel; ++d) {
+          tensor_s_elt& in_back_ref = in_back_mat.coeffRef(in_index, d);
+          in_back_ref /= kernel_size;
+        }
+      }
+    }
+  }
+
+  return;
+}

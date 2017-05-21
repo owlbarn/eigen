@@ -661,6 +661,7 @@ module Bindings (F : Cstubs.FOREIGN) = struct
     let ml_eigen_tensor_cuboid_avg_pooling = foreign "c_eigen_tensor_s_cuboid_avg_pooling" (ptr elt @-> ptr elt @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> returning void)
     let ml_eigen_tensor_spatial_max_pooling_argmax = foreign "c_eigen_tensor_s_spatial_max_pooling_argmax" (ptr elt @-> ptr elt @-> ptr int64_t @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> returning void)
     let ml_eigen_tensor_spatial_max_pooling_backward = foreign "c_eigen_tensor_s_spatial_max_pooling_backward" (ptr elt @-> ptr elt @-> ptr elt @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> returning void)
+    let ml_eigen_tensor_spatial_avg_pooling_backward = foreign "c_eigen_tensor_s_spatial_avg_pooling_backward" (ptr elt @-> ptr elt @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> returning void)
 
   end
 
@@ -682,6 +683,7 @@ module Bindings (F : Cstubs.FOREIGN) = struct
     let ml_eigen_tensor_cuboid_avg_pooling = foreign "c_eigen_tensor_d_cuboid_avg_pooling" (ptr elt @-> ptr elt @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> returning void)
     let ml_eigen_tensor_spatial_max_pooling_argmax = foreign "c_eigen_tensor_d_spatial_max_pooling_argmax" (ptr elt @-> ptr elt @-> ptr int64_t @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> returning void)
     let ml_eigen_tensor_spatial_max_pooling_backward = foreign "c_eigen_tensor_d_spatial_max_pooling_backward" (ptr elt @-> ptr elt @-> ptr elt @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> returning void)
+    let ml_eigen_tensor_spatial_avg_pooling_backward = foreign "c_eigen_tensor_d_spatial_avg_pooling_backward" (ptr elt @-> ptr elt @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> int @-> returning void)
 
   end
 
