@@ -11,7 +11,7 @@
 //#ifndef EIGEN_CXX11_TENSOR_MODULE
 //#define EIGEN_CXX11_TENSOR_MODULE
 
-#include <Eigen/Core>
+#include "../../../Eigen/Core"
 
 #ifdef EIGEN_USE_SYCL
 #undef min

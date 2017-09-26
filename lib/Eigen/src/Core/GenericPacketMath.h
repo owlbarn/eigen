@@ -230,14 +230,14 @@ pload1(const typename unpacket_traits<Packet>::type  *a) { return pset1<Packet>(
   * duplicated to form: {from[0],from[0],from[1],from[1],from[2],from[2],from[3],from[3]}
   * Currently, this function is only used for scalar * complex products.
   */
-template<typename Packet> EIGEN_DEVICE_FUNC inline Packet
+template<typename Packet> EIGEN_DEVICE_FUNC EIGEN_STRONG_INLINE Packet
 ploaddup(const typename unpacket_traits<Packet>::type* from) { return *from; }
 
 /** \internal \returns a packet with elements of \a *from quadrupled.
   * For instance, for a packet of 8 elements, 2 scalars will be read from \a *from and
   * replicated to form: {from[0],from[0],from[0],from[0],from[1],from[1],from[1],from[1]}
   * Currently, this function is only used in matrix products.
-  * For packet-size smaller or equal to 4, this function is equivalent to pload1
+  * For packet-size smaller or equal to 4, this function is equivalent to pload1 
   */
 template<typename Packet> EIGEN_DEVICE_FUNC inline Packet
 ploadquad(const typename unpacket_traits<Packet>::type* from)
@@ -278,7 +278,7 @@ inline void pbroadcast2(const typename unpacket_traits<Packet>::type *a,
 }
 
 /** \internal \brief Returns a packet with coefficients (a,a+1,...,a+packet_size-1). */
-template<typename Packet> inline Packet
+template<typename Packet> EIGEN_DEVICE_FUNC EIGEN_STRONG_INLINE Packet
 plset(const typename unpacket_traits<Packet>::type& a) { return a; }
 
 /** \internal copy the packet \a from to \a *to, \a to must be 16 bytes aligned */
@@ -482,7 +482,7 @@ EIGEN_DEVICE_FUNC EIGEN_ALWAYS_INLINE void pstoret(Scalar* to, const Packet& fro
   * by the current computation.
   */
 template<typename Packet, int LoadMode>
-inline Packet ploadt_ro(const typename unpacket_traits<Packet>::type* from)
+EIGEN_DEVICE_FUNC EIGEN_ALWAYS_INLINE Packet ploadt_ro(const typename unpacket_traits<Packet>::type* from)
 {
   return ploadt<Packet, LoadMode>(from);
 }
@@ -497,14 +497,14 @@ struct palign_impl
 
 /** \internal update \a first using the concatenation of the packet_size minus \a Offset last elements
   * of \a first and \a Offset first elements of \a second.
-  *
+  * 
   * This function is currently only used to optimize matrix-vector products on unligned matrices.
   * It takes 2 packets that represent a contiguous memory array, and returns a packet starting
   * at the position \a Offset. For instance, for packets of 4 elements, we have:
   *  Input:
   *  - first = {f0,f1,f2,f3}
   *  - second = {s0,s1,s2,s3}
-  * Output:
+  * Output: 
   *   - if Offset==0 then {f0,f1,f2,f3}
   *   - if Offset==1 then {f1,f2,f3,s0}
   *   - if Offset==2 then {f2,f3,s0,s1}
@@ -544,12 +544,6 @@ template<typename Packet> EIGEN_DEVICE_FUNC inline void
 ptranspose(PacketBlock<Packet,1>& /*kernel*/) {
   // Nothing to do in the scalar case, i.e. a 1x1 matrix.
 }
-
-//Liang: hack ...
-//template<typename Packet> EIGEN_DEVICE_FUNC inline void
-//ptranspose(PacketBlock<Packet,4>& /*kernel*/) {
-  // Nothing to do in the scalar case, i.e. a 1x1 matrix.
-//}
 
 /***************************************************************************
  * Selector, i.e. vector of N boolean values used to select (i.e. blend)
