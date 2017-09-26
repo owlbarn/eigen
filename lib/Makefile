@@ -1,7 +1,7 @@
-CXXFLAGS0 = -O3 -I. -shared -fPIC -ansi -pedantic -W -Wall
-CXXFLAGS1 = -O3 -I. -shared -fPIC -ansi -Wno-extern-c-compat -Wno-c++11-long-long
-CXXFLAGS2 = -O3 -I. -c -fPIC -ansi -Wno-extern-c-compat -Wno-c++11-long-long
-CXXFLAGS3 = -O3 -I. -I./unsupported/ -c -fPIC -ansi -Wno-extern-c-compat -Wno-c++11-long-long
+CXXFLAGS0 = -O3 -I. -shared -fPIC -ansi -pedantic -W -Wall -std=c++11
+CXXFLAGS1 = -O3 -I. -shared -fPIC -ansi -Wno-extern-c-compat -Wno-c++11-long-long -std=c++11
+CXXFLAGS2 = -O3 -I. -c -fPIC -ansi -Wno-extern-c-compat -Wno-c++11-long-long -std=c++11
+CXXFLAGS3 = -O3 -I. -I./unsupported/ -c -fPIC -ansi -Wno-extern-c-compat -Wno-c++11-long-long -std=c++11
 
 all:
 	g++ ${CXXFLAGS3} eigen_tensor.cpp -o eigen_tensor.o
