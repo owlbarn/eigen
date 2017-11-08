@@ -55,7 +55,8 @@ Library eigen
                     eigen_tensor.h,
                     eigen_utils_stubs.c,
                     ffi_eigen_generated_stub.c
-  CCOpt:            -O3 -I$pkg_ctypes
+  CCOpt:            -O3 -Ofast -I$pkg_ctypes
+                    -march=native -mfpmath=sse -flto -funroll-loops -ffast-math
   CCLib:            -L${libdir} -leigen
                     -lstdc++
   BuildDepends:     ctypes, ctypes.stubs
