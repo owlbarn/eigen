@@ -1,0 +1,32 @@
+(jbuild_version 1)
+
+(library (
+  (name eigen)
+  (public_name eigen)
+  (wrapped false)
+  (cxx_names (
+    eigen_dsmat
+    ;eigen_spmat
+    ;eigen_tensor
+  ))
+  (cxx_flags (
+    -O3 -std=c++11 -I. -I./unsupported/ -c -fPIC -ansi -Wno-extern-c-compat -Wno-c++11-long-long -Wno-invalid-partial-specialization
+  ))
+  (c_names (
+    eigen_utils_stubs
+    ffi_eigen_generated_stub
+  ))
+  (c_flags (
+    -g -O3 -Ofast
+    ; Experimental switches
+    ; -ffast-math may break IEEE754 semantics
+    -march=native -mfpmath=sse -flto -funroll-loops -ffast-math
+    ; For development use before release
+    ; -Wall -pedantic -Wextra -Wunused
+  ))
+  (flags (:standard -safe-string))
+  (libraries (
+    ctypes
+    ctypes.stubs
+  ))
+))

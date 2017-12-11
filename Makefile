@@ -1,16 +1,20 @@
+.PHONY: all clean test doc
+
 all:
-	ocaml setup.ml -build
-install:
-	ocaml setup.ml -uninstall
-	ocaml setup.ml -install
-uninstall:
-	ocamlfind remove eigen
-oasis:
-	oasis setup
-	ocaml setup.ml -configure
+	jbuilder build @install
+
 clean:
-	rm -rf _build
-cleanall: uninstall
-	rm -rf _build setup.* myocamlbuild.ml _tags
-	rm -rf lib/META lib/*.mldylib lib/*.mllib lib/*.clib
-	rm -rf *.byte *.native
+	jbuilder clean
+
+test:
+	jbuilder runtest -j1 --no-buffer
+
+install:
+	jbuilder install
+
+uninstall:
+	jbuilder uninstall
+
+cleanall:
+	jbuilder uninstall && jbuilder clean
+	rm -rf `find . -name .merlin`
