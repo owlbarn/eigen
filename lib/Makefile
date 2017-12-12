@@ -1,14 +1,3 @@
-ifeq ($(OS),Windows_NT)
-	ARCMD = ar
-else
-  UNAME_S := $(shell uname -s)
-  ifeq ($(UNAME_S),Linux)
-  	ARCMD = gcc-ar
-	else
-    ARCMD = ar
-  endif
-endif
-
 CXXFLAGS0 = -O3 -std=c++11 -I. -shared -fPIC -ansi -pedantic -W -Wall -Wno-invalid-partial-specialization
 CXXFLAGS1 = -O3 -std=c++11 -I. -shared -fPIC -ansi -Wno-extern-c-compat -Wno-c++11-long-long -Wno-invalid-partial-specialization
 CXXFLAGS2 = -O3 -std=c++11 -I. -c -fPIC -ansi -Wno-extern-c-compat -Wno-c++11-long-long -Wno-invalid-partial-specialization
@@ -20,7 +9,7 @@ all:
 	g++ ${CXXFLAGS2} ${OPTFLAGS0} eigen_dsmat.cpp -o eigen_dsmat.o
 	g++ ${CXXFLAGS2} ${OPTFLAGS0} eigen_spmat.cpp -o eigen_spmat.o
 
-	${ARCMD} rvs libeigen.a eigen_dsmat.o eigen_spmat.o eigen_tensor.o
+	ar rvs libeigen.a eigen_dsmat.o eigen_spmat.o eigen_tensor.o
 dynamic:
 	g++ ${CXXFLAGS1} -I. eigen_dsmat.cpp eigen_spmat.cpp -o libeigen.so
 clean:
