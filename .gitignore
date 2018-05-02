@@ -18,3 +18,10 @@ _build/
 # oasis generated files
 setup.data
 setup.log
+_tags
+lib/META
+lib/eigen.mldylib
+lib/eigen.mllib
+lib/libeigen_stubs.clib
+myocamlbuild.ml
+setup.ml
