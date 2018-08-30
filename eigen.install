@@ -4,6 +4,3 @@ etc: [
   "setup.log"
   "_oasis_remove_.ml"
 ]
-lib: [
-  "_build/include/libeigen.a" {"libeigen.a"}
-]
