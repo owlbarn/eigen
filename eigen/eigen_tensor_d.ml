@@ -3,8 +3,7 @@
  * Copyright (c) 2016-2017 Liang Wang <liang.wang@cl.cam.ac.uk>
  *)
 
-open Ctypes
-open Eigen_types.TENSOR_S
+open Eigen_types.TENSOR_D
 
 let test x =
   let x_ptr = Ctypes.bigarray_start Ctypes_static.Genarray x in
@@ -228,5 +227,6 @@ let spatial_avg_pooling_backward
     batches input_cols input_rows in_channel
     kernel_cols kernel_rows output_cols output_rows
     row_stride col_stride pad_rows pad_cols
+
 
 (* ends here *)

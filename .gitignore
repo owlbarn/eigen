@@ -25,3 +25,7 @@ lib/eigen.mllib
 lib/libeigen_stubs.clib
 myocamlbuild.ml
 setup.ml
+
+*.install
+.merlin
+*.opam

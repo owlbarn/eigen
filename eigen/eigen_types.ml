@@ -6,7 +6,6 @@
 include Ffi_eigen_bindings.Bindings(Ffi_eigen_generated)
 
 open Bigarray
-open Ctypes
 open Ctypes_static
 
 type dsmat_float32   = DSMAT_S.c_dsmat_s structure ptr

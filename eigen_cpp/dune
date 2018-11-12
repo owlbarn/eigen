@@ -1,0 +1,19 @@
+(ignored_subdirs (lib))
+
+(rule
+ (targets libeigen_cpp_stubs.a dlleigen_cpp_stubs.so)
+ (deps (source_tree lib))
+ (action (chdir lib (progn
+                     (run make)
+                     (system "cp libeigen.a ../libeigen_cpp_stubs.a")
+                     (run make dynamic)
+                     (system "cp libeigen.so ../dlleigen_cpp_stubs.so")
+                     ))))
+
+(library
+ (name eigen_cpp)
+ (public_name eigen.cpp)
+ (libraries ctypes)
+ (c_library_flags (:standard -lstdc++))
+ (self_build_stubs_archive (eigen_cpp)))
+
