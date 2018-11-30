@@ -1,12 +1,24 @@
 (rule
  (targets ffi_eigen_generated.ml)
  (deps ../bindings/ffi_eigen_stubgen.exe)
- (action (with-stdout-to %{targets} (run %{deps} -ml))))
+ (action
+  (with-stdout-to
+   %{targets}
+   (run %{deps} -ml)
+  )
+ )
+)
 
 (rule
  (targets ffi_eigen_generated_stub.c)
  (deps ../bindings/ffi_eigen_stubgen.exe)
- (action (with-stdout-to %{targets} (run %{deps} -c))))
+ (action
+  (with-stdout-to
+   %{targets}
+   (run %{deps} -c)
+  )
+ )
+)
 
 (library
  (name eigen)
@@ -15,5 +27,5 @@
  (modules :standard ffi_eigen_generated)
  (c_names eigen_utils_stubs ffi_eigen_generated_stub)
  (c_flags :standard -O3 -Ofast -march=native -mfpmath=sse -funroll-loops -ffast-math -flto -I../eigen_cpp/lib)
- (c_library_flags :standard -lstdc++ -Leigen_cpp -leigen_cpp_stubs))
-
+ (c_library_flags :standard -lstdc++ -Leigen_cpp -leigen_cpp_stubs)
+)
