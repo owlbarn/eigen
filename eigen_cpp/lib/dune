@@ -1,16 +1,16 @@
 (ignored_subdirs
  (Eigen unsupported)
-)
+ )
 
 (rule
  (targets libeigen.a libeigen.so)
  (deps
-  (source_tree lib)
- )
+  (source_tree .)
+  )
  (action
   (progn
-   (run make)
-   (run make dynamic)
+    (run make)
+    (run make dynamic)
+    )
   )
  )
-)

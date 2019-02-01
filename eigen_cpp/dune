@@ -3,11 +3,11 @@
  (deps lib/libeigen.a lib/libeigen.so)
  (action
   (progn
-   (copy lib/libeigen.a libeigen_cpp_stubs.a)
-   (copy lib/libeigen.so dlleigen_cpp_stubs.so)
+    (copy lib/libeigen.a libeigen_cpp_stubs.a)
+    (copy lib/libeigen.so dlleigen_cpp_stubs.so)
+    )
   )
  )
-)
 
 (library
  (name eigen_cpp)
@@ -15,7 +15,8 @@
  (libraries ctypes)
  (c_library_flags
   (:standard -lstdc++)
+  )
+ (self_build_stubs_archive
+  (eigen_cpp)
+  )
  )
- (self_build_stubs_archive 
-(eigen_cpp))
-)
