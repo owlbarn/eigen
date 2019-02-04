@@ -1,19 +1,12 @@
-all: setup.data
-	ocaml setup.ml -build
+build:
+	dune build eigen_cpp/libeigen_cpp_stubs.a
+	dune build -p eigen
 
-install:
-	ocaml setup.ml -uninstall
-	ocaml setup.ml -install
+install: build
+	dune install
 uninstall:
-	ocamlfind remove eigen
-oasis: setup.data
-setup.data: setup.ml
-	ocaml setup.ml -configure
-setup.ml: _oasis
-	oasis setup
+	dune remove
 clean:
-	rm -rf _build
-cleanall: uninstall
-	rm -rf _build setup.* myocamlbuild.ml _tags
-	rm -rf lib/META lib/*.mldylib lib/*.mllib lib/*.clib
-	rm -rf *.byte *.native
+	dune clean
+
+PHONY: build

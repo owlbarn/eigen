@@ -40,3 +40,6 @@ end
 
 
 module Utils = Eigen_utils
+
+
+module Types = Eigen_types
