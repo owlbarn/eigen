@@ -3,8 +3,8 @@
  (deps lib/libeigen.a lib/libeigen.so)
  (action
   (progn
-    (copy lib/libeigen.a libeigen_cpp_stubs.a)
-    (copy lib/libeigen.so dlleigen_cpp_stubs.so)
+    (bash "cp lib/libeigen.a libeigen_cpp_stubs.a")
+    (bash "cp lib/libeigen.so dlleigen_cpp_stubs.so")
     )
   )
  )
