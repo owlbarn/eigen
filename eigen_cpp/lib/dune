@@ -1,16 +1,22 @@
-(ignored_subdirs
- (Eigen unsupported)
- )
+(* -*- tuareg -*- *)
+let setenv_open, setenv_close =
+  match Sys.getenv "EIGENCPP_OPTFLAGS" with
+  | s -> Printf.sprintf "(setenv OPTFLAGS0 %S" s, ")"
+  | exception Not_found -> "", ""
 
+let () = Printf.ksprintf Jbuild_plugin.V1.send {|
 (rule
  (targets libeigen.a libeigen.so)
  (deps
   (source_tree .)
   )
  (action
+  %s
   (progn
     (run make)
     (run make dynamic)
     )
+  %s
   )
  )
+|} setenv_open setenv_close

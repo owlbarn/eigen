@@ -6,11 +6,24 @@ Even though Eigen3 itself provides a rich set of matrix operations. This OCaml l
 To install the library from the source code, execute the following `bash` command.
 
 ```bash
-make oasis && make && make install
+make && make install
 ```
 
 If you have questions or suggestions, please contact me via [Email](liang.wang@cl.cam.ac.uk), [LinkedIn](http://uk.linkedin.com/in/liangsuomi/), or [Twitter](https://twitter.com/ryan_liang).
 
+## Optional configuration
+
+You can customise the optimization flags used to compile the C++ libeigen by setting `EIGENCPP_OPTFLAGS`, the default value is
+```
+EIGENCPP_OPTFLAGS = -Ofast -march=native -mfpmath=sse -funroll-loops -ffast-math
+```
+
+Similarly you can customise the optimization flags used to compile the eigen library by setting `EIGEN_FLAGS`, the default value is
+```
+EIGEN_FLAGS = -O3 -Ofast -march=native -mfpmath=sse -funroll-loops -ffast-math
+```
+
+These can be useful if the set of flags is not supported by your system or if you want to use more experimental features
 
 ## Module Structure
 This section is not meant for a tutorial but to help you understand how Eigen's OCaml modules are organised. In case you want to contribute in extending either Eigen or Owl, this would be helpful.
