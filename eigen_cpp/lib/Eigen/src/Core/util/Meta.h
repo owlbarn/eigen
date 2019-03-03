@@ -17,8 +17,36 @@
 #endif
 
 #if EIGEN_COMP_ICC>=1600 &&  __cplusplus >= 201103L
-#include <cstdint>
+#define EIGEN_HAS_CXX11 1
+#else
+#define EIGEN_HAS_CXX11 0
 #endif
+
+// Define portable (u)int{32,64} types
+#if EIGEN_HAS_CXX11
+#include <cstdint>
+namespace Eigen {
+namespace numext {
+typedef std::uint32_t uint32_t;
+typedef std::int32_t  int32_t;
+typedef std::uint64_t uint64_t;
+typedef std::int64_t  int64_t;
+}
+}
+#else
+// Without c++11, all compilers able to compile Eigen also
+// provides the C99 stdint.h header file.
+#include <stdint.h>
+namespace Eigen {
+namespace numext {
+typedef ::uint32_t uint32_t;
+typedef ::int32_t  int32_t;
+typedef ::uint64_t uint64_t;
+typedef ::int64_t  int64_t;
+}
+}
+#endif
+
 
 namespace Eigen {
 
