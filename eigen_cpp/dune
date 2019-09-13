@@ -3,8 +3,9 @@
  (deps lib/libeigen.a lib/libeigen.so)
  (action
   (progn
-    (bash "cp lib/libeigen.a libeigen_cpp_stubs.a")
-    (bash "cp lib/libeigen.so dlleigen_cpp_stubs.so")
+    (bash "cp lib/libeigen.a libeigen.a")
+    (bash "ar -x libeigen.a")
+    (bash "ocamlmklib.opt -g -o eigen_cpp_stubs *.o -lc++")
     )
   )
  )
