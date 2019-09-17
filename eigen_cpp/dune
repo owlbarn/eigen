@@ -5,7 +5,7 @@
   (progn
     (bash "cp lib/libeigen.a libeigen.a")
     (bash "ar -x libeigen.a")
-    (bash "ocamlmklib.opt -g -o eigen_cpp_stubs *.o -lc++")
+    (bash "ocamlmklib.opt -g -o eigen_cpp_stubs *.o -lstdc++")
     )
   )
  )

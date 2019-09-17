@@ -1,5 +1,5 @@
 build:
-	dune build eigen_cpp/libeigen_cpp_stubs.a
+	dune build -p eigen eigen_cpp/libeigen_cpp_stubs.a
 	dune build -p eigen
 
 install: build
