@@ -444,10 +444,8 @@ c_spmat_d* c_eigen_spmat_d_sparse_LU(c_spmat_d *c_coefficients, c_spmat_d *c_obs
 {
   SparseSolver<SparseLU<col_major_spmat_d>,
                spmat_d,
-               dsmat_d,
                spmat_d_elt,
-               c_spmat_d,
-               c_dsmat_d> ss(c_coefficients, c_observations);
+               c_spmat_d> ss(c_coefficients, c_observations);
   return ss.solve();
 }
 
@@ -455,10 +453,8 @@ c_spmat_d* c_eigen_spmat_d_sparse_QR(c_spmat_d *c_coefficients, c_spmat_d *c_obs
 {
   SparseSolver<SparseQR<col_major_spmat_d, COLAMDOrdering<int> >,
                spmat_d,
-               dsmat_d,
                spmat_d_elt,
-               c_spmat_d,
-               c_dsmat_d> ss(c_coefficients, c_observations);
+               c_spmat_d> ss(c_coefficients, c_observations);
   return ss.solve();
 }
 
@@ -467,10 +463,8 @@ c_spmat_d* c_eigen_spmat_d_simplicial_LLT(c_spmat_d *c_coefficients,
 {
   SparseSolver<SimplicialLLT<col_major_spmat_d>,
                spmat_d,
-               dsmat_d,
                spmat_d_elt,
-               c_spmat_d,
-               c_dsmat_d> ss(c_coefficients, c_observations);
+               c_spmat_d> ss(c_coefficients, c_observations);
   return ss.solve();
 }
 
@@ -479,10 +473,8 @@ c_spmat_d* c_eigen_spmat_d_simplicial_LDLT(c_spmat_d *c_coefficients,
 {
   SparseSolver<SimplicialLDLT<col_major_spmat_d>,
                spmat_d,
-               dsmat_d,
                spmat_d_elt,
-               c_spmat_d,
-               c_dsmat_d> ss(c_coefficients, c_observations);
+               c_spmat_d> ss(c_coefficients, c_observations);
   return ss.solve();
 }
 
@@ -491,10 +483,8 @@ c_spmat_d* c_eigen_spmat_d_conjugate_gradient(c_spmat_d *c_coefficients,
 {
   SparseSolver<ConjugateGradient<col_major_spmat_d>,
                spmat_d,
-               dsmat_d,
                spmat_d_elt,
-               c_spmat_d,
-               c_dsmat_d> ss(c_coefficients, c_observations);
+               c_spmat_d> ss(c_coefficients, c_observations);
   return ss.solve();
 }
 
@@ -503,10 +493,8 @@ c_spmat_d* c_eigen_spmat_d_least_squares_conjugate_gradient(c_spmat_d *c_coeffic
 {
   SparseSolver<LeastSquaresConjugateGradient<col_major_spmat_d>,
                spmat_d,
-               dsmat_d,
                spmat_d_elt,
-               c_spmat_d,
-               c_dsmat_d> ss(c_coefficients, c_observations);
+               c_spmat_d> ss(c_coefficients, c_observations);
   return ss.solve();
 }
 
@@ -515,9 +503,7 @@ c_spmat_d* c_eigen_spmat_d_BiCGSTAB(c_spmat_d *c_coefficients,
 {
   SparseSolver<BiCGSTAB<col_major_spmat_d>,
                spmat_d,
-               dsmat_d,
                spmat_d_elt,
-               c_spmat_d,
-               c_dsmat_d> ss(c_coefficients, c_observations);
+               c_spmat_d> ss(c_coefficients, c_observations);
   return ss.solve();
 }
