@@ -5,12 +5,12 @@ CXXFLAGS3 = -O3 -std=c++11 -I. -I./unsupported/ -c -fPIC -ansi -Wno-extern-c-com
 OPTFLAGS0 ?= -Ofast -march=native -mfpmath=sse -funroll-loops -ffast-math #-flto
 
 all:
-	g++ ${CXXFLAGS3} ${OPTFLAGS0} eigen_tensor.cpp -o eigen_tensor.o
-	g++ ${CXXFLAGS2} ${OPTFLAGS0} eigen_dsmat.cpp -o eigen_dsmat.o
-	g++ ${CXXFLAGS2} ${OPTFLAGS0} eigen_spmat.cpp -o eigen_spmat.o
+	$(CXX) ${CXXFLAGS3} ${OPTFLAGS0} eigen_tensor.cpp -o eigen_tensor.o
+	$(CXX) ${CXXFLAGS2} ${OPTFLAGS0} eigen_dsmat.cpp -o eigen_dsmat.o
+	$(CXX) ${CXXFLAGS2} ${OPTFLAGS0} eigen_spmat.cpp -o eigen_spmat.o
 
 	ar rvs libeigen.a eigen_dsmat.o eigen_spmat.o eigen_tensor.o
 dynamic:
-	g++ ${CXXFLAGS1} -I. eigen_dsmat.cpp eigen_spmat.cpp -o libeigen.so
+	$(CXX) ${CXXFLAGS1} -I. eigen_dsmat.cpp eigen_spmat.cpp -o libeigen.so
 clean:
 	rm -rf _build *.byte *.a *.o *.so *.cmo *.cmi
