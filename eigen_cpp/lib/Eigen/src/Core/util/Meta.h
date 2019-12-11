@@ -16,10 +16,14 @@
 #include <math_constants.h>
 #endif
 
+// This is a hack to avoid redefining the macro with a different value.
+// Meta.h and Macros.h do not agree on the definition of C++11.
+#ifndef EIGEN_HAS_CXX11
 #if EIGEN_COMP_ICC>=1600 &&  __cplusplus >= 201103L
 #define EIGEN_HAS_CXX11 1
 #else
 #define EIGEN_HAS_CXX11 0
+#endif
 #endif
 
 // Define portable (u)int{32,64} types
@@ -492,7 +496,7 @@ template<typename T, typename U> struct scalar_product_traits
 } // end namespace internal
 
 namespace numext {
-  
+
 #if defined(__CUDA_ARCH__)
 template<typename T> EIGEN_DEVICE_FUNC   void swap(T &a, T &b) { T tmp = b; b = a; a = tmp; }
 #else

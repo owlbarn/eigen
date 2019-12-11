@@ -7,13 +7,12 @@ dev-repo: "git+https://github.com/owlbarn/eigen.git"
 bug-reports: "https://github.com/owlbarn/eigen/issues"
 doc: "https://owlbarn.github.io/eigen/eigen"
 build: [
-  ["dune" "build" "-p" name "eigen_cpp/libeigen_cpp_stubs.a"]
   ["dune" "build" "-p" name "-j" jobs]
 ]
 depends: [
   "ocaml" {>= "4.02"}
   "ctypes" {>= "0.14.0"}
-  "dune" {>= "1.5.0"}
+  "dune" {>= "2.0.0"}
 ]
 synopsis: "Owl's OCaml interface to Eigen3 C++ library"
 description:

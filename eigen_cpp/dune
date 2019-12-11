@@ -1,23 +1,39 @@
-(rule
- (targets libeigen_cpp_stubs.a dlleigen_cpp_stubs.so)
- (deps lib/libeigen.a lib/libeigen.so)
- (action
-  (progn
-    (bash "cp lib/libeigen.a libeigen.a")
-    (bash "ar -x libeigen.a")
-    (bash "ocamlmklib.opt -g -o eigen_cpp_stubs *.o -lstdc++")
-    )
-  )
- )
+(* -*- tuareg -*- *)
+
+let optflags =
+  match Sys.getenv "EIGENCPP_OPTFLAGS" with
+  | s ->
+    s
+  | exception Not_found ->
+    "-Ofast -march=native -mfpmath=sse -funroll-loops -ffast-math"
+
+let () = Printf.ksprintf Jbuild_plugin.V1.send {|
+
+(include_subdirs unqualified)
 
 (library
- (name eigen_cpp)
+ (name eigen_cpp_stubs)
  (public_name eigen.cpp)
  (libraries ctypes)
- (c_library_flags
-  (:standard -lstdc++)
+ (foreign_stubs
+  (language cxx)
+  (names eigen_tensor eigen_dsmat eigen_spmat)
+  (include_dirs lib lib/unsupported)
+  (flags
+    :standard
+    -fPIC
+    -ansi
+    -O3
+    -std=c++11
+    -pedantic
+    -Wall
+    -Wno-invalid-partial-specialization
+    -Wno-extern-c-compat
+    -Wno-c++11-long-long
+    %s
+   )
   )
- (self_build_stubs_archive
-  (eigen_cpp)
-  )
+ (c_library_flags :standard -lstdc++)
  )
+
+|} optflags
