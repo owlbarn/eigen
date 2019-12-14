@@ -7,6 +7,11 @@ let optflags =
   | exception Not_found ->
     "-Ofast -march=native -mfpmath=sse -funroll-loops -ffast-math"
 
+let devflags =
+  match Sys.getenv "EIGENCPP_DIAGNOSTIC" with
+  | s -> "-Wall -Wno-invalid-partial-specialization -Wno-extern-c-compat -Wno-c++11-long-long -Wno-ignored-attributes "^s
+  | exception Not_found -> "-w -Wno-invalid-partial-specialization"
+
 let () = Printf.ksprintf Jbuild_plugin.V1.send {|
 
 (include_subdirs unqualified)
@@ -23,18 +28,14 @@ let () = Printf.ksprintf Jbuild_plugin.V1.send {|
     :standard
     -fPIC
     -ansi
+    -pedantic
     -O3
     -std=c++11
-    -pedantic
-    -Wall
-    -Wno-invalid-partial-specialization
-    -Wno-extern-c-compat
-    -Wno-c++11-long-long
-    -Wno-ignored-attributes
+    %s
     %s
    )
   )
  (c_library_flags :standard -lstdc++)
  )
 
-|} optflags
+|} devflags optflags
