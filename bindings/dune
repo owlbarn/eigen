@@ -1,4 +1,3 @@
 (executable
  (name ffi_eigen_stubgen)
- (libraries ctypes.stubs)
-)
+ (libraries ctypes.stubs))
