@@ -1,3 +1,4 @@
+
 PHONY: build
 build:
 	dune build -p eigen
@@ -8,7 +9,7 @@ install: build
 
 PHONY: uninstall
 uninstall:
-	dune remove
+	dune uninstall
 
 PHONY: clean
 clean:
