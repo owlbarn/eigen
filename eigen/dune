@@ -3,7 +3,7 @@
 let eigen_flags =
   match Sys.getenv "EIGEN_FLAGS" with
   | s -> String.trim s
-  | exception Not_found -> "-O3 -Ofast -march=native -mfpmath=sse -funroll-loops -ffast-math"
+  | exception Not_found -> "-O3 -Ofast -march=native -funroll-loops -ffast-math"
 
 let () = Printf.ksprintf Jbuild_plugin.V1.send {|
 (rule

@@ -16,12 +16,12 @@ If you have questions or suggestions, please contact me via [Email](liang.wang@c
 
 You can customise the optimization flags used to compile the C++ libeigen by setting `EIGENCPP_OPTFLAGS`, the default value is
 ```
-EIGENCPP_OPTFLAGS = -Ofast -march=native -mfpmath=sse -funroll-loops -ffast-math
+EIGENCPP_OPTFLAGS = -Ofast -march=native -funroll-loops -ffast-math
 ```
 
 Similarly you can customise the optimization flags used to compile the eigen library by setting `EIGEN_FLAGS`, the default value is
 ```
-EIGEN_FLAGS = -O3 -Ofast -march=native -mfpmath=sse -funroll-loops -ffast-math
+EIGEN_FLAGS = -O3 -Ofast -march=native -funroll-loops -ffast-math
 ```
 
 These can be useful if the set of flags is not supported by your system or if you want to use more experimental features

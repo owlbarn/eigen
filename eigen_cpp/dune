@@ -5,7 +5,7 @@ let optflags =
   | s ->
     s
   | exception Not_found ->
-    "-Ofast -march=native -mfpmath=sse -funroll-loops -ffast-math"
+    "-Ofast -march=native -funroll-loops -ffast-math"
 
 let devflags =
   match Sys.getenv "EIGENCPP_DIAGNOSTIC" with
