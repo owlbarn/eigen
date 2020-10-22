@@ -9,15 +9,11 @@ jobs:
       matrix:
         os:
           - macos-latest
-          - ubuntu-18.04
+          - ubuntu-20.04
           - windows-latest
         ocaml-version:
           - 4.10.1
           - 4.11.1
-        include:
-          - os: macos-latest
-          - os: ubuntu-20.04
-          - os: windows-latest
 
     env:
       OCAML_VERSION: ${{ matrix.ocaml-version }}
