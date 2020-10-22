@@ -59,4 +59,4 @@ jobs:
 
       - name: Build Revdeps
         if: ${{ success() && startsWith(runner.os, 'Linux') }}
-        run:  opam list --depends-on eigen -as | xargs -n1 -I@ bash -c "opam install @ -y && opam remove @ -y"'
+        run:  opam list --depends-on eigen -as | xargs -n1 -I@ bash -c "opam install @ -ty && opam remove @ -y"'
