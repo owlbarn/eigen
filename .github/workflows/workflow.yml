@@ -53,6 +53,6 @@ jobs:
       - name: Build project
         run: opam exec -- dune build -p eigen
 
-      - name: Build Revdeps
-        if: ${{ success() && startsWith(runner.os, 'Linux') }}
-        run:  opam list --depends-on eigen -as | xargs -n1 -I@ bash -c "opam install @ -ty && opam remove @ -y"'
+      # - name: Build Revdeps
+      #   if: ${{ success() && startsWith(runner.os, 'Linux') }}
+      #   run:  opam list --depends-on eigen -as | xargs -n1 -I@ bash -c "opam install @ -ty && opam remove @ -y"'
