@@ -1,0 +1,62 @@
+name: Main workflow
+
+on: [push, pull_request]
+
+jobs:
+  build_and_test:
+    strategy:
+      fail-fast: false
+      matrix:
+        os:
+          - macos-latest
+          - ubuntu-18.04
+          - windows-latest
+        ocaml-version:
+          - 4.10.1
+          - 4.11.1
+        include:
+          - os: macos-latest
+          - os: ubuntu-20.04
+          - os: windows-latest
+
+    env:
+      OCAML_VERSION: ${{ matrix.ocaml-version }}
+      OS: ${{ matrix.os }}
+
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Cached Infra
+        uses: actions/cache@v2
+        env:
+          cache-name: cached-opam
+        with:
+          path: |
+           ~/.opam
+           _build
+           C:\cygwin
+          key: ${{ matrix.os }}-${{ matrix.ocaml-version }}-${{ env.cache-name }}-${{ hashFiles('**/*.opam*') }}
+          restore-keys: |
+            ${{ matrix.os }}-${{ matrix.ocaml-version }}-${{ env.cache-name }}-
+            ${{ matrix.os }}-${{ matrix.ocaml-version }}-
+            ${{ matrix.os }}-
+      - name: Use OCaml ${{ matrix.ocaml-version }}
+        uses: avsm/setup-ocaml@v1
+        with:
+          ocaml-version: ${{ matrix.ocaml-version }}
+
+      - name: Install dependencies
+        run: |
+          opam pin add eigen.dev . -n
+          opam depext eigen
+          opam install eigen --deps-only
+
+      - name: Build project
+        run: opam exec -- dune build -p eigen
+
+      - name: Build Revdeps
+        if: ${{ success() && startsWith(runner.os, 'Linux') }}
+        run:  opam list --depends-on eigen -as | xargs -n1 -I@ bash -c "opam install @ -ty && opam remove @ -y"'
