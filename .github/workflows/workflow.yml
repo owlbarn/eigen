@@ -34,6 +34,7 @@ jobs:
            ~/.opam
            _build
            C:\cygwin
+           D:/a/eigen/eigen
           key: ${{ matrix.os }}-${{ matrix.ocaml-version }}-${{ env.cache-name }}-${{ hashFiles('**/*.opam*') }}
           restore-keys: |
             ${{ matrix.os }}-${{ matrix.ocaml-version }}-${{ env.cache-name }}-
@@ -53,6 +54,16 @@ jobs:
       - name: Build project
         run: opam exec -- dune build -p eigen
 
-      # - name: Build Revdeps
-      #   if: ${{ success() && startsWith(runner.os, 'Linux') }}
-      #   run:  opam list --depends-on eigen -as | xargs -n1 -I@ bash -c "opam install @ -ty && opam remove @ -y"'
+      - name: Install openblas on windows
+        if: ${{ runner.os == 'Windows' }}
+        run: |
+          echo pwd
+          git clone https://github.com/xianyi/OpenBLAS.git || true
+          cd OpenBLAS
+          make CC=x86_64-w64-mingw32-gcc FC=x86_64-w64-mingw32-gfortran TARGET=HASWELL
+          make CC=x86_64-w64-mingw32-gcc FC=x86_64-w64-mingw32-gfortran TARGET=HASWELL PREFIX=/usr/x86_64-w64-mingw32/sys-root/mingw install
+
+      - name: Build and test owl
+        run: |
+          opam depext owl
+          opam install -t owl
