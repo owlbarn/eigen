@@ -16,26 +16,21 @@ let () = Printf.ksprintf Jbuild_plugin.V1.send {|
 
 (include_subdirs unqualified)
 
-(library
- (name eigen_cpp_stubs)
- (public_name eigen.cpp)
- (libraries ctypes)
- (foreign_stubs
-  (language cxx)
-  (names eigen_tensor eigen_dsmat eigen_spmat)
-  (include_dirs lib lib/unsupported)
-  (flags
-    :standard
-    -fPIC
-    -ansi
-    -pedantic
-    -O3
-    -std=c++11
-    %s
-    %s
-   )
+(foreign_library
+ (archive_name eigen_cpp_stubs)
+ (language cxx)
+ (names eigen_tensor eigen_dsmat eigen_spmat)
+ (include_dirs lib lib/unsupported)
+ (flags
+   :standard
+   -fPIC
+   -ansi
+   -pedantic
+   -O3
+   -std=c++11
+   %s
+   %s
   )
- (c_library_flags :standard -lstdc++)
  )
 
 |} devflags optflags
