@@ -1,0 +1,11 @@
+(test
+ (name native)
+ (modules native)
+ (libraries owl)
+ (modes native))
+
+(test
+ (name byte)
+ (modules byte)
+ (libraries owl)
+ (modes byte))
