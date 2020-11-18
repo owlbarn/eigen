@@ -44,11 +44,6 @@ jobs:
         uses: avsm/setup-ocaml@v1
         with:
           ocaml-version: ${{ matrix.ocaml-version }}
-
-      - name: Use GCC on osx
-        if: ${{ matrix.os == 'macos-latest' }}
-        env:
-          CC: gcc
       
       - name: Install openblas on windows
         if: ${{ runner.os == 'Windows' }}
