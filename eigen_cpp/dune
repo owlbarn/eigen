@@ -2,8 +2,7 @@
 
 let optflags =
   match Sys.getenv "EIGENCPP_OPTFLAGS" with
-  | s ->
-    s
+  | s -> s
   | exception Not_found ->
     "-Ofast -march=native -funroll-loops -ffast-math"
 
