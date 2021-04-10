@@ -44,8 +44,17 @@ jobs:
         uses: avsm/setup-ocaml@v1
         with:
           ocaml-version: ${{ matrix.ocaml-version }}
-      
-      - name: Install openblas on windows
+
+      - name: Install dependencies
+        run: |
+          opam pin add eigen.dev . -n
+          opam depext eigen
+          opam install eigen --deps-only
+
+      - name: Build project
+        run: opam exec -- dune build -p eigen
+
+      - name: Install openblas on windows (for testing owl)
         if: ${{ runner.os == 'Windows' }}
         run: |
           echo pwd
@@ -54,15 +63,7 @@ jobs:
           make CC=x86_64-w64-mingw32-gcc FC=x86_64-w64-mingw32-gfortran
           make CC=x86_64-w64-mingw32-gcc FC=x86_64-w64-mingw32-gfortran PREFIX=/usr/x86_64-w64-mingw32/sys-root/mingw install
 
-      - name: Install dependencies
-        run: |
-          opam pin add eigen.dev . -n
-          opam depext eigen owl owl-top owl-zoo
-          opam install eigen --deps-only
-
-      - name: Build project
-        run: opam exec -- dune build -p eigen
-
       - name: Build and test owl
         run: |
+          opam depext owl owl-top owl-zoo
           opam install -t owl owl-top owl-zoo
