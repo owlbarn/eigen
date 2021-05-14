@@ -10,7 +10,7 @@
 
  typedef int64_t INDEX;
 
- #ifdef __cplusplus
+ #if defined(__cplusplus) && !defined(OWL_EXTERN_C)
    typedef float tensor_s_elt;
    typedef double tensor_d_elt;
  #else

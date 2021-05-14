@@ -10,7 +10,7 @@ extern "C"
 
 typedef int64_t INDEX;
 
-#ifdef __cplusplus
+#if defined(__cplusplus) && !defined(OWL_EXTERN_C)
   typedef float spmat_s_elt;
   typedef double spmat_d_elt;
   typedef std::complex<float> spmat_c_elt;
