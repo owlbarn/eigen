@@ -17,8 +17,17 @@ let _ =
   | true, false ->
     Cstubs.write_ml Format.std_formatter ~prefix (module Ffi_eigen_bindings.Bindings)
   | false, true ->
-    print_endline "#include <stdint.h>";
-    print_endline "#include \"eigen_dsmat.h\"";
-    print_endline "#include \"eigen_spmat.h\"";
-    print_endline "#include \"eigen_tensor.h\"";
-    Cstubs.write_c Format.std_formatter ~prefix (module Ffi_eigen_bindings.Bindings)
+    List.iter print_endline
+      [ "#ifdef __cplusplus"
+      ; "extern \"C\" {"
+      ; "#define OWL_EXTERN_C"
+      ; "#endif"
+      ; "#include <stdint.h>"
+      ; "#include \"eigen_dsmat.h\""
+      ; "#include \"eigen_spmat.h\""
+      ; "#include \"eigen_tensor.h\""];
+    Cstubs.write_c Format.std_formatter ~prefix (module Ffi_eigen_bindings.Bindings);
+    List.iter print_endline
+      [ "#ifdef __cplusplus"
+      ; "}"
+      ; "#endif"]

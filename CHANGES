@@ -1,0 +1,8 @@
+# 0.4.0 (12-11-2020)
+
+* Fix bug in linking cmxs files ([#27](https://github.com/owlbarn/eigen/issues/27) @nojb @nilsbecker @dbuenzli)
+
+# 0.3.0 (22-10-2020)
+
+* Release 0.3.0, windows compatibility (thanks to @kkirstein)
+

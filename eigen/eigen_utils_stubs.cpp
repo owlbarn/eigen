@@ -1,3 +1,7 @@
+#ifdef __cplusplus
+extern "C" {
+#define OWL_EXTERN_C
+#endif
 #include "caml/alloc.h"
 #include "caml/bigarray.h"
 #include "caml/memory.h"
@@ -16,7 +20,7 @@ static void caml_owl_update_proxy(struct caml_ba_array * b1,
     ++ b1->proxy->refcount;
   } else {
     /* Otherwise, create proxy and attach it to both b1 and b2 */
-    proxy = caml_stat_alloc(sizeof(struct caml_ba_proxy));
+    proxy = (struct caml_ba_proxy *)caml_stat_alloc(sizeof(struct caml_ba_proxy));
     proxy->refcount = 2;      /* original array + sub array */
     proxy->data = b1->data;
     proxy->size =
@@ -48,3 +52,6 @@ CAMLprim value caml_owl_change_layout(value vb, value vlayout)
   }
   #undef b
 }
+#ifdef __cplusplus
+}
+#endif
