@@ -33,12 +33,12 @@ let () = Printf.ksprintf Jbuild_plugin.V1.send {|
  (public_name eigen)
  (libraries ctypes)
  (modules :standard ffi_eigen_generated)
- (foreign_archives ../eigen_cpp/eigen_cpp_stubs)
+ (foreign_archives ../eigen_cpp/eigen_cpp)
  (foreign_stubs
   (language c)
   (names eigen_utils_stubs ffi_eigen_generated_stub)
   (include_dirs ../eigen_cpp/lib)
-  (flags :standard %s)
+  (flags :standard -lstdc++ -leigen_cpp %s)
   )
 )
 |} eigen_flags

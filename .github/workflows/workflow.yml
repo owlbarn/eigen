@@ -54,16 +54,16 @@ jobs:
       - name: Build project
         run: opam exec -- dune build -p eigen
 
-      - name: Install openblas on windows
+      - name: Install openblas on windows (for testing owl)
         if: ${{ runner.os == 'Windows' }}
         run: |
           echo pwd
           git clone https://github.com/xianyi/OpenBLAS.git || true
           cd OpenBLAS
-          make CC=x86_64-w64-mingw32-gcc FC=x86_64-w64-mingw32-gfortran TARGET=HASWELL
-          make CC=x86_64-w64-mingw32-gcc FC=x86_64-w64-mingw32-gfortran TARGET=HASWELL PREFIX=/usr/x86_64-w64-mingw32/sys-root/mingw install
+          make CC=x86_64-w64-mingw32-gcc FC=x86_64-w64-mingw32-gfortran
+          make CC=x86_64-w64-mingw32-gcc FC=x86_64-w64-mingw32-gfortran PREFIX=/usr/x86_64-w64-mingw32/sys-root/mingw install
 
       - name: Build and test owl
         run: |
-          opam depext owl
-          opam install -t owl
+          opam depext owl owl-top owl-zoo
+          opam install -t owl owl-top owl-zoo
