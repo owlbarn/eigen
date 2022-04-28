@@ -12,8 +12,8 @@ jobs:
           - ubuntu-20.04
           - windows-latest
         ocaml-version:
-          - 4.10.1
-          - 4.11.1
+          - 4.10.x
+          - 4.13.x
 
     env:
       OCAML_VERSION: ${{ matrix.ocaml-version }}
