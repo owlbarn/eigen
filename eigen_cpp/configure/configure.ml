@@ -41,14 +41,6 @@ let detect_system_arch =
 |}
 
 let default_cppflags c =
-  let devflags =
-    match Sys.getenv "EIGENCPP_DIAGNOSTIC" with
-    | s -> 
-      ("-Wall -Wno-invalid-partial-specialization -Wno-extern-c-compat -Wno-c++11-long-long -Wno-ignored-attributes "^s)
-      |> String.split_on_char ' '
-      |> List.filter (fun s -> String.trim s <> "")
-    | exception Not_found -> ["-W"; "-Wno-invalid-partial-specialization"]
-  in
   try
     String.trim (Sys.getenv "EIGEN_OPTFLAGS")
     |> String.split_on_char ' '
@@ -108,7 +100,6 @@ let default_cppflags c =
         "-funroll-loops"
       ; "-ffast-math"
       ]
-    @ devflags
 
 let () =
   C.main ~name:"eigen_cpp" (fun c ->
