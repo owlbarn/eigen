@@ -42,7 +42,7 @@ let detect_system_arch =
 
 let default_cppflags c =
   try
-    String.trim (Sys.getenv "EIGEN_OPTFLAGS")
+    String.trim (Sys.getenv "EIGENCPP_OPTFLAGS")
     |> String.split_on_char ' '
     |> List.filter (fun s -> String.trim s <> "")
   with
