@@ -5,7 +5,7 @@
 
 module C = Configurator.V1
 
-let detect_system_header =
+let detect_system_os =
   {|
   #if __APPLE__
     #include <TargetConditionals.h>
@@ -48,15 +48,8 @@ let default_cppflags c =
   with
   | Not_found ->
     let os =
-      let header =
-        let file = Filename.temp_file "discover" "os.h" in
-        let fd = open_out file in
-        output_string fd detect_system_header;
-        close_out fd;
-        file
-      in
       let platform =
-        C.C_define.import c ~includes:[ header ] [ "PLATFORM_NAME", String ]
+        C.C_define.import c ~includes:[ ] ~prelude:detect_system_os [ "PLATFORM_NAME", String ]
       in
       match List.map snd platform with
       | [ String "android" ] -> `android
@@ -67,15 +60,8 @@ let default_cppflags c =
       | _                    -> `unknown
     in
     let arch =
-      let header =
-        let file = Filename.temp_file "discover" "arch.h" in
-        let fd = open_out file in
-        output_string fd detect_system_arch;
-        close_out fd;
-        file
-      in
       let arch =
-        C.C_define.import c ~includes:[ header ] [ "PLATFORM_ARCH", String ]
+        C.C_define.import c ~includes:[ ] ~prelude:detect_system_arch [ "PLATFORM_ARCH", String ]
       in
       match List.map snd arch with
       | [ String "x86_64" ] -> `x86_64
@@ -92,7 +78,6 @@ let default_cppflags c =
     ; "-std=c++11"
     ] @ (match arch, os with
       | `arm64, `mac -> [ "-mcpu=apple-m1" ]
-      | `arm64, _    -> [ "-march=native" ]
       | `x86_64, _   -> [ "-march=native"; "-mfpmath=sse"; "-msse2" ]
       | _            -> [])
     @ [ (* Experimental switches, -ffast-math may break IEEE754 semantics*)
