@@ -76,6 +76,7 @@ let default_cppflags c =
     ; "-pedantic"
     ; "-O3"
     ; "-std=c++11"
+    ; "-Ofast"
     ] @ (match arch, os with
       | `arm64, `mac -> [ "-mcpu=apple-m1" ]
       | `x86_64, _   -> [ "-march=native"; "-mfpmath=sse"; "-msse2" ]
