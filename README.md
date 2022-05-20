@@ -71,3 +71,8 @@ The `C++` functions are compiled into a static library `libeigen.a` which is lin
 ## Other Information
 
 Some functions in `NeuralNetwork` folder use the code from Google's Tensorflow hence they are subject to [Apache License](http://www.apache.org/licenses/LICENSE-2.0).
+
+# Troubleshooting
+
+After updating `x86_64-w64-mingw32-gcc` to `11.3.0` you will get some internal compiler error from the C++ compiler. Pinning/downgrading `x86_64-w64-mingw32-gcc` to `11.2.0` should fix this, it seems to be a strange corner case with gcc compatibility. Hopefully it will be fixed in the next gcc update.
+
