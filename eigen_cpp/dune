@@ -1,20 +1,11 @@
-(* -*- tuareg -*- *)
-
-let optflags =
-  match Sys.getenv "EIGENCPP_OPTFLAGS" with
-  | s ->
-    s
-  | exception Not_found ->
-    "-Ofast -march=native -funroll-loops -ffast-math"
-
-let devflags =
-  match Sys.getenv "EIGENCPP_DIAGNOSTIC" with
-  | s -> "-Wall -Wno-invalid-partial-specialization -Wno-extern-c-compat -Wno-c++11-long-long -Wno-ignored-attributes "^s
-  | exception Not_found -> "-w -Wno-invalid-partial-specialization"
-
-let () = Printf.ksprintf Jbuild_plugin.V1.send {|
-
 (include_subdirs unqualified)
+
+(rule
+ (targets cpp_flags.sexp)
+ (deps
+  (:deps-conf configure/configure.exe))
+ (action
+  (run %{deps-conf})))
 
 (foreign_library
  (archive_name eigen_cpp_stubs)
@@ -22,16 +13,5 @@ let () = Printf.ksprintf Jbuild_plugin.V1.send {|
  (names eigen_tensor eigen_dsmat eigen_spmat)
  (include_dirs lib lib/unsupported)
  (flags
-   :standard
-   -fPIC
-   -ansi
-   -pedantic
-   -O3
-   -std=c++11
-   -lstdc++
-   %s
-   %s
-  )
- )
-
-|} devflags optflags
+  :standard
+  (:include cpp_flags.sexp)))
