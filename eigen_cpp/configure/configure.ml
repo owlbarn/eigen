@@ -22,6 +22,8 @@ let detect_system_header =
     #endif
   #elif WIN32
     #define PLATFORM_NAME "windows"
+  #else
+    #define PLATFORM_NAME "unknown"
   #endif
 |}
 
